@@ -1,0 +1,14 @@
+[remap]
+
+importer="spine.skel"
+type="SpineSkeletonFileResource"
+uid="uid://d5qxlodmjn30"
+path="res://.godot/imported/the_insatiable.skel-e3b0bcffdeabcf1101635194cfbcba31.spskel"
+
+[deps]
+
+source_file="res://TheInsatiable/animations/the_insatiable.skel"
+dest_files=["res://.godot/imported/the_insatiable.skel-e3b0bcffdeabcf1101635194cfbcba31.spskel"]
+
+[params]
+

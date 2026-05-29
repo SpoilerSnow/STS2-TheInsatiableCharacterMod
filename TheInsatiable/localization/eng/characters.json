@@ -1,0 +1,17 @@
+{
+  "THEINSATIABLE-INSATIABLE_CHARACTER.aromaPrinciple": "[sine][blue]...I am the king of the hive...[/blue][/sine]",
+  "THEINSATIABLE-INSATIABLE_CHARACTER.banter.alive.endTurnPing": "<rustling sounds>",
+  "THEINSATIABLE-INSATIABLE_CHARACTER.banter.dead.endTurnPing": "...",
+  "THEINSATIABLE-INSATIABLE_CHARACTER.cardsModifierDescription": "Insatiable Sandworm cards now appear in rewards and shops.",
+  "THEINSATIABLE-INSATIABLE_CHARACTER.cardsModifierTitle": "Insatiable Sandworm Cards",
+  "THEINSATIABLE-INSATIABLE_CHARACTER.description": "A [gold]Insatiable Sandworm[/gold] from the hive, hiding in [gold]quicksand[/gold] is its innate ability.\nNow awakened, it is determined to [gold]devour[/gold] everything in the tower.",
+  "THEINSATIABLE-INSATIABLE_CHARACTER.eventDeathPrevention": "<The Insatiable Sandworm's appendages tremble>",
+  "THEINSATIABLE-INSATIABLE_CHARACTER.goldMonologue": "[sine]The Insatiable Sandworm found a treasure[/sine]",
+  "THEINSATIABLE-INSATIABLE_CHARACTER.possessiveAdjective": "its",
+  "THEINSATIABLE-INSATIABLE_CHARACTER.pronounObject": "it",
+  "THEINSATIABLE-INSATIABLE_CHARACTER.pronounPossessive": "its",
+  "THEINSATIABLE-INSATIABLE_CHARACTER.pronounSubject": "it",
+  "THEINSATIABLE-INSATIABLE_CHARACTER.title": "Insatiable Sandworm",
+  "THEINSATIABLE-INSATIABLE_CHARACTER.titleObject": "Insatiable Sandworm",
+  "THEINSATIABLE-INSATIABLE_CHARACTER.unlockText": "Complete a run with [pink]{Prerequisite}[/pink] to unlock this character."
+}

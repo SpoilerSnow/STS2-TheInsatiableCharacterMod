@@ -1,0 +1,17 @@
+{
+  "THEINSATIABLE-INSATIABLE_CHARACTER.aromaPrinciple": "[sine][blue]……我是巢穴之王……[/blue][/sine]",
+  "THEINSATIABLE-INSATIABLE_CHARACTER.banter.alive.endTurnPing": "<沙沙声>",
+  "THEINSATIABLE-INSATIABLE_CHARACTER.banter.dead.endTurnPing": "……",
+  "THEINSATIABLE-INSATIABLE_CHARACTER.cardsModifierDescription": "无厌沙虫的卡牌现在会出现在奖励和商店中。",
+  "THEINSATIABLE-INSATIABLE_CHARACTER.cardsModifierTitle": "无厌沙虫卡牌",
+  "THEINSATIABLE-INSATIABLE_CHARACTER.description": "一只来自巢穴的[gold]无厌沙虫[/gold]，藏身于[gold]流沙[/gold]中是它与生俱来的本领。\n如今它已苏醒，势必要[gold]吞噬[/gold]高塔的一切。",
+  "THEINSATIABLE-INSATIABLE_CHARACTER.eventDeathPrevention": "<无厌沙虫的附肢颤动着>",
+  "THEINSATIABLE-INSATIABLE_CHARACTER.goldMonologue": "[sine]无厌沙虫找到了至宝[/sine]",
+  "THEINSATIABLE-INSATIABLE_CHARACTER.possessiveAdjective": "它的",
+  "THEINSATIABLE-INSATIABLE_CHARACTER.pronounObject": "它",
+  "THEINSATIABLE-INSATIABLE_CHARACTER.pronounPossessive": "它的",
+  "THEINSATIABLE-INSATIABLE_CHARACTER.pronounSubject": "它",
+  "THEINSATIABLE-INSATIABLE_CHARACTER.title": "无厌沙虫",
+  "THEINSATIABLE-INSATIABLE_CHARACTER.titleObject": "无厌沙虫",
+  "THEINSATIABLE-INSATIABLE_CHARACTER.unlockText": "用[pink]{Prerequisite}[/pink]进行一局游戏来解锁这个角色。"
+}

@@ -1,0 +1,13 @@
+D:\downloads\Works\mods\the-insatiable\.godot\mono\temp\bin\Debug\TheInsatiable.deps.json
+D:\downloads\Works\mods\the-insatiable\.godot\mono\temp\bin\Debug\TheInsatiable.dll
+D:\downloads\Works\mods\the-insatiable\.godot\mono\temp\bin\Debug\TheInsatiable.pdb
+D:\downloads\Works\mods\the-insatiable\.godot\mono\temp\obj\Debug\TheInsatiable.csproj.AssemblyReference.cache
+D:\downloads\Works\mods\the-insatiable\.godot\mono\temp\obj\Debug\TheInsatiable.GeneratedMSBuildEditorConfig.editorconfig
+D:\downloads\Works\mods\the-insatiable\.godot\mono\temp\obj\Debug\TheInsatiable.AssemblyInfoInputs.cache
+D:\downloads\Works\mods\the-insatiable\.godot\mono\temp\obj\Debug\TheInsatiable.AssemblyInfo.cs
+D:\downloads\Works\mods\the-insatiable\.godot\mono\temp\obj\Debug\TheInsatiable.csproj.CoreCompileInputs.cache
+D:\downloads\Works\mods\the-insatiable\.godot\mono\temp\obj\Debug\TheInsatiable.sourcelink.json
+D:\downloads\Works\mods\the-insatiable\.godot\mono\temp\obj\Debug\TheInsatiable.dll
+D:\downloads\Works\mods\the-insatiable\.godot\mono\temp\obj\Debug\refint\TheInsatiable.dll
+D:\downloads\Works\mods\the-insatiable\.godot\mono\temp\obj\Debug\TheInsatiable.pdb
+D:\downloads\Works\mods\the-insatiable\.godot\mono\temp\obj\Debug\ref\TheInsatiable.dll

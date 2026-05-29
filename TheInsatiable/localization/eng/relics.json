@@ -1,0 +1,12 @@
+{
+    "SEA_GLASS.THEINSATIABLE-INSATIABLE_CHARACTER.title": "Caterpillar Glass",
+    "THEINSATIABLE-DESERT_STONE_RELIC.title": "Desert Stone",
+	"THEINSATIABLE-DESERT_STONE_RELIC.description": "At the start of each combat, add a [gold]Sand Stone[/gold] into your [gold]Hand[/gold] and apply [blue]{QuickSandPower}[/blue] layers of [gold]Quicksand[/gold] to ALL enemies.",
+    "THEINSATIABLE-DESERT_STONE_RELIC.flavor": "A treasure of the Insatiable Sandworm, said to come from a similarly mysterious eternal realm...",
+    "THEINSATIABLE-POLISHED_DESERT_STONE_RELIC.title": "Polished Desert Stone",
+    "THEINSATIABLE-POLISHED_DESERT_STONE_RELIC.description": "At the start of each combat, add a [gold]Sand Stone[/gold] into your [gold]Hand[/gold].\nAt the start of your turn, apply [blue]{QuickSandPower}[/blue] layers of [gold]Quicksand[/gold] to ALL enemies.",
+    "THEINSATIABLE-POLISHED_DESERT_STONE_RELIC.flavor": "A carefully polished Desert Stone, the source of the Insatiable Sandworm's power.",
+    "THEINSATIABLE-REVERSE_HOURGLASS_RELIC.title": "Reverse Hourglass",
+    "THEINSATIABLE-REVERSE_HOURGLASS_RELIC.description": "Whenever you apply [gold]Quicksand[/gold] to an enemy, the number of [gold]Quicksand[/gold] layers applied increases by [blue]{QuickSandPower}[/blue].",
+    "THEINSATIABLE-REVERSE_HOURGLASS_RELIC.flavor": "The sand within seems unaffected by gravity, flowing grain by grain from the bottom of the hourglass to the top."
+}

@@ -1,0 +1,5 @@
+{
+    "WEATHERING_AFFLICTION.description": "打出这张牌时获得[blue]{Amount}[/blue]层[gold]流沙[/gold]。",
+    "WEATHERING_AFFLICTION.extraCardText": "获得{Amount}层[gold]流沙[/gold]。",
+    "WEATHERING_AFFLICTION.title": "风化"
+}

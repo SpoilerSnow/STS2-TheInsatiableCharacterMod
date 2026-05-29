@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://c67l4fp5ibw4p"]
+
+[ext_resource type="Texture2D" uid="uid://dbeygtn7iw304" path="res://TheInsatiable/characterui/character_icon_the_insatiable.png" id="1_oepi6"]
+
+[node name="InsatiableIcon" type="TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_oepi6")
+expand_mode = 1
+stretch_mode = 5

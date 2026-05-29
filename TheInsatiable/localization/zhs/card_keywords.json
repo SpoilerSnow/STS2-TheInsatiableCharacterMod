@@ -1,0 +1,8 @@
+{
+    "THEINSATIABLE-SWALLOW.description": "用来触发特定的卡牌效果。\n吞噬卡牌时算作[gold]消耗[/gold]。\n吞噬敌人时将其消灭。\n[b]喂饱无厌沙虫！[/b]",
+    "THEINSATIABLE-SWALLOW.title": "吞噬",
+    "THEINSATIABLE-SELFSWALLOW.description": "如果这张牌在这个回合结束时留在你的[gold]手牌[/gold]中，则将其[gold]吞噬[/gold]。",
+    "THEINSATIABLE-SELFSWALLOW.title": "自噬",
+    "THEINSATIABLE-DIGEST.description": "被[gold]吞噬[/gold]时触发对应效果。",
+    "THEINSATIABLE-DIGEST.title": "消化"
+}

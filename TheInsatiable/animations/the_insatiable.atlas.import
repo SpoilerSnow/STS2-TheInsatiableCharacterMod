@@ -1,0 +1,16 @@
+[remap]
+
+importer="spine.atlas"
+type="SpineAtlasResource"
+uid="uid://bugva2mhngc42"
+path="res://.godot/imported/the_insatiable.atlas-6b0937fe2c7d8313b7daf61625071b7c.spatlas"
+
+[deps]
+
+source_file="res://TheInsatiable/animations/the_insatiable.atlas"
+dest_files=["res://.godot/imported/the_insatiable.atlas-6b0937fe2c7d8313b7daf61625071b7c.spatlas"]
+
+[params]
+
+normal_map_prefix="n"
+specular_map_prefix="s"

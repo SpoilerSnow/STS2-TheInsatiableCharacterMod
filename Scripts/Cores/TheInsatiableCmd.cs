@@ -14,7 +14,6 @@ public class TheInsatiableCmd
         if (!CombatManager.Instance.IsOverOrEnding)
 		{
 			ICombatState combatState = card.CombatState ?? card.Owner.Creature.CombatState;
-            await TheInsatiableHook.BeforeCardSwallow(combatState, card, causedBySelfSwallow);
             await CardCmd.Exhaust(choiceContext, card);
             CombatManager.Instance.History.CardSwallowed(combatState, card);
             await TheInsatiableHook.AfterCardSwallow(combatState, choiceContext, card, causedBySelfSwallow);
@@ -25,7 +24,6 @@ public class TheInsatiableCmd
         if (!CombatManager.Instance.IsOverOrEnding)
 		{
             ICombatState combatState = creature.CombatState ?? creature.CombatState;
-            await TheInsatiableHook.BeforeCreatureSwallow(combatState, creature, force);
             await CreatureCmd.Kill(creature);
             CombatManager.Instance.History.CreatureSwallowed(combatState, creature);
             await TheInsatiableHook.AfterCreatureSwallow(combatState, creature, force);

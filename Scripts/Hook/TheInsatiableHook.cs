@@ -57,7 +57,7 @@ public class TheInsatiableHook
         {
             if (item is ITheInsatiableModel theInsatiableModel)
             {
-                if (!theInsatiableModel.ShouldSelfSwallowTrigger(combatState, card))
+                if (!theInsatiableModel.ShouldSelfSwallowTrigger(card))
                 {
                     return false;
                 }

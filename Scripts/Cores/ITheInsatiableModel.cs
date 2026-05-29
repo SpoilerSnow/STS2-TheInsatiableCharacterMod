@@ -21,7 +21,7 @@ public interface ITheInsatiableModel
     {
         return Task.CompletedTask;
     }
-    public virtual bool ShouldSelfSwallowTrigger(ICombatState combatState, CardModel card)
+    public virtual bool ShouldSelfSwallowTrigger(CardModel card)
     {
         return true;
 	}

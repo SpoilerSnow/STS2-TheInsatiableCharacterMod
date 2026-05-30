@@ -22,7 +22,6 @@ public static class CombatManager_DoTurnEnd_SelfSwallowPatch
 		CardPile pile = PileType.Hand.GetPile(player);
 		PileType.Discard.GetPile(player);
 		List<CardModel> turnEndCards = new List<CardModel>();
-		List<CardModel> list = new List<CardModel>();
         List<CardModel> selfSwallowCards = new List<CardModel>();
 		foreach (CardModel card in pile.Cards)
 		{
@@ -30,18 +29,10 @@ public static class CombatManager_DoTurnEnd_SelfSwallowPatch
 			{
 				turnEndCards.Add(card);
 			}
-			else if (card.Keywords.Contains(CardKeyword.Ethereal) && Hook.ShouldEtherealTrigger(player.Creature.CombatState, card))
-			{
-				list.Add(card);
-			}
             else if (card.Keywords.Contains(TheInsatiableKeyword.SelfSwallow) && TheInsatiableHook.ShouldSelfSwallowTrigger(player.Creature.CombatState, card))
             {
                 selfSwallowCards.Add(card);
             }
-		}
-		foreach (CardModel item in list)
-		{
-			await CardCmd.Exhaust(choiceContext, item, causedByEthereal: true);
 		}
         foreach (CardModel item3 in selfSwallowCards)
         {
@@ -54,30 +45,34 @@ public static class CombatManager_DoTurnEnd_SelfSwallowPatch
     }
 }
 
-[HarmonyPatch(typeof(CardModel), "OnTurnEndInHandWrapper")]
+[HarmonyPatch(typeof(CardModel))]
 
 public static class CardModel_OnTurnEndInHandWrapper_SelfSwallowPatch
 {
-	public static async Task Postfix(Task __result, PlayerChoiceContext choiceContext)
+	protected virtual Task OnTurnEndInHand(PlayerChoiceContext choiceContext)
 	{
-		await CardPileCmd.Add(this, PileType.Play);
-		if (LocalContext.IsMe(Player.Owner))
-		{
-			await Cmd.CustomScaledWait(0.3f, 0.6f);
-		}
+		return Task.CompletedTask;
+	}
+    public static async Task Postfix(Task __result, CardModel __instance, PlayerChoiceContext choiceContext)
+    {
+        await CardPileCmd.Add(__instance, PileType.Play);
+        if (LocalContext.IsMe(__instance.Owner))
+        {
+            await Cmd.CustomScaledWait(0.3f, 0.6f);
+        }
 		await OnTurnEndInHand(choiceContext);
-		if (Keywords.Contains(CardKeyword.Ethereal))
-		{
-			await CardCmd.Exhaust(choiceContext, this, causedByEthereal: true);
-			return;
-		}
-		if (Keywords.Contains(TheInsatiableKeyword.SelfSwallow))
-		{
-			await TheInsatiableCmd.SwallowCard(choiceContext, this, causedBySelfSwallow: true);
-			return;
-		}
-		CardPile pile = GetResultPileTypeForOnTurnEndInHandEffect().GetPile(Player.Owner);
-		await CardPileCmd.Add(this, pile);
+        if (__instance.Keywords.Contains(TheInsatiableKeyword.SelfSwallow))
+        {
+            await TheInsatiableCmd.SwallowCard(choiceContext, __instance, causedBySelfSwallow: true);
+            return;
+        }
+        CardPile pile = GetResultPileTypeForOnTurnEndInHandEffect().GetPile(__instance.Owner);
+		await CardPileCmd.Add(__instance, pile);
+	}
+	protected virtual PileType GetResultPileTypeForOnTurnEndInHandEffect()
+	{
+		return PileType.Discard;
 	}
 }
+
 

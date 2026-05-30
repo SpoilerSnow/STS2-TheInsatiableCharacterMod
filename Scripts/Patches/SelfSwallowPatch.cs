@@ -49,11 +49,12 @@ public static class CombatManager_DoTurnEnd_SelfSwallowPatch
 [HarmonyPatch(typeof(CardModel), "OnTurnEndInHandWrapper")]
 public static class CardModel_OnTurnEndInHandWrapper_SelfSwallowPatch
 {
-    public static async Task Postfix(CardModel __instance, PlayerChoiceContext choiceContext)
+    public static async void Postfix(CardModel __instance, PlayerChoiceContext choiceContext)
     {
         if (__instance.Keywords.Contains(TheInsatiableKeyword.SelfSwallow))
         {
             await TheInsatiableCmd.SwallowCard(choiceContext, __instance, causedBySelfSwallow: true);
+			return;
         }
     }
 }

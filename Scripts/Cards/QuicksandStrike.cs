@@ -39,7 +39,7 @@ public class QuicksandStrike : InsatiableCardModel
 
 	protected override void OnUpgrade()
 	{
-		base.DynamicVars.Damage.UpgradeValueBy(10);
+		base.DynamicVars.Damage.UpgradeValueBy(2);
         base.DynamicVars["QuickSandPower"].UpgradeValueBy(2);
 	}
 }

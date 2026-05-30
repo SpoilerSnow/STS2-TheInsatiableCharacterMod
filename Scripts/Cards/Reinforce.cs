@@ -42,13 +42,15 @@ public sealed class Reinforce : InsatiableCardModel
                 await PowerCmd.Apply<QuickSandPower>(new ThrowingPlayerChoiceContext(), enemy, enemyCurrent, base.Owner.Creature, this);
             }
         }
-        foreach (CardModel sandstone in PileType.Hand.GetPile(base.Owner).Cards.Where(card => card is SandStone))
+        var sandstoneCards = PileType.Hand.GetPile(base.Owner).Cards
+                                          .Where(card => card is SandStone)
+                                          .ToList();
+        foreach (CardModel sandstone in sandstoneCards)
         {
             CardModel card = sandstone.CreateClone();
             await CardPileCmd.AddGeneratedCardToCombat(card, PileType.Hand, base.Owner);
         }
 	}
-
 	protected override void OnUpgrade()
 	{
 		base.EnergyCost.UpgradeBy(-1);

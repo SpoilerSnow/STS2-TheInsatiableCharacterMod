@@ -22,7 +22,7 @@ public class SalivatePower : InsatiablePowerModel
         if (!(amount >= 0m) && power is QuickSandPower)
         {
             Flash();
-            await PowerCmd.Apply<VigorPower>(new ThrowingPlayerChoiceContext(), base.Owner, -amount, base.Owner, null);
+            await PowerCmd.Apply<VigorPower>(new ThrowingPlayerChoiceContext(), base.Owner, -amount * base.Amount, base.Owner, null);
         }
     }
 }

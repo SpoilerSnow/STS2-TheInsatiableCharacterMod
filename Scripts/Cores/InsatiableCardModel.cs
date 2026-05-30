@@ -54,24 +54,8 @@ public abstract class InsatiableCardModel : CustomCardModel, ITheInsatiableModel
     {
         return true;
 	}
-    public async Task TheInsatiableOnTurnEndInHandWrapper(PlayerChoiceContext choiceContext)
+    public virtual Task OnTurnEndInHandWrapperSelfSwallow(PlayerChoiceContext choiceContext)
 	{
-		await CardPileCmd.Add(this, PileType.Play);
-		if (LocalContext.IsMe(Owner))
-		{
-			await Cmd.CustomScaledWait(0.3f, 0.6f);
-		}
-		await OnTurnEndInHand(choiceContext);
-		if (Keywords.Contains(TheInsatiableKeyword.SelfSwallow))
-		{
-			await TheInsatiableCmd.SwallowCard(choiceContext, this, causedBySelfSwallow: true);
-			return;
-		}
-		CardPile pile = GetResultPileTypeForOnTurnEndInHandEffect().GetPile(Owner);
-		await CardPileCmd.Add(this, pile);
-	}
-    protected virtual PileType GetResultPileTypeForOnTurnEndInHandEffect()
-	{
-		return PileType.Discard;
+		return Task.CompletedTask;
 	}
 }

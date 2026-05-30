@@ -29,5 +29,8 @@ public class TheInsatiableCmd
             await TheInsatiableHook.AfterCreatureSwallow(combatState, creature, force);
         }
     }
-
+    public static async Task OnTurnEndInHandWrapperSelfSwallow()
+    {
+        
+    }
 }

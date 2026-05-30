@@ -14,6 +14,7 @@ public static class CombatManager_DoTurnEnd_SelfSwallowPatch
 {
     public static async Task Postfix(Task __result, Player player, PlayerChoiceContext choiceContext)
     {
+		await __result;
         await player.PlayerCombatState.OrbQueue.BeforeTurnEnd(choiceContext);
 		if (CombatManager.Instance.IsOverOrEnding)
 		{
@@ -45,34 +46,16 @@ public static class CombatManager_DoTurnEnd_SelfSwallowPatch
     }
 }
 
-[HarmonyPatch(typeof(CardModel))]
-
+[HarmonyPatch(typeof(CardModel), "OnTurnEndInHandWrapper")]
 public static class CardModel_OnTurnEndInHandWrapper_SelfSwallowPatch
 {
-	protected virtual Task OnTurnEndInHand(PlayerChoiceContext choiceContext)
-	{
-		return Task.CompletedTask;
-	}
-    public static async Task Postfix(Task __result, CardModel __instance, PlayerChoiceContext choiceContext)
+    public static async Task Postfix(CardModel __instance, PlayerChoiceContext choiceContext)
     {
-        await CardPileCmd.Add(__instance, PileType.Play);
-        if (LocalContext.IsMe(__instance.Owner))
-        {
-            await Cmd.CustomScaledWait(0.3f, 0.6f);
-        }
-		await OnTurnEndInHand(choiceContext);
         if (__instance.Keywords.Contains(TheInsatiableKeyword.SelfSwallow))
         {
             await TheInsatiableCmd.SwallowCard(choiceContext, __instance, causedBySelfSwallow: true);
-            return;
         }
-        CardPile pile = GetResultPileTypeForOnTurnEndInHandEffect().GetPile(__instance.Owner);
-		await CardPileCmd.Add(__instance, pile);
-	}
-	protected virtual PileType GetResultPileTypeForOnTurnEndInHandEffect()
-	{
-		return PileType.Discard;
-	}
+    }
 }
 
 

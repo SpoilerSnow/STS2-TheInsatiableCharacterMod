@@ -23,12 +23,15 @@ public class SandFlowsPower : InsatiablePowerModel
 		}
 		foreach (var enemy in base.CombatState.HittableEnemies)
         {
-            int quicksandCount = enemy.GetPower<QuickSandPower>()?.Amount ?? 0;
+			if (enemy.IsAlive && enemy.GetPower<QuickSandPower>() != null)
+			{
+			int quicksandCount = enemy.GetPower<QuickSandPower>().Amount;
             int damage = quicksandCount * base.Amount;
 			await CreatureCmd.Damage(new ThrowingPlayerChoiceContext(), enemy, damage, ValueProp.Unpowered, null, null);
 			if (!base.Owner.IsAlive)
 			{
 				await Cmd.CustomScaledWait(0.1f, 0.25f);
+			}
 			}
 		}
 	}

@@ -21,7 +21,7 @@ public class PolishedDesertStoneRelic : InsatiableRelicModel
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromPower<QuickSandPower>()];
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [new PowerVar<QuickSandPower>(4), new CardsVar(1)];
-    public override async Task BeforeSideTurnStart(PlayerChoiceContext choiceContext, CombatSide side, IReadOnlyList<Creature> participants, ICombatState combatState)
+    public override async Task AfterSideTurnStart(CombatSide side, IReadOnlyList<Creature> participants, ICombatState combatState)
 	{
 		if (participants.Contains(base.Owner.Creature))
 		{

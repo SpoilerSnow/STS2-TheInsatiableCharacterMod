@@ -6,6 +6,7 @@ using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Hooks;
 using MegaCrit.Sts2.Core.Models;
+using TheInsatiable.Scripts;
 
 public class TheInsatiableCmd
 {
@@ -28,9 +29,5 @@ public class TheInsatiableCmd
             CombatManager.Instance.History.CreatureSwallowed(combatState, creature);
             await TheInsatiableHook.AfterCreatureSwallow(combatState, creature, force);
         }
-    }
-    public static async Task OnTurnEndInHandWrapperSelfSwallow()
-    {
-        
     }
 }

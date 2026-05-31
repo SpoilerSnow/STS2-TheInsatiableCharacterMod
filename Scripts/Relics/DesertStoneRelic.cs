@@ -24,7 +24,7 @@ public class DesertStoneRelic : InsatiableRelicModel
 		new PowerVar<QuickSandPower>(4), 
 		new CardsVar(1)
 		];
-    public override async Task BeforeSideTurnStart(PlayerChoiceContext choiceContext, CombatSide side, IReadOnlyList<Creature> participants, ICombatState combatState)
+    public override async Task AfterSideTurnStart(CombatSide side, IReadOnlyList<Creature> participants, ICombatState combatState)
 	{
 		if (participants.Contains(base.Owner.Creature) && base.Owner.PlayerCombatState.TurnNumber <= 1)
 		{

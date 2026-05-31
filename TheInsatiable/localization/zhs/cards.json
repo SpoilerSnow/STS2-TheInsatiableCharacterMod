@@ -149,7 +149,7 @@
 	"THEINSATIABLE-HONEY_XYLITOL.title": "蜜糖醇",
 	"THEINSATIABLE-HONEY_XYLITOL.description": "在本回合内获得{HoneyXylitolPower:diff()}点[gold]力量[/gold]。\n[gold]消化[/gold]：获得{StrengthPower:diff()}点[gold]力量[/gold]。",
 	"THEINSATIABLE-OUROBOROS_FROM.title": "衔尾形态",
-	"THEINSATIABLE-OUROBOROS_FROM.description": "每当你[gold]吞噬[/gold]时，所有牌的数值增加{OuroborosFromPower:diff()}。\n选择[gold]吞噬[/gold][blue]任意[/blue]一张牌。",
+	"THEINSATIABLE-OUROBOROS_FROM.description": "每当你[gold]吞噬[/gold]时，所有牌的[gold]数值[/gold]增加{OuroborosFromPower:diff()}。\n选择[gold]吞噬[/gold][blue]任意[/blue]一张牌。",
 	"THEINSATIABLE-SLUMBER.title": "熟睡",
 	"THEINSATIABLE-SLUMBER.description": "获得{Block:diff()}点[gold]格挡[/gold]。\n获得{StrengthPower:diff()}点[gold]力量[/gold]。\n结束你的回合。",
 	"THEINSATIABLE-RUMINATION.title": "反刍",
@@ -164,5 +164,5 @@
 	"THEINSATIABLE-SAND_FLOWS.title": "飞沙走石",
 	"THEINSATIABLE-SAND_FLOWS.description": "在你的回合开始时，给予所有敌人{SandySkyPower:diff()}层[gold]流沙[/gold]。\n回合结束时所有敌人受到等同于其[gold]流沙[/gold]层数的伤害。",
 	"THEINSATIABLE-DINOSAUR_FOSSIL.title": "恐龙化石",
-	"THEINSATIABLE-DINOSAUR_FOSSIL.description": "战斗结束后在下列奖励中随机获得{DinosaurFossilPower:diff()}份：\n一张稀有卡牌；一个遗物；\n一瓶药水；75[gold]金币[/gold]。"
+	"THEINSATIABLE-DINOSAUR_FOSSIL.description": "战斗结束后在下列奖励中随机获得{DinosaurFossilPower:diff()}份：\n一张稀有卡牌/一个遗物\n两瓶药水/一百[gold]金币[/gold]。"
 }

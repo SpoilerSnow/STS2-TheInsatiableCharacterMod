@@ -17,7 +17,7 @@ public class DinosaurFossil : InsatiableCardModel
     public override bool CanBeGeneratedInCombat => false;
 	protected override IEnumerable<DynamicVar> CanonicalVars => [new PowerVar<DinosaurFossilPower>(1)];
 	public DinosaurFossil()
-		: base(3, CardType.Power, CardRarity.Rare, TargetType.Self)
+		: base(4, CardType.Power, CardRarity.Rare, TargetType.Self)
 	{
 	}
 	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

@@ -71,6 +71,6 @@
     "THEINSATIABLE-SANDY_SKY_POWER.description": "在你的回合开始时，给予所有敌人[gold]流沙[/gold]。",
     "THEINSATIABLE-SANDY_SKY_POWER.smartDescription": "在你的回合开始时，给予所有敌人[blue]{Amount}[/blue]层[gold]流沙[/gold]。",
     "THEINSATIABLE-DINOSAUR_FOSSIL_POWER.title": "恐龙化石",
-    "THEINSATIABLE-DINOSAUR_FOSSIL_POWER.description": "战斗结束后在下列奖励中随机获得[blue]1[/blue]份：\n一张稀有卡牌；一个遗物；\n一瓶药水；75[gold]金币[/gold]。",
-    "THEINSATIABLE-DINOSAUR_FOSSIL_POWER.smartDescription": "战斗结束后在下列奖励中随机获得[blue]{Amount}[/blue]份：\n一张稀有卡牌；\n一个遗物；一瓶药水；75[gold]金币[/gold]。"
+    "THEINSATIABLE-DINOSAUR_FOSSIL_POWER.description": "战斗结束后在下列奖励中随机获得[blue]1[/blue]份：\n一张稀有卡牌/一个遗物\n两瓶药水/一百[gold]金币[/gold]。",
+    "THEINSATIABLE-DINOSAUR_FOSSIL_POWER.smartDescription": "战斗结束后在下列奖励中随机获得[blue]{Amount}[/blue]份：\n一张稀有卡牌/一个遗物\n两瓶药水/一百[gold]金币[/gold]。"
 }

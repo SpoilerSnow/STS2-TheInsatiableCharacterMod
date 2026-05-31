@@ -6,9 +6,8 @@ using MegaCrit.Sts2.Core.Rewards;
 using MegaCrit.Sts2.Core.Rooms;
 using MegaCrit.Sts2.Core.Runs;
 
-namespace MegaCrit.Sts2.Core.Models.Powers;
-
-public sealed class DinosaurFossilPower : PowerModel
+namespace TheInsatiable.Scripts;
+public sealed class DinosaurFossilPower : InsatiablePowerModel
 {
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Counter;
@@ -30,9 +29,10 @@ public sealed class DinosaurFossilPower : PowerModel
                 break;
             case 2:
                 reward = new PotionReward(base.Owner.Player);
+                reward = new PotionReward(base.Owner.Player);
                 break;
             case 3:
-                reward = new GoldReward(75, base.Owner.Player, false);
+                reward = new GoldReward(100, base.Owner.Player, false);
                 break;
         }
         if (reward != null)

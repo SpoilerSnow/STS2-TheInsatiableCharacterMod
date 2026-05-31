@@ -4,5 +4,7 @@
     "THEINSATIABLE-SELFSWALLOW.description": "如果这张牌在这个回合结束时留在你的[gold]手牌[/gold]中，则将其[gold]吞噬[/gold]。",
     "THEINSATIABLE-SELFSWALLOW.title": "自噬",
     "THEINSATIABLE-DIGEST.description": "被[gold]吞噬[/gold]时触发对应效果。",
-    "THEINSATIABLE-DIGEST.title": "消化"
+    "THEINSATIABLE-DIGEST.title": "消化",
+    "THEINSATIABLE-DYNAMIC.description": "指每张卡牌代码中的DynamicVar值\n影响伤害、格挡、能量、抽牌数及能力层数等数值。",
+    "THEINSATIABLE-DYNAMIC.title": "数值"
 }

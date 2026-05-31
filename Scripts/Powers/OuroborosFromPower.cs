@@ -19,7 +19,6 @@ public class OuroborosFromPower : InsatiablePowerModel
 	}
     private void UpgradeAllCardDynamicVars(int amount)
     {
-        amount = base.Amount;
         foreach (CardModel allCard in base.Owner.Player.PlayerCombatState.AllCards)
         {
 		    foreach (DynamicVar value in allCard.DynamicVars.Values)

@@ -15,4 +15,8 @@ public class TheInsatiableKeyword
     [CustomEnum("Digest")]
     [KeywordProperties(AutoKeywordPosition.Before)]
     public static CardKeyword Digest;
+
+    [CustomEnum("Dynamic")]
+    [KeywordProperties(AutoKeywordPosition.Before)]
+    public static CardKeyword Dynamic;
 }

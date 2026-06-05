@@ -20,25 +20,17 @@ public class ReverseHourglassRelic : InsatiableRelicModel
 
 	protected override IEnumerable<DynamicVar> CanonicalVars => [new PowerVar<QuickSandPower>(1)];
 
-	public override decimal ModifyPowerAmountGiven(PowerModel power, Creature giver, decimal amount, Creature? target, CardModel? cardSource)
+	public override decimal ModifyPowerAmountGivenAdditive(PowerModel power, Creature giver, decimal amount, Creature? target, CardModel? cardSource)
 	{
-		if (amount <= 0 )
-		{
-			return amount;
-		}
 		if (!(power is QuickSandPower))
 		{
-			return amount;
+			return 0m;
 		}
 		if (giver != base.Owner.Creature)
 		{
-			return amount;
+			return 0m;
 		}
-		if (target == base.Owner.Creature)
-		{
-			return amount;
-		}
-		return amount + (decimal)base.DynamicVars["QuickSandPower"].IntValue;
+		return base.DynamicVars["QuicksandPower"].BaseValue;
 	}
 
 	public override Task AfterModifyingPowerAmountGiven(PowerModel power)

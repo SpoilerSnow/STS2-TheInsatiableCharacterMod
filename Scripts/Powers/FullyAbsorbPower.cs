@@ -8,7 +8,7 @@ using MegaCrit.Sts2.Core.Models;
 
 namespace TheInsatiable.Scripts;
 
-public sealed class FullyAbsorbPower : InsatiablePowerModel
+public class FullyAbsorbPower : InsatiablePowerModel
 {
 	private class Data
 	{

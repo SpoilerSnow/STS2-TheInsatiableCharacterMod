@@ -164,5 +164,7 @@
 	"THEINSATIABLE-SAND_FLOWS.title": "飞沙走石",
 	"THEINSATIABLE-SAND_FLOWS.description": "在你的回合开始时，给予所有敌人{SandySkyPower:diff()}层[gold]流沙[/gold]。\n回合结束时所有敌人受到等同于其[gold]流沙[/gold]层数的伤害。",
 	"THEINSATIABLE-DINOSAUR_FOSSIL.title": "恐龙化石",
-	"THEINSATIABLE-DINOSAUR_FOSSIL.description": "战斗结束后在下列奖励中随机获得{DinosaurFossilPower:diff()}份：\n一张稀有卡牌/一个遗物\n两瓶药水/一百[gold]金币[/gold]。"
+	"THEINSATIABLE-DINOSAUR_FOSSIL.description": "战斗结束后在下列奖励中随机获得{DinosaurFossilPower:diff()}份：\n一张稀有卡牌/一个遗物\n两瓶药水/一百[gold]金币[/gold]。",
+	"THEINSATIABLE-GLUTTONY.title": "饕餮",
+	"THEINSATIABLE-GLUTTONY.description": "[gold]消耗[/gold]卡牌也算作[gold]吞噬[/gold]。\n敌人死亡也算作[gold]吞噬[/gold]。"
 }

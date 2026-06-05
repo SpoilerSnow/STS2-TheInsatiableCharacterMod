@@ -12,6 +12,7 @@ namespace TheInsatiable.Scripts;
 
 public class LawOfHive : InsatiableCardModel
 {
+    public override bool CanBeGeneratedInCombat => false;
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new DynamicVar("LawOfHive", 8),
         new MaxHpVar(2)

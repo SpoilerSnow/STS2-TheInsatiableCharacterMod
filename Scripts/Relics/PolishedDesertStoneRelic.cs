@@ -23,7 +23,7 @@ public class PolishedDesertStoneRelic : InsatiableRelicModel
     protected override IEnumerable<DynamicVar> CanonicalVars => [new PowerVar<QuickSandPower>(4), new CardsVar(1)];
     public override async Task AfterSideTurnStart(CombatSide side, IReadOnlyList<Creature> participants, ICombatState combatState)
 	{
-		if (participants.Contains(base.Owner.Creature))
+		if (participants.Contains(base.Owner.Creature) && base.Owner.PlayerCombatState.TurnNumber <= 4)
 		{
 			foreach (Creature hittableEnemy2 in base.Owner.Creature.CombatState.HittableEnemies)
 		    {

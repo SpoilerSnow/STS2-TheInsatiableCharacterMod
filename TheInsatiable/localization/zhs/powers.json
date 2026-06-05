@@ -65,12 +65,15 @@
     "THEINSATIABLE-DESERT_MIRAGE_POWER.description": "[blue]1[/blue]回合内[gold]流沙[/gold]的层数不会降低。",
     "THEINSATIABLE-DESERT_MIRAGE_POWER.smartDescription": "[blue]{Amount}[/blue]回合内[gold]流沙[/gold]的层数不会降低。",
     "THEINSATIABLE-SAND_FLOWS_POWER.title": "飞沙走石",
-    "THEINSATIABLE-SAND_FLOWS_POWER.description": "回合结束时所有敌人受到于[blue]1[/blue]倍于其[gold]流沙[/gold]层数的伤害。",
+    "THEINSATIABLE-SAND_FLOWS_POWER.description": "回合结束时所有敌人受到[blue]1[/blue]倍于其[gold]流沙[/gold]层数的伤害。",
     "THEINSATIABLE-SAND_FLOWS_POWER.smartDescription": "回合结束时所有敌人受到[blue]{Amount}[/blue]倍于其[gold]流沙[/gold]层数的伤害。",
     "THEINSATIABLE-SANDY_SKY_POWER.title": "漫天黄沙",
     "THEINSATIABLE-SANDY_SKY_POWER.description": "在你的回合开始时，给予所有敌人[gold]流沙[/gold]。",
     "THEINSATIABLE-SANDY_SKY_POWER.smartDescription": "在你的回合开始时，给予所有敌人[blue]{Amount}[/blue]层[gold]流沙[/gold]。",
     "THEINSATIABLE-DINOSAUR_FOSSIL_POWER.title": "恐龙化石",
     "THEINSATIABLE-DINOSAUR_FOSSIL_POWER.description": "战斗结束后在下列奖励中随机获得[blue]1[/blue]份：\n一张稀有卡牌/一个遗物\n两瓶药水/一百[gold]金币[/gold]。",
-    "THEINSATIABLE-DINOSAUR_FOSSIL_POWER.smartDescription": "战斗结束后在下列奖励中随机获得[blue]{Amount}[/blue]份：\n一张稀有卡牌/一个遗物\n两瓶药水/一百[gold]金币[/gold]。"
+    "THEINSATIABLE-DINOSAUR_FOSSIL_POWER.smartDescription": "战斗结束后在下列奖励中随机获得[blue]{Amount}[/blue]份：\n一张稀有卡牌/一个遗物\n两瓶药水/一百[gold]金币[/gold]。",
+    "THEINSATIABLE-GLUTTONY_POWER.title": "饕餮",
+    "THEINSATIABLE-GLUTTONY_POWER.description": "[gold]消耗[/gold]卡牌也算作[gold]吞噬[/gold]。\n敌人死亡也算作[gold]吞噬[/gold]。",
+    "THEINSATIABLE-GLUTTONY_POWER.smartDescription": "[gold]消耗[/gold]卡牌也算作[gold]吞噬[/gold]。\n敌人死亡也算作[gold]吞噬[/gold]。"
 }

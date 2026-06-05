@@ -12,10 +12,7 @@ namespace TheInsatiable.Scripts;
 public class LurchForLunch : InsatiableCardModel
 {
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
-    protected override IEnumerable<DynamicVar> CanonicalVars => [
-		new CardsVar(1),
-		new EnergyVar(1)
-	];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new EnergyVar(1)];
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [
         HoverTipFactory.FromCard<InsatiableSwallow>(),
         base.EnergyHoverTip

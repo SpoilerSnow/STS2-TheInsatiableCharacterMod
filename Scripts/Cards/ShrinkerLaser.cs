@@ -33,7 +33,9 @@ public class ShrinkerLaser : InsatiableCardModel
 		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue)
 			.FromCard(this)
 			.Targeting(cardPlay.Target)
+			.WithHitFx("vfx/vfx_attack_slash")
 			.Execute(choiceContext);
+		SfxCmd.Play("event:/sfx/enemy/enemy_attacks/shrinker_beetle/shrinker_beetle_cast");
 		await PowerCmd.Apply<ShrinkPower>(new ThrowingPlayerChoiceContext(), cardPlay.Target, base.DynamicVars.Repeat.BaseValue, base.Owner.Creature, this);
 	}
 

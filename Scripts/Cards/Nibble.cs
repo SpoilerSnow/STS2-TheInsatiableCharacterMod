@@ -19,15 +19,11 @@ public class Nibble : InsatiableCardModel
 {
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new DamageVar(4, ValueProp.Move),
-        new CalculationBaseVar(0),
-		new CalculationExtraVar(1),
-		new CalculatedVar("CalculatedHits").WithMultiplier((CardModel card, Creature? _) => card.Owner.PlayerCombatState?.ExhaustPile.Cards.Count((CardModel c) => c is Hatch) ?? 0)
+        new CalculationBaseVar(4),
+        new ExtraDamageVar(1),
+        new CalculatedDamageVar(ValueProp.Move).WithMultiplier((CardModel card, Creature? _) => card.Owner.PlayerCombatState?.ExhaustPile.Cards.Count((CardModel c) => c is Hatch) ?? 0)
     ];
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => [
-        HoverTipFactory.Static(StaticHoverTip.Block),
-        HoverTipFactory.FromCard<Hatch>()
-    ];
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromCard<Hatch>()];
     public Nibble()
 		: base(1, CardType.Attack, CardRarity.Token, TargetType.AnyEnemy)
 	{
@@ -38,10 +34,11 @@ public class Nibble : InsatiableCardModel
 		await DamageCmd.Attack(base.DynamicVars.CalculatedDamage)
             .FromCard(this)
             .Targeting(cardPlay.Target)
+            .WithHitFx("vfx/vfx_bite")
 			.Execute(choiceContext);
     }
     protected override void OnUpgrade()
 	{
-		DynamicVars.Damage.UpgradeValueBy(1);
+		base.DynamicVars.CalculationBase.UpgradeValueBy(1);
 	}
 }

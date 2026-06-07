@@ -33,6 +33,7 @@ public class EatLessMoreOften : InsatiableCardModel
 			.WithHitCount(base.DynamicVars.Repeat.IntValue)
 			.FromCard(this)
 			.Targeting(cardPlay.Target)
+			.WithHitFx("vfx/vfx_bite")
 			.Execute(choiceContext);
 	}
 	protected override void OnUpgrade()

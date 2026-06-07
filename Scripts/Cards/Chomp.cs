@@ -39,6 +39,7 @@ public class Chomp : InsatiableCardModel
 		    .WithHitCount(base.DynamicVars.Repeat.IntValue)
 			.FromCard(this)
 			.Targeting(cardPlay.Target)
+			.WithHitFx("vfx/vfx_attack_slash")
 			.Execute(choiceContext);
 		for (int i = 0; i < 2; i++)
 		{

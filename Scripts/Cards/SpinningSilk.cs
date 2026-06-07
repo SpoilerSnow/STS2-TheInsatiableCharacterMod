@@ -36,7 +36,9 @@ public class SpinningSilk : InsatiableCardModel
             .WithHitCount(base.DynamicVars.Repeat.IntValue)
 			.FromCard(this)
 			.Targeting(cardPlay.Target)
+			.WithHitFx("vfx/vfx_attack_blunt")
 			.Execute(choiceContext);
+		SfxCmd.Play("event:/sfx/enemy/enemy_attacks/workbug_silk/workbug_silk_spit");
         await PowerCmd.Apply<WeakPower>(new ThrowingPlayerChoiceContext(), cardPlay.Target, base.DynamicVars.Weak.IntValue, base.Owner.Creature, this);
 	}
 

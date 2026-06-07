@@ -172,7 +172,7 @@
 	"THEINSATIABLE-HATCH.title": "孵化",
 	"THEINSATIABLE-HATCH.description": "获得{Block:diff()}点[gold]格挡[/gold]。",
 	"THEINSATIABLE-NIBBLE.title": "幼虫轻咬",
-	"THEINSATIABLE-NIBBLE.description": "你的[gold]消耗堆[/gold]中每有一张[gold]孵化[/gold]，就造成{Damage:diff()}点伤害一次。{InCombat:（命中{CalculatedHits:diff()}次）|}",
+	"THEINSATIABLE-NIBBLE.description": "造成{CalculatedDamage:diff()}点伤害。\n你的[gold]消耗堆[/gold]中每有一张[gold]孵化[/gold]，就额外造成{ExtraDamage:diff()}点伤害。",
 	"THEINSATIABLE-RAISING_SAND.title": "聚沙成塔",
 	"THEINSATIABLE-RAISING_SAND.description": "造成{Damage:diff()}点伤害。\n如果该敌人有[gold]流沙[/gold]状态，抽{Cards:diff()}张牌。"
 }

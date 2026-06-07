@@ -22,7 +22,10 @@ public class LivingWeapon : InsatiableCardModel
 	{
         await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue)
             .FromCard(this)
+            .WithAttackerAnim("Thrash", 0.3f)
+			.OnlyPlayAnimOnce()
             .TargetingAllOpponents(base.CombatState)
+            .WithHitFx("vfx/vfx_scratch")
             .Execute(choiceContext);
 	}
     protected override void OnUpgrade()

@@ -42,6 +42,7 @@ public class SwallowStrike : InsatiableCardModel
             .Attack(base.DynamicVars.CalculatedDamage)
 			.FromCard(this)
 			.Targeting(cardPlay.Target)
+			.WithHitFx("vfx/vfx_bite")
 			.Execute(choiceContext);
 	}
 

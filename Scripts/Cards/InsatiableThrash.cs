@@ -32,7 +32,10 @@ public class InsatiableThrash : InsatiableCardModel
 		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue)
 		    .WithHitCount(hitCount)
 			.FromCard(this)
+			.WithAttackerAnim("Thrash", 0.3f)
+			.OnlyPlayAnimOnce()
 			.Targeting(cardPlay.Target)
+			.WithHitFx("vfx/vfx_scratch")
 			.Execute(choiceContext);
 	}
 

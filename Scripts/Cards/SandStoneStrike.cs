@@ -34,6 +34,7 @@ public class SandStoneStrike : InsatiableCardModel
 		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue)
 			.FromCard(this)
 			.Targeting(cardPlay.Target)
+			.WithHitFx("vfx/vfx_bite")
 			.Execute(choiceContext);
         await CardPileCmd.AddGeneratedCardToCombat(base.CombatState.CreateCard<SandStone>(base.Owner), PileType.Hand, base.Owner);
 		await Cmd.Wait(0.5f);

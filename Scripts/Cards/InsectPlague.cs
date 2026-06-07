@@ -54,6 +54,7 @@ public class InsectPlague : InsatiableCardModel
         await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue)
 			.FromCard(this)
 			.Targeting(cardPlay.Target)
+			.WithHitFx("vfx/vfx_bite")
 			.Execute(choiceContext);
 	}
 	protected override void OnUpgrade()

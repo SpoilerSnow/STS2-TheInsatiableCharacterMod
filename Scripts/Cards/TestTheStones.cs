@@ -31,6 +31,8 @@ public class TestTheStones : InsatiableCardModel
 		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue)
 			.FromCard(this)
 			.Targeting(cardPlay.Target)
+			.WithAttackerFx(null, "event:/sfx/enemy/enemy_attacks/workbug_rock/workbug_rock_attack")
+			.WithHitFx("vfx/vfx_attack_blunt")
 			.Execute(choiceContext);
         await PowerCmd.Apply<ImbalancedPower>(new ThrowingPlayerChoiceContext(), cardPlay.Target, 1, base.Owner.Creature, this);
 		await PowerCmd.Apply<TestTheStonesPower>(new ThrowingPlayerChoiceContext(), cardPlay.Target, 1, base.Owner.Creature, this);

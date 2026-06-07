@@ -33,6 +33,7 @@ public class Earthquake : InsatiableCardModel
         await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue)
             .FromCard(this)
             .TargetingAllOpponents(base.CombatState)
+			.WithHitFx("vfx/vfx_bite")
             .Execute(choiceContext);
 		await PowerCmd.Apply<QuickSandPower>(new ThrowingPlayerChoiceContext(), base.CombatState.HittableEnemies, base.DynamicVars["QuickSandPower"].IntValue, base.Owner.Creature, this);
 	}

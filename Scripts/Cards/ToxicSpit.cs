@@ -31,9 +31,11 @@ public class ToxicSpit : InsatiableCardModel
 	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
 	{
 		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+		SfxCmd.Play("event:/sfx/enemy/enemy_attacks/mite/mite_cast");
 		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue)
 		    .FromCard(this)
 			.Targeting(cardPlay.Target)
+			.WithHitFx("vfx/vfx_bite")
 			.Execute(choiceContext);
 		CardModel card = base.CombatState.CreateCard<Toxic>(base.Owner);
 		CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat(card, PileType.Discard, base.Owner));

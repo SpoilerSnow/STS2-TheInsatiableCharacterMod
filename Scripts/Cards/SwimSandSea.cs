@@ -32,6 +32,7 @@ public class SwimSandSea : InsatiableCardModel
         await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue)
 			.FromCard(this)
 			.Targeting(cardPlay.Target)
+			.WithHitFx("vfx/vfx_bite")
 			.Execute(choiceContext);
 	}
     public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)

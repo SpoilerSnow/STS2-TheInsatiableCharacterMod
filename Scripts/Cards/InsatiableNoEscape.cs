@@ -21,7 +21,8 @@ public class InsatiableNoEscape : InsatiableCardModel
 	}
 	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
 	{
-		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Salivate", 0f);
+		await PowerCmd.Apply<InsatiableNoEscapePower>(choiceContext, base.Owner.Creature, 1, base.Owner.Creature, this);
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
         List<CardPileAddResult> statusCards = new List<CardPileAddResult>();
 			for (int i = 0; i < 6; i++)
 			{
@@ -32,7 +33,6 @@ public class InsatiableNoEscape : InsatiableCardModel
 			}
             CardCmd.PreviewCardPileAdd(statusCards);
 			await Cmd.Wait(1f);
-		await PowerCmd.Apply<InsatiableNoEscapePower>(choiceContext, base.Owner.Creature, 1, base.Owner.Creature, this);
 	}
 	protected override void OnUpgrade()
     {

@@ -28,6 +28,7 @@ public class StrikeInsatiable : InsatiableCardModel
 		await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
 			.FromCard(this)
 			.Targeting(cardPlay.Target)
+			.WithHitFx("vfx/vfx_bite")
 			.Execute(choiceContext);
 	}
 

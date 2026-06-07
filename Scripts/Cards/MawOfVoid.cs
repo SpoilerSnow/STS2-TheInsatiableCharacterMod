@@ -30,6 +30,7 @@ public class MawOfVoid : InsatiableCardModel
         .Attack(base.DynamicVars.Damage.BaseValue)
         .FromCard(this)
         .Targeting(cardPlay.Target)
+		.WithHitFx("vfx/vfx_bite")
 		.Execute(choiceContext);
 	}
 	public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)

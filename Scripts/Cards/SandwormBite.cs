@@ -33,11 +33,11 @@ public class SandwormBite : InsatiableCardModel
 	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
 	{
 		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
-		await DamageCmd
-        .Attack(base.DynamicVars.CalculatedDamage)
-        .FromCard(this)
-        .Targeting(cardPlay.Target)
-		.Execute(choiceContext);
+		await DamageCmd.Attack(base.DynamicVars.CalculatedDamage)
+            .FromCard(this)
+            .Targeting(cardPlay.Target)
+		    .WithHitFx("vfx/vfx_bite")
+		    .Execute(choiceContext);
 	}
 
 	protected override void OnUpgrade()

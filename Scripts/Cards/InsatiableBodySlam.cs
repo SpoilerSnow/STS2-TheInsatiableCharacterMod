@@ -46,6 +46,7 @@ public class InsatiableBodySlam : InsatiableCardModel
             .Attack(base.DynamicVars.CalculatedDamage)
             .FromCard(this)
             .Targeting(enemy)
+			.WithHitFx("vfx/vfx_bite")
             .Execute(choiceContext);
         }
     }

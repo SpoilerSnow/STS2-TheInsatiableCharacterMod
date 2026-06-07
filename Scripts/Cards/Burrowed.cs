@@ -20,7 +20,7 @@ public class Burrowed : InsatiableCardModel
     ];
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new BlockVar(32, ValueProp.Move),
-        new PowerVar<QuickSandPower>(5),
+        new PowerVar<QuickSandPower>(4),
         new PowerVar<InsatiableBurrowedPower>(1)
     ];
     public Burrowed()
@@ -36,6 +36,5 @@ public class Burrowed : InsatiableCardModel
     protected override void OnUpgrade()
 	{
         base.DynamicVars.Block.UpgradeValueBy(5);
-		base.DynamicVars["QuickSandPower"].UpgradeValueBy(3);
 	}
 }

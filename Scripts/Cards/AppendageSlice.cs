@@ -22,6 +22,7 @@ public class AppendageSlice : InsatiableCardModel
 	}
 	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
 	{
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
 		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue)
 			.WithHitCount(base.DynamicVars.Repeat.IntValue)
 			.FromCard(this)

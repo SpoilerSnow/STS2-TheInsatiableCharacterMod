@@ -25,10 +25,6 @@ public class OuroborosFromPower : InsatiablePowerModel
             {
                 value.UpgradeValueBy(amount);
             }
-            if (allCard.BaseReplayCount > 0)
-		    {
-	            allCard.BaseReplayCount = allCard.BaseReplayCount + amount;
-            }
             NCard val = NCard.FindOnTable(allCard, null);
             if (val == null)
             {

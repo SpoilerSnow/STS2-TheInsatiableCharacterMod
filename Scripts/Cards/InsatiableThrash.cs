@@ -30,7 +30,8 @@ public class InsatiableThrash : InsatiableCardModel
 		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
 		int hitCount = (!cardPlay.Target.HasPower<QuickSandPower>()) ? 1 : 2;
 		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue)
-		    .WithHitCount(hitCount).FromCard(this)
+		    .WithHitCount(hitCount)
+			.FromCard(this)
 			.Targeting(cardPlay.Target)
 			.Execute(choiceContext);
 	}

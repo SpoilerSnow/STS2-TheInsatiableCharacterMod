@@ -23,7 +23,7 @@ public class DeathHighway : InsatiableCardModel
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromPower<QuickSandPower>()];
 	protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new DamageVar(12, ValueProp.Move),
+        new DamageVar(11, ValueProp.Move),
         new CardsVar(2)
     ];
 	public DeathHighway() 
@@ -32,6 +32,7 @@ public class DeathHighway : InsatiableCardModel
 	}
 	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
 	{
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
 		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue)
 			.FromCard(this)
 			.Targeting(cardPlay.Target)
@@ -51,6 +52,6 @@ public class DeathHighway : InsatiableCardModel
     }
 	protected override void OnUpgrade()
 	{
-		base.DynamicVars.Damage.UpgradeValueBy(4);
+		base.DynamicVars.Damage.UpgradeValueBy(3);
 	}
 }

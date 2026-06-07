@@ -21,7 +21,7 @@ public class Gluttony : InsatiableCardModel
 	];
 	protected override IEnumerable<DynamicVar> CanonicalVars => [new PowerVar<GluttonyPower>(1)];
 	public Gluttony()
-		: base(2, CardType.Power, CardRarity.Rare, TargetType.Self)
+		: base(1, CardType.Power, CardRarity.Rare, TargetType.Self)
 	{
 	}
 	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

@@ -31,6 +31,7 @@ public class LungingBite : InsatiableCardModel
 
 	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
 	{
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
         if (cardPlay.Target.Block > 0)
         {
             base.DynamicVars.Damage.BaseValue = base.DynamicVars.Damage.BaseValue * 2;

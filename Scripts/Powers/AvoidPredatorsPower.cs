@@ -24,11 +24,8 @@ public class AvoidPredatorsPower : InsatiablePowerModel
         Flash();
         return true;
     }
-    public override async Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
+    public override async Task AfterModifyingPowerAmountReceived(PowerModel power)
 	{
-		if (side == CombatSide.Enemy)
-		{
-			await PowerCmd.TickDownDuration(this);
-		}
+		await PowerCmd.Decrement(this);
 	}
 }

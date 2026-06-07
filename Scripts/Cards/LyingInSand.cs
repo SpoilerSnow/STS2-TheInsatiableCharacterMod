@@ -27,7 +27,7 @@ public class LyingInSand : InsatiableCardModel
         HoverTipFactory.FromPower<VulnerablePower>()
         ];
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new PowerVar<QuickSandPower>(5),
+        new PowerVar<QuickSandPower>(4),
         new PowerVar<WeakPower>(1),
         new PowerVar<VulnerablePower>(1)
         ];

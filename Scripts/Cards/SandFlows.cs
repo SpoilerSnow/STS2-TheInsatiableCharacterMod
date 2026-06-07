@@ -20,7 +20,7 @@ public class SandFlows : InsatiableCardModel
 	];
 	protected override IEnumerable<DynamicVar> CanonicalVars => [
         new PowerVar<SandFlowsPower>(1),
-        new PowerVar<SandySkyPower>(4)
+        new PowerVar<SandySkyPower>(3)
     ];
 	public SandFlows()
 		: base(1, CardType.Power, CardRarity.Rare, TargetType.Self)
@@ -34,6 +34,6 @@ public class SandFlows : InsatiableCardModel
 	}
 	protected override void OnUpgrade()
     {
-        AddKeyword(CardKeyword.Innate);
+        base.DynamicVars["SandySkyPower"].UpgradeValueBy(1);
     }
 }

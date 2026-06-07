@@ -8,8 +8,8 @@
     "THEINSATIABLE-TEMPORARY_THORNS_POWER.description": "在下回合开始前失去[gold]荆棘[/gold]。",
     "THEINSATIABLE-TEMPORARY_THORNS_POWER.smartDescription": "在下回合开始前失去[blue]{Amount}[/blue]层[gold]荆棘[/gold]。",
     "THEINSATIABLE-AVOID_PREDATORS_POWER.title": "躲避天敌",
-    "THEINSATIABLE-AVOID_PREDATORS_POWER.description": "[blue]1[/blue]回合内，不会受到来自敌人施加的[gold]易伤[/gold]、[gold]虚弱[/gold]与[gold]脆弱[/gold]效果。",
-    "THEINSATIABLE-AVOID_PREDATORS_POWER.smartDescription": "[blue]{Amount}[/blue]回合内，不会受到来自敌人施加的[gold]易伤[/gold]、[gold]虚弱[/gold]与[gold]脆弱[/gold]效果。",
+    "THEINSATIABLE-AVOID_PREDATORS_POWER.description": "免疫下[blue]1[/blue]次获得的[gold]易伤[/gold]、[gold]虚弱[/gold]与[gold]脆弱[/gold]效果。",
+    "THEINSATIABLE-AVOID_PREDATORS_POWER.smartDescription": "免疫下[blue]{Amount}[/blue]次获得的[gold]易伤[/gold]、[gold]虚弱[/gold]与[gold]脆弱[/gold]效果。",
     "THEINSATIABLE-SEDIMENTATION_POWER.title": "沉积",
     "THEINSATIABLE-SEDIMENTATION_POWER.description": "每当你给予[gold]流沙[/gold], 抽[blue]1[/blue]张牌。",
     "THEINSATIABLE-SEDIMENTATION_POWER.smartDescription": "每当你给予[gold]流沙[/gold]时, 抽[blue]{Amount}[/blue]张牌。",
@@ -75,5 +75,8 @@
     "THEINSATIABLE-DINOSAUR_FOSSIL_POWER.smartDescription": "战斗结束后在下列奖励中随机获得[blue]{Amount}[/blue]份：\n一张稀有卡牌/一个遗物\n两瓶药水/一百[gold]金币[/gold]。",
     "THEINSATIABLE-GLUTTONY_POWER.title": "饕餮",
     "THEINSATIABLE-GLUTTONY_POWER.description": "[gold]消耗[/gold]卡牌也算作[gold]吞噬[/gold]。\n敌人死亡也算作[gold]吞噬[/gold]。",
-    "THEINSATIABLE-GLUTTONY_POWER.smartDescription": "[gold]消耗[/gold]卡牌也算作[gold]吞噬[/gold]。\n敌人死亡也算作[gold]吞噬[/gold]。"
+    "THEINSATIABLE-GLUTTONY_POWER.smartDescription": "[gold]消耗[/gold]卡牌也算作[gold]吞噬[/gold]。\n敌人死亡也算作[gold]吞噬[/gold]。",
+    "THEINSATIABLE-LAY_EGGS_POWER.title": "产卵",
+    "THEINSATIABLE-LAY_EGGS_POWER.description": "在你的回合开始时，将[blue]1[/blue]张[gold]孵化[/gold]和[gold]幼虫轻咬[/gold]加入你的手牌。",
+    "THEINSATIABLE-LAY_EGGS_POWER.smartDescription": "在你的回合开始时，将[blue]{Amount}[/blue]张[gold]孵化[/gold]和[gold]幼虫轻咬[/gold]加入你的手牌。"
 }

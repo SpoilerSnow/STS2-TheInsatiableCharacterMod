@@ -30,7 +30,11 @@ public class ReverseHourglassRelic : InsatiableRelicModel
 		{
 			return 0m;
 		}
-		return base.DynamicVars["QuicksandPower"].BaseValue;
+		if (target == base.Owner.Creature)
+		{
+			return 0m;
+		}
+		return base.DynamicVars["QuickSandPower"].BaseValue;
 	}
 
 	public override Task AfterModifyingPowerAmountGiven(PowerModel power)

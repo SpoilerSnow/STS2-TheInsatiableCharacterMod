@@ -14,9 +14,9 @@ public class BlindBySand : InsatiableCardModel
 {
 	public override bool GainsBlock => true;
 	protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new BlockVar(5, ValueProp.Move),
-        new PowerVar<QuickSandPower>(3),
-        new CardsVar(2)
+        new BlockVar(4, ValueProp.Move),
+        new PowerVar<QuickSandPower>(5),
+        new CardsVar(1)
 	];
 	protected override IEnumerable<IHoverTip> ExtraHoverTips => [
 		HoverTipFactory.FromPower<QuickSandPower>(),
@@ -37,6 +37,6 @@ public class BlindBySand : InsatiableCardModel
 	protected override void OnUpgrade()
 	{
 		base.DynamicVars.Block.UpgradeValueBy(2);
-		base.DynamicVars["QuickSandPower"].UpgradeValueBy(3);
+		base.DynamicVars["QuickSandPower"].UpgradeValueBy(2);
 	}
 }

@@ -15,7 +15,7 @@ public class AvoidPredators : InsatiableCardModel
 {
 	public override bool GainsBlock => true;
 	protected override IEnumerable<DynamicVar> CanonicalVars => [
-		new BlockVar(12, ValueProp.Move),
+		new BlockVar(7, ValueProp.Move),
 		new PowerVar<AvoidPredatorsPower>(1)
 	];
 	protected override IEnumerable<IHoverTip> ExtraHoverTips => [
@@ -25,7 +25,7 @@ public class AvoidPredators : InsatiableCardModel
         HoverTipFactory.FromPower<FrailPower>()
         ];
 	public AvoidPredators() 
-		: base(2, CardType.Skill, CardRarity.Common, TargetType.Self)
+		: base(1, CardType.Skill, CardRarity.Common, TargetType.Self)
 	{
 	}
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -36,6 +36,6 @@ public class AvoidPredators : InsatiableCardModel
 	}
 	protected override void OnUpgrade()
 	{
-		DynamicVars.Block.UpgradeValueBy(4);
+		DynamicVars.Block.UpgradeValueBy(3);
 	}
 }

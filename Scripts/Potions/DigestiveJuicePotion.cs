@@ -24,7 +24,7 @@ public class DigestiveJuicePotion : InsatiablePotionModel
         AssertValidForTargetedPotion(target);
 		NCombatRoom.Instance?.PlaySplashVfx(target, new Color("94f882"));
         AbstractRoom? currentRoom = base.Owner.RunState.CurrentRoom;
-		if (currentRoom == null && currentRoom.RoomType != RoomType.Elite && currentRoom.RoomType != RoomType.Boss)
+		if (currentRoom != null && currentRoom.RoomType != RoomType.Elite && currentRoom.RoomType != RoomType.Boss)
 		{
             await CreatureCmd.TriggerAnim(base.Owner.Creature, "EatPlayer", 0.5f);
 			await Cmd.Wait(2f);

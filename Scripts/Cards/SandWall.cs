@@ -40,7 +40,7 @@ public class SandWall : InsatiableCardModel
 	}
     protected override void OnUpgrade()
 	{
-        base.DynamicVars.Block.UpgradeValueBy(5);
+        base.DynamicVars.Block.UpgradeValueBy(4);
 		base.DynamicVars["QuickSandPower"].UpgradeValueBy(2);
 	}
 

@@ -31,7 +31,8 @@ public class ToxicSpit : InsatiableCardModel
 	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
 	{
 		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
-		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this)
+		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue)
+		    .FromCard(this)
 			.Targeting(cardPlay.Target)
 			.Execute(choiceContext);
 		CardModel card = base.CombatState.CreateCard<Toxic>(base.Owner);

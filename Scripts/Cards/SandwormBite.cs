@@ -25,7 +25,7 @@ public class SandwormBite : InsatiableCardModel
 	}
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromPower<QuickSandPower>()];
 	protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new CalculationBaseVar(5),
+        new CalculationBaseVar(6),
         new ExtraDamageVar(1),
         new CalculatedDamageVar(ValueProp.Move).WithMultiplier((CardModel _, Creature? target) => target?.GetPowerAmount<QuickSandPower>() ?? 0)
     ];

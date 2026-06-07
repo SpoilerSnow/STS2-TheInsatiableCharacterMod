@@ -30,15 +30,14 @@ public class OuroborosFrom : InsatiableCardModel
 	{
 		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
 		await PowerCmd.Apply<OuroborosFromPower>(choiceContext, base.Owner.Creature, base.DynamicVars["OuroborosFromPower"].BaseValue, base.Owner.Creature, this);
+		if (IsUpgraded)
+		{
 		List<CardModel> cards = choesnpile1.Select(c => base.CombatState.CreateCard((CardModel)c, base.Owner)).ToList();
         CardModel cardModel = await CardSelectCmd.FromChooseACardScreen(choiceContext, cards, base.Owner, canSkip: true);
         if (cardModel != null)
         {
             await ((IChoosable)cardModel).OnChosen(choiceContext);
         }
+		}
 	}
-	protected override void OnUpgrade()
-    {
-        RemoveKeyword(TheInsatiableKeyword.SelfSwallow);
-    }
 }

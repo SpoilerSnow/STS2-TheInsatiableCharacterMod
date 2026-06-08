@@ -174,5 +174,7 @@
 	"THEINSATIABLE-NIBBLE.title": "幼虫轻咬",
 	"THEINSATIABLE-NIBBLE.description": "造成{CalculatedDamage:diff()}点伤害。\n你的[gold]消耗堆[/gold]中每有一张[gold]孵化[/gold]，就额外造成{ExtraDamage:diff()}点伤害。",
 	"THEINSATIABLE-RAISING_SAND.title": "聚沙成塔",
-	"THEINSATIABLE-RAISING_SAND.description": "造成{Damage:diff()}点伤害。\n如果该敌人有[gold]流沙[/gold]状态，抽{Cards:diff()}张牌。"
+	"THEINSATIABLE-RAISING_SAND.description": "造成{Damage:diff()}点伤害。\n如果该敌人有[gold]流沙[/gold]状态，抽{Cards:diff()}张牌。",
+	"THEINSATIABLE-MILLIPEDE_NEVER_DIE.title": "千足不僵",
+	"THEINSATIABLE-MILLIPEDE_NEVER_DIE.description": "回合结束时打出你上{MillipedeNeverDiePower:diff()}个回合最后打出的牌的复制。\n（不会打出千足不僵）"
 }

@@ -78,5 +78,8 @@
     "THEINSATIABLE-GLUTTONY_POWER.smartDescription": "[gold]消耗[/gold]卡牌也算作[gold]吞噬[/gold]。\n敌人死亡也算作[gold]吞噬[/gold]。",
     "THEINSATIABLE-LAY_EGGS_POWER.title": "产卵",
     "THEINSATIABLE-LAY_EGGS_POWER.description": "在你的回合开始时，将[blue]1[/blue]张[gold]孵化[/gold]和[gold]幼虫轻咬[/gold]加入你的手牌。",
-    "THEINSATIABLE-LAY_EGGS_POWER.smartDescription": "在你的回合开始时，将[blue]{Amount}[/blue]张[gold]孵化[/gold]和[gold]幼虫轻咬[/gold]加入你的手牌。"
+    "THEINSATIABLE-LAY_EGGS_POWER.smartDescription": "在你的回合开始时，将[blue]{Amount}[/blue]张[gold]孵化[/gold]和[gold]幼虫轻咬[/gold]加入你的手牌。",
+    "THEINSATIABLE-MILLIPEDE_NEVER_DIE_POWER.title": "千足不僵",
+    "THEINSATIABLE-MILLIPEDE_NEVER_DIE_POWER.description": "回合结束时打出你上[blue]1[/blue]个回合最后打出的牌的复制。\n（不会打出千足不僵）",
+    "THEINSATIABLE-MILLIPEDE_NEVER_DIE_POWER.smartDescription": "回合结束时打出你上[blue]{Amount}[/blue]个回合最后打出的牌的复制。\n（不会打出千足不僵）"
 }

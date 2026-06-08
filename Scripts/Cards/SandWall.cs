@@ -28,8 +28,8 @@ public class SandWall : InsatiableCardModel
         HoverTipFactory.FromPower<QuickSandPower>()
     ];
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new BlockVar(15, ValueProp.Move),
-        new PowerVar<QuickSandPower>(5),
+        new BlockVar(12, ValueProp.Move),
+        new PowerVar<QuickSandPower>(4),
         new CardsVar(1)
     ];
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

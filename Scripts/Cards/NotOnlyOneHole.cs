@@ -23,15 +23,11 @@ public class NotOnlyOneHole : InsatiableCardModel
     {
         List<CardModel> cards = choesnpile2.Select(c => base.CombatState.CreateCard((CardModel)c, base.Owner)).ToList();
         CardModel chosenPileCard = await CardSelectCmd.FromChooseACardScreen(choiceContext, cards, base.Owner, canSkip: true);
-        if (chosenPileCard == null)
+        if (chosenPileCard != null)
         {
-            return;
-        }
-        await ((IChoosable)chosenPileCard).OnChosen(choiceContext);
-        if (choiceContext == null)
+        CardModel? swallowedCard = await ((IChoosable)chosenPileCard).OnChosen(choiceContext);
+        if (swallowedCard != null && choiceContext != null)
         {
-            return;
-        }
         CardPile targetPile;
         if (chosenPileCard is InsatiableDrawPile)
         {
@@ -56,6 +52,8 @@ public class NotOnlyOneHole : InsatiableCardModel
             {
                 await CardPileCmd.Add(card, PileType.Hand);
             }
+        }
+        }
         }
     }
     protected override void OnUpgrade()

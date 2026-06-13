@@ -24,12 +24,8 @@ public class HaveDinner : InsatiableCardModel
         CardModel cardModel = await CardSelectCmd.FromChooseACardScreen(choiceContext, cards, base.Owner, canSkip: true);
         if (cardModel != null)
         {
-            await ((IChoosable)cardModel).OnChosen(choiceContext);
-            if (choiceContext == null)
-            {
-                return;
-            }
-            else
+            CardModel? swallowedCard = await ((IChoosable)cardModel).OnChosen(choiceContext);
+            if (swallowedCard != null && choiceContext != null)
             {
                 await CardPileCmd.Draw(choiceContext, base.DynamicVars.Cards.BaseValue, base.Owner);
             }

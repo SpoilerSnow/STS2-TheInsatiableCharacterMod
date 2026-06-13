@@ -15,7 +15,7 @@ public class AvoidPredatorsPower : InsatiablePowerModel
     public override bool TryModifyPowerAmountReceived(PowerModel canonicalPower, Creature target, decimal amount, Creature? applier, out decimal modifiedAmount)
     {
         Creature owner = base.Owner;
-        if (target != owner || ((canonicalPower is not FrailPower) && (canonicalPower is not WeakPower) && (canonicalPower is not VulnerablePower)) || !canonicalPower.IsVisible)
+        if (amount <= 0m || target != owner || ((canonicalPower is not FrailPower) && (canonicalPower is not WeakPower) && (canonicalPower is not VulnerablePower)) || !canonicalPower.IsVisible)
         {
             modifiedAmount = amount;
             return false;

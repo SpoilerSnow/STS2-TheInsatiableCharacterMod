@@ -46,11 +46,14 @@ public class NotOnlyOneHole : InsatiableCardModel
             return;
         }
         CardSelectorPrefs prefs = new CardSelectorPrefs(base.SelectionScreenPrompt, 2);
-        List<CardModel> selectedCards = (List<CardModel>)await CardSelectCmd.FromSimpleGrid(choiceContext, targetPile.Cards, base.Owner, prefs);
+        List<CardModel> cardsin = (from c in targetPile.Cards
+			orderby c.Rarity, c.Id
+			select c).ToList();
+        List<CardModel> selectedCards = (await CardSelectCmd.FromSimpleGrid(choiceContext, cardsin, base.Owner, prefs)).ToList();
         foreach (CardModel card in selectedCards)
         {
             if (card != null)
-		    {
+            {
                 await CardPileCmd.Add(card, PileType.Hand);
             }
         }

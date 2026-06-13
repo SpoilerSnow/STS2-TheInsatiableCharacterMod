@@ -24,19 +24,21 @@ public class SandBlowing : InsatiableCardModel, ITranscendenceCard
 		: base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
 	{
 	}
-	protected override IEnumerable<IHoverTip> ExtraHoverTips => IsUpgraded ? [HoverTipFactory.FromPower<QuickSandPower>(), HoverTipFactory.FromPower<VulnerablePower>()] : [HoverTipFactory.FromPower<QuickSandPower>()];
+	protected override IEnumerable<IHoverTip> ExtraHoverTips => IsUpgraded ? [HoverTipFactory.FromPower<QuickSandPower>(), HoverTipFactory.FromPower<VulnerablePower>(), HoverTipFactory.FromPower<WeakPower>()] : [HoverTipFactory.FromPower<QuickSandPower>(), HoverTipFactory.FromPower<VulnerablePower>()];
     protected override IEnumerable<DynamicVar> CanonicalVars => [
 		new PowerVar<QuickSandPower>(5),
-		new PowerVar<VulnerablePower>(1)
+		new PowerVar<VulnerablePower>(1),
+		new PowerVar<WeakPower>(1),
 	];
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
 	{
 		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
 		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
 		await PowerCmd.Apply<QuickSandPower>(new ThrowingPlayerChoiceContext(), cardPlay.Target, base.DynamicVars["QuickSandPower"].IntValue, base.Owner.Creature, this);
+		await PowerCmd.Apply<VulnerablePower>(new ThrowingPlayerChoiceContext(), cardPlay.Target, base.DynamicVars.Vulnerable.BaseValue, base.Owner.Creature, this);
 		if (IsUpgraded)
 		{
-			await PowerCmd.Apply<VulnerablePower>(new ThrowingPlayerChoiceContext(), cardPlay.Target, base.DynamicVars.Vulnerable.BaseValue, base.Owner.Creature, this);
+			await PowerCmd.Apply<WeakPower>(new ThrowingPlayerChoiceContext(), cardPlay.Target, base.DynamicVars.Weak.BaseValue, base.Owner.Creature, this);
 		}
 	}
     protected override void OnUpgrade()

@@ -27,15 +27,15 @@ public class RaisingSand : InsatiableCardModel
 	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
 	{
         ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+		if (cardPlay.Target != null && cardPlay.Target.HasPower<QuickSandPower>())
+        {
+            await CardPileCmd.Draw(choiceContext, base.DynamicVars.Cards.BaseValue, base.Owner);
+        }
 		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue)
 			.FromCard(this)
 			.Targeting(cardPlay.Target)
 			.WithHitFx("vfx/vfx_bite")
 			.Execute(choiceContext);
-        if (cardPlay.Target != null && cardPlay.Target.HasPower<QuickSandPower>())
-        {
-            await CardPileCmd.Draw(choiceContext, base.DynamicVars.Cards.BaseValue, base.Owner);
-        }
     }
 	protected override void OnUpgrade()
 	{

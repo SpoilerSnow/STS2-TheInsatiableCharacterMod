@@ -47,5 +47,4 @@ public class LyingInSand : InsatiableCardModel
 	{
 		base.DynamicVars["QuickSandPower"].UpgradeValueBy(2);
 	}
-
 }

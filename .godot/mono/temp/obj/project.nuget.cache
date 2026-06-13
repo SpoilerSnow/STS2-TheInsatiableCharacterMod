@@ -1,13 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "Wo4uSGUeoeM=",
+  "dgSpecHash": "qzjy9HCow9M=",
   "success": true,
   "projectFilePath": "D:\\downloads\\Works\\mods\\the-insatiable\\TheInsatiable.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\SpoilerSnow\\.nuget\\packages\\alchyr.sts2.baselib\\3.1.3\\alchyr.sts2.baselib.3.1.3.nupkg.sha512",
     "C:\\Users\\SpoilerSnow\\.nuget\\packages\\godot.sourcegenerators\\4.5.1\\godot.sourcegenerators.4.5.1.nupkg.sha512",
     "C:\\Users\\SpoilerSnow\\.nuget\\packages\\godotsharp\\4.5.1\\godotsharp.4.5.1.nupkg.sha512",
-    "C:\\Users\\SpoilerSnow\\.nuget\\packages\\godotsharpeditor\\4.5.1\\godotsharpeditor.4.5.1.nupkg.sha512"
+    "C:\\Users\\SpoilerSnow\\.nuget\\packages\\godotsharpeditor\\4.5.1\\godotsharpeditor.4.5.1.nupkg.sha512",
+    "C:\\Users\\SpoilerSnow\\.nuget\\packages\\microsoft.netcore.app.ref\\9.0.16\\microsoft.netcore.app.ref.9.0.16.nupkg.sha512",
+    "C:\\Users\\SpoilerSnow\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\9.0.16\\microsoft.windowsdesktop.app.ref.9.0.16.nupkg.sha512",
+    "C:\\Users\\SpoilerSnow\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\9.0.16\\microsoft.aspnetcore.app.ref.9.0.16.nupkg.sha512"
   ],
   "logs": []
 }

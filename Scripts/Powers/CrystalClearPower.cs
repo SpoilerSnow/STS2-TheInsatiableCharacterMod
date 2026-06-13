@@ -20,10 +20,10 @@ public sealed class CrystalClearPower : InsatiablePowerModel
 
 	public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
 	{
-		if (!(amount <= 0m) && applier == base.Owner && power is QuickSandPower)
+		if (!(amount <= 0m) && applier == base.Owner && power is QuickSandPower && base.CombatState.HittableEnemies != null)
 		{
 			Flash();
-			await CreatureCmd.Damage(new BlockingPlayerChoiceContext(), base.CombatState.HittableEnemies, base.Amount, ValueProp.Unpowered, base.Owner, null);
+			await CreatureCmd.Damage(choiceContext, base.CombatState.HittableEnemies, base.Amount, ValueProp.Unpowered, base.Owner, null);
 		}
 	}
 }

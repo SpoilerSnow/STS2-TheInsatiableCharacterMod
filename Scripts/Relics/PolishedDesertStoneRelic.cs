@@ -23,12 +23,21 @@ public class PolishedDesertStoneRelic : InsatiableRelicModel
     protected override IEnumerable<DynamicVar> CanonicalVars => [new PowerVar<QuickSandPower>(4), new CardsVar(1)];
     public override async Task AfterSideTurnStart(CombatSide side, IReadOnlyList<Creature> participants, ICombatState combatState)
 	{
+		if (base.Owner?.Creature == null || base.Owner.Creature.CombatState == null)
+        return;
 		if (participants.Contains(base.Owner.Creature) && base.Owner.PlayerCombatState.TurnNumber <= 4)
 		{
+			if (base.Owner.Creature.CombatState.HittableEnemies == null)
+			{
+                return;
+			}
 			foreach (Creature hittableEnemy2 in base.Owner.Creature.CombatState.HittableEnemies)
 		    {
-			    await PowerCmd.Apply<QuickSandPower>(new ThrowingPlayerChoiceContext(), hittableEnemy2, base.DynamicVars["QuickSandPower"].IntValue, base.Owner.Creature, null);
-		    }
+				if (hittableEnemy2 != null)
+				{
+					await PowerCmd.Apply<QuickSandPower>(new ThrowingPlayerChoiceContext(), hittableEnemy2, base.DynamicVars["QuickSandPower"].IntValue, base.Owner.Creature, null);
+		        }
+			}
 		    Flash();
 		}
     }

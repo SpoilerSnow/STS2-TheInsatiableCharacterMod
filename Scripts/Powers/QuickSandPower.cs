@@ -13,9 +13,6 @@ public class QuickSandPower : InsatiablePowerModel
 {
 	public override PowerType Type => PowerType.Debuff;
 	public override PowerStackType StackType => PowerStackType.Counter;
-	private const string _damageDecrease = "DamageDecrease";
-	private const string _damageIncrease = "DamageIncrease";
-	private const string _quicksand = "quicksand";
     protected override IEnumerable<DynamicVar> CanonicalVars => [
 		new DynamicVar("DamageIncrease", 0.04m),
 		new DynamicVar("DamageDecrease", 0.04m),
@@ -24,7 +21,15 @@ public class QuickSandPower : InsatiablePowerModel
 	];
 	public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
     {
+		if (base.CombatState == null)
+		{
+			return;
+		}
 		base.DynamicVars["quicksand2"].BaseValue = 4 * Amount;
+		if (base.CombatState.PlayerCreatures == null)
+        {
+			return;
+		}
 		foreach (var player in base.CombatState.PlayerCreatures)
         {
             int muddyamount = player.GetPowerAmount<MuddyPower>();

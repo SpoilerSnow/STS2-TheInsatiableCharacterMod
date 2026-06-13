@@ -20,7 +20,7 @@ public class Nibble : InsatiableCardModel
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new CalculationBaseVar(4),
-        new ExtraDamageVar(1),
+        new ExtraDamageVar(2),
         new CalculatedDamageVar(ValueProp.Move).WithMultiplier((CardModel card, Creature? _) => card.Owner.PlayerCombatState?.ExhaustPile.Cards.Count((CardModel c) => c is Hatch) ?? 0)
     ];
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromCard<Hatch>()];

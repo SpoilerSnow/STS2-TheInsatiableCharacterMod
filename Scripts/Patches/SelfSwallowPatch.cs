@@ -17,7 +17,6 @@ public static class CombatManager_DoTurnEnd_SelfSwallowPatch
     public static async Task SelfSwallowPatch(Task __result, Player player, PlayerChoiceContext choiceContext)
     {
         await __result;
-        await player.PlayerCombatState.OrbQueue.BeforeTurnEnd(choiceContext);
         if (CombatManager.Instance.IsOverOrEnding)
         {
             return;

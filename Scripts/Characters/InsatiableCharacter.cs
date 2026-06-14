@@ -41,14 +41,13 @@ public class InsatiableCharacter : PlaceholderCharacterModel
 	// 商店人物场景。
 	// public override string CustomMerchantAnimPath => "res://scenes/merchant/characters/ironclad_merchant.tscn";
 	// 多人模式-手指。
-	// public override string CustomArmPointingTexturePath => null;
+	public override string CustomArmPointingTexturePath => "res://TheInsatiable/characterui/multiplayer_hand_the_insatiable_point.png";
 	// 多人模式剪刀石头布-石头。
-	// public override string CustomArmRockTexturePath => null;
+	public override string CustomArmRockTexturePath => "res://TheInsatiable/characterui/multiplayer_hand_the_insatiable_rock.png";
 	// 多人模式剪刀石头布-布。
-	// public override string CustomArmPaperTexturePath => null;
+	public override string CustomArmPaperTexturePath => "res://TheInsatiable/characterui/multiplayer_hand_the_insatiable_paper.png";
 	// 多人模式剪刀石头布-剪刀。
-	// public override string CustomArmScissorsTexturePath => null;
-
+	public override string CustomArmScissorsTexturePath => "res://TheInsatiable/characterui/multiplayer_hand_the_insatiable_scissors.png";
 	// 人物选择背景。
 	public override string CustomCharacterSelectBg => "res://TheInsatiable/scenes/char_select_bg_insatiable.tscn";
 	// 人物选择图标。

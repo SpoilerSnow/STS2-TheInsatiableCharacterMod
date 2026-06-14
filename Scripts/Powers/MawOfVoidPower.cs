@@ -60,7 +60,10 @@ public sealed class MawOfVoidPower : InsatiablePowerModel
 	}
 	public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
 	{
+		if (cardPlay.Card.Owner.Creature == base.Owner)
+		{
 		await TheInsatiableCmd.SwallowCard(choiceContext, cardPlay.Card);
 		await PowerCmd.Decrement(this);
+		}
 	}
 }

@@ -39,7 +39,7 @@ public class InsatiableCharacter : PlaceholderCharacterModel
 	// 篝火休息场景。
 	// public override string CustomRestSiteAnimPath => "res://scenes/rest_site/characters/ironclad_rest_site.tscn";
 	// 商店人物场景。
-	// public override string CustomMerchantAnimPath => "res://scenes/merchant/characters/ironclad_merchant.tscn";
+	public override string CustomMerchantAnimPath => "res://TheInsatiable/animations/the_insatiable_merchant.tscn";
 	// 多人模式-手指。
 	public override string CustomArmPointingTexturePath => "res://TheInsatiable/characterui/multiplayer_hand_the_insatiable_point.png";
 	// 多人模式剪刀石头布-石头。

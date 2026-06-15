@@ -48,5 +48,17 @@
     "THEINSATIABLE-INSATIABLE_NO_ESCAPE_POWER.smartDescription": "When you take unblocked attack damage, add an [gold]Insatiable Swallow[/gold] into your [gold]Hand[/gold].\nAt the end of your turn, if there are no [gold]Insatiable Swallow[/gold] cards in your [gold]Draw Pile[/gold], [gold]Hand[/gold], or [gold]Discard Pile[/gold], [gold]Devour[/gold] ALL enemies.",
     "THEINSATIABLE-HIVE_MIND_POWER.title": "Hive Mind",
     "THEINSATIABLE-HIVE_MIND_POWER.description": "When you play a card, play all cards with the same name from your [gold]Draw Pile[/gold].",
-    "THEINSATIABLE-HIVE_MIND_POWER.smartDescription": "When you play a card, play all cards with the same name from your [gold]Draw Pile[/gold]."
+    "THEINSATIABLE-HIVE_MIND_POWER.smartDescription": "When you play a card, play all cards with the same name from your [gold]Draw Pile[/gold].",
+    "THEINSATIABLE-SAND_BURIAL_POWER.title": "Sand Burial",
+    "THEINSATIABLE-SAND_BURIAL_POWER.description": "This turn, whenever another ally deals damage to this enemy, apply [blue]3[/blue] [gold]Quicksand[/gold].",
+    "THEINSATIABLE-SAND_BURIAL_POWER.smartDescription": "This turn, whenever another ally deals damage to this enemy, apply [blue]{Amount}[/blue] [gold]Quicksand[/gold].",
+    "THEINSATIABLE-SIX_FEET_UNDER_POWER.title": "Six Feet Under",
+    "THEINSATIABLE-SIX_FEET_UNDER_POWER.description": "Lasts [blue]1[/blue] turn. If you apply a total of [blue]6[/blue] [gold]Quicksand[/gold] to a single enemy in one turn, [gold]Devour[/gold] it.",
+    "THEINSATIABLE-SIX_FEET_UNDER_POWER.smartDescription": "Lasts [blue]{Amount}[/blue] turns. If you apply a total of [blue]6[/blue] [gold]Quicksand[/gold] to a single enemy in one turn, [gold]Devour[/gold] it.",
+    "THEINSATIABLE-EGG_AGAINST_STONE_POWER.title": "Egg Against Stone",
+    "THEINSATIABLE-EGG_AGAINST_STONE_POWER.description": "Next time you take unblocked attack damage, lose ALL [gold]Plated Armor[/gold].",
+    "THEINSATIABLE-EGG_AGAINST_STONE_POWER.smartDescription": "Next time you take unblocked attack damage, lose ALL [gold]Plated Armor[/gold].",
+    "THEINSATIABLE-STEAL_TECHNIQUE_POWER.title": "Steal Technique",
+    "THEINSATIABLE-STEAL_TECHNIQUE_POWER.description": "After [blue]3[/blue] turns, add a copy of the stolen card to your hand.",
+    "THEINSATIABLE-STEAL_TECHNIQUE_POWER.smartDescription": "After [blue]{Amount}[/blue] turns, add a copy of the stolen card to your hand."
 }

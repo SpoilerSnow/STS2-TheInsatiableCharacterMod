@@ -18,7 +18,7 @@ public class ShieldOfSand : InsatiableCardModel
 {
     public override bool GainsBlock => true;
     public ShieldOfSand() 
-		: base(1, CardType.Skill, CardRarity.Uncommon,  TargetType.Self, true)
+		: base(1, CardType.Skill, CardRarity.Common,  TargetType.Self, true)
 	{
 	}
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [

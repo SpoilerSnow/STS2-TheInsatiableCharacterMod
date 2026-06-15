@@ -17,7 +17,7 @@ namespace TheInsatiable.Scripts;
 public class SwordOfSand : InsatiableCardModel
 {
     public SwordOfSand() 
-		: base(1, CardType.Attack, CardRarity.Uncommon,  TargetType.AnyEnemy, true)
+		: base(1, CardType.Attack, CardRarity.Common,  TargetType.AnyEnemy, true)
 	{
 	}
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromPower<QuickSandPower>()];

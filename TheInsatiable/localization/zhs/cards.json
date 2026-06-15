@@ -176,5 +176,13 @@
 	"THEINSATIABLE-RAISING_SAND.title": "聚沙成塔",
 	"THEINSATIABLE-RAISING_SAND.description": "如果该敌人有[gold]流沙[/gold]状态，抽{Cards:diff()}张牌。\n造成{Damage:diff()}点伤害。",
 	"THEINSATIABLE-MILLIPEDE_NEVER_DIE.title": "千足不僵",
-	"THEINSATIABLE-MILLIPEDE_NEVER_DIE.description": "回合结束时打出你上{MillipedeNeverDiePower:diff()}个回合最后打出的牌的复制。\n（不会打出千足不僵）"
+	"THEINSATIABLE-MILLIPEDE_NEVER_DIE.description": "回合结束时打出你上{MillipedeNeverDiePower:diff()}个回合最后打出的牌的复制。\n（不会打出千足不僵）",
+	"THEINSATIABLE-SAND_BURIAL.title": "沙葬",
+	"THEINSATIABLE-SAND_BURIAL.description": "造成{Damage:diff()}点伤害。\n本回合内，其他盟友每对该敌人造成一次伤害，就给予{QuickSandPower:diff()}层[gold]流沙[/gold]。",
+	"THEINSATIABLE-SIX_FEET_UNDER.title": "六英尺下",
+	"THEINSATIABLE-SIX_FEET_UNDER.description": "本回合内，对该敌人施加六次[gold]流沙[/gold]后，将其[gold]吞噬[/gold]。",
+	"THEINSATIABLE-EGG_AGAINST_STONE.title": "以卵击石",
+	"THEINSATIABLE-EGG_AGAINST_STONE.description": "造成{Damage:diff()}点伤害。\n获得{PlatingPower:diff()}层[gold]覆甲[/gold]。\n下一次当你受到未被格挡的攻击伤害时，失去所有[gold]覆甲[/gold]。",
+	"THEINSATIABLE-STEAL_TECHNIQUE.title": "偷窃技巧",
+	"THEINSATIABLE-STEAL_TECHNIQUE.description": "造成{Damage:diff()}点伤害。\n按[gold]偷窃[/gold]逻辑[gold]吞噬[/gold]一张牌，{CalculationBase:diff()}回合后将其一张复制加入你的手牌。"
 }

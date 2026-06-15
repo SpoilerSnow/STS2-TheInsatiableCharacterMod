@@ -81,5 +81,17 @@
     "THEINSATIABLE-LAY_EGGS_POWER.smartDescription": "在你的回合开始时，将[blue]{Amount}[/blue]张[gold]孵化[/gold]和[gold]幼虫轻咬[/gold]加入你的手牌。",
     "THEINSATIABLE-MILLIPEDE_NEVER_DIE_POWER.title": "千足不僵",
     "THEINSATIABLE-MILLIPEDE_NEVER_DIE_POWER.description": "回合结束时打出你上[blue]1[/blue]个回合最后打出的牌的复制。\n（不会打出千足不僵）",
-    "THEINSATIABLE-MILLIPEDE_NEVER_DIE_POWER.smartDescription": "回合结束时打出你上[blue]{Amount}[/blue]个回合最后打出的牌的复制。\n（不会打出千足不僵）"
+    "THEINSATIABLE-MILLIPEDE_NEVER_DIE_POWER.smartDescription": "回合结束时打出你上[blue]{Amount}[/blue]个回合最后打出的牌的复制。\n（不会打出千足不僵）",
+    "THEINSATIABLE-SAND_BURIAL_POWER.title": "沙葬",
+    "THEINSATIABLE-SAND_BURIAL_POWER.description": "本回合内，其他盟友每对该敌人造成一次伤害，就给予[blue]3[/blue]层[gold]流沙[/gold]。",
+    "THEINSATIABLE-SAND_BURIAL_POWER.smartDescription": "本回合内，其他盟友每对该敌人造成一次伤害，就给予[blue]{Amount}[/blue]层[gold]流沙[/gold]。",
+    "THEINSATIABLE-SIX_FEET_UNDER_POWER.title": "六英尺下",
+    "THEINSATIABLE-SIX_FEET_UNDER_POWER.description": "[blue]1[/blue]回合内，单回合对该敌人施加[blue]6[/blue]次[gold]流沙[/gold]后，将其[gold]吞噬[/gold]。",
+    "THEINSATIABLE-SIX_FEET_UNDER_POWER.smartDescription": "[blue]{Amount}[/blue]回合内，单回合对该敌人施加[blue]6[/blue]次[gold]流沙[/gold]后，将其[gold]吞噬[/gold]。",
+    "THEINSATIABLE-EGG_AGAINST_STONE_POWER.title": "以卵击石",
+    "THEINSATIABLE-EGG_AGAINST_STONE_POWER.description": "下一次受到未被格挡的攻击伤害时，失去所有[gold]覆甲[/gold]。",
+    "THEINSATIABLE-EGG_AGAINST_STONE_POWER.smartDescription": "下一次受到未被格挡的攻击伤害时，失去所有[gold]覆甲[/gold]。",
+    "THEINSATIABLE-STEAL_TECHNIQUE_POWER.title": "偷窃技巧",
+    "THEINSATIABLE-STEAL_TECHNIQUE_POWER.description": "[blue]3[/blue]回合后将[gold]吞噬[/gold]的牌的复制加入手牌。",
+    "THEINSATIABLE-STEAL_TECHNIQUE_POWER.smartDescription": "[blue]{Amount}[/blue]回合后将[gold]吞噬[/gold]的牌的复制加入手牌。"
 }

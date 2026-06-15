@@ -125,5 +125,13 @@
 	"THEINSATIABLE-LOCUST_OF_ABYSS.title": "Locust of Abyss",
 	"THEINSATIABLE-LOCUST_OF_ABYSS.description": "[blue]Corresponds to Mission cards[/blue]\nDeal {Damage:diff()} damage {Repeat:diff()} times.",
 	"THEINSATIABLE-ABYSS.title": "Abyss",
-	"THEINSATIABLE-ABYSS.description": "Choose [blue]any[/blue] six cards to [gold]Devour[/gold].\nBased on the types of cards [gold]Devoured[/gold], add corresponding {IfUpgraded:show:[gold]Upgraded[/gold] |}[gold]Locust[/gold] cards into your [gold]Hand[/gold]."
+	"THEINSATIABLE-ABYSS.description": "Choose [blue]any[/blue] six cards to [gold]Devour[/gold].\nBased on the types of cards [gold]Devoured[/gold], add corresponding {IfUpgraded:show:[gold]Upgraded[/gold] |}[gold]Locust[/gold] cards into your [gold]Hand[/gold].",
+	"THEINSATIABLE-SAND_BURIAL.title": "Sand Burial",
+	"THEINSATIABLE-SAND_BURIAL.description": "Deal {Damage:diff()} damage.\nThis turn, whenever another ally deals damage to this enemy, apply {QuickSandPower:diff()} [gold]Quicksand[/gold].",
+	"THEINSATIABLE-SIX_FEET_UNDER.title": "Six Feet Under",
+	"THEINSATIABLE-SIX_FEET_UNDER.description": "This turn, if you apply a total of {CalculationBase:diff()} [gold]Quicksand[/gold] to a single enemy, [gold]Devour[/gold] it.",
+	"THEINSATIABLE-EGG_AGAINST_STONE.title": "Egg Against Stone",
+	"THEINSATIABLE-EGG_AGAINST_STONE.description": "Deal {Damage:diff()} damage.\nGain {PlatingPower:diff()} [gold]Plated Armor[/gold].\nNext time you take unblocked attack damage, lose ALL [gold]Plated Armor[/gold].",
+	"THEINSATIABLE-STEAL_TECHNIQUE.title": "Steal Technique",
+	"THEINSATIABLE-STEAL_TECHNIQUE.description": "Deal {Damage:diff()} damage.\nSteal a card following Thieving Hopper's logic. After {CalculationBase:diff()} turns, add a copy to your [gold]Hand[/gold]."
 }

@@ -10,7 +10,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 
 namespace TheInsatiable.Scripts;
 
-[Pool(typeof(StatusCardPool))]
+[Pool(typeof(TokenCardPool))]
 
 public class LocustOfPestilence : InsatiableCardModel
 {

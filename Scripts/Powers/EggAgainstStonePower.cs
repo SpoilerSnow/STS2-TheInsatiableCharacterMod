@@ -16,7 +16,7 @@ namespace TheInsatiable.Scripts;
 /// </summary>
 public class EggAgainstStonePower : InsatiablePowerModel
 {
-	public override PowerType Type => PowerType.Buff;
+	public override PowerType Type => PowerType.Debuff;
 
 	public override PowerStackType StackType => PowerStackType.Single;
 

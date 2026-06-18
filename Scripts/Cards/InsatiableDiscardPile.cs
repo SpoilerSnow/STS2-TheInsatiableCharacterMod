@@ -8,7 +8,7 @@ using MegaCrit.Sts2.Core.Models.CardPools;
 
 namespace TheInsatiable.Scripts;
 
-[Pool(typeof(StatusCardPool))]
+[Pool(typeof(TokenCardPool))]
 
 public class InsatiableDiscardPile : InsatiableCardModel, InsatiableCardModel.IChoosable
 {

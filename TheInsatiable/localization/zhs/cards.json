@@ -180,7 +180,7 @@
 	"THEINSATIABLE-SAND_BURIAL.title": "沙葬",
 	"THEINSATIABLE-SAND_BURIAL.description": "造成{Damage:diff()}点伤害。\n本回合内，其他盟友每对该敌人造成一次伤害，就给予{QuickSandPower:diff()}层[gold]流沙[/gold]。",
 	"THEINSATIABLE-SIX_FEET_UNDER.title": "六英尺下",
-	"THEINSATIABLE-SIX_FEET_UNDER.description": "本回合内，对该敌人施加六次[gold]流沙[/gold]后，将其[gold]吞噬[/gold]。",
+	"THEINSATIABLE-SIX_FEET_UNDER.description": "打出本牌后，如果一回合内能对目标敌人施加六次[gold]流沙[/gold]，将其[gold]吞噬[/gold]。",
 	"THEINSATIABLE-EGG_AGAINST_STONE.title": "以卵击石",
 	"THEINSATIABLE-EGG_AGAINST_STONE.description": "造成{Damage:diff()}点伤害。\n获得{PlatingPower:diff()}层[gold]覆甲[/gold]。\n下一次当你受到未被格挡的攻击伤害时，失去所有[gold]覆甲[/gold]。",
 	"THEINSATIABLE-STEAL_TECHNIQUE.title": "偷窃技巧",

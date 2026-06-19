@@ -24,7 +24,7 @@ public class HoneyXylitol : InsatiableCardModel
         new PowerVar<StrengthPower>(2),
     ];
     public HoneyXylitol()
-		: base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+		: base(0, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
 	{
 	}
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

@@ -25,7 +25,7 @@ public class GluttonyPower : InsatiablePowerModel
 	}
 	public override async Task AfterDeath(PlayerChoiceContext choiceContext, Creature creature, bool wasRemovalPrevented, float deathAnimLength)
 	{
-		if (creature == base.CombatState.Enemies)
+		if (base.CombatState.Enemies.Contains(creature))
 		{
 			await TheInsatiableHook.BeforeCreatureSwallow(CombatState, creature, false);
 			await TheInsatiableHook.AfterCreatureSwallow(CombatState, creature, false);

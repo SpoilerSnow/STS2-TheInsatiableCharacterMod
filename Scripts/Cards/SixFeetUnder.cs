@@ -11,12 +11,12 @@ namespace TheInsatiable.Scripts;
 
 public class SixFeetUnder : InsatiableCardModel
 {
-	private const int energyCost = 2;
+	private const int energyCost = 1;
 	private const CardType type = CardType.Skill;
 	private const CardRarity rarity = CardRarity.Uncommon;
 	private const TargetType targetType = TargetType.AnyEnemy;
 
-	public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Retain,CardKeyword.Exhaust];
+	public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
 
 	protected override IEnumerable<DynamicVar> CanonicalVars => [
 		new PowerVar<SixFeetUnderPower>(1),

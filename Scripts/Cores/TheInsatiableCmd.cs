@@ -17,17 +17,15 @@ public class TheInsatiableCmd
 			ICombatState combatState = card.CombatState ?? card.Owner.Creature.CombatState;
             await CardCmd.Exhaust(choiceContext, card);
             CombatManager.Instance.History.CardSwallowed(combatState, card);
-            await TheInsatiableHook.AfterCardSwallow(combatState, choiceContext, card, causedBySelfSwallow);
         }
     }
     public static async Task SwallowCreature(Creature creature, bool force = false)
     {
         if (!CombatManager.Instance.IsOverOrEnding)
 		{
-            ICombatState combatState = creature.CombatState ?? creature.CombatState;
+            ICombatState combatState = creature.CombatState;
             await CreatureCmd.Kill(creature);
             CombatManager.Instance.History.CreatureSwallowed(combatState, creature);
-            await TheInsatiableHook.AfterCreatureSwallow(combatState, creature, force);
         }
     }
 }

@@ -143,7 +143,7 @@
 	"THEINSATIABLE-SWALLOW_STRIKE.title": "吞噬打击",
 	"THEINSATIABLE-SWALLOW_STRIKE.description": "造成{CalculatedDamage:diff()}点伤害。\n你每[gold]吞噬[/gold]一次，伤害增加{ExtraDamage:diff()}。",
 	"THEINSATIABLE-EAT_LESS_MORE_OFTEN.title": "少食多餐",
-	"THEINSATIABLE-EAT_LESS_MORE_OFTEN.description": "造成{Damage:diff()}点伤害{Repeat:diff()}次。\n你在本回合中每[gold]吞噬[/gold]一次，其耗能减少1{energyPrefix:energyIcons(1)}。",
+	"THEINSATIABLE-EAT_LESS_MORE_OFTEN.description": "造成{Damage:diff()}点伤害{Repeat:diff()}次。\n你在本场战斗中每[gold]吞噬[/gold]一次，其耗能减少1{energyPrefix:energyIcons(1)}。",
 	"THEINSATIABLE-GRAIN_RESERVES.title": "储备粮",
 	"THEINSATIABLE-GRAIN_RESERVES.description": "[gold]消化[/gold]：抽{Cards:diff()}张牌，获得{Energy:energyIcons()}。",
 	"THEINSATIABLE-HONEY_XYLITOL.title": "蜜糖醇",

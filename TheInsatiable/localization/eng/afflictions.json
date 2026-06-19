@@ -1,5 +1,5 @@
 {
-    "WEATHERING_AFFLICTION.description": "Gain [blue]{Amount}[/blue] layers of [gold]Quicksand[/gold] when this card is played.",
-    "WEATHERING_AFFLICTION.extraCardText": "Gain {Amount} layers of [gold]Quicksand[/gold].",
+    "WEATHERING_AFFLICTION.description": "Gain [blue]{Amount}[/blue] [gold]Quicksand[/gold] when played.",
+    "WEATHERING_AFFLICTION.extraCardText": "Gain {Amount} [gold]Quicksand[/gold].",
     "WEATHERING_AFFLICTION.title": "Weathering"
 }

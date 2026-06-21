@@ -30,13 +30,11 @@ public class SixFeetUnderPower : InsatiablePowerModel
 
 	public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
 	{
+		Creature target = base.Owner;
 		if (power is not QuickSandPower) return;
 		if (applier is null) return;
 		if (amount <= 0) return;
-
-		Creature target = power.Owner;
 		Data data = GetInternalData<Data>();
-
 		if (!data.quickSandCounts.ContainsKey(target))
 			data.quickSandCounts[target] = 0;
 		data.quickSandCounts[target] += 1;

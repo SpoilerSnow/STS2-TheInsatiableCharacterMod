@@ -143,7 +143,7 @@
 	"THEINSATIABLE-SWALLOW_STRIKE.title": "Swallow Strike",
 	"THEINSATIABLE-SWALLOW_STRIKE.description": "Deal {CalculatedDamage:diff()} damage.\nDamage increases by {ExtraDamage:diff()} for each time you [gold]Swallow[/gold].",
 	"THEINSATIABLE-EAT_LESS_MORE_OFTEN.title": "Eat Less, More Often",
-	"THEINSATIABLE-EAT_LESS_MORE_OFTEN.description": "Deal {Damage:diff()} damage {Repeat:diff()} times.\nCosts 1 less {energyPrefix:energyIcons(1)} for each time you [gold]Swallow[/gold].",
+	"THEINSATIABLE-EAT_LESS_MORE_OFTEN.description": "Deal {Damage:diff()} damage {Repeat:diff()} times.\nCosts 1 less {energyPrefix:energyIcons(1)} for each time you [gold]Swallow[/gold] this turn.",
 	"THEINSATIABLE-GRAIN_RESERVES.title": "Grain Reserves",
 	"THEINSATIABLE-GRAIN_RESERVES.description": "[gold]Digest[/gold]: Draw {Cards:diff()} cards and gain {Energy:energyIcons()}.",
 	"THEINSATIABLE-HONEY_XYLITOL.title": "Honey Xylitol",

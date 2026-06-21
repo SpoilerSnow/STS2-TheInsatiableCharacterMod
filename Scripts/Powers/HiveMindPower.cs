@@ -11,7 +11,7 @@ public class HiveMindPower : InsatiablePowerModel
     public override PowerStackType StackType => PowerStackType.Single;
     public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        if (cardPlay == null || cardPlay.Card == null || cardPlay.Card.Owner == null)
+        if (cardPlay == null || cardPlay.Card == null || cardPlay.Card.Owner != base.Owner.Player)
         {
             return;
         }

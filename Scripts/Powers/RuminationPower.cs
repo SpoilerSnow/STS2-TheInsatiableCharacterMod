@@ -40,7 +40,6 @@ public sealed class RuminationPower : InsatiablePowerModel
 				CardModel swallowedcard = card.CreateClone();
                 CardCmd.ApplyKeyword(swallowedcard, TheInsatiableKeyword.SelfSwallow);
 				await CardPileCmd.AddGeneratedCardToCombat(swallowedcard, PileType.Hand, base.Owner.Player);
-                
 			}
 		}
 	}

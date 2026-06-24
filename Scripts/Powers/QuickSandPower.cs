@@ -15,7 +15,7 @@ public class QuickSandPower : InsatiablePowerModel
 	public override PowerStackType StackType => PowerStackType.Counter;
     protected override IEnumerable<DynamicVar> CanonicalVars => [
 		new DynamicVar("DamageIncrease", 0.04m),
-		new DynamicVar("DamageDecrease", 0.04m),
+		new DynamicVar("DamageDecrease", 0.03m),
 		new DynamicVar("quicksand1", 0),
 		new DynamicVar("quicksand2", 0)
 	];
@@ -25,7 +25,7 @@ public class QuickSandPower : InsatiablePowerModel
 		{
 			return;
 		}
-		base.DynamicVars["quicksand2"].BaseValue = 4 * Amount;
+		base.DynamicVars["quicksand2"].BaseValue = 3 * Amount;
 		if (base.CombatState.PlayerCreatures == null)
         {
 			return;
@@ -37,11 +37,11 @@ public class QuickSandPower : InsatiablePowerModel
 			if (muddyamount > 0)
 			{
 				totalmuddyamount += muddyamount;
-				base.DynamicVars["quicksand1"].BaseValue = 4 * Amount * (totalmuddyamount + 1);
+				base.DynamicVars["quicksand1"].BaseValue = 3 * Amount * (totalmuddyamount + 1);
 			}
 			else
 			{
-				base.DynamicVars["quicksand1"].BaseValue = 4 * Amount;
+				base.DynamicVars["quicksand1"].BaseValue = 3 * Amount;
 			}
         }
     }

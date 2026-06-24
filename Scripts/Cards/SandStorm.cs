@@ -25,11 +25,11 @@ public class SandStorm : InsatiableCardModel
 	public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Retain];
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [
         HoverTipFactory.FromPower<QuickSandPower>(),
+		HoverTipFactory.FromPower<VulnerablePower>(),
         HoverTipFactory.FromPower<WeakPower>(),
-        HoverTipFactory.FromPower<VulnerablePower>()
         ];
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new PowerVar<QuickSandPower>(7),
+        new PowerVar<QuickSandPower>(8),
         new PowerVar<WeakPower>(1),
         new PowerVar<VulnerablePower>(1)
     ];
@@ -37,8 +37,8 @@ public class SandStorm : InsatiableCardModel
 	{
 		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.AttackAnimDelay);
 		await PowerCmd.Apply<QuickSandPower>(new ThrowingPlayerChoiceContext(), base.CombatState.HittableEnemies, base.DynamicVars["QuickSandPower"].IntValue, base.Owner.Creature, this);
-        await PowerCmd.Apply<WeakPower>(new ThrowingPlayerChoiceContext(), base.CombatState.HittableEnemies, base.DynamicVars.Weak.BaseValue, base.Owner.Creature, this);
 		await PowerCmd.Apply<VulnerablePower>(new ThrowingPlayerChoiceContext(), base.CombatState.HittableEnemies, base.DynamicVars.Vulnerable.BaseValue, base.Owner.Creature, this);
+        await PowerCmd.Apply<WeakPower>(new ThrowingPlayerChoiceContext(), base.CombatState.HittableEnemies, base.DynamicVars.Weak.BaseValue, base.Owner.Creature, this);
 	}
     protected override void OnUpgrade()
 	{

@@ -26,6 +26,7 @@ public class InsectPlague : InsatiableCardModel
     protected override bool ShouldGlowGoldInternal => CombatManager.Instance.History.Entries
         .OfType<DamageReceivedEntry>()
         .Any(e => e.Dealer == base.Owner.Creature
+		    && e.Receiver != null
             && e.Result.Props.IsPoweredAttack()
             && e.HappenedThisTurn(base.CombatState));
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromPower<VulnerablePower>()];

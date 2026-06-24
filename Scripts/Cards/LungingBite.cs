@@ -46,6 +46,6 @@ public class LungingBite : InsatiableCardModel
 
 	protected override void OnUpgrade()
 	{
-		DynamicVars.Damage.UpgradeValueBy(3);
+		DynamicVars.Damage.UpgradeValueBy(7);
 	}
 }

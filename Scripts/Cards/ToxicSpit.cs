@@ -27,7 +27,7 @@ public class ToxicSpit : InsatiableCardModel
 	{
 	}
 	protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromCard<Toxic>()];
-	protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(14, ValueProp.Move)];
+	protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(13, ValueProp.Move)];
 	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
 	{
 		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
@@ -44,6 +44,6 @@ public class ToxicSpit : InsatiableCardModel
 
 	protected override void OnUpgrade()
 	{
-		base.DynamicVars.Damage.UpgradeValueBy(5);
+		base.DynamicVars.Damage.UpgradeValueBy(4);
 	}
 }

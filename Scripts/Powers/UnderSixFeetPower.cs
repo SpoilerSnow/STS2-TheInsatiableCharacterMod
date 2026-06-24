@@ -8,7 +8,7 @@ using MegaCrit.Sts2.Core.Models;
 
 namespace TheInsatiable.Scripts;
 
-public class SixFeetUnderPower : InsatiablePowerModel
+public class UnderSixFeetPower : InsatiablePowerModel
 {
 	private const int SwallowThreshold = 6;
 
@@ -31,6 +31,7 @@ public class SixFeetUnderPower : InsatiablePowerModel
 	public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
 	{
 		Creature target = base.Owner;
+		if (power.Owner != target) return;
 		if (power is not QuickSandPower) return;
 		if (applier is null) return;
 		if (amount <= 0) return;

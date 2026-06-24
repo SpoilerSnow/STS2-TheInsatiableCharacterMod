@@ -14,5 +14,8 @@
     "THEINSATIABLE-ANOTHER_STOMACH_RELIC.flavor": "永远填不满。",
     "THEINSATIABLE-EXUVIAE_SKELETON_RELIC.title": "外骨骼虫之蜕",
     "THEINSATIABLE-EXUVIAE_SKELETON_RELIC.description": "每场战斗受到的第一次大于[blue]9[/blue]的攻击伤害变为[blue]9[/blue]。",
-    "THEINSATIABLE-EXUVIAE_SKELETON_RELIC.flavor": "巢穴中经常能捡到类似的壳，不知道是外骨骼虫的蜕皮还是尸体。"
+    "THEINSATIABLE-EXUVIAE_SKELETON_RELIC.flavor": "巢穴中经常能捡到类似的壳，不知道是外骨骼虫的蜕皮还是尸体。",
+    "THEINSATIABLE-OBELISK_RELIC.title": "方尖碑",
+    "THEINSATIABLE-OBELISK_RELIC.description": "拥有[gold]固有[/gold]的卡牌获得[gold]保留[/gold]。\n拥有[gold]保留[/gold]的卡牌获得[gold]固有[/gold]。",
+    "THEINSATIABLE-OBELISK_RELIC.flavor": "古老的纪念碑。"
 }

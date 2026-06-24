@@ -20,7 +20,7 @@ public class ShrinkerLaser : InsatiableCardModel
 	private const bool shouldShowInCardLibrary = true;
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
 	protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new DamageVar(13, ValueProp.Move),
+        new DamageVar(14, ValueProp.Move),
         new DynamicVar("DamageDecrease", 30m),
 		new RepeatVar(4)];
 	public ShrinkerLaser() 

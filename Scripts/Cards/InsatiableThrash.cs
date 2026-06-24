@@ -20,7 +20,7 @@ public class InsatiableThrash : InsatiableCardModel
 	private const bool shouldShowInCardLibrary = true;
     protected override bool ShouldGlowGoldInternal => base.CombatState?.HittableEnemies.Any((Creature e) => e.HasPower<QuickSandPower>()) ?? false;
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromPower<QuickSandPower>()];
-	protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(9, ValueProp.Move)];
+	protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(8, ValueProp.Move)];
 	public InsatiableThrash() 
 		: base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
 	{

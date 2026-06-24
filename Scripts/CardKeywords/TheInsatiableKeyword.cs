@@ -8,7 +8,7 @@ public class TheInsatiableKeyword
     [KeywordProperties(AutoKeywordPosition.Before)]
     public static CardKeyword Swallow;
 
-    [CustomEnum("SelfSwallow")]
+    [CustomEnum("Self_Swallow")]
     [KeywordProperties(AutoKeywordPosition.Before)]
     public static CardKeyword SelfSwallow;
 

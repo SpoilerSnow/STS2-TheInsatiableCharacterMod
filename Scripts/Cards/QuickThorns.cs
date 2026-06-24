@@ -36,12 +36,16 @@ public class QuickThorns : InsatiableCardModel
 	{
         await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
         await CreatureCmd.GainBlock(base.Owner.Creature, base.DynamicVars.Block, cardPlay);
+		if (IsUpgraded)
+		{
+			await PowerCmd.Apply<ThornsPower>(choiceContext, base.Owner.Creature, base.DynamicVars["ThornsPower"].BaseValue, base.Owner.Creature, this);
+			return;
+		}
 		await PowerCmd.Apply<QuickThornsPower>(choiceContext, base.Owner.Creature, base.DynamicVars["ThornsPower"].BaseValue, base.Owner.Creature, this);
 	}
 
 	protected override void OnUpgrade()
 	{
 		DynamicVars.Block.UpgradeValueBy(2);
-        DynamicVars["ThornsPower"].UpgradeValueBy(3);
 	}
 }

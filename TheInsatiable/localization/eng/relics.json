@@ -14,5 +14,8 @@
     "THEINSATIABLE-ANOTHER_STOMACH_RELIC.flavor": "It can never be filled.",
     "THEINSATIABLE-EXUVIAE_SKELETON_RELIC.title": "Exoskeleton Exuviae",
     "THEINSATIABLE-EXUVIAE_SKELETON_RELIC.description": "The first attack damage greater than [blue]9[/blue] received each combat is reduced to [blue]9[/blue].",
-    "THEINSATIABLE-EXUVIAE_SKELETON_RELIC.flavor": "Similar shells can often be found in the Burrow. Whether they are molted skins or corpses of exoskeleton creatures, no one knows."
+    "THEINSATIABLE-EXUVIAE_SKELETON_RELIC.flavor": "Similar shells can often be found in the Burrow. Whether they are molted skins or corpses of exoskeleton creatures, no one knows.",
+    "THEINSATIABLE-OBELISK_RELIC.title": "Obelisk",
+    "THEINSATIABLE-OBELISK_RELIC.description": "Cards with [gold]Innate[/gold] gain [gold]Retain[/gold]. \nCards with [gold]Retain[/gold] gain [gold]Innate[/gold].",
+    "THEINSATIABLE-OBELISK_RELIC.flavor": "An ancient monument."
 }

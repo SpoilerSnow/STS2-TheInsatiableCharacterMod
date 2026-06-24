@@ -14,7 +14,7 @@ namespace TheInsatiable.Scripts;
 public class Evaporate : InsatiableCardModel
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new PowerVar<QuickSandPower>(7),
+        new PowerVar<QuickSandPower>(8),
         new CardsVar(1)
     ];
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [
@@ -44,6 +44,6 @@ public class Evaporate : InsatiableCardModel
 
     protected override void OnUpgrade()
     {
-        base.DynamicVars["QuickSandPower"].UpgradeValueBy(4);
+        base.DynamicVars["QuickSandPower"].UpgradeValueBy(5);
     }
 }

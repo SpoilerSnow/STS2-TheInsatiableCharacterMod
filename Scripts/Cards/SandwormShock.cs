@@ -12,7 +12,6 @@ namespace TheInsatiable.Scripts;
 public class SandwormShock : InsatiableCardModel
 {
     protected override bool HasEnergyCostX => true;
-	private const bool shouldShowInCardLibrary = true;
     public SandwormShock()
 		: base(0, CardType.Skill, CardRarity.Uncommon, TargetType.AllEnemies)
 	{
@@ -22,7 +21,7 @@ public class SandwormShock : InsatiableCardModel
         HoverTipFactory.FromPower<QuickSandPower>(),
         HoverTipFactory.FromPower<VulnerablePower>()];
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new PowerVar<QuickSandPower>(4),
+        new PowerVar<QuickSandPower>(5),
         new PowerVar<VulnerablePower>(1)
         ];
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

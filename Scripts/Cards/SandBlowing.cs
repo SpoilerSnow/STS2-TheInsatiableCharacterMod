@@ -26,7 +26,7 @@ public class SandBlowing : InsatiableCardModel, ITranscendenceCard
 	}
 	protected override IEnumerable<IHoverTip> ExtraHoverTips => IsUpgraded ? [HoverTipFactory.FromPower<QuickSandPower>(), HoverTipFactory.FromPower<VulnerablePower>(), HoverTipFactory.FromPower<WeakPower>()] : [HoverTipFactory.FromPower<QuickSandPower>(), HoverTipFactory.FromPower<VulnerablePower>()];
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-		new PowerVar<QuickSandPower>(5),
+		new PowerVar<QuickSandPower>(6),
 		new PowerVar<VulnerablePower>(1),
 		new PowerVar<WeakPower>(1),
 	];

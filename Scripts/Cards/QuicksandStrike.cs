@@ -18,10 +18,13 @@ public class QuicksandStrike : InsatiableCardModel
 	private const TargetType targetType = TargetType.AnyEnemy;
 	private const bool shouldShowInCardLibrary = true;
     protected override HashSet<CardTag> CanonicalTags => new HashSet<CardTag> { CardTag.Strike };
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromPower<QuickSandPower>()];
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+		HoverTipFactory.FromPower<QuickSandPower>(),
+		HoverTipFactory.FromCard<SandStone>()
+	];
 	protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new DamageVar(8, ValueProp.Move),
+        new DamageVar(9, ValueProp.Move),
         new PowerVar<QuickSandPower>(5)
     ];
 	public QuicksandStrike() 
@@ -36,11 +39,13 @@ public class QuicksandStrike : InsatiableCardModel
 			.Targeting(cardPlay.Target)
 			.Execute(choiceContext);
         await PowerCmd.Apply<QuickSandPower>(new ThrowingPlayerChoiceContext(), cardPlay.Target, base.DynamicVars["QuickSandPower"].IntValue, base.Owner.Creature, this);
+		await CardPileCmd.AddGeneratedCardToCombat(base.CombatState.CreateCard<SandStone>(base.Owner), PileType.Hand, base.Owner);
+		await Cmd.Wait(0.5f);
 	}
 
 	protected override void OnUpgrade()
 	{
 		base.DynamicVars.Damage.UpgradeValueBy(2);
-        base.DynamicVars["QuickSandPower"].UpgradeValueBy(2);
+        base.DynamicVars["QuickSandPower"].UpgradeValueBy(3);
 	}
 }

@@ -1,0 +1,5 @@
+{
+    "WEATHERING_AFFLICTION.description": "使用時、[gold]流砂[/gold]を[blue]{Amount}[/blue]得る。",
+    "WEATHERING_AFFLICTION.extraCardText": "[gold]流砂[/gold]を{Amount}得る。",
+    "WEATHERING_AFFLICTION.title": "風化"
+}

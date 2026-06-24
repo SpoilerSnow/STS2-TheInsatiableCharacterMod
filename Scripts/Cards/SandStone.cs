@@ -26,7 +26,7 @@ public class SandStone : InsatiableCardModel
         CardKeyword.Retain,
         CardKeyword.Exhaust
     ];
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new PowerVar<QuickSandPower>(3)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new PowerVar<QuickSandPower>(4)];
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {
         await PowerCmd.Apply<QuickSandPower>(new ThrowingPlayerChoiceContext(), base.CombatState.HittableEnemies, base.DynamicVars["QuickSandPower"].IntValue, base.Owner.Creature, this);

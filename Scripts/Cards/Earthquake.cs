@@ -26,7 +26,7 @@ public class Earthquake : InsatiableCardModel
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromPower<QuickSandPower>()];
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new DamageVar(12, ValueProp.Move),
-        new PowerVar<QuickSandPower>(4)
+        new PowerVar<QuickSandPower>(5)
     ];
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
 	{

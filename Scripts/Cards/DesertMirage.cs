@@ -25,9 +25,9 @@ public class DesertMirage : InsatiableCardModel
         HoverTipFactory.Static(StaticHoverTip.Block)
     ];
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new HealVar(3),
+        new HealVar(4),
         new BlockVar(10, ValueProp.Move),
-        new PowerVar<QuickSandPower>(4),
+        new PowerVar<QuickSandPower>(5),
         new PowerVar<DesertMiragePower>(1)
     ];
 

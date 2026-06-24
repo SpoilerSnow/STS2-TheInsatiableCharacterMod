@@ -27,6 +27,6 @@ public class Sedimentation : InsatiableCardModel
 	}
 	protected override void OnUpgrade()
 	{
-		base.DynamicVars.Cards.UpgradeValueBy(1m);
+		base.EnergyCost.UpgradeBy(-1);
 	}
 }

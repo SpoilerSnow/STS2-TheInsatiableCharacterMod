@@ -12,7 +12,7 @@ namespace TheInsatiable.Scripts;
 
 public class AnotherStomachRelic : InsatiableRelicModel
 {
-	public override RelicRarity Rarity => RelicRarity.Rare;
+	public override RelicRarity Rarity => RelicRarity.Uncommon;
     protected override IEnumerable<DynamicVar> CanonicalVars => [new HealVar(5)];
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromKeyword(TheInsatiableKeyword.Swallow)];
     public override async Task AfterCreatureSwallow(ICombatState combatState, Creature creature, bool force)

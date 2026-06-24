@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TheInsatiable")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6982b6b176e7bd61df6b55e33f697571cb80f6f9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fa7f85ca294106ecdc2f4e1f2ea2d8c817f0ffbb")]
 [assembly: System.Reflection.AssemblyProductAttribute("TheInsatiable")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TheInsatiable")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

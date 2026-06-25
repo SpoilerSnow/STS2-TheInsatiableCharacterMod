@@ -4,13 +4,15 @@ using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
+using STS2RitsuLib.Interop.AutoRegistration;
 
 namespace TheInsatiable.Scripts;
+[RegisterPower]
 public class MobileDunePower : InsatiablePowerModel
 {
 	public override PowerType Type => PowerType.Buff;
 	public override PowerStackType StackType => PowerStackType.Single;
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromPower<QuickSandPower>()];
+    protected override IEnumerable<IHoverTip> AdditionalHoverTips => [HoverTipFactory.FromPower<QuickSandPower>()];
 	public override async Task BeforeSideTurnStart(PlayerChoiceContext choiceContext, CombatSide side, IReadOnlyList<Creature> participants, ICombatState combatState)
 	{
         if (participants.Contains(base.Owner))

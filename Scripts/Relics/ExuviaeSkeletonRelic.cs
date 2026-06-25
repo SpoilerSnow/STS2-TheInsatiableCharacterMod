@@ -1,4 +1,5 @@
-using BaseLib.Utils;
+using MegaCrit.Sts2.Core.HoverTips;
+using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Relics;
 using MegaCrit.Sts2.Core.Models;
@@ -6,7 +7,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 
 namespace TheInsatiable.Scripts;
 
-[Pool(typeof(InsatiableRelicPool))]
+[RegisterRelic(typeof(InsatiableRelicPool))]
 public class ExuviaeSkeletonRelic : InsatiableRelicModel
 {
     public override RelicRarity Rarity => RelicRarity.Uncommon;

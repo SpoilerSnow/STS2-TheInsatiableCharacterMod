@@ -1,4 +1,4 @@
-using BaseLib.Utils;
+using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -9,7 +9,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 
 namespace TheInsatiable.Scripts;
 
-[Pool(typeof(InsatiableCardPool))]
+[RegisterCard(typeof(InsatiableCardPool))]
 
 public class AvoidPredators : InsatiableCardModel
 {
@@ -18,7 +18,7 @@ public class AvoidPredators : InsatiableCardModel
 		new BlockVar(7, ValueProp.Move),
 		new PowerVar<AvoidPredatorsPower>(1)
 	];
-	protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+	protected override IEnumerable<IHoverTip> AdditionalHoverTips => [
         HoverTipFactory.Static(StaticHoverTip.Block),
 		HoverTipFactory.FromPower<VulnerablePower>(),
 		HoverTipFactory.FromPower<WeakPower>(),

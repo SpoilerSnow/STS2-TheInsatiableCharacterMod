@@ -1,14 +1,15 @@
-using BaseLib.Utils;
+using MegaCrit.Sts2.Core.HoverTips;
+using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
-using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.Powers;
 
 namespace TheInsatiable.Scripts;
 
-[Pool(typeof(InsatiableCardPool))]
+[RegisterCard(typeof(InsatiableCardPool))]
+[RegisterArchaicToothTranscendence(typeof(SandBlowing))]
 
 public class SandStorm : InsatiableCardModel
 {
@@ -23,7 +24,7 @@ public class SandStorm : InsatiableCardModel
 	{
 	}
 	public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Retain];
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+    protected override IEnumerable<IHoverTip> AdditionalHoverTips => [
         HoverTipFactory.FromPower<QuickSandPower>(),
 		HoverTipFactory.FromPower<VulnerablePower>(),
         HoverTipFactory.FromPower<WeakPower>(),

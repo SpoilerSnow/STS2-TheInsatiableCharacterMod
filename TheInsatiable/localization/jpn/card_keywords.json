@@ -1,10 +1,10 @@
 {
-    "THEINSATIABLE-SWALLOW.description": "特定のカード効果を発動させるために使用する。\nカードを丸呑みにすると、そのカードを[gold]廃棄[/gold]したものとして扱う。\n敵を丸呑みにすると、その敵を消滅させる。\n[b]貪りの獣に餌を！[/b]",
-    "THEINSATIABLE-SWALLOW.title": "丸呑み",
-    "THEINSATIABLE-SELF_SWALLOW.description": "このターンの終了時、このカードが[gold]手札[/gold]にある場合、このカードを[gold]丸呑み[/gold]する。",
-    "THEINSATIABLE-SELF_SWALLOW.title": "吞身",
-    "THEINSATIABLE-DIGEST.description": "[gold]丸呑み[/gold]された時、対応する効果を発動する。",
-    "THEINSATIABLE-DIGEST.title": "消化",
-    "THEINSATIABLE-DYNAMIC.description": "各カードのコードに設定されたDynamicVarの値を指す。\nダメージ、ブロック、エナジー、ドロー枚数、パワーなどの数値に影響する。",
-    "THEINSATIABLE-DYNAMIC.title": "数値"
+    "THE_INSATIABLE_KEYWORD_SWALLOW.description": "特定のカード効果を発動させるために使用する。\nカードを丸呑みにすると、そのカードを[gold]廃棄[/gold]したものとして扱う。\n敵を丸呑みにすると、その敵を消滅させる。\n[b]貪りの獣に餌を！[/b]",
+    "THE_INSATIABLE_KEYWORD_SWALLOW.title": "丸呑み",
+    "THE_INSATIABLE_KEYWORD_SELF_SWALLOW.description": "このターンの終了時、このカードが[gold]手札[/gold]にある場合、このカードを[gold]丸呑み[/gold]する。",
+    "THE_INSATIABLE_KEYWORD_SELF_SWALLOW.title": "吞身",
+    "THE_INSATIABLE_KEYWORD_DIGEST.description": "[gold]丸呑み[/gold]された時、対応する効果を発動する。",
+    "THE_INSATIABLE_KEYWORD_DIGEST.title": "消化",
+    "THE_INSATIABLE_KEYWORD_DYNAMIC.description": "各カードのコードに設定されたDynamicVarの値を指す。\nダメージ、ブロック、エナジー、ドロー枚数、パワーなどの数値に影響する。",
+    "THE_INSATIABLE_KEYWORD_DYNAMIC.title": "数値"
 }

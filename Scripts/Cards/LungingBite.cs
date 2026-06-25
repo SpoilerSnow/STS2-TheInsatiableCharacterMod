@@ -1,15 +1,15 @@
-using BaseLib.Utils;
+using MegaCrit.Sts2.Core.HoverTips;
+using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
-using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 
 namespace TheInsatiable.Scripts;
 
-[Pool(typeof(InsatiableCardPool))]
+[RegisterCard(typeof(InsatiableCardPool))]
 
 public class LungingBite : InsatiableCardModel
 {
@@ -19,7 +19,7 @@ public class LungingBite : InsatiableCardModel
 	private const TargetType targetType = TargetType.AnyEnemy;
 	private const bool shouldShowInCardLibrary = true;
     protected override bool ShouldGlowGoldInternal => base.CombatState?.HittableEnemies.Any((Creature e) => e.Block > 0) ?? false;
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.Static(StaticHoverTip.Block)];
+    protected override IEnumerable<IHoverTip> AdditionalHoverTips => [HoverTipFactory.Static(StaticHoverTip.Block)];
 	public LungingBite() 
 		: base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
 	{

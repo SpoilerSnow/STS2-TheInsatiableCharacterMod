@@ -1,9 +1,11 @@
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
+using STS2RitsuLib.Interop.AutoRegistration;
 
 namespace TheInsatiable.Scripts;
 
+[RegisterPower]
 public class InsatiableBurrowedPower : InsatiablePowerModel
 {
 	public override PowerType Type => PowerType.Buff;

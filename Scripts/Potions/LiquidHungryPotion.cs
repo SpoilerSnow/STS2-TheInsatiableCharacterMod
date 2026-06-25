@@ -1,4 +1,4 @@
-using BaseLib.Utils;
+using STS2RitsuLib.Interop.AutoRegistration;
 using Godot;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -11,14 +11,14 @@ using MegaCrit.Sts2.Core.Nodes.Rooms;
 
 namespace TheInsatiable.Scripts;
 
-[Pool(typeof(InsatiablePotionPool))]
+[RegisterPotion(typeof(InsatiablePotionPool))]
 
 public class LiquidHungryPotion : InsatiablePotionModel
 {
     public override PotionRarity Rarity => PotionRarity.Uncommon;
     public override PotionUsage Usage => PotionUsage.CombatOnly;
     public override TargetType TargetType => TargetType.Self;
-    public override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromCard<InsatiableSwallow>()];
+    protected override IEnumerable<IHoverTip> AdditionalHoverTips => [HoverTipFactory.FromCard<InsatiableSwallow>()];
     protected override async Task OnUse(PlayerChoiceContext choiceContext, Creature? target)
     {
         AssertValidForTargetedPotion(target);

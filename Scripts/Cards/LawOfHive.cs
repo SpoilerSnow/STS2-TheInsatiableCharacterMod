@@ -1,14 +1,14 @@
-using BaseLib.Utils;
+using MegaCrit.Sts2.Core.HoverTips;
+using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
-using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 
 namespace TheInsatiable.Scripts;
 
-[Pool(typeof(InsatiableCardPool))]
+[RegisterCard(typeof(InsatiableCardPool))]
 
 public class LawOfHive : InsatiableCardModel
 {
@@ -17,7 +17,7 @@ public class LawOfHive : InsatiableCardModel
         new DynamicVar("LawOfHive", 8),
         new MaxHpVar(2)
     ];
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+    protected override IEnumerable<IHoverTip> AdditionalHoverTips => [
         HoverTipFactory.FromKeyword(TheInsatiableKeyword.Swallow),
         HoverTipFactory.Static(StaticHoverTip.Fatal)];
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];

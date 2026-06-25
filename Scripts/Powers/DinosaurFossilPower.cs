@@ -5,8 +5,10 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Rewards;
 using MegaCrit.Sts2.Core.Rooms;
 using MegaCrit.Sts2.Core.Runs;
+using STS2RitsuLib.Interop.AutoRegistration;
 
 namespace TheInsatiable.Scripts;
+[RegisterPower]
 public sealed class DinosaurFossilPower : InsatiablePowerModel
 {
     public override PowerType Type => PowerType.Buff;

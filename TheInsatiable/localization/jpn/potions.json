@@ -1,8 +1,8 @@
 {
-    "THEINSATIABLE-BOTTLED_QUICK_SAND_POTION.title": "瓶詰めの流砂",
-    "THEINSATIABLE-BOTTLED_QUICK_SAND_POTION.description": "[blue]{QuickSandPower}[/blue][gold]流砂[/gold]を付与する。",
-    "THEINSATIABLE-LIQUID_HUNGRY_POTION.title": "液状の飢餓",
-    "THEINSATIABLE-LIQUID_HUNGRY_POTION.description": "[gold]手札[/gold]がいっぱいになるまで[gold]貪りの丸呑み[/gold]を加える。",
-    "THEINSATIABLE-DIGESTIVE_JUICE_POTION.title": "消化液",
-    "THEINSATIABLE-DIGESTIVE_JUICE_POTION.description": "敵を1体[gold]丸呑み[/gold]する。[gold]エリート[/gold]戦および[gold]ボス[/gold]戦では使用できない。"
+    "THE_INSATIABLE_POTION_BOTTLED_QUICK_SAND_POTION.title": "瓶詰めの流砂",
+    "THE_INSATIABLE_POTION_BOTTLED_QUICK_SAND_POTION.description": "[blue]{QuickSandPower}[/blue][gold]流砂[/gold]を付与する。",
+    "THE_INSATIABLE_POTION_LIQUID_HUNGRY_POTION.title": "液状の飢餓",
+    "THE_INSATIABLE_POTION_LIQUID_HUNGRY_POTION.description": "[gold]手札[/gold]がいっぱいになるまで[gold]貪りの丸呑み[/gold]を加える。",
+    "THE_INSATIABLE_POTION_DIGESTIVE_JUICE_POTION.title": "消化液",
+    "THE_INSATIABLE_POTION_DIGESTIVE_JUICE_POTION.description": "敵を1体[gold]丸呑み[/gold]する。[gold]エリート[/gold]戦および[gold]ボス[/gold]戦では使用できない。"
 }

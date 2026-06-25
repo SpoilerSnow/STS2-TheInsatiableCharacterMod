@@ -1,4 +1,4 @@
-using BaseLib.Utils;
+using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -9,7 +9,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 
 namespace TheInsatiable.Scripts;
 
-[Pool(typeof(InsatiableCardPool))]
+[RegisterCard(typeof(InsatiableCardPool))]
 
 public class TestTheStones : InsatiableCardModel
 {
@@ -19,7 +19,7 @@ public class TestTheStones : InsatiableCardModel
 	private const TargetType targetType = TargetType.AnyEnemy;
 	private const bool shouldShowInCardLibrary = true;
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
-	protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromPower<ImbalancedPower>()];
+	protected override IEnumerable<IHoverTip> AdditionalHoverTips => [HoverTipFactory.FromPower<ImbalancedPower>()];
 	protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(12, ValueProp.Move)];
 	public TestTheStones() 
 		: base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)

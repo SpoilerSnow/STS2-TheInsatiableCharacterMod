@@ -1,4 +1,4 @@
-using BaseLib.Utils;
+using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -9,7 +9,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 
 namespace TheInsatiable.Scripts;
 
-[Pool(typeof(InsatiableCardPool))]
+[RegisterCard(typeof(InsatiableCardPool))]
 
 public class EggAgainstStone : InsatiableCardModel
 {
@@ -23,7 +23,7 @@ public class EggAgainstStone : InsatiableCardModel
 		new PowerVar<PlatingPower>(4),
 	];
 
-	protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromPower<PlatingPower>()];
+	protected override IEnumerable<IHoverTip> AdditionalHoverTips => [HoverTipFactory.FromPower<PlatingPower>()];
 
 	public EggAgainstStone()
 		: base(energyCost, type, rarity, targetType)

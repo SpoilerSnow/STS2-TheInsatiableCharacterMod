@@ -1,10 +1,10 @@
 {
-    "THEINSATIABLE-SWALLOW.description": "Used to trigger specific card effects.\nSwallowing a card counts as [gold]Exhausting[/gold] it.\nSwallowing an enemy destroys it.\n[b]Feed the Insatiable ![/b]",
-    "THEINSATIABLE-SWALLOW.title": "Swallow",
-    "THEINSATIABLE-SELF_SWALLOW.description": "If this card is in your [gold]Hand[/gold] at the end of this turn, [gold]Swallow[/gold] it.",
-    "THEINSATIABLE-SELF_SWALLOW.title": "Self-Swallow",
-    "THEINSATIABLE-DIGEST.description": "Triggers the corresponding effect when [gold]Swallowed[/gold].",
-    "THEINSATIABLE-DIGEST.title": "Digest",
-    "THEINSATIABLE-DYNAMIC.description": "Refers to the DynamicVar value in each card's code.\nAffects damage, block, energy, draw count, power, and other values.",
-    "THEINSATIABLE-DYNAMIC.title": "Value"
+    "THE_INSATIABLE_KEYWORD_SWALLOW.description": "Used to trigger specific card effects.\nSwallowing a card counts as [gold]Exhausting[/gold] it.\nSwallowing an enemy destroys it.\n[b]Feed the Insatiable ![/b]",
+    "THE_INSATIABLE_KEYWORD_SWALLOW.title": "Swallow",
+    "THE_INSATIABLE_KEYWORD_SELF_SWALLOW.description": "If this card is in your [gold]Hand[/gold] at the end of this turn, [gold]Swallow[/gold] it.",
+    "THE_INSATIABLE_KEYWORD_SELF_SWALLOW.title": "Self-Swallow",
+    "THE_INSATIABLE_KEYWORD_DIGEST.description": "Triggers the corresponding effect when [gold]Swallowed[/gold].",
+    "THE_INSATIABLE_KEYWORD_DIGEST.title": "Digest",
+    "THE_INSATIABLE_KEYWORD_DYNAMIC.description": "Refers to the DynamicVar value in each card's code.\nAffects damage, block, energy, draw count, power, and other values.",
+    "THE_INSATIABLE_KEYWORD_DYNAMIC.title": "Value"
 }

@@ -1,4 +1,4 @@
-using BaseLib.Utils;
+using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -11,7 +11,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 
 namespace TheInsatiable.Scripts;
 
-[Pool(typeof(InsatiableCardPool))]
+[RegisterCard(typeof(InsatiableCardPool))]
 
 public class InsatiableBodySlam : InsatiableCardModel
 {
@@ -30,7 +30,7 @@ public class InsatiableBodySlam : InsatiableCardModel
 		new ExtraDamageVar(1),
 		new CalculatedDamageVar(ValueProp.Move).WithMultiplier((CardModel card, Creature? _) => card.Owner.Creature.Block)
 	];
-	protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+	protected override IEnumerable<IHoverTip> AdditionalHoverTips => [
 		HoverTipFactory.Static(StaticHoverTip.Block),
 		HoverTipFactory.FromPower<QuickSandPower>()
 		];

@@ -5,9 +5,11 @@ using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models;
+using STS2RitsuLib.Interop.AutoRegistration;
 
 namespace TheInsatiable.Scripts;
 
+[RegisterPower]
 public class UnderSixFeetPower : InsatiablePowerModel
 {
 	private const int SwallowThreshold = 6;
@@ -23,7 +25,7 @@ public class UnderSixFeetPower : InsatiablePowerModel
 
 	protected override object InitInternalData() => new Data();
 
-	protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+	protected override IEnumerable<IHoverTip> AdditionalHoverTips => [
 		HoverTipFactory.FromPower<QuickSandPower>(),
 		HoverTipFactory.FromKeyword(TheInsatiableKeyword.Swallow),
 	];

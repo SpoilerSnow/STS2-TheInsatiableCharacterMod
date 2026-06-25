@@ -12,6 +12,16 @@
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <SourceRoot Include="C:\Users\SpoilerSnow\.nuget\packages\" />
   </ItemGroup>
+  <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Content Include="$(NuGetPackageRoot)sts2.ritsulib\0.4.35\contentFiles\any\net9.0\.godot\mono\temp\obj\Release\mod_manifest.generated.json" Condition="Exists('$(NuGetPackageRoot)sts2.ritsulib\0.4.35\contentFiles\any\net9.0\.godot\mono\temp\obj\Release\mod_manifest.generated.json')">
+      <NuGetPackageId>STS2.RitsuLib</NuGetPackageId>
+      <NuGetPackageVersion>0.4.35</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>.godot\mono\temp\obj\Release\mod_manifest.generated.json</Link>
+    </Content>
+  </ItemGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <Import Project="$(NuGetPackageRoot)godot.sourcegenerators\4.5.1\build\Godot.SourceGenerators.props" Condition="Exists('$(NuGetPackageRoot)godot.sourcegenerators\4.5.1\build\Godot.SourceGenerators.props')" />
   </ImportGroup>

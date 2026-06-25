@@ -7,8 +7,10 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Interop.AutoRegistration;
 
 namespace TheInsatiable.Scripts;
+[RegisterPower]
 public class QuickSandPower : InsatiablePowerModel
 {
 	public override PowerType Type => PowerType.Debuff;

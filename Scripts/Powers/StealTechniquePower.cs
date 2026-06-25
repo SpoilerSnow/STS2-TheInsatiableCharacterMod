@@ -11,6 +11,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Enchantments;
+using STS2RitsuLib.Interop.AutoRegistration;
 
 namespace TheInsatiable.Scripts;
 
@@ -18,6 +19,7 @@ namespace TheInsatiable.Scripts;
 /// 偷窃技巧 Power：按蚱蜢偷窃优先级从敌方牌组偷取一张牌，
 /// 3回合后将其复制加入手牌。
 /// </summary>
+[RegisterPower]
 public class StealTechniquePower : InsatiablePowerModel
 {
 	private static readonly Func<CardModel, bool>[] _stealPriorities =
@@ -36,7 +38,7 @@ public class StealTechniquePower : InsatiablePowerModel
 
 	public override PowerInstanceType InstanceType => PowerInstanceType.Instanced;
 
-	protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+	protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
 		_stolenCard != null
 			? [HoverTipFactory.FromCard(_stolenCard)]
 			: Array.Empty<IHoverTip>();

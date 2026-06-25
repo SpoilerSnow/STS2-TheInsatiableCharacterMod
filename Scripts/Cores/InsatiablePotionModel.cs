@@ -1,9 +1,9 @@
-using BaseLib.Abstracts;
+using STS2RitsuLib.Scaffolding.Content;
 
 namespace TheInsatiable.Scripts;
 
-public abstract class InsatiablePotionModel : CustomPotionModel, ITheInsatiableModel
+public abstract class InsatiablePotionModel : ModPotionTemplate, ITheInsatiableModel
 {
-    public override string? CustomPackedImagePath => $"res://TheInsatiable/images/potions/{GetType().Name.Replace("Potion", "")}.png";
-    public override string? CustomPackedOutlinePath => $"res://TheInsatiable/images/potions/{GetType().Name.Replace("Potion", "")}.png";
+    public override string? CustomImagePath => $"res://TheInsatiable/images/potions/{GetType().Name.Replace("Potion", "")}.png";
+    public override string? CustomOutlinePath => $"res://TheInsatiable/images/potions/{GetType().Name.Replace("Potion", "")}.png";
 }

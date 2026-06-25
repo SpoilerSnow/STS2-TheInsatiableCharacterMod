@@ -4,14 +4,16 @@ using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models;
+using STS2RitsuLib.Interop.AutoRegistration;
 
 namespace TheInsatiable.Scripts;
 
+[RegisterPower]
 public class GluttonyPower : InsatiablePowerModel
 {
     public override PowerType Type => PowerType.Buff;
 	public override PowerStackType StackType => PowerStackType.Single;
-	protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+	protected override IEnumerable<IHoverTip> AdditionalHoverTips => [
 		HoverTipFactory.FromKeyword(TheInsatiableKeyword.Swallow),
 		HoverTipFactory.FromKeyword(CardKeyword.Exhaust)
 	];

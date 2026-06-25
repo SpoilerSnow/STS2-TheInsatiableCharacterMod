@@ -1,15 +1,15 @@
-using BaseLib.Utils;
+using MegaCrit.Sts2.Core.HoverTips;
+using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
-using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.CardPools;
 
 namespace TheInsatiable.Scripts;
 
-[Pool(typeof(StatusCardPool))]
+[RegisterCard(typeof(StatusCardPool))]
 public class SandStone : InsatiableCardModel
 {
 	private const int energyCost = 1;
@@ -21,7 +21,7 @@ public class SandStone : InsatiableCardModel
 		: base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
 	{
     }
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromPower<QuickSandPower>()];
+    protected override IEnumerable<IHoverTip> AdditionalHoverTips => [HoverTipFactory.FromPower<QuickSandPower>()];
     public override IEnumerable<CardKeyword> CanonicalKeywords => [
         CardKeyword.Retain,
         CardKeyword.Exhaust

@@ -1,22 +1,18 @@
-using BaseLib.Patches.Content;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using STS2RitsuLib.Content;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Keywords;
 
 namespace TheInsatiable.Scripts;
+
+[RegisterOwnedCardKeyword(nameof(Swallow), CardDescriptionPlacement = ModKeywordCardDescriptionPlacement.BeforeCardDescription)]
+[RegisterOwnedCardKeyword(nameof(SelfSwallow), CardDescriptionPlacement = ModKeywordCardDescriptionPlacement.BeforeCardDescription)]
+[RegisterOwnedCardKeyword(nameof(Digest), CardDescriptionPlacement = ModKeywordCardDescriptionPlacement.BeforeCardDescription)]
+[RegisterOwnedCardKeyword(nameof(Dynamic), CardDescriptionPlacement = ModKeywordCardDescriptionPlacement.BeforeCardDescription)]
 public class TheInsatiableKeyword
 {
-    [CustomEnum("Swallow")]
-    [KeywordProperties(AutoKeywordPosition.Before)]
-    public static CardKeyword Swallow;
-
-    [CustomEnum("Self_Swallow")]
-    [KeywordProperties(AutoKeywordPosition.Before)]
-    public static CardKeyword SelfSwallow;
-
-    [CustomEnum("Digest")]
-    [KeywordProperties(AutoKeywordPosition.Before)]
-    public static CardKeyword Digest;
-
-    [CustomEnum("Dynamic")]
-    [KeywordProperties(AutoKeywordPosition.Before)]
-    public static CardKeyword Dynamic;
+    public static readonly CardKeyword Swallow = ModContentRegistry.GetQualifiedKeywordId("TheInsatiable", nameof(Swallow)).GetModCardKeyword();
+    public static readonly CardKeyword SelfSwallow = ModContentRegistry.GetQualifiedKeywordId("TheInsatiable", nameof(SelfSwallow)).GetModCardKeyword();
+    public static readonly CardKeyword Digest = ModContentRegistry.GetQualifiedKeywordId("TheInsatiable", nameof(Digest)).GetModCardKeyword();
+    public static readonly CardKeyword Dynamic = ModContentRegistry.GetQualifiedKeywordId("TheInsatiable", nameof(Dynamic)).GetModCardKeyword();
 }

@@ -1,4 +1,5 @@
-using BaseLib.Utils;
+using MegaCrit.Sts2.Core.HoverTips;
+using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -8,7 +9,7 @@ using MegaCrit.Sts2.Core.Models.CardPools;
 
 namespace TheInsatiable.Scripts;
 
-[Pool(typeof(TokenCardPool))]
+[RegisterCard(typeof(TokenCardPool))]
 
 public class InsatiableHandPile : InsatiableCardModel, InsatiableCardModel.IChoosable
 {

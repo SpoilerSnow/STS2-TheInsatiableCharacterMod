@@ -1,19 +1,17 @@
-using BaseLib.Utils;
-using MegaCrit.Sts2.Core.CardSelection;
+using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models;
-using MegaCrit.Sts2.Core.Models.CardPools;
 
 namespace TheInsatiable.Scripts;
 
-[Pool(typeof(InsatiableCardPool))]
+[RegisterCard(typeof(InsatiableCardPool))]
 
 public class Abyss : InsatiableCardModel
 {
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+    protected override IEnumerable<IHoverTip> AdditionalHoverTips => [
         HoverTipFactory.FromCard<LocustOfWar>(base.IsUpgraded),
         HoverTipFactory.FromCard<LocustOfConquest>(base.IsUpgraded),
         HoverTipFactory.FromCard<LocustOfFamine>(base.IsUpgraded),

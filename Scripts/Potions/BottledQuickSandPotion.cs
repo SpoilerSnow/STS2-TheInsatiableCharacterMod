@@ -1,4 +1,4 @@
-using BaseLib.Utils;
+using STS2RitsuLib.Interop.AutoRegistration;
 using Godot;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -11,7 +11,7 @@ using MegaCrit.Sts2.Core.Nodes.Rooms;
 
 namespace TheInsatiable.Scripts;
 
-[Pool(typeof(InsatiablePotionPool))]
+[RegisterPotion(typeof(InsatiablePotionPool))]
 
 public class BottledQuickSandPotion : InsatiablePotionModel
 {
@@ -19,7 +19,7 @@ public class BottledQuickSandPotion : InsatiablePotionModel
     public override PotionUsage Usage => PotionUsage.CombatOnly;
     public override TargetType TargetType => TargetType.AnyEnemy;
     protected override IEnumerable<DynamicVar> CanonicalVars => [new PowerVar<QuickSandPower>(9)];
-    public override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromPower<QuickSandPower>()];
+    protected override IEnumerable<IHoverTip> AdditionalHoverTips => [HoverTipFactory.FromPower<QuickSandPower>()];
     protected override async Task OnUse(PlayerChoiceContext choiceContext, Creature? target)
     {
         AssertValidForTargetedPotion(target);

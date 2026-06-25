@@ -8,14 +8,16 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using STS2RitsuLib.Interop.AutoRegistration;
 
 namespace TheInsatiable.Scripts;
+[RegisterPower]
 public class WeatheringPower : InsatiablePowerModel
 {
 	public override PowerType Type => PowerType.Buff;
 	public override PowerStackType StackType => PowerStackType.Counter;
     protected override IEnumerable<DynamicVar> CanonicalVars => [new StringVar("AfflictionTitle", ModelDb.Affliction<WeatheringAffliction>().Title.GetFormattedText())];
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => HoverTipFactory.FromAffliction<WeatheringAffliction>(2);
+    protected override IEnumerable<IHoverTip> AdditionalHoverTips => HoverTipFactory.FromAffliction<WeatheringAffliction>(2);
     public override async Task AfterApplied(Creature? applier, CardModel? cardSource)
     {
         foreach (CardModel allCard in base.Owner.Player.PlayerCombatState.AllCards)

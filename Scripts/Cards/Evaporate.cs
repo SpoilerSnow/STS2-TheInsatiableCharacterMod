@@ -1,4 +1,4 @@
-using BaseLib.Utils;
+using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -9,7 +9,7 @@ using MegaCrit.Sts2.Core.Models;
 
 namespace TheInsatiable.Scripts;
 
-[Pool(typeof(InsatiableCardPool))]
+[RegisterCard(typeof(InsatiableCardPool))]
 
 public class Evaporate : InsatiableCardModel
 {
@@ -17,7 +17,7 @@ public class Evaporate : InsatiableCardModel
         new PowerVar<QuickSandPower>(8),
         new CardsVar(1)
     ];
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+    protected override IEnumerable<IHoverTip> AdditionalHoverTips => [
         HoverTipFactory.FromPower<QuickSandPower>(),
         HoverTipFactory.FromKeyword(TheInsatiableKeyword.Swallow)
     ];

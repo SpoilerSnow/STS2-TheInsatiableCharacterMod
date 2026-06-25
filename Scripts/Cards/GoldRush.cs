@@ -1,4 +1,4 @@
-using BaseLib.Utils;
+using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -8,14 +8,14 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 
 namespace TheInsatiable.Scripts;
 
-[Pool(typeof(InsatiableCardPool))]
+[RegisterCard(typeof(InsatiableCardPool))]
 
 public class GoldRush : InsatiableCardModel
 {
     private const string _goldKey = "Gold";
 	public override bool CanBeGeneratedInCombat => false;
 	protected override IEnumerable<DynamicVar> CanonicalVars => [new DynamicVar("Gold", 10)];
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromPower<QuickSandPower>()];
+    protected override IEnumerable<IHoverTip> AdditionalHoverTips => [HoverTipFactory.FromPower<QuickSandPower>()];
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
 	public GoldRush()
 		: base(0, CardType.Skill, CardRarity.Rare, TargetType.AllEnemies)

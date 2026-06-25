@@ -1,18 +1,17 @@
-using BaseLib.Abstracts;
-using BaseLib.Utils;
+using MegaCrit.Sts2.Core.HoverTips;
+using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
-using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 
 namespace TheInsatiable.Scripts;
 
-[Pool(typeof(InsatiableCardPool))]
+[RegisterCard(typeof(InsatiableCardPool))]
 
-public class SandBlowing : InsatiableCardModel, ITranscendenceCard
+public class SandBlowing : InsatiableCardModel
 {
 	private const int energyCost = 1;
 	private const CardType type = CardType.Skill;
@@ -24,7 +23,7 @@ public class SandBlowing : InsatiableCardModel, ITranscendenceCard
 		: base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
 	{
 	}
-	protected override IEnumerable<IHoverTip> ExtraHoverTips => IsUpgraded ? [HoverTipFactory.FromPower<QuickSandPower>(), HoverTipFactory.FromPower<VulnerablePower>(), HoverTipFactory.FromPower<WeakPower>()] : [HoverTipFactory.FromPower<QuickSandPower>(), HoverTipFactory.FromPower<VulnerablePower>()];
+	protected override IEnumerable<IHoverTip> AdditionalHoverTips => IsUpgraded ? [HoverTipFactory.FromPower<QuickSandPower>(), HoverTipFactory.FromPower<VulnerablePower>(), HoverTipFactory.FromPower<WeakPower>()] : [HoverTipFactory.FromPower<QuickSandPower>(), HoverTipFactory.FromPower<VulnerablePower>()];
     protected override IEnumerable<DynamicVar> CanonicalVars => [
 		new PowerVar<QuickSandPower>(6),
 		new PowerVar<VulnerablePower>(1),
@@ -45,5 +44,4 @@ public class SandBlowing : InsatiableCardModel, ITranscendenceCard
 	{
 		base.DynamicVars["QuickSandPower"].UpgradeValueBy(2);
 	}
-	public CardModel GetTranscendenceTransformedCard() => ModelDb.Card<SandStorm>();
 }

@@ -7,9 +7,11 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
+using STS2RitsuLib.Interop.AutoRegistration;
 
 namespace TheInsatiable.Scripts;
 
+[RegisterPower]
 public abstract class TemporaryThornsPower : InsatiablePowerModel, ITemporaryPower
 {
 	private bool _shouldIgnoreNextInstance;
@@ -67,7 +69,7 @@ public abstract class TemporaryThornsPower : InsatiablePowerModel, ITemporaryPow
 		}
 	}
 
-	public override LocString Description => new LocString("powers", IsPositive ? "THEINSATIABLE-TEMPORARY_THORNS_POWER.description" : "THEINSATIABLE-TEMPORARY_THORNS_DOWN.description");
+	public override LocString Description => new LocString("powers", IsPositive ? "THE_INSATIABLE-TEMPORARY_THORNS_POWER.description" : "THE_INSATIABLE-TEMPORARY_THORNS_DOWN.description");
 
 	protected override string SmartDescriptionLocKey
 	{
@@ -75,13 +77,13 @@ public abstract class TemporaryThornsPower : InsatiablePowerModel, ITemporaryPow
 		{
 			if (!IsPositive)
 			{
-				return "THEINSATIABLE-TEMPORARY_THORNS_DOWN.smartDescription";
+				return "THE_INSATIABLE-TEMPORARY_THORNS_DOWN.smartDescription";
 			}
-			return "THEINSATIABLE-TEMPORARY_THORNS_POWER.smartDescription";
+			return "THE_INSATIABLE-TEMPORARY_THORNS_POWER.smartDescription";
 		}
 	}
 
-	protected override IEnumerable<IHoverTip> ExtraHoverTips
+	protected override IEnumerable<IHoverTip> AdditionalHoverTips
 	{
 		get
 		{

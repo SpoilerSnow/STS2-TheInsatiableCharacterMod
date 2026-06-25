@@ -2,9 +2,11 @@ using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Rooms;
+using STS2RitsuLib.Interop.AutoRegistration;
 
 namespace TheInsatiable.Scripts;
 
+[RegisterPower]
 public class DrugResistancePower : InsatiablePowerModel
 {
     private readonly Dictionary<Creature, HashSet<Type>> _allowedDebuffTypesByOwner = new();

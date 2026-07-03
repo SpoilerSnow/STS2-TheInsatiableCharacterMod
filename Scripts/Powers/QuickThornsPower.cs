@@ -1,11 +1,6 @@
-using MegaCrit.Sts2.Core.Models;
-using STS2RitsuLib.Interop.AutoRegistration;
-
+// 创建多个类标记不同的来源并使用不同的图标。
+// 当然如果你所有这种临时能力都用一个图标，取消父类的abstract直接给予TempPower即可。
 namespace TheInsatiable.Scripts;
-
-[RegisterPower]
-public class QuickThornsPower : TemporaryThornsPower
+public class QuickThornsPower : TemporaryThornsPower<QuickThorns>
 {
-	public override AbstractModel OriginModel => ModelDb.Card<QuickThorns>();
-	protected override bool IsPositive => true;
 }

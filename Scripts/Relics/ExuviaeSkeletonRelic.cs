@@ -4,6 +4,7 @@ using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Relics;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
+using MegaCrit.Sts2.Core.Entities.Cards;
 
 namespace TheInsatiable.Scripts;
 
@@ -27,7 +28,7 @@ public class ExuviaeSkeletonRelic : InsatiableRelicModel
     /// <summary>
     /// 核心：设置伤害上限 (Cap)
     /// </summary>
-    public override decimal ModifyDamageCap(Creature? target, ValueProp props, Creature? dealer, CardModel? cardSource)
+    public override decimal ModifyDamageCap(Creature? target, ValueProp props, Creature? dealer, CardModel? cardSource, CardPlay? cardPlay)
     {
         // 1. 如果已经触发过，不限制
         // 2. 目标不是自己，不限制

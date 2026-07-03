@@ -25,7 +25,7 @@ public sealed class CrystalClearPower : InsatiablePowerModel
 		if (!(amount <= 0m) && applier == base.Owner && power is QuickSandPower && base.CombatState.HittableEnemies != null)
 		{
 			Flash();
-			await CreatureCmd.Damage(choiceContext, base.CombatState.HittableEnemies, base.Amount, ValueProp.Unpowered, base.Owner, null);
+			await CreatureCmd.Damage(choiceContext, base.Owner.CombatState.HittableEnemies, base.Amount, ValueProp.Unpowered, base.Owner);
 		}
 	}
 }

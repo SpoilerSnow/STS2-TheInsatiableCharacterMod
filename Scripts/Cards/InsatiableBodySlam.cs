@@ -44,7 +44,7 @@ public class InsatiableBodySlam : InsatiableCardModel
         {
             await DamageCmd
             .Attack(base.DynamicVars.CalculatedDamage)
-            .FromCard(this)
+            .FromCard(this, cardPlay)
             .Targeting(enemy)
 			.WithHitFx("vfx/vfx_bite")
             .Execute(choiceContext);

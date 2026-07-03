@@ -33,7 +33,7 @@ public class ToxicSpit : InsatiableCardModel
 		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
 		SfxCmd.Play("event:/sfx/enemy/enemy_attacks/mite/mite_cast");
 		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue)
-		    .FromCard(this)
+		    .FromCard(this, cardPlay)
 			.Targeting(cardPlay.Target)
 			.WithHitFx("vfx/vfx_bite")
 			.Execute(choiceContext);

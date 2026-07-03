@@ -1,12 +1,12 @@
 cb68465a049d370e5dc715e0fed1d1f8
-::res://::1782399445
+::res://::1782558796
 export_presets.cfg::TextFile::-1::1776168532::0::1::::<><><>0<>0<><>::
 icon.svg::CompressedTexture2D::2279642014401172703::1776526908::1779970013::1::::<><><>0<>0<>1043cf6c93534af6398d2c5513acc33c<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 README.md::TextFile::-1::1782321907::0::1::::<><><>0<>0<><>::
 TheInsatiable.json::JSON::-1::1782385816::0::1::::<><><>0<>0<><>::
 ::res://bin/::1782314407
 spine_godot_extension.gdextension::GDExtension::4333421989616201256::1773373641::0::1::::<><><>0<>0<><>::
-::res://bin/windows/::1782399441
+::res://bin/windows/::1782558791
 ::res://Scripts/::1782323079
 Entry.cs::CSharpScript::544966533024565005::1782375081::0::1::::<><><>0<>0<><>::
 ::res://Scripts/Afflictions/::1782323008
@@ -73,7 +73,7 @@ Nibble.cs::CSharpScript::3877029940698355099::1782321001::0::1::::<><><>0<>0<><>
 NotOnlyOneHole.cs::CSharpScript::3605375311301448050::1782321001::0::1::::<><><>0<>0<><>::
 OuroborosFrom.cs::CSharpScript::543978882697906444::1782321001::0::1::::<><><>0<>0<><>::
 QuicksandStrike.cs::CSharpScript::9175863338343889530::1782321001::0::1::::<><><>0<>0<><>::
-QuickThorns.cs::CSharpScript::405615658050465664::1782321001::0::1::::<><><>0<>0<><>::
+QuickThorns.cs::CSharpScript::405615658050465664::1782460940::0::1::::<><><>0<>0<><>::
 RaisingSand.cs::CSharpScript::8074599138844953570::1782321001::0::1::::<><><>0<>0<><>::
 Reinforce.cs::CSharpScript::6191180762090107680::1782321001::0::1::::<><><>0<>0<><>::
 RepairHive.cs::CSharpScript::8852518330494011599::1782321001::0::1::::<><><>0<>0<><>::
@@ -136,7 +136,7 @@ InsatiableRelicPool.cs::CSharpScript::539659867138227405::1782323025::0::1::::<>
 BottledQuickSandPotion.cs::CSharpScript::7532238797138253863::1782323009::0::1::::<><><>0<>0<><>::
 DigestiveJuicePotion.cs::CSharpScript::6351468408389018601::1782323009::0::1::::<><><>0<>0<><>::
 LiquidHungryPotion.cs::CSharpScript::8900664545934408523::1782323009::0::1::::<><><>0<>0<><>::
-::res://Scripts/Powers/::1782320711
+::res://Scripts/Powers/::1782460988
 AvoidPredatorsPower.cs::CSharpScript::5944095980777096937::1782320621::0::1::::<><><>0<>0<><>::
 CrystalClearPower.cs::CSharpScript::8964379319805899125::1782320679::0::1::::<><><>0<>0<><>::
 DesertMiragePower.cs::CSharpScript::4522104702671718284::1782320621::0::1::::<><><>0<>0<><>::
@@ -156,8 +156,8 @@ MillipedeNeverDiePower.cs::CSharpScript::731873359611934091::1782320649::0::1:::
 MobileDunePower.cs::CSharpScript::8265534429947303878::1782320678::0::1::::<><><>0<>0<><>::
 MuddyPower.cs::CSharpScript::5869099560381967386::1782320679::0::1::::<><><>0<>0<><>::
 OuroborosFromPower.cs::CSharpScript::2977937904216474347::1782320649::0::1::::<><><>0<>0<><>::
-QuickSandPower.cs::CSharpScript::7572322944678176307::1782320649::0::1::::<><><>0<>0<><>::
-QuickThornsPower.cs::CSharpScript::8991612028345261055::1782398854::0::1::::<><><>0<>0<><>::
+QuickSandPower.cs::CSharpScript::7572322944678176307::1782466773::0::1::::<><><>0<>0<><>::
+QuickThornsPower.cs::CSharpScript::6090411742074750786::1782460757::0::1::::<><><>0<>0<><>::
 RuminationPower.cs::CSharpScript::5087662616158686378::1782320649::0::1::::<><><>0<>0<><>::
 SalivatePower.cs::CSharpScript::6510696526497515662::1782320679::0::1::::<><><>0<>0<><>::
 SandBurialPower.cs::CSharpScript::2027848754603245617::1782320709::0::1::::<><><>0<>0<><>::
@@ -166,7 +166,7 @@ SandySkyPower.cs::CSharpScript::8499167190319312861::1782320710::0::1::::<><><>0
 ScorchedEarthPower.cs::CSharpScript::6242948244857592872::1782320710::0::1::::<><><>0<>0<><>::
 SedimentationPower.cs::CSharpScript::1024843101738955349::1782320710::0::1::::<><><>0<>0<><>::
 StealTechniquePower.cs::CSharpScript::7922854643913109454::1782320710::0::1::::<><><>0<>0<><>::
-TemporaryThornsPower.cs::CSharpScript::8768129037965822972::1782399383::0::1::::<><><>0<>0<><>::
+TemporaryThornsPower.cs::CSharpScript::8768129037965822972::1782461662::0::1::::<><><>0<>0<><>::
 TenderToxicPower.cs::CSharpScript::594164390283797427::1782320649::0::1::::<><><>0<>0<><>::
 TestTheStonesPower.cs::CSharpScript::879378474123325948::1782320649::0::1::::<><><>0<>0<><>::
 UnderSixFeetPower.cs::CSharpScript::5706388499925719890::1782320711::0::1::::<><><>0<>0<><>::
@@ -272,7 +272,7 @@ ToxicSpit.png::CompressedTexture2D::1696931866731151600::1776320668::1779970012:
 BottledQuickSand.png::CompressedTexture2D::154074246383737977::1780586309::1780586462::1::::<><><>0<>0<>922a5d8f949ee8c7e1f6a58cecd85cb8<>res://.godot/imported/BottledQuickSand.png-f29d42996b519a86b0eab9b7b6620fd7.ctex::
 DigestiveJuice.png::CompressedTexture2D::7378905793206217419::1780586389::1780586462::1::::<><><>0<>0<>e3c02c755f4bcc76d25e4906dcde341f<>res://.godot/imported/DigestiveJuice.png-f53c99249aff5e4549a82339ac610c18.ctex::
 LiquidHungry.png::CompressedTexture2D::6697046163071310510::1780586370::1780586462::1::::<><><>0<>0<>9ac77751e3d4836fbb53b03559de5a2d<>res://.godot/imported/LiquidHungry.png-fdc561ff6fb4b1e444b9ed374f56799d.ctex::
-::res://TheInsatiable/images/powers/::1782314410
+::res://TheInsatiable/images/powers/::1782558741
 CrystalClear.png::CompressedTexture2D::861900635087399000::1777707346::1779970013::1::::<><><>0<>0<>b0f2c555d4be90b4f6d0d80e510c0979<>res://.godot/imported/CrystalClear.png-b2b9e0b5acac27ba0eaf86767918bc30.ctex::
 DrugResistance.png::CompressedTexture2D::8916738062468454299::1777707346::1779970013::1::::<><><>0<>0<>eec4189d0105b994ffa4e32a4ea08ece<>res://.godot/imported/DrugResistance.png-84d47072ed896c6b7f8537c1a0986bcb.ctex::
 FullyAbsorb.png::CompressedTexture2D::6676682081480720893::1781409116::1781409610::1::::<><><>0<>0<>1b4db3838d985bf90c842736791ec1ed<>res://.godot/imported/FullyAbsorb.png-82451eda52e47e26a1ea46f5cd4ebf47.ctex::
@@ -281,10 +281,11 @@ LayEggs.png::CompressedTexture2D::8570082739431404998::1777707346::1779970013::1
 MakingSandcastles.png::CompressedTexture2D::4506479021795034414::1777707346::1779970013::1::::<><><>0<>0<>d5c805fbdbba35598fcda7a8946133e7<>res://.godot/imported/MakingSandcastles.png-105565e1ae72212a57c52ede3aad87ca.ctex::
 MobileDune.png::CompressedTexture2D::1947185103597559787::1777707346::1779970013::1::::<><><>0<>0<>24a92411f7384df966d990654ec5612e<>res://.godot/imported/MobileDune.png-b998ea13db973b2076ddd0b7751f6dc6.ctex::
 QuickSand.png::CompressedTexture2D::1268189427899989964::1777707346::1779970013::1::::<><><>0<>0<>8d1686a9595f2c591ec56af436c0596a<>res://.godot/imported/QuickSand.png-8414bef3fc945f0f8b165a4fe71a91d9.ctex::
+Salivate.png::CompressedTexture2D::8374132579193122115::1782558712::1782558798::1::::<><><>0<>0<>001e07c8897d8ae909f692e3bb233500<>res://.godot/imported/Salivate.png-610ccf84fd3130fec57fa932818fbdda.ctex::
 Sedimentation.png::CompressedTexture2D::1735704679311413553::1777707346::1779970013::1::::<><><>0<>0<>a193fab4dd4c8a743876dbf3af66236c<>res://.godot/imported/Sedimentation.png-b739a6e3fb400dcf8eea4b8195353eb6.ctex::
 TestTheStones.png::CompressedTexture2D::3607585329204828739::1777696433::1779970013::1::::<><><>0<>0<>d5ec6e01bd08c94c05a021ca6a58b0ea<>res://.godot/imported/TestTheStones.png-863b5c4cfab779fd0a5fbdad3fbf686e.ctex::
 the_insatiable_power.png::CompressedTexture2D::1538546996946232514::1781409273::1781409610::1::::<><><>0<>0<>4a2f68b9f551fea31ee87dd42947f9d8<>res://.godot/imported/the_insatiable_power.png-88c8f96ba2d02d0e1e0106b3df58286d.ctex::
-::res://TheInsatiable/images/powers/big/::1782314410
+::res://TheInsatiable/images/powers/big/::1782558747
 CrystalClear.png::CompressedTexture2D::6505071083060381938::1777735786::1779970012::1::::<><><>0<>0<>da4f2c37ce17dff6fd49428eedead394<>res://.godot/imported/CrystalClear.png-c8b6ec2807038e3309aafa4a016541cd.ctex::
 DrugResistance.png::CompressedTexture2D::7363379899469097203::1777735786::1779970012::1::::<><><>0<>0<>4411bfe7cc5eb5b44a9622a1b0b58777<>res://.godot/imported/DrugResistance.png-96c9f383dbfd31f30a8b4bdf3d8edf4c.ctex::
 FullyAbsorb.png::CompressedTexture2D::4796377676075610665::1780456031::1781409610::1::::<><><>0<>0<>40ac099eb5ab1f51e88c15da5b56e10c<>res://.godot/imported/FullyAbsorb.png-bf493d8108ba9930a4490ee7f7a3efb4.ctex::
@@ -293,6 +294,7 @@ LayEggs.png::CompressedTexture2D::721537717397958550::1777735787::1779970012::1:
 MakingSandcastles.png::CompressedTexture2D::966582967982547586::1777735787::1779970012::1::::<><><>0<>0<>a8f6ae5fd826c0f920b2f7031d406881<>res://.godot/imported/MakingSandcastles.png-ef2e2f66bb2fca61ca2441de5b77410d.ctex::
 MobileDune.png::CompressedTexture2D::1492523901101757293::1777735787::1779970012::1::::<><><>0<>0<>bc9b1cd23a03663736155a92984d5302<>res://.godot/imported/MobileDune.png-62377b8a45e840e28565ce3ebeb38acf.ctex::
 QuickSand.png::CompressedTexture2D::828813323082801683::1777735787::1779970012::1::::<><><>0<>0<>d4dfa166139d70704a43a7b84fb3a259<>res://.godot/imported/QuickSand.png-b387b1c1f38f7e013c2cc5e5dfe3fa0d.ctex::
+Salivate.png::CompressedTexture2D::6755683519055443899::1782558664::1782558798::1::::<><><>0<>0<>be84156f88a1eff97e249e0b501d7e41<>res://.godot/imported/Salivate.png-a51e94f7cf9c37600003b2988bedb89a.ctex::
 Sedimentation.png::CompressedTexture2D::5672739499202478153::1777735787::1779970012::1::::<><><>0<>0<>0c3987dd6c643f99faf6881b9dbada64<>res://.godot/imported/Sedimentation.png-1ca70e7d4b8cfd9695fa24a55ca06d02.ctex::
 TestTheStones.png::CompressedTexture2D::2829017144330895097::1777696410::1779970012::1::::<><><>0<>0<>cbcf4d382e54541b03f3a660e4502a6a<>res://.godot/imported/TestTheStones.png-165709d9da35fc2b36f69269cf157ef2.ctex::
 the_insatiable_power.png::CompressedTexture2D::7288733111179243889::1781409245::1781409610::1::::<><><>0<>0<>2432e8eb82b4a654946a9f84ac07657c<>res://.godot/imported/the_insatiable_power.png-9dadba58404b4aa79e5326fd4242dfef.ctex::
@@ -332,7 +334,7 @@ card_keywords.json::JSON::-1::1782372854::0::1::::<><><>0<>0<><>::
 characters.json::JSON::-1::1782324354::0::1::::<><><>0<>0<><>::
 events.json::JSON::-1::1782380078::0::1::::<><><>0<>0<><>::
 potions.json::JSON::-1::1782324362::0::1::::<><><>0<>0<><>::
-powers.json::JSON::-1::1782399418::0::1::::<><><>0<>0<><>::
+powers.json::JSON::-1::1782464751::0::1::::<><><>0<>0<><>::
 relics.json::JSON::-1::1782324379::0::1::::<><><>0<>0<><>::
 ::res://TheInsatiable/localization/jpn/::1782373683
 afflictions.json::JSON::-1::1782324387::0::1::::<><><>0<>0<><>::
@@ -342,7 +344,7 @@ card_keywords.json::JSON::-1::1782372844::0::1::::<><><>0<>0<><>::
 characters.json::JSON::-1::1782324416::0::1::::<><><>0<>0<><>::
 events.json::JSON::-1::1782380230::0::1::::<><><>0<>0<><>::
 potions.json::JSON::-1::1782324424::0::1::::<><><>0<>0<><>::
-powers.json::JSON::-1::1782399409::0::1::::<><><>0<>0<><>::
+powers.json::JSON::-1::1782464796::0::1::::<><><>0<>0<><>::
 relics.json::JSON::-1::1782324439::0::1::::<><><>0<>0<><>::
 ::res://TheInsatiable/localization/zhs/::1782373563
 afflictions.json::JSON::-1::1782385193::0::1::::<><><>0<>0<><>::
@@ -352,7 +354,7 @@ card_keywords.json::JSON::-1::1782372832::0::1::::<><><>0<>0<><>::
 characters.json::JSON::-1::1782324085::0::1::::<><><>0<>0<><>::
 events.json::JSON::-1::1782373664::0::1::::<><><>0<>0<><>::
 potions.json::JSON::-1::1782324291::0::1::::<><><>0<>0<><>::
-powers.json::JSON::-1::1782398950::0::1::::<><><>0<>0<><>::
+powers.json::JSON::-1::1782464665::0::1::::<><><>0<>0<><>::
 relics.json::JSON::-1::1782375759::0::1::::<><><>0<>0<><>::
 ::res://TheInsatiable/scenes/::1782314410
 char_select_bg_insatiable.tscn::PackedScene::356312420270905543::1777374782::0::1::::<><><>0<>0<><>::uid://2xfrl2twknvu::::res://TheInsatiable/characterui/bg1.png<>uid://ddksub4afh68v::::res://TheInsatiable/characterui/the_insatiable_placeholder.png<>uid://n0bndrtkcd6g::::res://TheInsatiable/animations/dot.png

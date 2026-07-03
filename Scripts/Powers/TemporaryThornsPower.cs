@@ -1,160 +1,36 @@
-using MegaCrit.Sts2.Core.Combat;
-using MegaCrit.Sts2.Core.Commands;
-using MegaCrit.Sts2.Core.Entities.Creatures;
-using MegaCrit.Sts2.Core.Entities.Powers;
-using MegaCrit.Sts2.Core.GameActions.Multiplayer;
-using MegaCrit.Sts2.Core.HoverTips;
+using Godot;
 using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
+using STS2RitsuLib.Combat.Powers;
 using STS2RitsuLib.Interop.AutoRegistration;
 
 namespace TheInsatiable.Scripts;
 
-[RegisterPower]
-public abstract class TemporaryThornsPower : InsatiablePowerModel, ITemporaryPower
-{
-	private bool _shouldIgnoreNextInstance;
+// 注册power并设置Inherit = true，使得继承这个类的power自动被注册
+[RegisterPower(Inherit = true)]
+public abstract class TemporaryThornsPower<T> : ModTemporaryAppliedPowerTemplate<T, ThornsPower> where T : AbstractModel
+{   
+	public virtual bool HasCustomPortrait => ResourceLoader.Exists($"res://TheInsatiable/images/powers/{GetType().Name.Replace("Power", "")}.png");
+    public virtual bool HasBigCustomPortrait => ResourceLoader.Exists($"res://TheInsatiable/images/powers/big/{GetType().Name.Replace("Power", "")}.png");
+    public override string? CustomIconPath => HasCustomPortrait ? ($"res://TheInsatiable/images/powers/{GetType().Name.Replace("Power", "")}.png") : ($"res://TheInsatiable/images/powers/the_insatiable_power.png");
+	public override string? CustomBigIconPath => HasCustomPortrait ? ($"res://TheInsatiable/images/powers/big/{GetType().Name.Replace("Power", "")}.png") : ($"res://TheInsatiable/images/powers/big/the_insatiable_power.png");
+    protected override bool IsPositive => true; // 正面效果还是负面
+    protected override bool UntilEndOfOtherSideTurn => false; // 为 true 时，在另一方回合结束时过期；否则在拥有者一方回合结束时过期。
+    protected override int LastForXExtraTurns => 0; // 额外持续回合数
 
-	public override PowerType Type
-	{
-		get
-		{
-			if (!IsPositive)
-			{
-				return PowerType.Debuff;
-			}
-			return PowerType.Buff;
-		}
-	}
-
-	public override PowerStackType StackType => PowerStackType.Counter;
-
-	public abstract AbstractModel OriginModel { get; }
-
-	public PowerModel InternallyAppliedPower => ModelDb.Power<ThornsPower>();
-
-	protected virtual bool IsPositive => true;
-
-	private int Sign
-	{
-		get
-		{
-			if (!IsPositive)
-			{
-				return -1;
-			}
-			return 1;
-		}
-	}
-
-	public override LocString Title
-	{
-		get
-		{
-			AbstractModel originModel = OriginModel;
-			if (!(originModel is CardModel cardModel))
-			{
-				if (!(originModel is PotionModel potionModel))
-				{
-					if (originModel is RelicModel relicModel)
-					{
-						return relicModel.Title;
-					}
-					throw new InvalidOperationException();
-				}
-				return potionModel.Title;
-			}
-			return cardModel.TitleLocString;
-		}
-	}
-
-	public override LocString Description => new LocString("powers", IsPositive ? "THE_INSATIABLE-TEMPORARY_THORNS_POWER.description" : "THE_INSATIABLE-TEMPORARY_THORNS_DOWN.description");
-
+    // 推荐重载描述，以达到多个power共享一条文本的效果
+    // 例如这里的文本需要在powers.json中写"TEST_POWER_TEMP_POWER.description"和"TEST_POWER_TEMP_POWER_DOWN.description"
+    public override LocString Description => new("powers", IsPositive ? "THE_INSATIABLE_POWER_TEMPORARY_THORNS_POWER.description" : "THE_INSATIABLE_POWER_TEMPORARY_THORNS_POWER_DOWN.description");
 	protected override string SmartDescriptionLocKey
 	{
 		get
 		{
 			if (!IsPositive)
 			{
-				return "THE_INSATIABLE-TEMPORARY_THORNS_DOWN.smartDescription";
+				return "THE_INSATIABLE_POWER_TEMPORARY_THORNS_POWER_DOWN.smartDescription";
 			}
-			return "THE_INSATIABLE-TEMPORARY_THORNS_POWER.smartDescription";
-		}
-	}
-
-	protected override IEnumerable<IHoverTip> AdditionalHoverTips
-	{
-		get
-		{
-			List<IHoverTip> list = new List<IHoverTip>();
-			List<IHoverTip> list2 = list;
-			AbstractModel originModel = OriginModel;
-			IEnumerable<IHoverTip> collection;
-			if (!(originModel is CardModel card))
-			{
-				if (!(originModel is PotionModel model))
-				{
-					if (!(originModel is RelicModel relic))
-					{
-						throw new InvalidOperationException();
-					}
-					collection = HoverTipFactory.FromRelic(relic);
-				}
-				else
-				{
-					collection = [HoverTipFactory.FromPotion(model)];
-				}
-			}
-			else
-			{
-				collection = [HoverTipFactory.FromCard(card)];
-			}
-			list2.AddRange(collection);
-			list.Add(HoverTipFactory.FromPower<ThornsPower>());
-			return list;
-		}
-	}
-
-	public void IgnoreNextInstance()
-	{
-		_shouldIgnoreNextInstance = true;
-	}
-
-	public override async Task BeforeApplied(Creature target, decimal amount, Creature? applier, CardModel? cardSource)
-	{
-		if (_shouldIgnoreNextInstance)
-		{
-			_shouldIgnoreNextInstance = false;
-		}
-		else
-		{
-			await PowerCmd.Apply<ThornsPower>(new ThrowingPlayerChoiceContext(), target, (decimal)Sign * amount, applier, cardSource, silent: true);
-		}
-	}
-
-	public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
-	{
-		if (!(amount == (decimal)base.Amount) && power == this)
-		{
-			if (_shouldIgnoreNextInstance)
-			{
-				_shouldIgnoreNextInstance = false;
-			}
-			else
-			{
-				await PowerCmd.Apply<ThornsPower>(choiceContext, base.Owner, (decimal)Sign * amount, applier, cardSource, silent: true);
-			}
-		}
-	}
-
-	public override async Task BeforeSideTurnStart(PlayerChoiceContext choiceContext, CombatSide side, IReadOnlyList<Creature> participants, ICombatState combatState)
-	{
-		if (participants.Contains(base.Owner))
-		{
-			Flash();
-			await PowerCmd.Remove(this);
-			await PowerCmd.Apply<ThornsPower>(choiceContext, base.Owner, -Sign * base.Amount, base.Owner, null);
+			return "THE_INSATIABLE_POWER_TEMPORARY_THORNS_POWER.smartDescription";
 		}
 	}
 }

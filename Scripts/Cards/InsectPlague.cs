@@ -53,7 +53,7 @@ public class InsectPlague : InsatiableCardModel
 			await PowerCmd.Apply<VulnerablePower>(new ThrowingPlayerChoiceContext(), cardPlay.Target, base.DynamicVars.Vulnerable.BaseValue, base.Owner.Creature, this);
 		}
         await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue)
-			.FromCard(this)
+			.FromCard(this, cardPlay)
 			.Targeting(cardPlay.Target)
 			.WithHitFx("vfx/vfx_bite")
 			.Execute(choiceContext);

@@ -27,7 +27,7 @@ public class LocustOfConquest : InsatiableCardModel
 	{
 		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue)
 			.WithHitCount(base.DynamicVars.Repeat.IntValue)
-			.FromCard(this)
+			.FromCard(this, cardPlay)
             .TargetingAllOpponents(base.CombatState)
 			.Execute(choiceContext);
 	}

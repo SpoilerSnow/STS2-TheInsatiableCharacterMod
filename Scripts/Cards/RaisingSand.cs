@@ -32,7 +32,7 @@ public class RaisingSand : InsatiableCardModel
             await CardPileCmd.Draw(choiceContext, base.DynamicVars.Cards.BaseValue, base.Owner);
         }
 		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue)
-			.FromCard(this)
+			.FromCard(this, cardPlay)
 			.Targeting(cardPlay.Target)
 			.WithHitFx("vfx/vfx_bite")
 			.Execute(choiceContext);

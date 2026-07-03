@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\downloads\\Works\\mods\\the-insatiable - 副本\\TheInsatiable.csproj": {}
+    "D:\\downloads\\Works\\mods\\the-insatiable\\TheInsatiable.csproj": {}
   },
   "projects": {
-    "D:\\downloads\\Works\\mods\\the-insatiable - 副本\\TheInsatiable.csproj": {
+    "D:\\downloads\\Works\\mods\\the-insatiable\\TheInsatiable.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\downloads\\Works\\mods\\the-insatiable - 副本\\TheInsatiable.csproj",
+        "projectUniqueName": "D:\\downloads\\Works\\mods\\the-insatiable\\TheInsatiable.csproj",
         "projectName": "TheInsatiable",
-        "projectPath": "D:\\downloads\\Works\\mods\\the-insatiable - 副本\\TheInsatiable.csproj",
+        "projectPath": "D:\\downloads\\Works\\mods\\the-insatiable\\TheInsatiable.csproj",
         "packagesPath": "C:\\Users\\SpoilerSnow\\.nuget\\packages\\",
-        "outputPath": "D:\\downloads\\Works\\mods\\the-insatiable - 副本\\.godot\\mono\\temp\\obj\\",
+        "outputPath": "D:\\downloads\\Works\\mods\\the-insatiable\\.godot\\mono\\temp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\SpoilerSnow\\AppData\\Roaming\\NuGet\\NuGet.Config"

@@ -1,17 +1,22 @@
+using Godot;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
+using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Combat.HealthBars;
 using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Scaffolding.Content;
 
 namespace TheInsatiable.Scripts;
 [RegisterPower]
-public class QuickSandPower : InsatiablePowerModel
+public class QuickSandPower : InsatiablePowerModel, IHealthBarForecastSource
 {
 	public override PowerType Type => PowerType.Debuff;
 	public override PowerStackType StackType => PowerStackType.Counter;
@@ -47,7 +52,7 @@ public class QuickSandPower : InsatiablePowerModel
 			}
         }
     }
-	public override decimal ModifyDamageMultiplicative(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource)
+	public override decimal ModifyDamageMultiplicative(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource, CardPlay? cardPlay)
 	{
 		if (!props.IsPoweredAttack())
 		{
@@ -94,6 +99,30 @@ public class QuickSandPower : InsatiablePowerModel
             int newAmount = oldAmount / 2;
 		    await PowerCmd.ModifyAmount(new ThrowingPlayerChoiceContext(), this, newAmount - Amount, null, null);
 		}
+    }
+	private int SandFlowsPowerCount
+	{
+		get
+		{
+			IEnumerable<Creature> source = from c in base.Owner.CombatState.GetOpponentsOf(base.Owner)
+				where c.IsAlive
+				select c;
+			return Math.Max(0, source.Sum((Creature a) => a.GetPowerAmount<SandFlowsPower>()));
+		}
+	}
+	public IEnumerable<HealthBarForecastSegment> GetHealthBarForecastSegments(HealthBarForecastContext context)
+    {
+		if (base.Owner is Player)
+		{
+			return Enumerable.Empty<HealthBarForecastSegment>();
+		}
+        return HealthBarForecasts.Single(
+            context.Creature.GetPowerAmount<QuickSandPower>() * SandFlowsPowerCount - context.Creature.Block, // 展示的数量（例如如果你的能力有2倍效果可以乘2）
+            new Color(188f / 255f, 130f / 255f, 54f / 255f), // 颜色
+            HealthBarForecastGrowthDirection.FromRight // 从左边开始延伸还是右边开始
+        // 0, // 顺序，越大越远离血条边缘，默认0
+        // PreloadManager.Cache.GetMaterial("res://xxx.tres") // 如果需要自定义材质
+        );
     }
 }
 

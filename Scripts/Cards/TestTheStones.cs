@@ -29,7 +29,7 @@ public class TestTheStones : InsatiableCardModel
 	{
 		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
 		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue)
-			.FromCard(this)
+			.FromCard(this, cardPlay)
 			.Targeting(cardPlay.Target)
 			.WithAttackerFx(null, "event:/sfx/enemy/enemy_attacks/workbug_rock/workbug_rock_attack")
 			.WithHitFx("vfx/vfx_attack_blunt")

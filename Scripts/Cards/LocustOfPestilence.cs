@@ -31,7 +31,7 @@ public class LocustOfPestilence : InsatiableCardModel
 		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
 		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue)
 			.WithHitCount(base.DynamicVars.Repeat.IntValue)
-			.FromCard(this)
+			.FromCard(this, cardPlay)
 			.Targeting(cardPlay.Target)
 			.Execute(choiceContext);
         await PowerCmd.Apply<PoisonPower>(new ThrowingPlayerChoiceContext(), cardPlay.Target, base.DynamicVars.Poison.BaseValue, base.Owner.Creature, this);

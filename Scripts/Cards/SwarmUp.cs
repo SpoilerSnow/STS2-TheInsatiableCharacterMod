@@ -32,7 +32,7 @@ public class SwarmUp : InsatiableCardModel
 	{
         await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue)
             .WithHitCount(base.DynamicVars.Repeat.IntValue)
-            .FromCard(this)
+            .FromCard(this, cardPlay)
             .TargetingAllOpponents(base.CombatState)
             .OnlyPlayAnimOnce()
 			.WithAttackerFx(null, "event:/sfx/enemy/enemy_attacks/entomancer/entomancer_attack_ranged")

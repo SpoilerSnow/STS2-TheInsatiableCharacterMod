@@ -31,7 +31,7 @@ public class InsatiableThrash : InsatiableCardModel
 		int hitCount = (!cardPlay.Target.HasPower<QuickSandPower>()) ? 1 : 2;
 		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue)
 		    .WithHitCount(hitCount)
-			.FromCard(this)
+			.FromCard(this, cardPlay)
 			.WithAttackerAnim("Thrash", 0.3f)
 			.OnlyPlayAnimOnce()
 			.Targeting(cardPlay.Target)

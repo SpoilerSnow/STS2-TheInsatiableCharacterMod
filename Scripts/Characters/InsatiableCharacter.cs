@@ -32,7 +32,7 @@ public class InsatiableCharacter : ModCharacterTemplate<InsatiableCardPool, Insa
     // 初始血量
     public override int StartingHp => 80;
     // 攻击动画延迟
-    public override float AttackAnimDelay => 0f;
+    public override float AttackAnimDelay => 0.3f;
     // 施法动画延迟
     public override float CastAnimDelay => 0f;
     // 如果你的人物不需要时间线小故事，加上这句。

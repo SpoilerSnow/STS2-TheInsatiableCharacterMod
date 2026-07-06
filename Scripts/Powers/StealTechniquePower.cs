@@ -71,7 +71,7 @@ public class StealTechniquePower : InsatiablePowerModel
 		CardModel cardToSteal = base.CombatState.RunState.Rng.CombatCardSelection.NextItem(selected);
 		if (cardToSteal == null) return;
 
-		await CardPileCmd.RemoveFromCombat(cardToSteal);
+		await TheInsatiableCmd.SwallowCard(new ThrowingPlayerChoiceContext(), cardToSteal);
 		_stolenCard = cardToSteal;
 	}
 

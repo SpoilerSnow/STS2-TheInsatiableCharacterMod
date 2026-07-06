@@ -26,8 +26,8 @@ public class InsatiableHandPile : InsatiableCardModel, InsatiableCardModel.IChoo
 		CardModel cardModel3 = (await CardSelectCmd.FromSimpleGrid(choiceContext, pile.Cards, base.Owner, prefs)).FirstOrDefault();
         if (cardModel3 != null)
 		{
-			await TheInsatiableCmd.SwallowCard(choiceContext, cardModel3);
-			return cardModel3;
+			bool swallowed = await TheInsatiableCmd.SwallowCard(choiceContext, cardModel3);
+			return swallowed ? cardModel3 : null;
 		}
 		return null;
     }

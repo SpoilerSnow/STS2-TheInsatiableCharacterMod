@@ -28,8 +28,8 @@ public class InsatiableDrawPile : InsatiableCardModel, InsatiableCardModel.IChoo
 		CardModel cardModel2 = (await CardSelectCmd.FromSimpleGrid(choiceContext, cardsIn, base.Owner, prefs)).FirstOrDefault();
         if (cardModel2 != null)
 		{
-			await TheInsatiableCmd.SwallowCard(choiceContext, cardModel2);
-			return cardModel2;
+			bool swallowed = await TheInsatiableCmd.SwallowCard(choiceContext, cardModel2);
+			return swallowed ? cardModel2 : null;
 		}
 		return null;
     }

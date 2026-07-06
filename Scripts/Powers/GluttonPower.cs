@@ -21,8 +21,8 @@ public class GluttonyPower : InsatiablePowerModel
 	{
 		if (card.Owner.Creature == base.Owner)
 		{
-            await TheInsatiableHook.BeforeCardSwallow(CombatState, card, false);
-			await TheInsatiableHook.AfterCardSwallow(CombatState, choiceContext, card, false);
+			CardModel scard = card.CreateClone();
+			await TheInsatiableCmd.SwallowCard(choiceContext, scard);
 		}
 	}
 	public override async Task AfterDeath(PlayerChoiceContext choiceContext, Creature creature, bool wasRemovalPrevented, float deathAnimLength)

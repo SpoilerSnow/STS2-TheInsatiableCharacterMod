@@ -64,8 +64,9 @@ public sealed class MawOfVoidPower : InsatiablePowerModel
 	{
 		if (cardPlay.Card.Owner.Creature == base.Owner)
 		{
-		await TheInsatiableCmd.SwallowCard(choiceContext, cardPlay.Card);
-		await PowerCmd.Decrement(this);
+			bool swallowed = await TheInsatiableCmd.SwallowCard(choiceContext, cardPlay.Card);
+			if (swallowed)
+				await PowerCmd.Decrement(this);
 		}
 	}
 }

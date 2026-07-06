@@ -1,16 +1,23 @@
 using System.Reflection;
+using Godot;
 using Godot.Bridge;
 using HarmonyLib;
+using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Logging;
 using MegaCrit.Sts2.Core.Modding;
 using STS2RitsuLib;
+using STS2RitsuLib.CardPiles;
 using STS2RitsuLib.Interop;
+using Logger = MegaCrit.Sts2.Core.Logging.Logger;
 
 namespace TheInsatiable.Scripts;
 
 [ModInitializer("Init")]
 public class Entry
 {
+	public const string ModId = "TheInsatiable";
+    public static readonly Logger Logger = RitsuLibFramework.CreateLogger(ModId);
+    public static PileType SwallowPile;
 	public static void Init()
 	{
 		ModTypeDiscoveryHub.RegisterModAssembly("TheInsatiable", Assembly.GetExecutingAssembly());
@@ -26,5 +33,16 @@ public class Entry
 		harmony.PatchAll();
 		ScriptManagerBridge.LookupScriptsInAssembly(typeof(Entry).Assembly);
 		Log.Debug("Mod initialized!");
+
+		var registry = ModCardPileRegistry.For(ModId);
+        SwallowPile = registry.RegisterOwned("swallow_pile", new ModCardPileSpec
+        {
+            Scope = ModCardPileScope.CombatOnly,
+            Style = ModCardPileUiStyle.BottomRight,
+            Anchor = new ModCardPileAnchor(ModCardPileAnchorKind.BottomRightPrimary, new Vector2(100f, -100f)),
+            IconPath = "res://TheInsatiable/images/ui/the_insatiable_energy_big.png",
+            OnOpen = ctx => ctx.ShowDefaultPileScreen(),
+            VisibleWhen = ctx => ctx.Pile is { Cards.Count: > 0 },
+        }).PileType;
 	}
 }

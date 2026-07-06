@@ -26,8 +26,8 @@ public class InsatiableDiscardPile : InsatiableCardModel, InsatiableCardModel.IC
 		CardModel cardModel1 = (await CardSelectCmd.FromSimpleGrid(choiceContext, pile.Cards, base.Owner, prefs)).FirstOrDefault();
         if (cardModel1 != null)
 		{
-			await TheInsatiableCmd.SwallowCard(choiceContext, cardModel1);
-			return cardModel1;
+			bool swallowed = await TheInsatiableCmd.SwallowCard(choiceContext, cardModel1);
+			return swallowed ? cardModel1 : null;
 		}
 		return null;
     }

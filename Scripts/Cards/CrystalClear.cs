@@ -15,7 +15,7 @@ namespace TheInsatiable.Scripts;
 public class CrystalClear : InsatiableCardModel
 {
 	protected override IEnumerable<IHoverTip> AdditionalHoverTips => [HoverTipFactory.FromPower<QuickSandPower>()];
-	protected override IEnumerable<DynamicVar> CanonicalVars => [new PowerVar<CrystalClearPower>(3)];
+	protected override IEnumerable<DynamicVar> CanonicalVars => [new PowerVar<CrystalClearPower>(2)];
 	public CrystalClear()
 		: base(1, CardType.Power, CardRarity.Uncommon, TargetType.Self)
 	{

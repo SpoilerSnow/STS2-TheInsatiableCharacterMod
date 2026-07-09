@@ -75,13 +75,4 @@ public class WeatheringPower : InsatiablePowerModel
 		    }
         }
     }
-    public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
-	{
-		if (cardPlay.Card.Affliction is WeatheringAffliction)
-		{
-            int weatheringCount = cardPlay.Card.Affliction.Amount;
-            decimal quickSandCount = weatheringCount;
-			await PowerCmd.Apply<QuickSandPower>(new ThrowingPlayerChoiceContext(), base.Owner, quickSandCount, base.Owner, null);
-        }
-	}
 }

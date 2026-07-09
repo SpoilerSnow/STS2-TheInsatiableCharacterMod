@@ -42,7 +42,6 @@ public class Entry
             Anchor = new ModCardPileAnchor(ModCardPileAnchorKind.BottomRightPrimary, new Vector2(100f, -100f)),
             IconPath = "res://TheInsatiable/images/ui/the_insatiable_energy_big.png",
             OnOpen = ctx => ctx.ShowDefaultPileScreen(),
-            VisibleWhen = ctx => ctx.Pile is { Cards.Count: > 0 },
         }).PileType;
 	}
 }

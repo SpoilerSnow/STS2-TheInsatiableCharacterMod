@@ -2,9 +2,7 @@ using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
-using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
-using MegaCrit.Sts2.Core.Hooks;
 using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Models;
 using TheInsatiable.Scripts;
@@ -24,7 +22,7 @@ public class TheInsatiableCmd
                 return false;
             }
             await TheInsatiableHook.BeforeCardSwallow(combatState, card, causedBySelfSwallow);
-            await CardPileCmd.Add(card, Entry.SwallowPile);
+            await CardPileCmd.Add(card, swallowPile);
             SwallowPile.OnCardAdded(card);
             CombatManager.Instance.History.CardSwallowed(combatState, card);
             await TheInsatiableHook.AfterCardSwallow(combatState, choiceContext, card, causedBySelfSwallow);

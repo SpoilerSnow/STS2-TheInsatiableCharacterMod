@@ -9,10 +9,12 @@ namespace TheInsatiable.Scripts;
 [RegisterOwnedCardKeyword(nameof(SelfSwallow), CardDescriptionPlacement = ModKeywordCardDescriptionPlacement.BeforeCardDescription)]
 [RegisterOwnedCardKeyword(nameof(Digest), CardDescriptionPlacement = ModKeywordCardDescriptionPlacement.BeforeCardDescription)]
 [RegisterOwnedCardKeyword(nameof(Dynamic), CardDescriptionPlacement = ModKeywordCardDescriptionPlacement.BeforeCardDescription)]
+[RegisterOwnedCardKeyword(nameof(Gulp), CardDescriptionPlacement = ModKeywordCardDescriptionPlacement.BeforeCardDescription)]
 public class TheInsatiableKeyword
 {
     public static readonly CardKeyword Swallow = ModContentRegistry.GetQualifiedKeywordId("TheInsatiable", nameof(Swallow)).GetModCardKeyword();
     public static readonly CardKeyword SelfSwallow = ModContentRegistry.GetQualifiedKeywordId("TheInsatiable", nameof(SelfSwallow)).GetModCardKeyword();
     public static readonly CardKeyword Digest = ModContentRegistry.GetQualifiedKeywordId("TheInsatiable", nameof(Digest)).GetModCardKeyword();
     public static readonly CardKeyword Dynamic = ModContentRegistry.GetQualifiedKeywordId("TheInsatiable", nameof(Dynamic)).GetModCardKeyword();
+    public static readonly CardKeyword Gulp = ModContentRegistry.GetQualifiedKeywordId("TheInsatiable", nameof(Gulp)).GetModCardKeyword();
 }

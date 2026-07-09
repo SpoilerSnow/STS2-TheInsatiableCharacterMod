@@ -19,7 +19,7 @@ public class MakingSandcastles : InsatiableCardModel
         HoverTipFactory.FromPower<QuickSandPower>(),
         HoverTipFactory.Static(StaticHoverTip.Block)
     ];
-	protected override IEnumerable<DynamicVar> CanonicalVars => [new PowerVar<MakingSandcastlesPower>(3)];
+	protected override IEnumerable<DynamicVar> CanonicalVars => [new PowerVar<MakingSandcastlesPower>(2)];
 
 	public MakingSandcastles()
 		: base(1, CardType.Power, CardRarity.Uncommon, TargetType.Self)

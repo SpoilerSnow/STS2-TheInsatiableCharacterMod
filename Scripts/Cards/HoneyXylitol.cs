@@ -16,7 +16,7 @@ namespace TheInsatiable.Scripts;
 public class HoneyXylitol : InsatiableCardModel
 {
     protected override IEnumerable<IHoverTip> AdditionalHoverTips => [
-        HoverTipFactory.FromKeyword(TheInsatiableKeyword.Digest),
+        HoverTipFactory.FromKeyword(TheInsatiableKeyword.Gulp),
         HoverTipFactory.FromPower<StrengthPower>()
     ];
     protected override IEnumerable<DynamicVar> CanonicalVars => [
@@ -32,16 +32,9 @@ public class HoneyXylitol : InsatiableCardModel
 		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
         await PowerCmd.Apply<HoneyXylitolPower>(new ThrowingPlayerChoiceContext(), base.Owner.Creature, base.DynamicVars["HoneyXylitolPower"].IntValue, base.Owner.Creature, this);
 	}
-    public override async Task AfterCardSwallow(ICombatState combatState, PlayerChoiceContext choiceContext, CardModel card, bool causedBySelfSwallow)
+	public override async Task Gulp()
 	{
-		if (card == this && base.CombatState != null)
-		{
-			int playCount = await GeneratePlayCount(base.CombatState, null);
-			for (int i = 0; i < playCount; i++)
-			{
-                await PowerCmd.Apply<StrengthPower>(new ThrowingPlayerChoiceContext(), base.Owner.Creature, base.DynamicVars.Strength.IntValue, base.Owner.Creature, this);
-			}
-		}
+		await PowerCmd.Apply<StrengthPower>(new ThrowingPlayerChoiceContext(), base.Owner.Creature, base.DynamicVars.Strength.IntValue, base.Owner.Creature, this);
 	}
     protected override void OnUpgrade()
 	{

@@ -35,7 +35,7 @@ public class ToxicSpit : InsatiableCardModel
 		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue)
 		    .FromCard(this, cardPlay)
 			.Targeting(cardPlay.Target)
-			.WithHitFx("vfx/vfx_bite")
+			.WithHitFx("vfx/vfx_slime_impact")
 			.Execute(choiceContext);
 		CardModel card = base.CombatState.CreateCard<Toxic>(base.Owner);
 		CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat(card, PileType.Discard, base.Owner));

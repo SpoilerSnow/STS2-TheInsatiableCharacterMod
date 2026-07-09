@@ -16,7 +16,7 @@ public abstract class TemporaryThornsPower<T> : ModTemporaryAppliedPowerTemplate
     public override string? CustomIconPath => HasCustomPortrait ? ($"res://TheInsatiable/images/powers/{GetType().Name.Replace("Power", "")}.png") : ($"res://TheInsatiable/images/powers/the_insatiable_power.png");
 	public override string? CustomBigIconPath => HasCustomPortrait ? ($"res://TheInsatiable/images/powers/big/{GetType().Name.Replace("Power", "")}.png") : ($"res://TheInsatiable/images/powers/big/the_insatiable_power.png");
     protected override bool IsPositive => true; // 正面效果还是负面
-    protected override bool UntilEndOfOtherSideTurn => false; // 为 true 时，在另一方回合结束时过期；否则在拥有者一方回合结束时过期。
+    protected override bool UntilEndOfOtherSideTurn => true; // 为 true 时，在另一方回合结束时过期；否则在拥有者一方回合结束时过期。
     protected override int LastForXExtraTurns => 0; // 额外持续回合数
 
     // 推荐重载描述，以达到多个power共享一条文本的效果

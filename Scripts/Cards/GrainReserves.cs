@@ -19,27 +19,20 @@ public class GrainReserves : InsatiableCardModel
         base.EnergyHoverTip
     ];
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new CardsVar(2),
+        new CardsVar(1),
         new EnergyVar(1)
     ];
     public GrainReserves()
 		: base(-1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
 	{
 	}
-    public override async Task AfterCardSwallow(ICombatState combatState, PlayerChoiceContext choiceContext, CardModel card, bool causedBySelfSwallow)
+	public override async Task Digest()
 	{
-		if (card == this && base.CombatState != null)
-		{
-			int playCount = await GeneratePlayCount(base.CombatState, null);
-			for (int i = 0; i < playCount; i++)
-			{
-                await CardPileCmd.Draw(choiceContext, base.DynamicVars.Cards.BaseValue, base.Owner);
-				await PlayerCmd.GainEnergy(base.DynamicVars.Energy.BaseValue, base.Owner);
-			}
-		}
+		await CardPileCmd.Draw(new ThrowingPlayerChoiceContext(), base.DynamicVars.Cards.BaseValue, base.Owner);
+		await PlayerCmd.GainEnergy(base.DynamicVars.Energy.BaseValue, base.Owner);
 	}
     protected override void OnUpgrade()
 	{
-        base.DynamicVars.Energy.UpgradeValueBy(1);
+        AddKeyword(TheInsatiableKeyword.SelfSwallow);
 	}
 }

@@ -1,4 +1,7 @@
-using System.Collections.Generic;
+using HarmonyLib;
+using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Models;
 
 namespace TheInsatiable.Scripts.Piles;
@@ -10,7 +13,8 @@ internal static class SwallowPile
 {
     public const int DefaultMaxCapacity = 10;
     public static int MaxCapacity = DefaultMaxCapacity;
-    public const int MaxTurnsInPile = 4;
+    public const int DefaultMaxTurnsInPile = 4;
+    public static int MaxTurnsInPile = DefaultMaxTurnsInPile;
 
     /// <summary>
     /// 追踪每张卡牌在吞噬堆中度过的回合数。
@@ -46,5 +50,55 @@ internal static class SwallowPile
     {
         MaxCapacity = DefaultMaxCapacity;
         CardTurns.Clear();
+        MaxTurnsInPile = DefaultMaxTurnsInPile;
+    }
+}
+
+[HarmonyPatch(typeof(CombatManager), "DoTurnEnd")]
+internal static class SwallowPileAgePatch
+{
+    [HarmonyPostfix]
+    public static async Task Postfix(Task __result)
+    {
+        await __result;
+        var players = CombatManager.Instance.DebugOnlyGetState()?.Players;
+        if (players == null)
+            return;
+
+        foreach (var player in players)
+        {
+            var pile = Entry.SwallowPile.GetPile(player);
+            var cards = pile.Cards.ToList();
+
+            SwallowPile.CleanStaleEntries(cards);
+
+            var toRemove = new List<CardModel>();
+            foreach (var card in cards)
+            {
+                if (!SwallowPile.CardTurns.ContainsKey(card))
+                    continue;
+
+                SwallowPile.CardTurns[card]++;
+
+                if (SwallowPile.CardTurns[card] >= SwallowPile.MaxTurnsInPile)
+                    toRemove.Add(card);
+            }
+
+            foreach (var card in toRemove)
+            {
+                await CardPileCmd.RemoveFromCombat(card, skipVisuals: false);
+                SwallowPile.CardTurns.Remove(card);
+            }
+        }
+    }
+}
+
+[HarmonyPatch(typeof(CombatManager), "CombatEnded")]
+internal static class SwallowPileResetPatch
+{
+    [HarmonyPostfix]
+    public static void Postfix()
+    {
+        SwallowPile.ResetForNewCombat();
     }
 }

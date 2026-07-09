@@ -2,9 +2,11 @@ using Godot;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
+using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 using STS2RitsuLib.Scaffolding.Content;
+
 
 namespace TheInsatiable.Scripts;
 
@@ -36,9 +38,13 @@ public abstract class InsatiableCardModel : ModCardTemplate, ITheInsatiableModel
     {
         return Task.CompletedTask;
     }
-    public virtual Task AfterCardSwallow(ICombatState combatState, PlayerChoiceContext choiceContext, CardModel card, bool causedBySelfSwallow)
+    public virtual async Task AfterCardSwallow(ICombatState combatState, PlayerChoiceContext choiceContext, CardModel card, bool causedBySelfSwallow)
     {
-        return Task.CompletedTask;
+        if (card == this)
+        {
+            await Gulp(); 
+        }
+        return;
     }
     public virtual Task BeforeCreatureSwallow(Creature creature, bool force)
     {
@@ -48,12 +54,20 @@ public abstract class InsatiableCardModel : ModCardTemplate, ITheInsatiableModel
     {
         return Task.CompletedTask;
     }
-    public virtual bool ShouldSelfSwallowTrigger(ICombatState combatState, CardModel card)
+    public virtual Task Gulp()
     {
-        return true;
-	}
-    public virtual Task OnTurnEndInHandWrapperSelfSwallow(PlayerChoiceContext choiceContext)
+        return Task.CompletedTask;
+    }
+    public override async Task AfterAutoPrePlayPhaseEnteredEarly(PlayerChoiceContext choiceContext, Player player)
 	{
-		return Task.CompletedTask;
+		CardPile? pile = base.Pile;
+		if (pile != null && pile == Entry.SwallowPile.GetPile(player) && player == base.Owner)
+		{
+			await Digest(); 
+		}
 	}
+    public virtual Task Digest()
+    {
+        return Task.CompletedTask;
+    }
 }

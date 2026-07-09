@@ -29,8 +29,6 @@ public class DesertStoneRelic : InsatiableRelicModel
 		];
     public override async Task AfterSideTurnStart(CombatSide side, IReadOnlyList<Creature> participants, ICombatState combatState)
 	{
-		if (base.Owner?.Creature == null || base.Owner.Creature.CombatState == null)
-        return;
 		if (participants.Contains(base.Owner.Creature) && base.Owner.PlayerCombatState.TurnNumber <= 1)
 		{
 			foreach (Creature hittableEnemy2 in base.Owner.Creature.CombatState.HittableEnemies)

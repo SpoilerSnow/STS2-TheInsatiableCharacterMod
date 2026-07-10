@@ -4,7 +4,7 @@ using TheInsatiable.Scripts.Piles;
 
 namespace TheInsatiable.Scripts;
 
-[HarmonyPatch(typeof(CombatManager), "OnBattleEnd")]
+[HarmonyPatch(typeof(CombatManager), nameof(CombatManager.Reset))]
 public static class SwallowPileResetPatch
 {
     [HarmonyPostfix]

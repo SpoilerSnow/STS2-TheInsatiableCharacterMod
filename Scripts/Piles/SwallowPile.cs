@@ -9,7 +9,8 @@ public static class SwallowPile
 {
     public const int DefaultMaxCapacity = 10;
     public static int MaxCapacity = DefaultMaxCapacity;
-    public static int MaxTurnsInPile = 4;
+    public const int DefaultMaxTurnsInPile = 4;
+    public static int MaxTurnsInPile = DefaultMaxTurnsInPile;
 
     /// <summary>
     /// 追踪每张卡牌在吞噬堆中度过的回合数。
@@ -45,5 +46,6 @@ public static class SwallowPile
     {
         MaxCapacity = DefaultMaxCapacity;
         CardTurns.Clear();
+        MaxTurnsInPile = DefaultMaxTurnsInPile;
     }
 }

@@ -3,8 +3,9 @@ using HarmonyLib;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.Models.Relics;
 using MegaCrit.Sts2.Core.Nodes.Rooms;
+using TheInsatiable.Scripts.Characters;
 
-namespace TheInsatiable.Scripts;
+namespace TheInsatiable.Scripts.Patches;
 
 [HarmonyPatch(typeof(BigMushroom), "Grow")]
 internal static class BigMushroomGrowScalePatch

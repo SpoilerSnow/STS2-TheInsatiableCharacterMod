@@ -3,7 +3,7 @@ using STS2RitsuLib.Scaffolding.Characters;
 using STS2RitsuLib.Scaffolding.Content;
 using STS2RitsuLib.Utils;
 
-namespace TheInsatiable.Scripts;
+namespace TheInsatiable.Scripts.Pools;
 
 public class InsatiableCardPool : TypeListCardPoolModel, IModColorfulPhilosophersCardPool
 {

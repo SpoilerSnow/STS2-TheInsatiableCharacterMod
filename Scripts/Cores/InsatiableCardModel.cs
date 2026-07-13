@@ -6,6 +6,7 @@ using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 using STS2RitsuLib.Scaffolding.Content;
+using TheInsatiable.Scripts.Cards;
 
 
 namespace TheInsatiable.Scripts;
@@ -42,7 +43,7 @@ public abstract class InsatiableCardModel : ModCardTemplate, ITheInsatiableModel
     {
         if (card == this)
         {
-            await Gulp(); 
+            await OnGulp(); 
         }
         return;
     }
@@ -54,20 +55,29 @@ public abstract class InsatiableCardModel : ModCardTemplate, ITheInsatiableModel
     {
         return Task.CompletedTask;
     }
-    public virtual Task Gulp()
+    public virtual Task OnGulp()
     {
         return Task.CompletedTask;
     }
-    public override async Task AfterAutoPrePlayPhaseEnteredEarly(PlayerChoiceContext choiceContext, Player player)
+    public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
 	{
 		CardPile? pile = base.Pile;
-		if (pile != null && pile == Entry.SwallowPile.GetPile(player) && player == base.Owner)
+		if (pile == Entry.SwallowPile.GetPile(player) && player == base.Owner)
 		{
-			await Digest(); 
+            await OnDigest(); 
 		}
 	}
-    public virtual Task Digest()
+    public virtual Task OnDigest()
     {
         return Task.CompletedTask;
     }
+    public void FlashOnPlayer()
+	{
+		FlashOn();
+	}
+	public void FlashOn(Creature? target = null)
+	{
+		CardModel card = this.CardScope.CreateCard(ModelDb.GetById<CardModel>(((AbstractModel)this).Id), ((CardModel)this).Owner);
+		TheInsatiableVfxCmd.CardFlashVfx(card, target);
+	}
 }

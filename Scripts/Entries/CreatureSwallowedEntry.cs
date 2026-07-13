@@ -3,6 +3,7 @@ using MegaCrit.Sts2.Core.Combat.History;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Players;
 
+namespace TheInsatiable.Scripts;
 public class CreatureSwallowedEntry : CombatHistoryEntry
 {
     public Creature Creature { get; }

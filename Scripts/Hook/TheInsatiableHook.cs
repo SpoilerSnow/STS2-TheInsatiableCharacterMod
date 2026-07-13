@@ -3,6 +3,7 @@ using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 
+namespace TheInsatiable.Scripts;
 public class TheInsatiableHook
 {
     public static async Task BeforeCardSwallow(ICombatState combatState, CardModel card, bool causedBySelfSwallow)

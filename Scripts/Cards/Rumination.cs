@@ -5,8 +5,11 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using TheInsatiable.Scripts.Piles;
+using TheInsatiable.Scripts.CardKeywords;
+using TheInsatiable.Scripts.Pools;
+using TheInsatiable.Scripts.Powers;
 
-namespace TheInsatiable.Scripts;
+namespace TheInsatiable.Scripts.Cards;
 
 [RegisterCard(typeof(InsatiableCardPool))]
 
@@ -18,20 +21,20 @@ public class Rumination : InsatiableCardModel
     ];
 	protected override IEnumerable<DynamicVar> CanonicalVars => [
 		new PowerVar<RuminationPower>(1),
-		new CardsVar(5)
+		new MaxCapacityVar(4),
 	];
 	public Rumination()
-		: base(2, CardType.Power, CardRarity.Uncommon, TargetType.Self)
+		: base(1, CardType.Power, CardRarity.Uncommon, TargetType.Self)
 	{
 	}
 	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
 	{
 		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
-		SwallowPile.MaxCapacity += (int)base.DynamicVars.Cards.BaseValue;
+		SwallowPile.MaxCapacity += (int)DynamicVars["MaxCapacity"].BaseValue;
 		await PowerCmd.Apply<RuminationPower>(choiceContext, base.Owner.Creature, base.DynamicVars["RuminationPower"].BaseValue, base.Owner.Creature, this);
 	}
 	protected override void OnUpgrade()
     {
-        base.EnergyCost.UpgradeBy(-1);
+        DynamicVars["MaxCapacity"].UpgradeValueBy(4);
     }
 }

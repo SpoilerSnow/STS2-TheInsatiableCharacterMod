@@ -8,8 +8,10 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Nodes.Rooms;
 using MegaCrit.Sts2.Core.Rooms;
+using TheInsatiable.Scripts.Pools;
+using TheInsatiable.Scripts.CardKeywords;
 
-namespace TheInsatiable.Scripts;
+namespace TheInsatiable.Scripts.Potions;
 
 [RegisterPotion(typeof(InsatiablePotionPool))]
 

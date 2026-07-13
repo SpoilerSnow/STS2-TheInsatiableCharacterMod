@@ -7,7 +7,7 @@ using MegaCrit.Sts2.Core.Models.Monsters;
 using MegaCrit.Sts2.Core.Models.Powers;
 using STS2RitsuLib.Interop.AutoRegistration;
 
-namespace TheInsatiable.Scripts;
+namespace TheInsatiable.Scripts.Powers;
 
 [RegisterPower]
 public sealed class TestTheStonesPower : InsatiablePowerModel

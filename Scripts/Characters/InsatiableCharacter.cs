@@ -8,9 +8,12 @@ using MegaCrit.Sts2.Core.Nodes.Vfx;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Characters;
 using STS2RitsuLib.Scaffolding.Godot;
+using TheInsatiable.Scripts.Cards;
+using TheInsatiable.Scripts.Pools;
+using TheInsatiable.Scripts.Relics;
 using Color = Godot.Color;
 
-namespace TheInsatiable.Scripts;
+namespace TheInsatiable.Scripts.Characters;
 
 [RegisterCharacter]
 public class InsatiableCharacter : ModCharacterTemplate<InsatiableCardPool, InsatiableRelicPool, InsatiablePotionPool>

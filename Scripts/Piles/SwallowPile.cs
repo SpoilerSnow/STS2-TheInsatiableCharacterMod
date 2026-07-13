@@ -1,3 +1,5 @@
+using MegaCrit.Sts2.addons.mega_text;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 
 namespace TheInsatiable.Scripts.Piles;
@@ -5,13 +7,12 @@ namespace TheInsatiable.Scripts.Piles;
 /// <summary>
 /// 吞噬堆逻辑管理：最大容量 10 张，存满 3 回合的卡牌自动消失。
 /// </summary>
-public static class SwallowPile
+public abstract class SwallowPile
 {
     public const int DefaultMaxCapacity = 10;
     public static int MaxCapacity = DefaultMaxCapacity;
     public const int DefaultMaxTurnsInPile = 4;
     public static int MaxTurnsInPile = DefaultMaxTurnsInPile;
-
     /// <summary>
     /// 追踪每张卡牌在吞噬堆中度过的回合数。
     /// </summary>

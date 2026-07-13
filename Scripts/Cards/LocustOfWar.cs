@@ -8,7 +8,7 @@ using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 
-namespace TheInsatiable.Scripts;
+namespace TheInsatiable.Scripts.Cards;
 
 [RegisterCard(typeof(TokenCardPool))]
 

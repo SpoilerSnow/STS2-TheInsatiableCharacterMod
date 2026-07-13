@@ -4,7 +4,7 @@ using MegaCrit.Sts2.Core.Nodes.Cards.Holders;
 using MegaCrit.Sts2.Core.Nodes.HoverTips;
 using STS2RitsuLib.Utils;
 
-namespace TheInsatiable.Scripts;
+namespace TheInsatiable.Scripts.Patches;
 
 /// <summary>
 /// 当 NCardHolder 持有的卡牌是 InsatiableCardModel 且有多张 CardHoverTip 时，

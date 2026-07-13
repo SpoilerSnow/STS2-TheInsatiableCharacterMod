@@ -3,6 +3,7 @@ using MegaCrit.Sts2.Core.Combat.History;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Models;
 
+namespace TheInsatiable.Scripts;
 public class CardSwallowedEntry : CombatHistoryEntry
 {
 	public CardModel Card { get; }

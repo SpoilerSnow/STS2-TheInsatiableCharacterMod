@@ -9,15 +9,16 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using STS2RitsuLib.Interop.AutoRegistration;
+using TheInsatiable.Scripts.Afflictions;
 
-namespace TheInsatiable.Scripts;
+namespace TheInsatiable.Scripts.Powers;
 [RegisterPower]
 public class WeatheringPower : InsatiablePowerModel
 {
 	public override PowerType Type => PowerType.Buff;
 	public override PowerStackType StackType => PowerStackType.Counter;
     protected override IEnumerable<DynamicVar> CanonicalVars => [new StringVar("AfflictionTitle", ModelDb.Affliction<WeatheringAffliction>().Title.GetFormattedText())];
-    protected override IEnumerable<IHoverTip> AdditionalHoverTips => HoverTipFactory.FromAffliction<WeatheringAffliction>(2);
+    protected override IEnumerable<IHoverTip> AdditionalHoverTips => HoverTipFactory.FromAffliction<WeatheringAffliction>(3);
     public override async Task AfterApplied(Creature? applier, CardModel? cardSource)
     {
         foreach (CardModel allCard in base.Owner.Player.PlayerCombatState.AllCards)
@@ -53,7 +54,7 @@ public class WeatheringPower : InsatiablePowerModel
 		}
 		return count + (decimal)base.Amount;
 	}
-    public int _weatheringCount = 2;
+    public int _weatheringCount = 3;
     public override async Task AfterSideTurnStart(CombatSide side, IReadOnlyList<Creature> participants, ICombatState combatState)
 	{
 		if (participants.Contains(base.Owner))

@@ -6,13 +6,11 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 using STS2RitsuLib.Interop.AutoRegistration;
 
-namespace TheInsatiable.Scripts;
+namespace TheInsatiable.Scripts.Powers;
 
 [RegisterPower]
 public sealed class MawOfVoidPower : InsatiablePowerModel
 {
-    private PlayerChoiceContext choiceContext;
-
     public override PowerType Type => PowerType.Buff;
 
 	public override PowerStackType StackType => PowerStackType.Counter;

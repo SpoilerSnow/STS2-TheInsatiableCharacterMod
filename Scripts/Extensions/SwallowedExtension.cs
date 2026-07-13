@@ -4,6 +4,7 @@ using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Models;
 using System.Reflection;
 
+namespace TheInsatiable.Scripts;
 public static class CombatHistorySwallowedExtensions
 {
     public static void CardSwallowed(this CombatHistory history, ICombatState combatState, CardModel card)

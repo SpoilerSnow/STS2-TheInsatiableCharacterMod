@@ -5,8 +5,10 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using TheInsatiable.Scripts.CardKeywords;
+using TheInsatiable.Scripts.Pools;
 
-namespace TheInsatiable.Scripts;
+namespace TheInsatiable.Scripts.Cards;
 
 [RegisterCard(typeof(InsatiableCardPool))]
 
@@ -14,7 +16,7 @@ public class LawOfHive : InsatiableCardModel
 {
     public override bool CanBeGeneratedInCombat => false;
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new DynamicVar("LawOfHive", 8),
+        new DynamicVar("LawOfHive", 10),
         new MaxHpVar(2)
     ];
     protected override IEnumerable<IHoverTip> AdditionalHoverTips => [

@@ -3,7 +3,7 @@ using STS2RitsuLib.Content;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Keywords;
 
-namespace TheInsatiable.Scripts;
+namespace TheInsatiable.Scripts.CardKeywords;
 
 [RegisterOwnedCardKeyword(nameof(Swallow), CardDescriptionPlacement = ModKeywordCardDescriptionPlacement.BeforeCardDescription)]
 [RegisterOwnedCardKeyword(nameof(SelfSwallow), CardDescriptionPlacement = ModKeywordCardDescriptionPlacement.BeforeCardDescription)]

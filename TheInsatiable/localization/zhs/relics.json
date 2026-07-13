@@ -19,6 +19,6 @@
     "THE_INSATIABLE_RELIC_OBELISK_RELIC.description": "拥有[gold]固有[/gold]的卡牌获得[gold]保留[/gold]。\n拥有[gold]保留[/gold]的卡牌获得[gold]固有[/gold]。",
     "THE_INSATIABLE_RELIC_OBELISK_RELIC.flavor": "古老的纪念碑。",
     "THE_INSATIABLE_RELIC_GASTROLITH_RELIC.title": "胃石",
-    "THE_INSATIABLE_RELIC_GASTROLITH_RELIC.description": "[gold]吞噬堆[/gold]中的卡牌存在回合数减少[blue]{MaxTurnsInPile:diff()}[/blue]。\n进入[gold]吞噬堆[/gold]的卡牌[gold]数值[/gold]增加[blue]{UpgradeAmount:diff()}[/blue]。",
-    "THE_INSATIABLE_RELIC_GASTROLITH_RELIC.flavor": "吞进胃里用来促进消化的石头，大部分时候会被无厌沙虫连同食物一起吃掉。"
+    "THE_INSATIABLE_RELIC_GASTROLITH_RELIC.description": "[gold]吞噬堆[/gold]中的卡牌存在回合数减少[blue]{MaxTurnsInPile:diff()}[/blue]。\n[gold]吞咽[/gold]和[gold]消化[/gold]效果会额外触发[blue]{Repeat:diff()}[/blue]次。",
+    "THE_INSATIABLE_RELIC_GASTROLITH_RELIC.flavor": "吞进胃里用来促进消化的石头，大部分时候会被无厌沙虫连同食物一起吸收掉。"
 }

@@ -1,6 +1,6 @@
 using STS2RitsuLib.Scaffolding.Content;
 
-namespace TheInsatiable.Scripts;
+namespace TheInsatiable.Scripts.Pools;
 public class InsatiablePotionPool : TypeListPotionPoolModel
 {
 	public override string EnergyColorName => "TheInsatiable";

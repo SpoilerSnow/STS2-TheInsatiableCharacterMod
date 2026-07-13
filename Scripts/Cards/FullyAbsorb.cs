@@ -5,8 +5,11 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using TheInsatiable.Scripts.Piles;
+using TheInsatiable.Scripts.CardKeywords;
+using TheInsatiable.Scripts.Pools;
+using TheInsatiable.Scripts.Powers;
 
-namespace TheInsatiable.Scripts;
+namespace TheInsatiable.Scripts.Cards;
 
 [RegisterCard(typeof(InsatiableCardPool))]
 
@@ -18,7 +21,7 @@ public class FullyAbsorb : InsatiableCardModel
 	];
     protected override IEnumerable<DynamicVar> CanonicalVars => [
 		new EnergyVar(1),
-		new CardsVar(5)
+		new MaxCapacityVar(5),
 	];
 	public FullyAbsorb()
 		: base(2, CardType.Power, CardRarity.Uncommon, TargetType.Self)
@@ -27,7 +30,7 @@ public class FullyAbsorb : InsatiableCardModel
 	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
 	{
 		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
-		SwallowPile.MaxCapacity += (int)base.DynamicVars.Cards.BaseValue;
+		SwallowPile.MaxCapacity += (int)DynamicVars["MaxCapacity"].BaseValue;
 		await PowerCmd.Apply<FullyAbsorbPower>(choiceContext, base.Owner.Creature, base.DynamicVars.Energy.BaseValue, base.Owner.Creature, this);
 	}
 	protected override void OnUpgrade()

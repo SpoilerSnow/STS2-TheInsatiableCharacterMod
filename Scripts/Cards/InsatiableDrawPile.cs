@@ -1,4 +1,3 @@
-using MegaCrit.Sts2.Core.HoverTips;
 using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
@@ -7,7 +6,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.CardPools;
 
-namespace TheInsatiable.Scripts;
+namespace TheInsatiable.Scripts.Cards;
 
 [RegisterCard(typeof(TokenCardPool))]
 

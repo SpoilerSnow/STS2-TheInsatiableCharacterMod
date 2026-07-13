@@ -9,8 +9,11 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using TheInsatiable.Scripts.Pools;
+using TheInsatiable.Scripts.Cards;
+using TheInsatiable.Scripts.Powers;
 
-namespace TheInsatiable.Scripts;
+namespace TheInsatiable.Scripts.Relics;
 
 [RegisterRelic(typeof(InsatiableRelicPool))]
 

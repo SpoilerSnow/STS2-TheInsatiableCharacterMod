@@ -7,7 +7,7 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models;
 using STS2RitsuLib.Interop.AutoRegistration;
 
-namespace TheInsatiable.Scripts;
+namespace TheInsatiable.Scripts.Powers;
 
 [RegisterPower]
 public class FullyAbsorbPower : InsatiablePowerModel

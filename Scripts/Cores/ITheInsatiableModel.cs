@@ -3,6 +3,7 @@ using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 
+namespace TheInsatiable.Scripts;
 public interface ITheInsatiableModel
 {
     public virtual Task BeforeCardSwallow(CardModel card, bool causedBySelfSwallow)
@@ -25,4 +26,12 @@ public interface ITheInsatiableModel
     {
         return true;
 	}
+    public virtual Task OnGulp()
+    {
+        return Task.CompletedTask;
+    }
+    public virtual Task OnDigest()
+    {
+        return Task.CompletedTask;
+    }
 }

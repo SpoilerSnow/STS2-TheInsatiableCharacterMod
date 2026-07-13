@@ -1,19 +1,17 @@
 using STS2RitsuLib.Interop.AutoRegistration;
-using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
-using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Relics;
-using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models;
+using TheInsatiable.Scripts.Pools;
 
-namespace TheInsatiable.Scripts;
+namespace TheInsatiable.Scripts.Relics;
 
 [RegisterRelic(typeof(InsatiableRelicPool))]
 public class ObeliskRelic : InsatiableRelicModel
 {
-	public override RelicRarity Rarity => RelicRarity.Rare;
+	public override RelicRarity Rarity => RelicRarity.Shop;
 	protected override IEnumerable<IHoverTip> AdditionalHoverTips => [
 		HoverTipFactory.FromKeyword(CardKeyword.Innate),
 		HoverTipFactory.FromKeyword(CardKeyword.Retain),
@@ -36,7 +34,10 @@ public class ObeliskRelic : InsatiableRelicModel
 				activated = true;
 			}
 		}
-		if (activated) Flash();
+		if (activated) 
+		{
+			Flash();
+		}
 		return Task.CompletedTask;
 	}
 	public override async Task AfterCardEnteredCombat(CardModel card)
@@ -56,6 +57,9 @@ public class ObeliskRelic : InsatiableRelicModel
 				activated = true;
 			}
 		}
-		if (activated) Flash();
+		if (activated) 
+		{
+			Flash();
+		}
 	}
 }

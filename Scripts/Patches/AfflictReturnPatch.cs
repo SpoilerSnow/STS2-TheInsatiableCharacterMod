@@ -2,8 +2,10 @@ using HarmonyLib;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Models;
+using TheInsatiable.Scripts.Afflictions;
+using TheInsatiable.Scripts.Powers;
 
-namespace TheInsatiable.Scripts;
+namespace TheInsatiable.Scripts.Patches;
 
 [HarmonyPatch(typeof(CardCmd))]
 internal static class AfflictReturnPatch

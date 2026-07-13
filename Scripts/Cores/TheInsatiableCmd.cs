@@ -5,9 +5,9 @@ using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Models;
-using TheInsatiable.Scripts;
 using TheInsatiable.Scripts.Piles;
 
+namespace TheInsatiable.Scripts;
 public class TheInsatiableCmd
 {
     public static async Task<bool> SwallowCard(PlayerChoiceContext choiceContext, CardModel card, bool causedBySelfSwallow = false, bool skipVisuals = false)

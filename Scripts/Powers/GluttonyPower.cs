@@ -1,3 +1,4 @@
+using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
@@ -5,8 +6,9 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models;
 using STS2RitsuLib.Interop.AutoRegistration;
+using TheInsatiable.Scripts.CardKeywords;
 
-namespace TheInsatiable.Scripts;
+namespace TheInsatiable.Scripts.Powers;
 
 [RegisterPower]
 public class GluttonyPower : InsatiablePowerModel
@@ -30,6 +32,7 @@ public class GluttonyPower : InsatiablePowerModel
 		if (base.CombatState.Enemies.Contains(creature))
 		{
 			await TheInsatiableHook.BeforeCreatureSwallow(CombatState, creature, false);
+			CombatManager.Instance.History.CreatureSwallowed(CombatState, creature);
 			await TheInsatiableHook.AfterCreatureSwallow(CombatState, creature, false);
 		}
 	}

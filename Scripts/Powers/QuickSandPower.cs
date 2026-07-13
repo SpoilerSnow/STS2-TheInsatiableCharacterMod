@@ -3,18 +3,16 @@ using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
-using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Hooks;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
-using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using STS2RitsuLib.Combat.HealthBars;
 using STS2RitsuLib.Interop.AutoRegistration;
-using STS2RitsuLib.Scaffolding.Content;
 
-namespace TheInsatiable.Scripts;
+namespace TheInsatiable.Scripts.Powers;
 [RegisterPower]
 public class QuickSandPower : InsatiablePowerModel, IHealthBarForecastSource
 {
@@ -110,14 +108,22 @@ public class QuickSandPower : InsatiablePowerModel, IHealthBarForecastSource
 			return Math.Max(0, source.Sum((Creature a) => a.GetPowerAmount<SandFlowsPower>()));
 		}
 	}
+	public int CalculateTotalDamageNextTurn()
+    {
+        decimal num = default;
+        decimal damage = base.Amount * SandFlowsPowerCount;
+		damage = Hook.ModifyDamage(base.Owner.CombatState.RunState, base.Owner.CombatState, base.Owner, null, damage, ValueProp.Unpowered, null, null, ModifyDamageHookType.All, CardPreviewMode.None, out IEnumerable<AbstractModel> _);
+		num += damage;
+        return (int)num;
+    }
 	public IEnumerable<HealthBarForecastSegment> GetHealthBarForecastSegments(HealthBarForecastContext context)
     {
-		if (base.Owner is Player)
-		{
-			return Enumerable.Empty<HealthBarForecastSegment>();
-		}
+		if (base.Owner.IsPlayer)
+        {
+            return Enumerable.Empty<HealthBarForecastSegment>();
+        }
         return HealthBarForecasts.Single(
-            context.Creature.GetPowerAmount<QuickSandPower>() * SandFlowsPowerCount - context.Creature.Block, // 展示的数量（例如如果你的能力有2倍效果可以乘2）
+            (context.Creature.GetPower<QuickSandPower>()?.CalculateTotalDamageNextTurn() ?? 0) - context.Creature.Block, // 展示的数量（例如如果你的能力有2倍效果可以乘2）
             new Color(188f / 255f, 130f / 255f, 54f / 255f), // 颜色
             HealthBarForecastGrowthDirection.FromRight // 从左边开始延伸还是右边开始
         // 0, // 顺序，越大越远离血条边缘，默认0

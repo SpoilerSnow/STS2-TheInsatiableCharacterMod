@@ -5,8 +5,10 @@ using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Relics;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using TheInsatiable.Scripts.Pools;
+using TheInsatiable.Scripts.CardKeywords;
 
-namespace TheInsatiable.Scripts;
+namespace TheInsatiable.Scripts.Relics;
 
 [RegisterRelic(typeof(InsatiableRelicPool))]
 

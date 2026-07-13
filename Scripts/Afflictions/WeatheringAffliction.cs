@@ -1,23 +1,20 @@
 using MegaCrit.Sts2.Core.Commands;
-using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
+using TheInsatiable.Scripts.Powers;
 
-namespace TheInsatiable.Scripts;
+namespace TheInsatiable.Scripts.Afflictions;
+
 [RegisterAffliction]
 public class WeatheringAffliction : ModAfflictionTemplate
 {
 	public override bool HasExtraCardText => true;
     protected override IEnumerable<IHoverTip> AdditionalHoverTips => [HoverTipFactory.FromPower<QuickSandPower>()];
-    public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	public override async Task OnPlay(PlayerChoiceContext choiceContext, Creature? target)
 	{
-		if (cardPlay.Card.Affliction is WeatheringAffliction)
-		{
-            int weatheringCount = cardPlay.Card.Affliction.Amount;
-            decimal quickSandCount = weatheringCount;
-			await PowerCmd.Apply<QuickSandPower>(new ThrowingPlayerChoiceContext(), cardPlay.Card.Owner.Creature, quickSandCount, cardPlay.Card.Owner.Creature, null);
-        }
+		await PowerCmd.Apply<QuickSandPower>(new ThrowingPlayerChoiceContext(), Card.Owner.Creature, Amount, Card.Owner.Creature, null);
 	}
 }

@@ -1,13 +1,10 @@
-using MegaCrit.Sts2.Core.Entities.Cards;
-using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Powers;
-using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Rewards;
 using MegaCrit.Sts2.Core.Rooms;
 using MegaCrit.Sts2.Core.Runs;
 using STS2RitsuLib.Interop.AutoRegistration;
 
-namespace TheInsatiable.Scripts;
+namespace TheInsatiable.Scripts.Powers;
 [RegisterPower]
 public sealed class DinosaurFossilPower : InsatiablePowerModel
 {
@@ -30,8 +27,9 @@ public sealed class DinosaurFossilPower : InsatiablePowerModel
                 reward = new RelicReward(base.Owner.Player);
                 break;
             case 2:
-                reward = new PotionReward(base.Owner.Player);
-                reward = new PotionReward(base.Owner.Player);
+                room.AddExtraReward(base.Owner.Player, new PotionReward(base.Owner.Player));
+                room.AddExtraReward(base.Owner.Player, new PotionReward(base.Owner.Player));
+                reward = null;
                 break;
             case 3:
                 reward = new GoldReward(100, base.Owner.Player, false);

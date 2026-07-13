@@ -8,6 +8,9 @@ using MegaCrit.Sts2.Core.Modding;
 using STS2RitsuLib;
 using STS2RitsuLib.CardPiles;
 using STS2RitsuLib.Interop;
+using TheInsatiable.Scripts.Cards;
+using TheInsatiable.Scripts.Pools;
+using TheInsatiable.Scripts.Relics;
 using Logger = MegaCrit.Sts2.Core.Logging.Logger;
 
 namespace TheInsatiable.Scripts;

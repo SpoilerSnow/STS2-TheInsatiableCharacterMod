@@ -5,7 +5,7 @@ using MegaCrit.Sts2.Core.Models.Powers;
 using STS2RitsuLib.Combat.Powers;
 using STS2RitsuLib.Interop.AutoRegistration;
 
-namespace TheInsatiable.Scripts;
+namespace TheInsatiable.Scripts.Powers;
 
 // 注册power并设置Inherit = true，使得继承这个类的power自动被注册
 [RegisterPower(Inherit = true)]

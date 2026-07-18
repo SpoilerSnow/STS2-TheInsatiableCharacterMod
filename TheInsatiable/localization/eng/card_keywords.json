@@ -6,5 +6,7 @@
     "THE_INSATIABLE_KEYWORD_DIGEST.description": "Triggers the corresponding effect when [gold]Swallowed[/gold].",
     "THE_INSATIABLE_KEYWORD_DIGEST.title": "Digest",
     "THE_INSATIABLE_KEYWORD_DYNAMIC.description": "Refers to the DynamicVar value in each card's code.\nAffects damage, block, energy, draw count, power, and other values.",
-    "THE_INSATIABLE_KEYWORD_DYNAMIC.title": "Value"
+    "THE_INSATIABLE_KEYWORD_DYNAMIC.title": "Value",
+    "THE_INSATIABLE_KEYWORD_GULP.description": "Triggers the corresponding effect when [gold]Swallowed[/gold].",
+    "THE_INSATIABLE_KEYWORD_GULP.title": "Gulp"
 }

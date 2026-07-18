@@ -20,7 +20,7 @@ public class DinosaurFossil : InsatiableCardModel
 	}
 	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
 	{
-		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);  
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "PowerUp", base.Owner.Character.CastAnimDelay);  
 		await PowerCmd.Apply<DinosaurFossilPower>(choiceContext, base.Owner.Creature, base.DynamicVars["DinosaurFossilPower"].BaseValue, base.Owner.Creature, this);
 	}
 	protected override void OnUpgrade()

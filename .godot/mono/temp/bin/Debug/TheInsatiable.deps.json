@@ -10,7 +10,8 @@
         "dependencies": {
           "GodotSharp": "4.5.1",
           "GodotSharpEditor": "4.5.1",
-          "STS2.RitsuLib": "0.4.35"
+          "STS2.RitsuLib": "0.4.35",
+          "SmartFormat": "3.3.0"
         },
         "runtime": {
           "TheInsatiable.dll": {}
@@ -32,6 +33,18 @@
           "lib/net8.0/GodotSharpEditor.dll": {
             "assemblyVersion": "4.5.1.0",
             "fileVersion": "4.5.1.0"
+          }
+        }
+      },
+      "SmartFormat/3.3.0": {
+        "runtime": {
+          "lib/netstandard2.1/SmartFormat.ZString.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.3.0.704"
+          },
+          "lib/netstandard2.1/SmartFormat.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.3.0.704"
           }
         }
       },
@@ -76,6 +89,13 @@
       "sha512": "sha512-8CM49047b0Us3qPJo6L7kdldreOvR7JCoXlKoSHzpA0TQP6+Qnoxz/26GZ1ONg2wW4vV9uzor0AHXSGUFP9XSw==",
       "path": "godotsharpeditor/4.5.1",
       "hashPath": "godotsharpeditor.4.5.1.nupkg.sha512"
+    },
+    "SmartFormat/3.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JN19FJuWZwW3G3euSQNTDLAr5wI8ok/VDcBfEN88cZPvzCQMPdyS9s4/fQlEuupXH+IV0wBEbodHVS51t2RIDQ==",
+      "path": "smartformat/3.3.0",
+      "hashPath": "smartformat.3.3.0.nupkg.sha512"
     },
     "STS2.RitsuLib/0.4.35": {
       "type": "package",

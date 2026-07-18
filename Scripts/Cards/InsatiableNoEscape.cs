@@ -24,7 +24,7 @@ public class InsatiableNoEscape : InsatiableCardModel
 	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
 	{
 		await PowerCmd.Apply<InsatiableNoEscapePower>(choiceContext, base.Owner.Creature, 1, base.Owner.Creature, this);
-		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "PowerUp", base.Owner.Character.CastAnimDelay);
         List<CardPileAddResult> statusCards = new List<CardPileAddResult>();
 			for (int i = 0; i < 6; i++)
 			{

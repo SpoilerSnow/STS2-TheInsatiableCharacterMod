@@ -6,5 +6,7 @@
     "THE_INSATIABLE_KEYWORD_DIGEST.description": "[gold]丸呑み[/gold]された時、対応する効果を発動する。",
     "THE_INSATIABLE_KEYWORD_DIGEST.title": "消化",
     "THE_INSATIABLE_KEYWORD_DYNAMIC.description": "各カードのコードに設定されたDynamicVarの値を指す。\nダメージ、ブロック、エナジー、ドロー枚数、パワーなどの数値に影響する。",
-    "THE_INSATIABLE_KEYWORD_DYNAMIC.title": "数値"
+    "THE_INSATIABLE_KEYWORD_DYNAMIC.title": "数値",
+    "THE_INSATIABLE_KEYWORD_GULP.description": "[gold]丸呑み[/gold]された時、対応する効果を発動する。",
+    "THE_INSATIABLE_KEYWORD_GULP.title": "嚥下"
 }

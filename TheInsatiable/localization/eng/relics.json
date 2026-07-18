@@ -17,5 +17,8 @@
     "THE_INSATIABLE_RELIC_EXUVIAE_SKELETON_RELIC.flavor": "Similar shells can often be found in the Burrow. Whether they are molted skins or corpses of exoskeleton creatures, no one knows.",
     "THE_INSATIABLE_RELIC_OBELISK_RELIC.title": "Obelisk",
     "THE_INSATIABLE_RELIC_OBELISK_RELIC.description": "Cards with [gold]Innate[/gold] gain [gold]Retain[/gold]. \nCards with [gold]Retain[/gold] gain [gold]Innate[/gold].",
-    "THE_INSATIABLE_RELIC_OBELISK_RELIC.flavor": "An ancient monument."
+    "THE_INSATIABLE_RELIC_OBELISK_RELIC.flavor": "An ancient monument.",
+    "THE_INSATIABLE_RELIC_GASTROLITH_RELIC.title": "Gastrolith",
+    "THE_INSATIABLE_RELIC_GASTROLITH_RELIC.description": "Cards in the [gold]Swallow Pile[/gold] remain for [blue]{MaxTurnsInPile:diff()}[/blue] fewer turns.\n[gold]Gulp[/gold] and [gold]Digest[/gold] effects trigger [blue]{Repeat:diff()}[/blue] additional times.",
+    "THE_INSATIABLE_RELIC_GASTROLITH_RELIC.flavor": "A stone swallowed to aid digestion — most of the time, the Insatiable absorbs it right along with the meal."
 }

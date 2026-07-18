@@ -17,5 +17,8 @@
     "THE_INSATIABLE_RELIC_EXUVIAE_SKELETON_RELIC.flavor": "巣穴では、これと似た殻がたびたび見つかる。脱皮した抜け殻なのか、外骨格を持つ生物の死骸なのか、知る者はいない。",
     "THE_INSATIABLE_RELIC_OBELISK_RELIC.title": "オベリスク",
     "THE_INSATIABLE_RELIC_OBELISK_RELIC.description": "[gold]天賦[/gold]を持つカードは[gold]保留[/gold]を得る。\n[gold]保留[/gold]を持つカードは[gold]天賦[/gold]を得る。",
-    "THE_INSATIABLE_RELIC_OBELISK_RELIC.flavor": "古代の記念碑。"
+    "THE_INSATIABLE_RELIC_OBELISK_RELIC.flavor": "古代の記念碑。",
+    "THE_INSATIABLE_RELIC_GASTROLITH_RELIC.title": "胃石",
+    "THE_INSATIABLE_RELIC_GASTROLITH_RELIC.description": "[gold]丸呑みスタック[/gold]内のカードの滞留ターン数が[blue]{MaxTurnsInPile:diff()}[/blue]減少する。\n[gold]嚥下[/gold]と[gold]消化[/gold]の効果が[blue]{Repeat:diff()}[/blue]回追加で発動する。",
+    "THE_INSATIABLE_RELIC_GASTROLITH_RELIC.flavor": "消化を促進するために胃に呑み込まれる石。大半の場合、貪りの獣は食べ物と一緒にこれも吸収してしまう。"
 }

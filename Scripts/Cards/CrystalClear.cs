@@ -21,7 +21,7 @@ public class CrystalClear : InsatiableCardModel
 	}
 	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
 	{
-		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "PowerUp", base.Owner.Character.CastAnimDelay);
 		await PowerCmd.Apply<CrystalClearPower>(choiceContext, base.Owner.Creature, base.DynamicVars["CrystalClearPower"].BaseValue, base.Owner.Creature, this);
 	}
 	protected override void OnUpgrade()

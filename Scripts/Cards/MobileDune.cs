@@ -27,7 +27,7 @@ public class MobileDune : InsatiableCardModel
 	}
 	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
 	{
-		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "PowerUp", base.Owner.Character.CastAnimDelay);
 		await PowerCmd.Apply<MobileDunePower>(choiceContext, base.Owner.Creature, base.DynamicVars["MobileDunePower"].BaseValue, base.Owner.Creature, this);
 		await PowerCmd.Apply<SandySkyPower>(choiceContext, base.Owner.Creature, base.DynamicVars["SandySkyPower"].BaseValue, base.Owner.Creature, this);
 	}

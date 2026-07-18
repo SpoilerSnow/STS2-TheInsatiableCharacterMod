@@ -7,6 +7,8 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheInsatiable.Scripts.Pools;
+using MegaCrit.Sts2.Core.Entities.Creatures;
+using TheInsatiable.Scripts.CardKeywords;
 
 namespace TheInsatiable.Scripts.Cards;
 
@@ -19,7 +21,10 @@ public class SpinningSilk : InsatiableCardModel
 	private const CardRarity rarity = CardRarity.Common;
 	private const TargetType targetType = TargetType.AnyEnemy;
 	private const bool shouldShowInCardLibrary = true;
-    protected override IEnumerable<IHoverTip> AdditionalHoverTips => [HoverTipFactory.FromPower<WeakPower>()];
+    protected override IEnumerable<IHoverTip> AdditionalHoverTips => [
+		HoverTipFactory.FromPower<WeakPower>(),
+		HoverTipFactory.FromKeyword(TheInsatiableKeyword.Swallow)
+	];
 	protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
         new DamageVar(4, ValueProp.Move),
@@ -41,6 +46,15 @@ public class SpinningSilk : InsatiableCardModel
 			.Execute(choiceContext);
 		SfxCmd.Play("event:/sfx/enemy/enemy_attacks/workbug_silk/workbug_silk_spit");
         await PowerCmd.Apply<WeakPower>(new ThrowingPlayerChoiceContext(), cardPlay.Target, base.DynamicVars.Weak.IntValue, base.Owner.Creature, this);
+	}
+	public override async Task OnGulp()
+	{
+        FlashOnPlayer();
+        await Cmd.Wait(0.3f);
+		foreach (Creature hittableEnemy in base.CombatState.HittableEnemies)
+		{
+			await PowerCmd.Apply<WeakPower>(new ThrowingPlayerChoiceContext(), hittableEnemy, base.DynamicVars.Weak.IntValue, base.Owner.Creature, this);
+		}
 	}
 
 	protected override void OnUpgrade()

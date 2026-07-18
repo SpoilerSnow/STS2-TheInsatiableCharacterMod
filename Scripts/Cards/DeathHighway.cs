@@ -24,7 +24,7 @@ public class DeathHighway : InsatiableCardModel
     protected override IEnumerable<IHoverTip> AdditionalHoverTips => [HoverTipFactory.FromPower<QuickSandPower>()];
 	protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new DamageVar(10, ValueProp.Move),
+        new DamageVar(9, ValueProp.Move),
         new CardsVar(2)
     ];
 	public DeathHighway() 

@@ -13,7 +13,7 @@ namespace TheInsatiable.Scripts.Cards;
 public class GoldAndSand : InsatiableCardModel
 {
 	protected override IEnumerable<DynamicVar> CanonicalVars => [
-		new PowerVar<QuickSandPower>(4),
+		new PowerVar<QuickSandPower>(5),
 		new EnergyVar(2)
 	];
     protected override IEnumerable<IHoverTip> AdditionalHoverTips => [
@@ -34,6 +34,5 @@ public class GoldAndSand : InsatiableCardModel
 	protected override void OnUpgrade()
 	{
 		base.DynamicVars.Energy.UpgradeValueBy(1);
-        base.DynamicVars["QuickSandPower"].UpgradeValueBy(-2);
 	}
 }

@@ -1,0 +1,5 @@
+{
+  "THE_INSATIABLE_CARDPILE_SWALLOW_PILE.title": "丸呑みスタック",
+  "THE_INSATIABLE_CARDPILE_SWALLOW_PILE.description": "丸呑みスタックには最大[blue]{MaxCapacity:diff()}[/blue]枚のカードを収納でき、\n[blue]{MaxTurnsInPile:diff()}[/blue]ターン経過したカードは戦闘から取り除かれる。\n\nクリックして丸呑みスタックのカードを確認できる。",
+  "THE_INSATIABLE_CARDPILE_SWALLOW_PILE.empty": "丸呑みスタックは[red]空っぽ[/red]だ。"
+}

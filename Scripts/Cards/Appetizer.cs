@@ -17,39 +17,37 @@ namespace TheInsatiable.Scripts.Cards;
 
 public class Appetizer : InsatiableCardModel
 {
-	public override bool GainsBlock => true;
-	protected override IEnumerable<DynamicVar> CanonicalVars => [
-		new BlockVar(7, ValueProp.Move),
-		new MaxCapacityVar(1),
+	protected override IEnumerable<DynamicVar> CanonicalVars => [new CardsVar(1)];
+	public override IEnumerable<CardKeyword> CanonicalKeywords => [
+		CardKeyword.Innate,
+		CardKeyword.Exhaust,
 	];
 	protected override IEnumerable<IHoverTip> AdditionalHoverTips => [
-        HoverTipFactory.Static(StaticHoverTip.Block),
 		HoverTipFactory.FromKeyword(TheInsatiableKeyword.Swallow)
     ];
 	public Appetizer()
-		: base(1, CardType.Skill, CardRarity.Common, TargetType.Self)
+		: base(0, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
 	{
 	}
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
 	{
         await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
-        await CreatureCmd.GainBlock(base.Owner.Creature, base.DynamicVars.Block, cardPlay);
-         CardSelectorPrefs prefs = new CardSelectorPrefs(base.SelectionScreenPrompt, 1);
+		int innateCount = PileType.Hand.GetPile(base.Owner).Cards.Count(card => card.Keywords.Contains(CardKeyword.Innate)) + 1;
+        CardSelectorPrefs prefs = new CardSelectorPrefs(base.SelectionScreenPrompt, innateCount);
         List<CardModel> cardsIn = (from c in PileType.Draw.GetPile(base.Owner).Cards
 			orderby c.Rarity, c.Id
 			select c).ToList();
-		CardModel cardModel = (await CardSelectCmd.FromSimpleGrid(choiceContext, cardsIn, base.Owner, prefs)).FirstOrDefault();
+		List<CardModel> cardModel = (await CardSelectCmd.FromSimpleGrid(choiceContext, cardsIn, base.Owner, prefs)).ToList();
         if (cardModel != null)
 		{
-			bool swallowed = await TheInsatiableCmd.SwallowCard(choiceContext, cardModel);
-            if (swallowed == true && choiceContext != null)
+			foreach (CardModel card in cardModel)
             {
-                SwallowPile.MaxCapacity += (int)DynamicVars["MaxCapacity"].BaseValue;
-            }
+			    bool swallowed = await TheInsatiableCmd.SwallowCard(choiceContext, card);
+			}
 		}
-	}
-	protected override void OnUpgrade()
-	{
-		DynamicVars.Block.UpgradeValueBy(3);
+		if (IsUpgraded)
+		{
+			await CardPileCmd.Draw(new ThrowingPlayerChoiceContext(), base.DynamicVars.Cards.BaseValue, base.Owner);
+		}
 	}
 }

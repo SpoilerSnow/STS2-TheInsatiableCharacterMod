@@ -32,6 +32,7 @@
 
   <ItemGroup>
     <PackageReference Include="STS2.RitsuLib" Version="0.4.35" />
+    <PackageReference Include="SmartFormat" Version="3.3.0" />
   </ItemGroup>
 
   <Target Name="Copy Mod" AfterTargets="PostBuildEvent">

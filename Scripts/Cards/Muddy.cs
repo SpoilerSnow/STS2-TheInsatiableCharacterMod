@@ -26,7 +26,7 @@ public class Muddy : InsatiableCardModel
 
 	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
 	{
-		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "PowerUp", base.Owner.Character.CastAnimDelay);
         await PowerCmd.Apply<QuickSandPower>(new ThrowingPlayerChoiceContext(), base.CombatState.HittableEnemies, base.DynamicVars["QuickSandPower"].IntValue, base.Owner.Creature, this);    
 		await PowerCmd.Apply<MuddyPower>(choiceContext, base.Owner.Creature, base.DynamicVars["MuddyPower"].BaseValue, base.Owner.Creature, this);
 	}

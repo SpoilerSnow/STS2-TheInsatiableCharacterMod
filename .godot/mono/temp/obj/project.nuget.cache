@@ -1,14 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "rZ+aTt+4isY=",
+  "dgSpecHash": "rAqtJpOlU8E=",
   "success": true,
   "projectFilePath": "D:\\downloads\\Works\\mods\\the-insatiable\\TheInsatiable.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\SpoilerSnow\\.nuget\\packages\\godot.sourcegenerators\\4.5.1\\godot.sourcegenerators.4.5.1.nupkg.sha512",
     "C:\\Users\\SpoilerSnow\\.nuget\\packages\\godotsharp\\4.5.1\\godotsharp.4.5.1.nupkg.sha512",
     "C:\\Users\\SpoilerSnow\\.nuget\\packages\\godotsharpeditor\\4.5.1\\godotsharpeditor.4.5.1.nupkg.sha512",
+    "C:\\Users\\SpoilerSnow\\.nuget\\packages\\smartformat\\3.3.0\\smartformat.3.3.0.nupkg.sha512",
     "C:\\Users\\SpoilerSnow\\.nuget\\packages\\sts2.ritsulib\\0.4.35\\sts2.ritsulib.0.4.35.nupkg.sha512",
     "C:\\Users\\SpoilerSnow\\.nuget\\packages\\system.io.hashing\\9.0.0\\system.io.hashing.9.0.0.nupkg.sha512",
+    "C:\\Users\\SpoilerSnow\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512",
+    "C:\\Users\\SpoilerSnow\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512",
     "C:\\Users\\SpoilerSnow\\.nuget\\packages\\microsoft.netcore.app.ref\\9.0.16\\microsoft.netcore.app.ref.9.0.16.nupkg.sha512",
     "C:\\Users\\SpoilerSnow\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\9.0.16\\microsoft.windowsdesktop.app.ref.9.0.16.nupkg.sha512",
     "C:\\Users\\SpoilerSnow\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\9.0.16\\microsoft.aspnetcore.app.ref.9.0.16.nupkg.sha512"

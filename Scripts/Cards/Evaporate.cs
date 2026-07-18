@@ -22,7 +22,6 @@ public class Evaporate : InsatiableCardModel
         HoverTipFactory.FromPower<QuickSandPower>(),
         HoverTipFactory.FromKeyword(TheInsatiableKeyword.Swallow)
     ];
-
     public Evaporate()
         : base(0, CardType.Skill, CardRarity.Rare, TargetType.AnyEnemy)
     {
@@ -35,7 +34,7 @@ public class Evaporate : InsatiableCardModel
         await PowerCmd.Apply<QuickSandPower>(new ThrowingPlayerChoiceContext(), cardPlay.Target, base.DynamicVars["QuickSandPower"].IntValue, base.Owner.Creature, this);
         int quicksandamount = cardPlay.Target.GetPowerAmount<QuickSandPower>();
         int hpamount = cardPlay.Target.CurrentHp;
-        if (quicksandamount >= hpamount)
+        if (hpamount > 0 && quicksandamount >= hpamount)
         {
             await CreatureCmd.TriggerAnim(base.Owner.Creature, "EatPlayer", 0.5f);
 			await Cmd.Wait(2f);

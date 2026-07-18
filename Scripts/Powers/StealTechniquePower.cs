@@ -82,6 +82,7 @@ public class StealTechniquePower : InsatiablePowerModel
 		{
 			Flash();
 			CardModel copy = _stolenCard.CreateClone();
+			copy.SetToFreeThisTurn();
 			await CardPileCmd.AddGeneratedCardToCombat(copy, PileType.Hand, base.Owner.Player);
 			await PowerCmd.Remove(this);
 		}

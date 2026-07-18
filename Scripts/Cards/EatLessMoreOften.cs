@@ -24,7 +24,7 @@ public class EatLessMoreOften : InsatiableCardModel
 		new RepeatVar(4)
 	];
 	public EatLessMoreOften() 
-		: base(3, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
+		: base(4, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
 	{
 	}
 	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -43,7 +43,7 @@ public class EatLessMoreOften : InsatiableCardModel
 	}
 	private void ReduceCostBy(int amount)
 	{
-		base.EnergyCost.AddThisTurn(-amount);
+		base.EnergyCost.AddThisCombat(-amount);
 	}
 	public override Task AfterCardEnteredCombat(CardModel card)
 	{
@@ -56,8 +56,8 @@ public class EatLessMoreOften : InsatiableCardModel
 			return Task.CompletedTask;
 		}
 		var history = CombatManager.Instance.History;
-        var swallowedCards = history.Entries.OfType<CardSwallowedEntry>().Count(e => e.Card.Owner == card.Owner && e.HappenedThisTurn(base.CombatState));
-        var swallowedCreatures = history.Entries.OfType<CreatureSwallowedEntry>().Count(e => e.HappenedThisTurn(base.CombatState));
+        var swallowedCards = history.Entries.OfType<CardSwallowedEntry>().Count(e => e.Card.Owner == card.Owner);
+        var swallowedCreatures = history.Entries.OfType<CreatureSwallowedEntry>().Count();
 		int amount = swallowedCards + swallowedCreatures;
 		ReduceCostBy(amount);
 		return Task.CompletedTask;

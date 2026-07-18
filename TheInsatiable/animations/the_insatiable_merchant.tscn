@@ -230,7 +230,7 @@ color_ramp = SubResource("Gradient_83se2")
 [node name="SalivaSlotNode" type="SpineSlotNode" parent="Visuals"]
 slot_name = "saliva_base_attach"
 show_behind_parent = true
-position = Vector2(-22.669262, -459.40463)
+position = Vector2(-27.544659, -461.9399)
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="SalivaCloudParticles" type="CPUParticles2D" parent="Visuals/SalivaSlotNode"]

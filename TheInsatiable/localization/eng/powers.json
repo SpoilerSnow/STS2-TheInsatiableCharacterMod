@@ -93,5 +93,11 @@
     "THE_INSATIABLE_POWER_EGG_AGAINST_STONE_POWER.smartDescription": "The next time you take unblocked attack damage, lose all [gold]Plating[/gold].",
     "THE_INSATIABLE_POWER_STEAL_TECHNIQUE_POWER.title": "Steal Technique",
     "THE_INSATIABLE_POWER_STEAL_TECHNIQUE_POWER.description": "After [blue]3[/blue] turns, add a copy of the [gold]Swallowed[/gold] card to your hand.",
-    "THE_INSATIABLE_POWER_STEAL_TECHNIQUE_POWER.smartDescription": "After [blue]{Amount}[/blue] turns, add a copy of the [gold]Swallowed[/gold] card to your hand."
+    "THE_INSATIABLE_POWER_STEAL_TECHNIQUE_POWER.smartDescription": "After [blue]{Amount}[/blue] turns, add a copy of the [gold]Swallowed[/gold] card to your hand.",
+    "THE_INSATIABLE_POWER_CHASE_SEQUENCE_POWER.title": "Chase Sequence",
+    "THE_INSATIABLE_POWER_CHASE_SEQUENCE_POWER.description": "At the start of your turn, shuffle [blue]1[/blue] random Status card into other allies' [gold]Draw Piles[/gold].\nEvery [blue]6[/blue] turns, if any ally has [red]Frenetic Escape[/red] in their [gold]Draw Pile[/gold], [gold]Hand[/gold], or [gold]Discard Pile[/gold], [gold]Swallow[/gold] it.",
+    "THE_INSATIABLE_POWER_CHASE_SEQUENCE_POWER.smartDescription": "At the start of your turn, shuffle [blue]{Amount}[/blue] random Status cards into other allies' [gold]Draw Piles[/gold].\nEvery [blue]6[/blue] turns, if any ally has [red]Frenetic Escape[/red] in their [gold]Draw Pile[/gold], [gold]Hand[/gold], or [gold]Discard Pile[/gold], [gold]Swallow[/gold] it.",
+    "THE_INSATIABLE_POWER_RUN_POWER.title": "Run!",
+    "THE_INSATIABLE_POWER_RUN_POWER.description": "At the start of your turn, gain [blue]1[/blue] [gold]Energy[/gold] and draw [blue]1[/blue] additional card.",
+    "THE_INSATIABLE_POWER_RUN_POWER.smartDescription": "At the start of your turn, gain {Amount:energyIcons()} and draw [blue]{Amount}[/blue] additional cards."
 }

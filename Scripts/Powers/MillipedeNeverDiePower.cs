@@ -55,7 +55,7 @@ public class MillipedeNeverDiePower : InsatiablePowerModel
             
             if (_lastPlayedCardsPerTurn.TryGetValue(targetTurn, out CardModel cardModel))
             {
-                await CardCmd.AutoPlay(choiceContext, cardModel.CreateDupe(), null);
+                await CardCmd.AutoPlay(choiceContext, cardModel.CreateDupe(base.Owner.Player), null);
             }
         }
     }

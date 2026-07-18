@@ -20,21 +20,15 @@ public class SandBurial : InsatiableCardModel
 	private const CardType type = CardType.Attack;
 	private const CardRarity rarity = CardRarity.Uncommon;
 	private const TargetType targetType = TargetType.AnyEnemy;
-
-	public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
-
 	protected override IEnumerable<DynamicVar> CanonicalVars => [
-		new DamageVar(6, ValueProp.Move),
+		new DamageVar(7, ValueProp.Move),
 		new PowerVar<QuickSandPower>(3),
 	];
-
 	protected override IEnumerable<IHoverTip> AdditionalHoverTips => [HoverTipFactory.FromPower<QuickSandPower>()];
-
 	public SandBurial()
 		: base(energyCost, type, rarity, targetType)
 	{
 	}
-
 	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
 	{
 		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");

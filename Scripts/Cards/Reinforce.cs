@@ -7,6 +7,7 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheInsatiable.Scripts.Pools;
 using TheInsatiable.Scripts.Powers;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 
 namespace TheInsatiable.Scripts.Cards;
 
@@ -14,6 +15,7 @@ namespace TheInsatiable.Scripts.Cards;
 
 public sealed class Reinforce : InsatiableCardModel
 {
+    public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.MultiplayerOnly;
 	public override bool GainsBlock => true;
     protected override IEnumerable<IHoverTip> AdditionalHoverTips => [
         HoverTipFactory.Static(StaticHoverTip.Block),
@@ -21,28 +23,25 @@ public sealed class Reinforce : InsatiableCardModel
         HoverTipFactory.FromCard<SandStone>()
     ];
 	public Reinforce()
-		: base(2, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+		: base(2, CardType.Skill, CardRarity.Uncommon, TargetType.AllAllies)
 	{
 	}
 	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
 	{
-		await CreatureCmd.GainBlock(base.Owner.Creature, base.Owner.Creature.Block, ValueProp.Unpowered | ValueProp.Move, cardPlay);
-        int selfCurrent = base.Owner.Creature.GetPowerAmount<QuickSandPower>();
-        if (selfCurrent > 0)
+        IEnumerable<Creature> enumerable = base.CombatState.PlayerCreatures.Where((Creature c) => c?.IsAlive ?? false).ToList();
+		foreach (Creature item in enumerable)
+		{
+			await CreatureCmd.GainBlock(item, item.Block, ValueProp.Unpowered | ValueProp.Move, cardPlay);
+		}
+        foreach (var creature in base.CombatState.Creatures)
         {
-            await PowerCmd.Apply<QuickSandPower>(new ThrowingPlayerChoiceContext(), base.Owner.Creature, selfCurrent, base.Owner.Creature, this, false);
-        }
-        foreach (var enemy in base.CombatState.HittableEnemies)
-        {
-            int enemyCurrent = enemy.GetPowerAmount<QuickSandPower>();
-            if (enemyCurrent > 0)
+            int creatureCurrent = creature.GetPowerAmount<QuickSandPower>();
+            if (creatureCurrent > 0)
             {
-                await PowerCmd.Apply<QuickSandPower>(new ThrowingPlayerChoiceContext(), enemy, enemyCurrent, base.Owner.Creature, this);
+                await PowerCmd.Apply<QuickSandPower>(new ThrowingPlayerChoiceContext(), creature, creatureCurrent, base.Owner.Creature, this);
             }
         }
-        var sandstoneCards = PileType.Hand.GetPile(base.Owner).Cards
-                                          .Where(card => card is SandStone)
-                                          .ToList();
+        var sandstoneCards = PileType.Hand.GetPile(base.Owner).Cards.Where(card => card is SandStone).ToList();
         foreach (CardModel sandstone in sandstoneCards)
         {
             CardModel card = sandstone.CreateClone();

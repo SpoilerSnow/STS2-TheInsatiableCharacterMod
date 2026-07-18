@@ -9,36 +9,43 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using TheInsatiable.Scripts.CardKeywords;
 using TheInsatiable.Scripts.Pools;
 using TheInsatiable.Scripts.Powers;
+using MegaCrit.Sts2.Core.Models.Cards;
+using MegaCrit.Sts2.Core.Entities.Players;
 
 namespace TheInsatiable.Scripts.Cards;
 
 [RegisterCard(typeof(InsatiableCardPool))]
 
-public sealed class SurvivalOfTheFittest : InsatiableCardModel
+public sealed class ChaseSequence : InsatiableCardModel
 {
-	public override bool CanBeGeneratedInCombat => false;
+	public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Innate];
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.MultiplayerOnly;
     protected override IEnumerable<IHoverTip> AdditionalHoverTips => [
+		base.EnergyHoverTip,
+		HoverTipFactory.FromCard<FranticEscape>(),
         HoverTipFactory.FromKeyword(TheInsatiableKeyword.Swallow),
-        HoverTipFactory.FromPower<StrengthPower>(),
-		HoverTipFactory.FromPower<DexterityPower>()
     ];
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-		new PowerVar<StrengthPower>(3),
-		new PowerVar<DexterityPower>(3)
+		new PowerVar<ChaseSequencePower>(2),
+		new PowerVar<RunPower>(1),
+		new EnergyVar(1)
 	];
-	public SurvivalOfTheFittest()
+	public ChaseSequence()
 		: base(1, CardType.Power, CardRarity.Rare, TargetType.Self)
 	{
 	}
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
 	{
-        await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
-	    await PowerCmd.Apply<SurvivalOfTheFittestPower>(choiceContext, base.Owner.Creature, base.DynamicVars.Strength.BaseValue, base.Owner.Creature, this);
+        await CreatureCmd.TriggerAnim(base.Owner.Creature, "PowerUp", base.Owner.Character.CastAnimDelay);
+	    await PowerCmd.Apply<ChaseSequencePower>(choiceContext, base.Owner.Creature, base.DynamicVars["ChaseSequencePower"].BaseValue, base.Owner.Creature, this);
+		IEnumerable<Player> enumerable = base.CombatState.Players.Where((Player p) => p.Creature.IsAlive && p != base.Owner);
+		foreach (Player player1 in enumerable)
+		{
+			await PowerCmd.Apply<RunPower>(choiceContext, player1.Creature, base.DynamicVars["RunPower"].BaseValue, base.Owner.Creature, this);
+		}
 	}
     protected override void OnUpgrade()
 	{
-		base.DynamicVars.Strength.UpgradeValueBy(1);
-        base.DynamicVars.Dexterity.UpgradeValueBy(1);
+        DynamicVars["ChaseSequencePower"].UpgradeValueBy(-1);
 	}
 }

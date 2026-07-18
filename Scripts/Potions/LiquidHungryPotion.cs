@@ -19,7 +19,7 @@ public class LiquidHungryPotion : InsatiablePotionModel
 {
     public override PotionRarity Rarity => PotionRarity.Uncommon;
     public override PotionUsage Usage => PotionUsage.CombatOnly;
-    public override TargetType TargetType => TargetType.Self;
+    public override TargetType TargetType => TargetType.AnyPlayer;
     protected override IEnumerable<IHoverTip> AdditionalHoverTips => [HoverTipFactory.FromCard<InsatiableSwallow>()];
     protected override async Task OnUse(PlayerChoiceContext choiceContext, Creature? target)
     {

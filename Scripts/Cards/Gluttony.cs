@@ -27,7 +27,7 @@ public class Gluttony : InsatiableCardModel
 	}
 	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
 	{
-		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "PowerUp", base.Owner.Character.CastAnimDelay);
 		SwallowPile.MaxCapacity = int.MaxValue;  
 		await PowerCmd.Apply<GluttonyPower>(choiceContext, base.Owner.Creature, base.DynamicVars["GluttonyPower"].BaseValue, base.Owner.Creature, this);
 	}

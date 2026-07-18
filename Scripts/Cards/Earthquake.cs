@@ -36,7 +36,7 @@ public class Earthquake : InsatiableCardModel
             .TargetingAllOpponents(base.CombatState)
 			.WithHitFx("vfx/vfx_bite")
             .Execute(choiceContext);
-		await PowerCmd.Apply<QuickSandPower>(new ThrowingPlayerChoiceContext(), base.CombatState.HittableEnemies, base.DynamicVars["QuickSandPower"].IntValue, base.Owner.Creature, this);
+		await PowerCmd.Apply<QuickSandPower>(new ThrowingPlayerChoiceContext(), base.CombatState.HittableEnemies, base.DynamicVars["QuickSandPower"].BaseValue, base.Owner.Creature, this);
 	}
     protected override void OnUpgrade()
 	{

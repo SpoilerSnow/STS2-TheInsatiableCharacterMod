@@ -1,0 +1,5 @@
+{
+  "THE_INSATIABLE_CARDPILE_SWALLOW_PILE.title": "Swallow Pile",
+  "THE_INSATIABLE_CARDPILE_SWALLOW_PILE.description": "The Swallow Pile holds up to [blue]{MaxCapacity:diff()}[/blue] cards.\nCards that have been in the pile for [blue]{MaxTurnsInPile:diff()}[/blue] turns are removed from combat.\n\nClick to view the cards in your Swallow Pile.",
+  "THE_INSATIABLE_CARDPILE_SWALLOW_PILE.empty": "My Swallow Pile is [red]empty[/red]."
+}

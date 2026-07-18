@@ -41,7 +41,7 @@ public static class SwallowPileAgePatch
             }
             if (toRemove.Count != 0)
             {
-                await CreatureCmd.TriggerAnim(player.Creature, "Salivate", 0.5f);
+                await CreatureCmd.TriggerAnim(player.Creature, "PowerUp", 0.5f);
             }
             foreach (var card in toRemove)
             {

@@ -67,8 +67,8 @@ public class InsatiableCharacter : ModCharacterTemplate<InsatiableCardPool, Insa
                 CharacterSelectIconPath: "res://TheInsatiable/characterui/char_select_the_insatiable.png",
                 // 人物选择图标-锁定状态。
                 CharacterSelectLockedIconPath: "res://TheInsatiable/characterui/char_select_the_insatiable_locked.png",
-                // 人物选择过渡动画（暂未自定义）。
-                // CharacterSelectTransitionPath: "res://materials/transitions/ironclad_transition_mat.tres",
+                // 人物选择过渡动画。
+                CharacterSelectTransitionPath: "res://TheInsatiable/scenes/the_insatiable_transition.tres",
                 // 地图上的角色标记图标、表情轮盘上的角色头像。
                 MapMarkerPath: "res://TheInsatiable/characterui/map_marker_the_insatiable.png"
             ),
@@ -202,8 +202,8 @@ public class InsatiableCharacter : ModCharacterTemplate<InsatiableCardPool, Insa
         valtotal.AddAnyState("NoEscape", val6, () => HasNoEscapePower);
         valtotal.AddAnyState("EatPlayer", val7, () => !HasNoEscapePower);
         valtotal.AddAnyState("EatPlayer", val7a, () => HasNoEscapePower);
-        valtotal.AddAnyState("Salivate", val8, () => !HasNoEscapePower);
-        valtotal.AddAnyState("Salivate", val8a, () => HasNoEscapePower);
+        valtotal.AddAnyState("PowerUp", val8, () => !HasNoEscapePower);
+        valtotal.AddAnyState("PowerUp", val8a, () => HasNoEscapePower);
         valtotal.AddAnyState("Thrash", val9, () => !HasNoEscapePower);
         valtotal.AddAnyState("Thrash", val9a, () => HasNoEscapePower);
         return valtotal;

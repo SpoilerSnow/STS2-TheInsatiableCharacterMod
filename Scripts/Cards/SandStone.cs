@@ -15,7 +15,7 @@ public class SandStone : InsatiableCardModel
 	private const int energyCost = 1;
 	private const CardType type = CardType.Status;
 	private const CardRarity rarity = CardRarity.Status;
-	private const TargetType targetType = TargetType.AllEnemies;
+	private const TargetType targetType = TargetType.Self;
 	private const bool shouldShowInCardLibrary = true;
 	public SandStone() 
 		: base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
@@ -29,8 +29,10 @@ public class SandStone : InsatiableCardModel
     protected override IEnumerable<DynamicVar> CanonicalVars => [new PowerVar<QuickSandPower>(4)];
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {
-        await PowerCmd.Apply<QuickSandPower>(new ThrowingPlayerChoiceContext(), base.CombatState.HittableEnemies, base.DynamicVars["QuickSandPower"].IntValue, base.Owner.Creature, this);
-        await PowerCmd.Apply<QuickSandPower>(new ThrowingPlayerChoiceContext(), base.Owner.Creature, base.DynamicVars["QuickSandPower"].IntValue, base.Owner.Creature, this);
+        foreach (var creature in base.CombatState.Creatures)
+        {
+            await PowerCmd.Apply<QuickSandPower>(new ThrowingPlayerChoiceContext(), creature, DynamicVars["QuickSandPower"].BaseValue, base.Owner.Creature, this);
+        }
     }
     
     protected override void OnUpgrade()

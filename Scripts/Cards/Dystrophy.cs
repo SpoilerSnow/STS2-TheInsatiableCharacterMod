@@ -20,7 +20,7 @@ public class Dystrophy : InsatiableCardModel
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new CardsVar(1),
         new EnergyVar(1),
-        new MaxCapacityVar(5),
+        new MaxCapacityVar(4),
     ];
     public Dystrophy()
 		: base(0, CardType.Skill, CardRarity.Uncommon, TargetType.Self)

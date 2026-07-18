@@ -93,5 +93,11 @@
     "THE_INSATIABLE_POWER_EGG_AGAINST_STONE_POWER.smartDescription": "次にブロックされていないアタックダメージを受けた時、すべての[gold]プレートアーマー[/gold]を失う。",
     "THE_INSATIABLE_POWER_STEAL_TECHNIQUE_POWER.title": "技を盗む",
     "THE_INSATIABLE_POWER_STEAL_TECHNIQUE_POWER.description": "[blue]3[/blue]ターン後、[gold]丸呑み[/gold]したカードのコピーを手札に加える。",
-    "THE_INSATIABLE_POWER_STEAL_TECHNIQUE_POWER.smartDescription": "[blue]{Amount}[/blue]ターン後、[gold]丸呑み[/gold]したカードのコピーを手札に加える。"
+    "THE_INSATIABLE_POWER_STEAL_TECHNIQUE_POWER.smartDescription": "[blue]{Amount}[/blue]ターン後、[gold]丸呑み[/gold]したカードのコピーを手札に加える。",
+    "THE_INSATIABLE_POWER_CHASE_SEQUENCE_POWER.title": "追撃戦",
+    "THE_INSATIABLE_POWER_CHASE_SEQUENCE_POWER.description": "自分のターン開始時、他の味方の[gold]山札[/gold]にランダムな状態異常カードを[blue]1[/blue]枚混ぜ込む。\n[blue]6[/blue]ターン終了時、味方の[gold]山札[/gold]、[gold]手札[/gold]、または[gold]捨て札[/gold]に[red]決死の逃亡[/red]がある場合、それを[gold]丸呑み[/gold]する。",
+    "THE_INSATIABLE_POWER_CHASE_SEQUENCE_POWER.smartDescription": "自分のターン開始時、他の味方の[gold]山札[/gold]にランダムな状態異常カードを[blue]{Amount}[/blue]枚混ぜ込む。\n[blue]6[/blue]ターン終了時、味方の[gold]山札[/gold]、[gold]手札[/gold]、または[gold]捨て札[/gold]に[red]決死の逃亡[/red]がある場合、それを[gold]丸呑み[/gold]する。",
+    "THE_INSATIABLE_POWER_RUN_POWER.title": "走れ！",
+    "THE_INSATIABLE_POWER_RUN_POWER.description": "自分のターン開始時、[blue]1[/blue][gold]エナジー[/gold]を得て、追加で[blue]1[/blue]枚カードを引く。",
+    "THE_INSATIABLE_POWER_RUN_POWER.smartDescription": "自分のターン開始時、{Amount:energyIcons()}を得て、追加で[blue]{Amount}[/blue]枚カードを引く。"
 }

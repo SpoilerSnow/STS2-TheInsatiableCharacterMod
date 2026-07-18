@@ -27,7 +27,7 @@ public class OuroborosFrom : InsatiableCardModel
 	}
 	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
 	{
-		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "PowerUp", base.Owner.Character.CastAnimDelay);
 		await PowerCmd.Apply<OuroborosFromPower>(choiceContext, base.Owner.Creature, base.DynamicVars["OuroborosFromPower"].BaseValue, base.Owner.Creature, this);
 		if (IsUpgraded)
 		{

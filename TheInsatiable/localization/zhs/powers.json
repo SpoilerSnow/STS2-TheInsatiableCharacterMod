@@ -99,5 +99,11 @@
     "THE_INSATIABLE_POWER_CHASE_SEQUENCE_POWER.smartDescription": "在你的回合开始时，向其他盟友的[gold]抽牌堆[/gold]洗入[blue]{Amount}[/blue]张随机状态牌。\n每[blue]6[/blue]个回合结束，如果有盟友的[gold]抽牌堆[/gold]，[gold]手牌[/gold]或[gold]弃牌堆[/gold]里有[red]狂乱逃离[/red]，将其[gold]吞噬[/gold]。",
     "THE_INSATIABLE_POWER_RUN_POWER.title": "快跑！",
     "THE_INSATIABLE_POWER_RUN_POWER.description": "在你的回合开始时，获得[blue]1[/blue]点[gold]能量[/gold]并额外抽[blue]1[/blue]张牌。",
-    "THE_INSATIABLE_POWER_RUN_POWER.smartDescription": "在你的回合开始时，获得{Amount:energyIcons()}并额外抽[blue]{Amount}[/blue]张牌。"
+    "THE_INSATIABLE_POWER_RUN_POWER.smartDescription": "在你的回合开始时，获得{Amount:energyIcons()}并额外抽[blue]{Amount}[/blue]张牌。",
+    "THE_INSATIABLE_POWER_ENERGY_FLOW_THEORY_POWER.title": "能量流动理论",
+    "THE_INSATIABLE_POWER_ENERGY_FLOW_THEORY_POWER.description": "战斗结束后，所有玩家按照生命值百分比从低到高的顺序回复生命。\n最低的玩家回复[blue]5[/blue]点生命值，逐级递减一点。",
+    "THE_INSATIABLE_POWER_ENERGY_FLOW_THEORY_POWER.smartDescription": "战斗结束后，所有玩家按照生命值百分比从低到高的顺序回复生命。\n最低的玩家回复[blue]{Amount}[/blue]点生命值，逐级递减一点。",
+    "THE_INSATIABLE_POWER_CONVERGENT_EVOLUTION_POWER.title": "趋同进化",
+    "THE_INSATIABLE_POWER_CONVERGENT_EVOLUTION_POWER.description": "当另一名玩家获得正面效果时，你也获得一次。\n（不会获得趋同进化）",
+    "THE_INSATIABLE_POWER_CONVERGENT_EVOLUTION_POWER.smartDescription": "当[gold]{TargetPlayer}[/gold]下[blue]{Amount}[/blue]次获得正面效果时，你也获得一次。\n（不会获得趋同进化）"
 }

@@ -25,12 +25,12 @@ public class MetamorphosisDevelopment : InsatiableCardModel
     protected override IEnumerable<IHoverTip> AdditionalHoverTips => [
         HoverTipFactory.Static(StaticHoverTip.Block),
         HoverTipFactory.FromKeyword(TheInsatiableKeyword.Swallow),
-        HoverTipFactory.FromPower<PlatingPower>(),
+        HoverTipFactory.FromPower<DexterityPower>(),
         HoverTipFactory.FromPower<WeakPower>(),
     ];
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new BlockVar(8, ValueProp.Move),
-        new PowerVar<PlatingPower>(2),
+        new PowerVar<DexterityPower>(1),
         new EnergyVar(1),
         new PowerVar<WeakPower>(2)
     ];
@@ -52,15 +52,13 @@ public class MetamorphosisDevelopment : InsatiableCardModel
                 }
                 if (swallowedCard.Enchantment != null || swallowedCard.IsUpgraded)
                 {
-                    await PowerCmd.Apply<PlatingPower>(choiceContext, base.Owner.Creature, base.DynamicVars["PlatingPower"].BaseValue, base.Owner.Creature, this);
+                    await PowerCmd.Apply<DexterityPower>(choiceContext, base.Owner.Creature, base.DynamicVars["DexterityPower"].BaseValue, base.Owner.Creature, this);
                 }
             }
         }
     }
     protected override void OnUpgrade()
 	{
-        base.DynamicVars.Block.UpgradeValueBy(3);
-		base.DynamicVars["PlatingPower"].UpgradeValueBy(1);
+        base.DynamicVars.Block.UpgradeValueBy(4);
 	}
-
 }

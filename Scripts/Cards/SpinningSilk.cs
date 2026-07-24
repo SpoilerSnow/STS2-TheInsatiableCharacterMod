@@ -23,7 +23,7 @@ public class SpinningSilk : InsatiableCardModel
 	private const bool shouldShowInCardLibrary = true;
     protected override IEnumerable<IHoverTip> AdditionalHoverTips => [
 		HoverTipFactory.FromPower<WeakPower>(),
-		HoverTipFactory.FromKeyword(TheInsatiableKeyword.Swallow)
+		HoverTipFactory.FromKeyword(TheInsatiableKeyword.Digest)
 	];
 	protected override IEnumerable<DynamicVar> CanonicalVars => 
     [

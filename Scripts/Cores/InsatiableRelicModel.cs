@@ -8,12 +8,14 @@ namespace TheInsatiable.Scripts;
 
 public abstract class InsatiableRelicModel : ModRelicTemplate, ITheInsatiableModel
 {
-    // 小图标（原版85x85）
-    public override string? CustomIconPath => $"res://TheInsatiable/images/relics/{GetType().Name.Replace("Relic", "")}.png";
-    // 轮廓图标（原版85x85）
-    public override string? CustomIconOutlinePath => $"res://TheInsatiable/images/relics/{GetType().Name.Replace("Relic", "")}.png";
-    // 大图标（原版256x256）
-    public override string? CustomBigIconPath => $"res://TheInsatiable/images/relics/big/{GetType().Name.Replace("Relic", "")}.png";
+    public override RelicAssetProfile AssetProfile => new(
+        // 小图标（原版85x85）
+        IconPath: $"res://TheInsatiable/images/relics/{GetType().Name.Replace("Relic", "")}.png",
+        // 轮廓图标（原版85x85）
+        IconOutlinePath: $"res://TheInsatiable/images/relics/outline/{GetType().Name.Replace("Relic", "")}.png",
+        // 大图标（原版256x256）
+        BigIconPath: $"res://TheInsatiable/images/relics/big/{GetType().Name.Replace("Relic", "")}.png"
+    );
     public virtual Task AfterCardSwallow(ICombatState combatState, PlayerChoiceContext choiceContext, CardModel card, bool causedBySelfSwallow)
     {
         return Task.CompletedTask;

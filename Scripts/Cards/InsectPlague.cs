@@ -39,7 +39,7 @@ public class InsectPlague : InsatiableCardModel
 	}
 	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
 	{
-		ArgumentNullException.ThrowIfNull(cardPlay.Target, nameof(cardPlay.Target));
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
 		bool hasAttackedTarget = CombatManager.Instance.History.Entries
 			.OfType<DamageReceivedEntry>()
 			.Any(e => e.Receiver == cardPlay.Target

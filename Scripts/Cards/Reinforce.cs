@@ -7,7 +7,6 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheInsatiable.Scripts.Pools;
 using TheInsatiable.Scripts.Powers;
-using MegaCrit.Sts2.Core.Entities.Creatures;
 
 namespace TheInsatiable.Scripts.Cards;
 
@@ -15,8 +14,11 @@ namespace TheInsatiable.Scripts.Cards;
 
 public sealed class Reinforce : InsatiableCardModel
 {
-    public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.MultiplayerOnly;
 	public override bool GainsBlock => true;
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [
+        CardKeyword.Retain,
+        CardKeyword.Exhaust
+    ];
     protected override IEnumerable<IHoverTip> AdditionalHoverTips => [
         HoverTipFactory.Static(StaticHoverTip.Block),
         HoverTipFactory.FromPower<QuickSandPower>(),
@@ -28,11 +30,7 @@ public sealed class Reinforce : InsatiableCardModel
 	}
 	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
 	{
-        IEnumerable<Creature> enumerable = base.CombatState.PlayerCreatures.Where((Creature c) => c?.IsAlive ?? false).ToList();
-		foreach (Creature item in enumerable)
-		{
-			await CreatureCmd.GainBlock(item, item.Block, ValueProp.Unpowered | ValueProp.Move, cardPlay);
-		}
+        await CreatureCmd.GainBlock(base.Owner.Creature, base.Owner.Creature.Block, ValueProp.Unpowered | ValueProp.Move, cardPlay);
         foreach (var creature in base.CombatState.Creatures)
         {
             int creatureCurrent = creature.GetPowerAmount<QuickSandPower>();

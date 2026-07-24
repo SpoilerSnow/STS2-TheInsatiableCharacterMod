@@ -30,13 +30,7 @@ public class MawOfVoid : InsatiableCardModel
         .Targeting(cardPlay.Target)
 		.WithHitFx("vfx/vfx_bite")
 		.Execute(choiceContext);
-	}
-	public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
-	{
-		if (cardPlay.Card == this)
-		{
-			await PowerCmd.Apply<MawOfVoidPower>(choiceContext, base.Owner.Creature, 1, base.Owner.Creature, this);
-		}
+		await PowerCmd.Apply<MawOfVoidPower>(choiceContext, base.Owner.Creature, 1, base.Owner.Creature, this);
 	}
 	protected override void OnUpgrade()
 	{

@@ -28,7 +28,10 @@ public class Dystrophy : InsatiableCardModel
 	}
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {
-        SwallowPile.MaxCapacity -= (int)DynamicVars["MaxCapacity"].BaseValue;
+        if (!SwallowPile.IsLocked)
+        {
+            SwallowPile.MaxCapacity += (int)DynamicVars["MaxCapacity"].BaseValue;
+        }
         await CardPileCmd.Draw(choiceContext, base.DynamicVars.Cards.BaseValue, base.Owner);
         await PlayerCmd.GainEnergy(base.DynamicVars.Energy.BaseValue, base.Owner);
     }

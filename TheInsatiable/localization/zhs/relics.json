@@ -20,5 +20,8 @@
     "THE_INSATIABLE_RELIC_OBELISK_RELIC.flavor": "古老的纪念碑。",
     "THE_INSATIABLE_RELIC_GASTROLITH_RELIC.title": "胃石",
     "THE_INSATIABLE_RELIC_GASTROLITH_RELIC.description": "[gold]吞噬堆[/gold]中的卡牌存在回合数减少[blue]{MaxTurnsInPile:diff()}[/blue]。\n[gold]吞咽[/gold]和[gold]消化[/gold]效果会额外触发[blue]{Repeat:diff()}[/blue]次。",
-    "THE_INSATIABLE_RELIC_GASTROLITH_RELIC.flavor": "吞进胃里用来促进消化的石头，大部分时候会被无厌沙虫连同食物一起吸收掉。"
+    "THE_INSATIABLE_RELIC_GASTROLITH_RELIC.flavor": "吞进胃里用来促进消化的石头，大部分时候会被无厌沙虫连同食物一起吸收掉。",
+    "THE_INSATIABLE_RELIC_GOLD_PAN_RELIC.title": "淘金盘",
+    "THE_INSATIABLE_RELIC_GOLD_PAN_RELIC.description": "在每场战斗开始时，[gold]吞噬[/gold][blue]{Cards:diff()}[/blue]张[gold]淘金热[/gold]。",
+    "THE_INSATIABLE_RELIC_GOLD_PAN_RELIC.flavor": "来自曾经的尖塔冒险者前辈。"
 }

@@ -42,7 +42,10 @@ public class Dessert : InsatiableCardModel
 			bool swallowed = await TheInsatiableCmd.SwallowCard(choiceContext, cardModel);
             if (swallowed == true && choiceContext != null)
             {
-                SwallowPile.MaxCapacity += (int)DynamicVars["MaxCapacity"].BaseValue;
+                if (!SwallowPile.IsLocked)
+                {
+                    SwallowPile.MaxCapacity += (int)DynamicVars["MaxCapacity"].BaseValue;
+                }
             }
 		}
 	}

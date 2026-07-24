@@ -40,9 +40,7 @@ public class EggAgainstStone : InsatiableCardModel
 			.Targeting(cardPlay.Target)
 			.WithHitFx("vfx/vfx_attack_blunt")
 			.Execute(choiceContext);
-		// 使用原版 PlatingPower 作为覆甲
 		await PowerCmd.Apply<PlatingPower>(choiceContext, base.Owner.Creature, base.DynamicVars["PlatingPower"].BaseValue, base.Owner.Creature, this);
-		// 附加一个不叠加的监听 Power，仅负责在受到未被格挡的攻击伤害时移除覆甲
 		await PowerCmd.Apply<EggAgainstStonePower>(choiceContext, base.Owner.Creature, 1m, base.Owner.Creature, this);
 	}
 

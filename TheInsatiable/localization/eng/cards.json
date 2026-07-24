@@ -57,7 +57,7 @@
     "THE_INSATIABLE_CARD_SAND_WALL.title": "Sand Wall",
     "THE_INSATIABLE_CARD_SAND_WALL.description": "Gain {Block:diff()} [gold]Block[/gold].\nApply {QuickSandPower:diff()} [gold]Quicksand[/gold] to ALL enemies.\nAdd a [gold]Sandstone[/gold] to your [gold]Hand[/gold].",
     "THE_INSATIABLE_CARD_REINFORCE.title": "Reinforce",
-    "THE_INSATIABLE_CARD_REINFORCE.description": "Double your current [gold]Block[/gold] and ALL creatures' [gold]Quicksand[/gold].\nCopy ALL [gold]Sandstone[/gold] in your [gold]Hand[/gold].",
+    "THE_INSATIABLE_CARD_REINFORCE.description": "Double ALL players' current [gold]Block[/gold] and ALL creatures' [gold]Quicksand[/gold].\nCopy ALL [gold]Sandstone[/gold] in your [gold]Hand[/gold].",
     "THE_INSATIABLE_CARD_TENDER_TOXIC.title": "Tender Toxic",
     "THE_INSATIABLE_CARD_TENDER_TOXIC.description": "After playing this card, for each card you play this turn, ALL enemies lose {StrengthPower:diff()} [gold]Strength[/gold] and {DexterityPower:diff()} [gold]Dexterity[/gold].",
     "THE_INSATIABLE_CARD_SWIM_SAND_SEA.title": "Swim the Sand Sea",

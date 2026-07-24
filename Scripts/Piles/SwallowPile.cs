@@ -11,6 +11,12 @@ public abstract class SwallowPile
     public static int MaxCapacity = DefaultMaxCapacity;
     public const int DefaultMaxTurnsInPile = 4;
     public static int MaxTurnsInPile = DefaultMaxTurnsInPile;
+    public static bool IsLocked { get; private set; } = false;
+    public static void LockMaxCapacity()
+    {
+        MaxCapacity = int.MaxValue;
+        IsLocked = true;
+    }
     /// <summary>
     /// 追踪每张卡牌在吞噬堆中度过的回合数。
     /// </summary>
@@ -46,5 +52,6 @@ public abstract class SwallowPile
         MaxCapacity = DefaultMaxCapacity;
         CardTurns.Clear();
         MaxTurnsInPile = DefaultMaxTurnsInPile;
+        IsLocked = false;
     }
 }

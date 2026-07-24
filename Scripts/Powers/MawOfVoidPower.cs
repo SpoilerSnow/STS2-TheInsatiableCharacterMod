@@ -11,6 +11,7 @@ namespace TheInsatiable.Scripts.Powers;
 [RegisterPower]
 public sealed class MawOfVoidPower : InsatiablePowerModel
 {
+	private bool _ignoredFirst;
     public override PowerType Type => PowerType.Buff;
 
 	public override PowerStackType StackType => PowerStackType.Counter;
@@ -60,6 +61,11 @@ public sealed class MawOfVoidPower : InsatiablePowerModel
 	}
 	public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
 	{
+		if (!_ignoredFirst)
+		{
+			_ignoredFirst = true;
+			return;
+		}
 		if (cardPlay.Card.Owner.Creature == base.Owner)
 		{
 			bool swallowed = await TheInsatiableCmd.SwallowCard(choiceContext, cardPlay.Card);

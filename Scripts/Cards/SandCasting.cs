@@ -1,4 +1,3 @@
-using MegaCrit.Sts2.Core.HoverTips;
 using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Combat.History.Entries;
@@ -6,6 +5,7 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
@@ -16,19 +16,29 @@ namespace TheInsatiable.Scripts.Cards;
 
 [RegisterCard(typeof(InsatiableCardPool))]
 
-public class ShieldOfSand : InsatiableCardModel
+public class SandCasting : InsatiableCardModel
 {
     public override bool GainsBlock => true;
-    public ShieldOfSand() 
-		: base(1, CardType.Skill, CardRarity.Common,  TargetType.Self, true)
+    public SandCasting() 
+		: base(1, CardType.Attack, CardRarity.Uncommon,  TargetType.AnyEnemy, true)
 	{
 	}
     protected override IEnumerable<IHoverTip> AdditionalHoverTips => [
         HoverTipFactory.FromPower<QuickSandPower>(),
         HoverTipFactory.Static(StaticHoverTip.Block)
     ];
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Retain];
 	protected override IEnumerable<DynamicVar> CanonicalVars => [
         new CalculationBaseVar(0),
+        new ExtraDamageVar(1),
+        new CalculatedDamageVar(ValueProp.Move).WithMultiplier((CardModel card, Creature? target) =>
+            CombatManager.Instance.History.Entries
+                .OfType<PowerReceivedEntry>()
+                .Where((PowerReceivedEntry e) =>
+                    e.HappenedThisTurn(card.CombatState)
+                    && e.Power is QuickSandPower
+                    && e.Applier == card.Owner.Creature)
+                .Sum((PowerReceivedEntry e) => e.Amount)),
         new CalculationExtraVar(1),
         new CalculatedBlockVar(ValueProp.Move).WithMultiplier((CardModel card, Creature? target) =>
             CombatManager.Instance.History.Entries
@@ -42,7 +52,14 @@ public class ShieldOfSand : InsatiableCardModel
 	
 	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
 	{
-		await CreatureCmd.GainBlock(base.Owner.Creature, base.DynamicVars.CalculatedBlock.Calculate(cardPlay.Target), base.DynamicVars.CalculatedBlock.Props, cardPlay);
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+		await DamageCmd
+        .Attack(base.DynamicVars.CalculatedDamage)
+        .FromCard(this, cardPlay)
+        .Targeting(cardPlay.Target)
+        .WithHitFx("vfx/vfx_bite")
+		.Execute(choiceContext);
+        await CreatureCmd.GainBlock(base.Owner.Creature, base.DynamicVars.CalculatedBlock.Calculate(cardPlay.Target), base.DynamicVars.CalculatedBlock.Props, cardPlay);
 	}
 
 	protected override void OnUpgrade()

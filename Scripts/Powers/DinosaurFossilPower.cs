@@ -15,7 +15,7 @@ public sealed class DinosaurFossilPower : InsatiablePowerModel
         Reward? reward = null;
         for (int i = 0; i < base.Amount; i++)
         {
-        int choice = base.Owner.Player.RunState.Rng.CombatCardSelection.NextInt(4);
+        int choice = base.Owner.Player.RunState.Rng.Niche.NextInt(4);
         switch (choice)
         {
             case 0:

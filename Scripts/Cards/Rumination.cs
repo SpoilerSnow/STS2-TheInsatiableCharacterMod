@@ -30,10 +30,7 @@ public class Rumination : InsatiableCardModel
 	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
 	{
 		await CreatureCmd.TriggerAnim(base.Owner.Creature, "PowerUp", base.Owner.Character.CastAnimDelay);
-		if (!SwallowPile.IsLocked)
-        {
-            SwallowPile.MaxCapacity += (int)DynamicVars["MaxCapacity"].BaseValue;
-        }
+		await PowerCmd.Apply<GastricCapacityPower>(choiceContext, base.Owner.Creature, base.DynamicVars["MaxCapacity"].IntValue, base.Owner.Creature, this);
 		await PowerCmd.Apply<RuminationPower>(choiceContext, base.Owner.Creature, base.DynamicVars["RuminationPower"].BaseValue, base.Owner.Creature, this);
 	}
 	protected override void OnUpgrade()

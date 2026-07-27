@@ -13,7 +13,7 @@ using TheInsatiable.Scripts.Cards;
 namespace TheInsatiable.Scripts.Powers;
 
 [RegisterPower]
-public sealed class LayEggsPower : InsatiablePowerModel
+public class LayEggsPower : InsatiablePowerModel
 {
 	public override PowerType Type => PowerType.Buff;
 	public override PowerStackType StackType => PowerStackType.Counter;

@@ -7,6 +7,7 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheInsatiable.Scripts.Powers;
+using TheInsatiable.Scripts.CardKeywords;
 
 namespace TheInsatiable.Scripts.Cards;
 
@@ -14,7 +15,10 @@ namespace TheInsatiable.Scripts.Cards;
 
 public class LocustOfFamine : InsatiableCardModel
 {
-    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [
+		CardKeyword.Exhaust,
+		TheInsatiableKeyword.Insect
+	];
     protected override IEnumerable<IHoverTip> AdditionalHoverTips => [HoverTipFactory.FromPower<QuickSandPower>()];
 	protected override IEnumerable<DynamicVar> CanonicalVars => 
 	[

@@ -15,14 +15,8 @@ namespace TheInsatiable.Scripts.Cards;
 
 public class SandStorm : InsatiableCardModel
 {
-	private const int energyCost = 1;
-	private const CardType type = CardType.Skill;
-	private const CardRarity rarity = CardRarity.Ancient;
-	private const TargetType targetType = TargetType.AllEnemies;
-	private const bool shouldShowInCardLibrary = true;
-
     public SandStorm()
-		: base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
+		: base(1, CardType.Skill, CardRarity.Ancient, TargetType.AllEnemies)
 	{
 	}
 	public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Retain];
@@ -32,7 +26,7 @@ public class SandStorm : InsatiableCardModel
         HoverTipFactory.FromPower<WeakPower>(),
         ];
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new PowerVar<QuickSandPower>(8),
+        new PowerVar<QuickSandPower>(7),
         new PowerVar<WeakPower>(1),
         new PowerVar<VulnerablePower>(1)
     ];
@@ -45,7 +39,7 @@ public class SandStorm : InsatiableCardModel
 	}
     protected override void OnUpgrade()
 	{
-		base.DynamicVars["QuickSandPower"].UpgradeValueBy(3);
+		base.DynamicVars["QuickSandPower"].UpgradeValueBy(2);
         base.DynamicVars.Weak.UpgradeValueBy(1);
 	    base.DynamicVars.Vulnerable.UpgradeValueBy(1);
 	}

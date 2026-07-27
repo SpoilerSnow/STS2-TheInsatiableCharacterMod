@@ -6,6 +6,8 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using TheInsatiable.Scripts.Piles;
 using TheInsatiable.Scripts.Pools;
+using MegaCrit.Sts2.Core.Localization;
+using TheInsatiable.Scripts.Powers;
 
 namespace TheInsatiable.Scripts.Cards;
 
@@ -23,14 +25,15 @@ public class Dystrophy : InsatiableCardModel
         new MaxCapacityVar(4),
     ];
     public Dystrophy()
-		: base(0, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+		: base(0, CardType.Skill, CardRarity.Common, TargetType.Self)
 	{
 	}
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {
-        if (!SwallowPile.IsLocked)
+        await PowerCmd.Apply<GastricCapacityPower>(choiceContext, base.Owner.Creature, -base.DynamicVars["MaxCapacity"].IntValue, base.Owner.Creature, this);
+        if (Entry.SwallowPile.GetPile(base.Owner).Cards.Count >= SwallowPile.MaxCapacity)
         {
-            SwallowPile.MaxCapacity += (int)DynamicVars["MaxCapacity"].BaseValue;
+            ThinkCmd.Play(new LocString("combat_messages", "SWALLOW_PILE_FULL_2"), base.Owner.Creature, 2.0);
         }
         await CardPileCmd.Draw(choiceContext, base.DynamicVars.Cards.BaseValue, base.Owner);
         await PlayerCmd.GainEnergy(base.DynamicVars.Energy.BaseValue, base.Owner);

@@ -19,7 +19,7 @@ public class QuickSandPower : InsatiablePowerModel, IHealthBarForecastSource
 	public override PowerType Type => PowerType.Debuff;
 	public override PowerStackType StackType => PowerStackType.Counter;
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-		new DynamicVar("DamageIncrease", 0.04m),
+		new DynamicVar("DamageIncrease", 0.01m),
 		new DynamicVar("DamageDecrease", 0.03m),
 		new DynamicVar("quicksand1", 0),
 		new DynamicVar("quicksand2", 0)

@@ -5,6 +5,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheInsatiable.Scripts.Pools;
+using TheInsatiable.Scripts.CardKeywords;
 
 namespace TheInsatiable.Scripts.Cards;
 
@@ -12,17 +13,14 @@ namespace TheInsatiable.Scripts.Cards;
 
 public class SwarmUp : InsatiableCardModel
 {
-	private const int energyCost = 3;
-	private const CardType type = CardType.Attack;
-	private const CardRarity rarity = CardRarity.Rare;
-	private const TargetType targetType = TargetType.AllEnemies;
-	private const bool shouldShowInCardLibrary = true;
-
     public SwarmUp()
-		: base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
+		: base(3, CardType.Attack, CardRarity.Rare, TargetType.AllEnemies)
 	{
 	}
-    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Retain];
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [
+        CardKeyword.Retain,
+        TheInsatiableKeyword.Insect
+    ];
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new DamageVar(3, ValueProp.Move),
         new RepeatVar(7),

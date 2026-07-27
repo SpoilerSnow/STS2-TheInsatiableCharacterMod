@@ -14,13 +14,7 @@ namespace TheInsatiable.Scripts.Cards;
 
 public class UnderSixFeet : InsatiableCardModel
 {
-	private const int energyCost = 1;
-	private const CardType type = CardType.Skill;
-	private const CardRarity rarity = CardRarity.Uncommon;
-	private const TargetType targetType = TargetType.AnyEnemy;
-
 	public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
-
 	protected override IEnumerable<DynamicVar> CanonicalVars => [
 		new PowerVar<UnderSixFeetPower>(1),
 	];
@@ -29,7 +23,7 @@ public class UnderSixFeet : InsatiableCardModel
 		HoverTipFactory.FromKeyword(TheInsatiableKeyword.Swallow),
 	];
 	public UnderSixFeet()
-		: base(energyCost, type, rarity, targetType)
+		: base(1, CardType.Skill, CardRarity.Uncommon, TargetType.AnyEnemy)
 	{
 	}
 	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

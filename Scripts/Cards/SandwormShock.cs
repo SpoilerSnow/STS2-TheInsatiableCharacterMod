@@ -23,7 +23,7 @@ public class SandwormShock : InsatiableCardModel
         HoverTipFactory.FromPower<QuickSandPower>(),
         HoverTipFactory.FromPower<VulnerablePower>()];
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new PowerVar<QuickSandPower>(5),
+        new PowerVar<QuickSandPower>(4),
         new PowerVar<VulnerablePower>(1)
         ];
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

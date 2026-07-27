@@ -8,19 +8,16 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheInsatiable.Scripts.Pools;
+using TheInsatiable.Scripts.CardKeywords;
 
 namespace TheInsatiable.Scripts.Cards;
 
 [RegisterCard(typeof(InsatiableCardPool))]
 public class ToxicSpit : InsatiableCardModel
 {
-	private const int energyCost = 1;
-	private const CardType type = CardType.Attack;
-	private const CardRarity rarity = CardRarity.Common;
-	private const TargetType targetType = TargetType.AnyEnemy;
-	private const bool shouldShowInCardLibrary = true;
+	public override IEnumerable<CardKeyword> CanonicalKeywords => [TheInsatiableKeyword.Insect];
 	public ToxicSpit() 
-		: base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
+		: base(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
 	{
 	}
 	protected override IEnumerable<IHoverTip> AdditionalHoverTips => [HoverTipFactory.FromCard<Toxic>()];

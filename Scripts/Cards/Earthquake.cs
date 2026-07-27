@@ -14,14 +14,8 @@ namespace TheInsatiable.Scripts.Cards;
 
 public class Earthquake : InsatiableCardModel
 {
-	private const int energyCost = 2;
-	private const CardType type = CardType.Attack;
-	private const CardRarity rarity = CardRarity.Uncommon;
-	private const TargetType targetType = TargetType.AllEnemies;
-	private const bool shouldShowInCardLibrary = true;
-
     public Earthquake()
-		: base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
+		: base(2, CardType.Attack, CardRarity.Uncommon, TargetType.AllEnemies)
 	{
 	}
     protected override IEnumerable<IHoverTip> AdditionalHoverTips => [HoverTipFactory.FromPower<QuickSandPower>()];

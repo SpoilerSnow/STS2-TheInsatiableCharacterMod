@@ -16,13 +16,8 @@ namespace TheInsatiable.Scripts.Cards;
 
 public class SandwormBite : InsatiableCardModel
 {
-	private const int energyCost = 1;
-	private const CardType type = CardType.Attack;
-	private const CardRarity rarity = CardRarity.Basic;
-	private const TargetType targetType = TargetType.AnyEnemy;
-	private const bool shouldShowInCardLibrary = true;
     public SandwormBite() 
-		: base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
+		: base(1, CardType.Attack, CardRarity.Basic, TargetType.AnyEnemy)
 	{
 	}
     protected override IEnumerable<IHoverTip> AdditionalHoverTips => [HoverTipFactory.FromPower<QuickSandPower>()];

@@ -14,15 +14,10 @@ namespace TheInsatiable.Scripts.Cards;
 
 public class LungingBite : InsatiableCardModel
 {
-	private const int energyCost = 2;
-	private const CardType type = CardType.Attack;
-	private const CardRarity rarity = CardRarity.Rare;
-	private const TargetType targetType = TargetType.AnyEnemy;
-	private const bool shouldShowInCardLibrary = true;
     protected override bool ShouldGlowGoldInternal => base.CombatState?.HittableEnemies.Any((Creature e) => e.Block > 0) ?? false;
     protected override IEnumerable<IHoverTip> AdditionalHoverTips => [HoverTipFactory.Static(StaticHoverTip.Block)];
 	public LungingBite() 
-		: base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
+		: base(2, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)
 	{
 	}
 	protected override IEnumerable<DynamicVar> CanonicalVars => 

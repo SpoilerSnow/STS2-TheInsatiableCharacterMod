@@ -15,17 +15,13 @@ namespace TheInsatiable.Scripts.Cards;
 public class SandBurial : InsatiableCardModel
 {
 	public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.MultiplayerOnly;
-	private const int energyCost = 1;
-	private const CardType type = CardType.Attack;
-	private const CardRarity rarity = CardRarity.Uncommon;
-	private const TargetType targetType = TargetType.AnyEnemy;
 	protected override IEnumerable<DynamicVar> CanonicalVars => [
 		new DamageVar(7, ValueProp.Move),
 		new PowerVar<QuickSandPower>(3),
 	];
 	protected override IEnumerable<IHoverTip> AdditionalHoverTips => [HoverTipFactory.FromPower<QuickSandPower>()];
 	public SandBurial()
-		: base(energyCost, type, rarity, targetType)
+		: base(1, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
 	{
 	}
 	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

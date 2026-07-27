@@ -11,7 +11,7 @@ using STS2RitsuLib.Interop.AutoRegistration;
 namespace TheInsatiable.Scripts.Powers;
 
 [RegisterPower]
-public sealed class SedimentationPower : InsatiablePowerModel
+public class SedimentationPower : InsatiablePowerModel
 {
 	public override PowerType Type => PowerType.Buff;
 

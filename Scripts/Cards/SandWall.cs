@@ -14,14 +14,9 @@ namespace TheInsatiable.Scripts.Cards;
 
 public class SandWall : InsatiableCardModel
 {
-	private const int energyCost = 2;
-	private const CardType type = CardType.Skill;
-	private const CardRarity rarity = CardRarity.Uncommon;
-	private const TargetType targetType = TargetType.AllEnemies;
-	private const bool shouldShowInCardLibrary = true;
     public override bool GainsBlock => true;
     public SandWall()
-		: base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
+		: base(2, CardType.Skill, CardRarity.Uncommon, TargetType.AllEnemies)
 	{
 	}
     protected override IEnumerable<IHoverTip> AdditionalHoverTips => [

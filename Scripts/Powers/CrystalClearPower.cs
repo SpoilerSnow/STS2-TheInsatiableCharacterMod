@@ -1,3 +1,4 @@
+using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
@@ -10,7 +11,7 @@ using STS2RitsuLib.Interop.AutoRegistration;
 namespace TheInsatiable.Scripts.Powers;
 
 [RegisterPower]
-public sealed class CrystalClearPower : InsatiablePowerModel
+public class CrystalClearPower : InsatiablePowerModel
 {
 	public override PowerType Type => PowerType.Buff;
 
@@ -24,6 +25,13 @@ public sealed class CrystalClearPower : InsatiablePowerModel
 		{
 			Flash();
 			await CreatureCmd.Damage(choiceContext, base.Owner.CombatState.HittableEnemies, base.Amount, ValueProp.Unpowered, base.Owner);
+		}
+	}
+	public override async Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
+	{
+		if (side == CombatSide.Player)
+		{
+			await PowerCmd.Remove(this);
 		}
 	}
 }

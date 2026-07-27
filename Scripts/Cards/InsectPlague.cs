@@ -16,11 +16,6 @@ namespace TheInsatiable.Scripts.Cards;
 
 public class InsectPlague : InsatiableCardModel
 {
-	private const int energyCost = 1;
-	private const CardType type = CardType.Attack;
-	private const CardRarity rarity = CardRarity.Uncommon;
-	private const TargetType targetType = TargetType.AnyEnemy;
-	private const bool shouldShowInCardLibrary = true;
     protected override bool ShouldGlowGoldInternal => CombatManager.Instance.History.Entries
         .OfType<DamageReceivedEntry>()
         .Any(e => e.Dealer == base.Owner.Creature
@@ -34,7 +29,7 @@ public class InsectPlague : InsatiableCardModel
         new PowerVar<VulnerablePower>(1)
     ];
 	public InsectPlague() 
-		: base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
+		: base(1, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
 	{
 	}
 	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -58,7 +53,7 @@ public class InsectPlague : InsatiableCardModel
 	}
 	protected override void OnUpgrade()
 	{
-		base.DynamicVars.Damage.UpgradeValueBy(4);
+		base.DynamicVars.Damage.UpgradeValueBy(3);
         base.DynamicVars.Vulnerable.UpgradeValueBy(1);
 	}
 }

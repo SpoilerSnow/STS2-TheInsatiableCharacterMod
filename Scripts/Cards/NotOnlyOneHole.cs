@@ -59,6 +59,6 @@ public class NotOnlyOneHole : InsatiableCardModel
     }
     protected override void OnUpgrade()
     {
-        base.EnergyCost.UpgradeBy(-1);
+        RemoveKeyword(CardKeyword.Exhaust);
     }
 }

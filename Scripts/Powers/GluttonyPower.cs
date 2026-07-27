@@ -7,6 +7,7 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models;
 using STS2RitsuLib.Interop.AutoRegistration;
 using TheInsatiable.Scripts.CardKeywords;
+using TheInsatiable.Scripts.Piles;
 
 namespace TheInsatiable.Scripts.Powers;
 
@@ -19,6 +20,11 @@ public class GluttonyPower : InsatiablePowerModel
 		HoverTipFactory.FromKeyword(TheInsatiableKeyword.Swallow),
 		HoverTipFactory.FromKeyword(CardKeyword.Exhaust)
 	];
+	public override Task AfterApplied(Creature? applier, CardModel? cardSource)
+    {
+        SwallowPile.LockMaxCapacity();
+        return Task.CompletedTask;
+    }
     public override async Task AfterCardExhausted(PlayerChoiceContext choiceContext, CardModel card, bool _)
 	{
 		if (card.Owner.Creature == base.Owner)

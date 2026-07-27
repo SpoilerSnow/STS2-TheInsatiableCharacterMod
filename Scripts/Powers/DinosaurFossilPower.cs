@@ -6,7 +6,7 @@ using STS2RitsuLib.Interop.AutoRegistration;
 
 namespace TheInsatiable.Scripts.Powers;
 [RegisterPower]
-public sealed class DinosaurFossilPower : InsatiablePowerModel
+public class DinosaurFossilPower : InsatiablePowerModel
 {
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Counter;

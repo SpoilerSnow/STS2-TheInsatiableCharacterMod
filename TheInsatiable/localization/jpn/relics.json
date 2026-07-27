@@ -20,5 +20,11 @@
     "THE_INSATIABLE_RELIC_OBELISK_RELIC.flavor": "古代の記念碑。",
     "THE_INSATIABLE_RELIC_GASTROLITH_RELIC.title": "胃石",
     "THE_INSATIABLE_RELIC_GASTROLITH_RELIC.description": "[gold]丸呑みスタック[/gold]内のカードの滞留ターン数が[blue]{MaxTurnsInPile:diff()}[/blue]減少する。\n[gold]嚥下[/gold]と[gold]消化[/gold]の効果が[blue]{Repeat:diff()}[/blue]回追加で発動する。",
-    "THE_INSATIABLE_RELIC_GASTROLITH_RELIC.flavor": "消化を促進するために胃に呑み込まれる石。大半の場合、貪りの獣は食べ物と一緒にこれも吸収してしまう。"
+    "THE_INSATIABLE_RELIC_GASTROLITH_RELIC.flavor": "消化を促進するために胃に呑み込まれる石。大半の場合、貪りの獣は食べ物と一緒にこれも吸収してしまう。",
+    "THE_INSATIABLE_RELIC_GOLD_PAN_RELIC.title": "砂金皿",
+    "THE_INSATIABLE_RELIC_GOLD_PAN_RELIC.description": "各戦闘開始時、[gold]ゴールドラッシュ[/gold]を[blue]{Cards:diff()}[/blue]枚[gold]丸呑み[/gold]する。",
+    "THE_INSATIABLE_RELIC_GOLD_PAN_RELIC.flavor": "かつての塔の冒険者の先輩より。",
+    "THE_INSATIABLE_RELIC_CROWN_OF_INSECT_RELIC.title": "蟲群の冠",
+    "THE_INSATIABLE_RELIC_CROWN_OF_INSECT_RELIC.description": "すべての[gold]蟲[/gold]カードのコストが{Energy:energyIcons()}減少する。",
+    "THE_INSATIABLE_RELIC_CROWN_OF_INSECT_RELIC.flavor": "蟲群はこれにひれ伏す。"
 }

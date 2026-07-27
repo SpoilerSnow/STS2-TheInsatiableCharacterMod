@@ -12,13 +12,8 @@ namespace TheInsatiable.Scripts.Cards;
 [RegisterCard(typeof(StatusCardPool))]
 public class SandStone : InsatiableCardModel
 {
-	private const int energyCost = 1;
-	private const CardType type = CardType.Status;
-	private const CardRarity rarity = CardRarity.Status;
-	private const TargetType targetType = TargetType.Self;
-	private const bool shouldShowInCardLibrary = true;
 	public SandStone() 
-		: base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
+		: base(1, CardType.Status, CardRarity.Status, TargetType.Self)
 	{
     }
     protected override IEnumerable<IHoverTip> AdditionalHoverTips => [HoverTipFactory.FromPower<QuickSandPower>()];

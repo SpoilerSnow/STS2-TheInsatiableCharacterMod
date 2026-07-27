@@ -11,7 +11,7 @@ using TheInsatiable.Scripts.CardKeywords;
 namespace TheInsatiable.Scripts.Powers;
 
 [RegisterPower]
-public sealed class RuminationPower : InsatiablePowerModel
+public class RuminationPower : InsatiablePowerModel
 {
 	private class Data
 	{

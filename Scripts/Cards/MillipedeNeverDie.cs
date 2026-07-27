@@ -5,6 +5,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using TheInsatiable.Scripts.Pools;
 using TheInsatiable.Scripts.Powers;
+using TheInsatiable.Scripts.CardKeywords;
 
 namespace TheInsatiable.Scripts.Cards;
 
@@ -12,6 +13,7 @@ namespace TheInsatiable.Scripts.Cards;
 
 public class MillipedeNeverDie : InsatiableCardModel
 {
+	public override IEnumerable<CardKeyword> CanonicalKeywords => [TheInsatiableKeyword.Insect];
 	protected override IEnumerable<DynamicVar> CanonicalVars => [new PowerVar<MillipedeNeverDiePower>(1)];
 	public MillipedeNeverDie()
 		: base(2, CardType.Power, CardRarity.Rare, TargetType.Self)

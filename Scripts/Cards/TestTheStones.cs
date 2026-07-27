@@ -8,6 +8,7 @@ using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheInsatiable.Scripts.Pools;
 using TheInsatiable.Scripts.Powers;
+using TheInsatiable.Scripts.CardKeywords;
 
 namespace TheInsatiable.Scripts.Cards;
 
@@ -15,16 +16,14 @@ namespace TheInsatiable.Scripts.Cards;
 
 public class TestTheStones : InsatiableCardModel
 {
-	private const int energyCost = 2;
-	private const CardType type = CardType.Attack;
-	private const CardRarity rarity = CardRarity.Uncommon;
-	private const TargetType targetType = TargetType.AnyEnemy;
-	private const bool shouldShowInCardLibrary = true;
-    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [
+		CardKeyword.Exhaust,
+		TheInsatiableKeyword.Insect
+	];
 	protected override IEnumerable<IHoverTip> AdditionalHoverTips => [HoverTipFactory.FromPower<ImbalancedPower>()];
 	protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(12, ValueProp.Move)];
 	public TestTheStones() 
-		: base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
+		: base(2, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
 	{
 	}
 	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

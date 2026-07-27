@@ -15,7 +15,6 @@ namespace TheInsatiable.Scripts.Cards;
 
 public class Dune : InsatiableCardModel
 {
-    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new PowerVar<QuickSandPower>(7),
         new IntVar("Replay", 1)

@@ -8,6 +8,7 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.ValueProps;
+using TheInsatiable.Scripts.CardKeywords;
 
 namespace TheInsatiable.Scripts.Cards;
 
@@ -15,7 +16,10 @@ namespace TheInsatiable.Scripts.Cards;
 
 public class Nibble : InsatiableCardModel
 {
-    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [
+        CardKeyword.Exhaust,
+        TheInsatiableKeyword.Insect
+    ];
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new CalculationBaseVar(4),
         new ExtraDamageVar(2),

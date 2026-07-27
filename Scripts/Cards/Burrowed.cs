@@ -7,6 +7,7 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheInsatiable.Scripts.Pools;
 using TheInsatiable.Scripts.Powers;
+using TheInsatiable.Scripts.CardKeywords;
 
 namespace TheInsatiable.Scripts.Cards;
 
@@ -15,14 +16,17 @@ namespace TheInsatiable.Scripts.Cards;
 public class Burrowed : InsatiableCardModel
 {
     public override bool GainsBlock => true;
-    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [
+        TheInsatiableKeyword.Insect,
+        CardKeyword.Exhaust
+    ];
     protected override IEnumerable<IHoverTip> AdditionalHoverTips => [
         HoverTipFactory.Static(StaticHoverTip.Block),
         HoverTipFactory.FromPower<QuickSandPower>()
     ];
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new BlockVar(27, ValueProp.Move),
-        new PowerVar<QuickSandPower>(6),
+        new PowerVar<QuickSandPower>(5),
         new PowerVar<InsatiableBurrowedPower>(1)
     ];
     public Burrowed()

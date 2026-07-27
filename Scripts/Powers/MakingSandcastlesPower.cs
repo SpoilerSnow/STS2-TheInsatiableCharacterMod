@@ -10,7 +10,7 @@ using STS2RitsuLib.Interop.AutoRegistration;
 namespace TheInsatiable.Scripts.Powers;
 
 [RegisterPower]
-public sealed class MakingSandcastlesPower : InsatiablePowerModel
+public class MakingSandcastlesPower : InsatiablePowerModel
 {
 	public override PowerType Type => PowerType.Buff;
 

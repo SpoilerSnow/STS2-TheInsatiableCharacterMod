@@ -23,5 +23,8 @@
     "THE_INSATIABLE_RELIC_GASTROLITH_RELIC.flavor": "吞进胃里用来促进消化的石头，大部分时候会被无厌沙虫连同食物一起吸收掉。",
     "THE_INSATIABLE_RELIC_GOLD_PAN_RELIC.title": "淘金盘",
     "THE_INSATIABLE_RELIC_GOLD_PAN_RELIC.description": "在每场战斗开始时，[gold]吞噬[/gold][blue]{Cards:diff()}[/blue]张[gold]淘金热[/gold]。",
-    "THE_INSATIABLE_RELIC_GOLD_PAN_RELIC.flavor": "来自曾经的尖塔冒险者前辈。"
+    "THE_INSATIABLE_RELIC_GOLD_PAN_RELIC.flavor": "来自曾经的尖塔冒险者前辈。",
+    "THE_INSATIABLE_RELIC_CROWN_OF_INSECT_RELIC.title": "虫群冠冕",
+    "THE_INSATIABLE_RELIC_CROWN_OF_INSECT_RELIC.description": "所有[gold]虫群[/gold]牌费用减少{Energy:energyIcons()}。",
+    "THE_INSATIABLE_RELIC_CROWN_OF_INSECT_RELIC.flavor": "虫群为此俯首。"
 }

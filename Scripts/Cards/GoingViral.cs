@@ -44,6 +44,6 @@ public class GoingViral : InsatiableCardModel
     }
     protected override void OnUpgrade()
 	{
-		AddKeyword(CardKeyword.Retain);
+		AddKeyword(CardKeyword.Ethereal);
 	}
 }

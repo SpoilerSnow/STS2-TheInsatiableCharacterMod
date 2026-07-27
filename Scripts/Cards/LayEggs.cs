@@ -6,6 +6,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using TheInsatiable.Scripts.Pools;
 using TheInsatiable.Scripts.Powers;
+using TheInsatiable.Scripts.CardKeywords;
 
 namespace TheInsatiable.Scripts.Cards;
 
@@ -13,6 +14,7 @@ namespace TheInsatiable.Scripts.Cards;
 
 public class LayEggs : InsatiableCardModel
 {
+	public override IEnumerable<CardKeyword> CanonicalKeywords => [TheInsatiableKeyword.Insect];
 	protected override IEnumerable<IHoverTip> AdditionalHoverTips => [
 		HoverTipFactory.FromCard<Hatch>(),
         HoverTipFactory.FromCard<Nibble>(),

@@ -14,14 +14,8 @@ namespace TheInsatiable.Scripts.Cards;
 
 public class SandBlowing : InsatiableCardModel
 {
-	private const int energyCost = 1;
-	private const CardType type = CardType.Skill;
-	private const CardRarity rarity = CardRarity.Basic;
-	private const TargetType targetType = TargetType.AnyEnemy;
-	private const bool shouldShowInCardLibrary = true;
-
     public SandBlowing()
-		: base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
+		: base(1, CardType.Skill, CardRarity.Basic, TargetType.AnyEnemy)
 	{
 	}
 	protected override IEnumerable<IHoverTip> AdditionalHoverTips => IsUpgraded ? [HoverTipFactory.FromPower<QuickSandPower>(), HoverTipFactory.FromPower<VulnerablePower>(), HoverTipFactory.FromPower<WeakPower>()] : [HoverTipFactory.FromPower<QuickSandPower>(), HoverTipFactory.FromPower<VulnerablePower>()];
@@ -43,6 +37,6 @@ public class SandBlowing : InsatiableCardModel
 	}
     protected override void OnUpgrade()
 	{
-		base.DynamicVars["QuickSandPower"].UpgradeValueBy(2);
+		base.DynamicVars["QuickSandPower"].UpgradeValueBy(1);
 	}
 }

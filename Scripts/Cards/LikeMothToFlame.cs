@@ -20,7 +20,7 @@ public class LikeMothToFlame : InsatiableCardModel
 	protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
         new DamageVar(4, ValueProp.Move),
-        new PowerVar<LikeMothToFlamePower>(1)
+        new PowerVar<LikeMothToFlamePower>(2)
     ];
     protected override IEnumerable<IHoverTip> AdditionalHoverTips => [
         HoverTipFactory.FromPower<StrengthPower>(),

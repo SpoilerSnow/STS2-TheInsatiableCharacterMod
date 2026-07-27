@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wbulcihr827g"
-path="res://.godot/imported/PolishedDesertStone.png-32715b7ff10acc11b7c489dd8535b3fe.ctex"
+uid="uid://tf3cwrs4s0l0"
+path="res://.godot/imported/CrownOfInsect.png-5342f61e3327fc4eca43e81910ecdca5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TheInsatiable/images/relics/outline/upscayl_png_digital-art-4x_1x/PolishedDesertStone.png"
-dest_files=["res://.godot/imported/PolishedDesertStone.png-32715b7ff10acc11b7c489dd8535b3fe.ctex"]
+source_file="res://TheInsatiable/images/relics/big/CrownOfInsect.png"
+dest_files=["res://.godot/imported/CrownOfInsect.png-5342f61e3327fc4eca43e81910ecdca5.ctex"]
 
 [params]
 

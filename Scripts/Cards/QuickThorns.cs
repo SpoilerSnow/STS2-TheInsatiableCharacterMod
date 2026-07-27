@@ -25,7 +25,6 @@ public class QuickThorns : InsatiableCardModel
         HoverTipFactory.Static(StaticHoverTip.Block),
         HoverTipFactory.FromPower<ThornsPower>()
     ];
-
 	public QuickThorns() 
 		: base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
 	{
@@ -37,7 +36,6 @@ public class QuickThorns : InsatiableCardModel
 		await PowerCmd.Apply<ThornsPower>(choiceContext, base.Owner.Creature, base.DynamicVars["ThornsPower"].BaseValue, base.Owner.Creature, this);
 		await PowerCmd.Apply<QuickThornsPower>(choiceContext, base.Owner.Creature, base.DynamicVars["QuickThornsPower"].BaseValue, base.Owner.Creature, this);
 	}
-
 	protected override void OnUpgrade()
 	{
 		DynamicVars.Block.UpgradeValueBy(1);

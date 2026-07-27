@@ -16,7 +16,7 @@ public class ScorchedEarth : InsatiableCardModel
 	protected override IEnumerable<IHoverTip> AdditionalHoverTips => [HoverTipFactory.FromPower<QuickSandPower>()];
 
 	protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new PowerVar<ScorchedEarthPower>(1),
+        new PowerVar<ScorchedEarthPower>(4),
         new PowerVar<QuickSandPower>(6)
     ];
 	public ScorchedEarth()

@@ -16,25 +16,22 @@ namespace TheInsatiable.Scripts.Cards;
 
 public class SpinningSilk : InsatiableCardModel
 {
-	private const int energyCost = 1;
-	private const CardType type = CardType.Attack;
-	private const CardRarity rarity = CardRarity.Common;
-	private const TargetType targetType = TargetType.AnyEnemy;
-	private const bool shouldShowInCardLibrary = true;
+	public override IEnumerable<CardKeyword> CanonicalKeywords => [TheInsatiableKeyword.Insect];
+	public SpinningSilk() 
+		: base(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
+	{
+	}
     protected override IEnumerable<IHoverTip> AdditionalHoverTips => [
 		HoverTipFactory.FromPower<WeakPower>(),
-		HoverTipFactory.FromKeyword(TheInsatiableKeyword.Digest)
+		HoverTipFactory.FromKeyword(TheInsatiableKeyword.Gulp)
 	];
 	protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
         new DamageVar(4, ValueProp.Move),
         new RepeatVar(2),
-        new PowerVar<WeakPower>(1)
+        new PowerVar<WeakPower>(1),
+		new DynamicVar("WeakGulp", 1),
     ];
-	public SpinningSilk() 
-		: base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
-	{
-	}
 	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
 	{
 		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
@@ -53,7 +50,7 @@ public class SpinningSilk : InsatiableCardModel
         await Cmd.Wait(0.3f);
 		foreach (Creature hittableEnemy in base.CombatState.HittableEnemies)
 		{
-			await PowerCmd.Apply<WeakPower>(new ThrowingPlayerChoiceContext(), hittableEnemy, base.DynamicVars.Weak.IntValue, base.Owner.Creature, this);
+			await PowerCmd.Apply<WeakPower>(new ThrowingPlayerChoiceContext(), hittableEnemy, base.DynamicVars["WeakGulp"].IntValue, base.Owner.Creature, this);
 		}
 	}
 

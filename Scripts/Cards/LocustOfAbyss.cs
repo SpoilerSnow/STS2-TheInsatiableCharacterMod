@@ -5,6 +5,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.ValueProps;
+using TheInsatiable.Scripts.CardKeywords;
 
 namespace TheInsatiable.Scripts.Cards;
 
@@ -12,7 +13,10 @@ namespace TheInsatiable.Scripts.Cards;
 
 public class LocustOfAbyss : InsatiableCardModel
 {
-    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [
+		CardKeyword.Exhaust,
+		TheInsatiableKeyword.Insect
+	];
 	protected override IEnumerable<DynamicVar> CanonicalVars => 
 	[
 		new DamageVar(4, ValueProp.Move),

@@ -17,15 +17,10 @@ namespace TheInsatiable.Scripts.Cards;
 
 public class SwimSandSea : InsatiableCardModel
 {
-	private const int energyCost = 0;
-	private const CardType type = CardType.Attack;
-	private const CardRarity rarity = CardRarity.Rare;
-	private const TargetType targetType = TargetType.AnyEnemy;
-	private const bool shouldShowInCardLibrary = true;
 	protected override IEnumerable<IHoverTip> AdditionalHoverTips => [HoverTipFactory.FromPower<QuickSandPower>()];
 	protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(5, ValueProp.Move)];
 	public SwimSandSea() 
-		: base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
+		: base(0, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)
 	{
 	}
 	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

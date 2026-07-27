@@ -17,12 +17,12 @@ public class Slumber : InsatiableCardModel
 {
     public override bool GainsBlock => true;
     public Slumber() 
-		: base(2, CardType.Skill, CardRarity.Uncommon,  TargetType.Self, true)
+		: base(2, CardType.Skill, CardRarity.Uncommon,  TargetType.Self)
 	{
 	}
     public override IEnumerable<CardKeyword> CanonicalKeywords => [
+        TheInsatiableKeyword.Insect,
         CardKeyword.Innate,
-        TheInsatiableKeyword.SelfSwallow,
         CardKeyword.Exhaust
     ];
     protected override IEnumerable<IHoverTip> AdditionalHoverTips => [
@@ -31,7 +31,7 @@ public class Slumber : InsatiableCardModel
     ];
 	protected override IEnumerable<DynamicVar> CanonicalVars => [
         new BlockVar(15, ValueProp.Move),
-        new PowerVar<StrengthPower>(2),
+        new PowerVar<StrengthPower>(1),
     ];
 	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
 	{
@@ -43,6 +43,6 @@ public class Slumber : InsatiableCardModel
 	protected override void OnUpgrade()
 	{
         base.DynamicVars.Block.UpgradeValueBy(3);
-		RemoveKeyword(TheInsatiableKeyword.SelfSwallow);
+        base.DynamicVars.Strength.UpgradeValueBy(1);
 	}
 }

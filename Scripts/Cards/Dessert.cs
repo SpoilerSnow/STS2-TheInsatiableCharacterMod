@@ -10,6 +10,7 @@ using MegaCrit.Sts2.Core.Models;
 using TheInsatiable.Scripts.Piles;
 using TheInsatiable.Scripts.CardKeywords;
 using TheInsatiable.Scripts.Pools;
+using TheInsatiable.Scripts.Powers;
 
 namespace TheInsatiable.Scripts.Cards;
 
@@ -42,10 +43,7 @@ public class Dessert : InsatiableCardModel
 			bool swallowed = await TheInsatiableCmd.SwallowCard(choiceContext, cardModel);
             if (swallowed == true && choiceContext != null)
             {
-                if (!SwallowPile.IsLocked)
-                {
-                    SwallowPile.MaxCapacity += (int)DynamicVars["MaxCapacity"].BaseValue;
-                }
+                await PowerCmd.Apply<GastricCapacityPower>(choiceContext, base.Owner.Creature, base.DynamicVars["MaxCapacity"].IntValue, base.Owner.Creature, this);
             }
 		}
 	}

@@ -19,7 +19,7 @@ public class MetamorphosisDevelopment : InsatiableCardModel
 {
     public override bool GainsBlock => true;
     public MetamorphosisDevelopment()
-		: base(2, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+		: base(2, CardType.Skill, CardRarity.Common, TargetType.Self)
 	{
 	}
     protected override IEnumerable<IHoverTip> AdditionalHoverTips => [

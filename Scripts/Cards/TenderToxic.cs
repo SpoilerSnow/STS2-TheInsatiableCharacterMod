@@ -8,6 +8,7 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using TheInsatiable.Scripts.Pools;
 using TheInsatiable.Scripts.Powers;
+using TheInsatiable.Scripts.CardKeywords;
 
 namespace TheInsatiable.Scripts.Cards;
 
@@ -19,7 +20,10 @@ public sealed class TenderToxic : InsatiableCardModel
         HoverTipFactory.FromPower<StrengthPower>(),
 		HoverTipFactory.FromPower<DexterityPower>()
     ];
-    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [
+		CardKeyword.Exhaust,
+		TheInsatiableKeyword.Insect
+	];
     protected override IEnumerable<DynamicVar> CanonicalVars => [
 		new PowerVar<StrengthPower>(1),
 		new PowerVar<DexterityPower>(1)

@@ -16,8 +16,8 @@ public class BlindBySand : InsatiableCardModel
 {
 	public override bool GainsBlock => true;
 	protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new BlockVar(6, ValueProp.Move),
-        new PowerVar<QuickSandPower>(5),
+        new BlockVar(5, ValueProp.Move),
+        new PowerVar<QuickSandPower>(4),
         new CardsVar(1)
 	];
 	protected override IEnumerable<IHoverTip> AdditionalHoverTips => [

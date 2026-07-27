@@ -1,3 +1,4 @@
 {
-  "SWALLOW_PILE_FULL": "丸呑みスタックが[red]満杯[/red]だ。"
+  "SWALLOW_PILE_FULL": "丸呑みスタックが[red]満杯[/red]だ。",
+  "SWALLOW_PILE_FULL_2": "もう食べきれない。"
 }

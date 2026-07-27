@@ -15,6 +15,7 @@ namespace TheInsatiable.Scripts.Cards;
 
 public class HoneyXylitol : InsatiableCardModel
 {
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [TheInsatiableKeyword.Insect];
     protected override IEnumerable<IHoverTip> AdditionalHoverTips => [
         HoverTipFactory.FromKeyword(TheInsatiableKeyword.Gulp),
         HoverTipFactory.FromPower<StrengthPower>()

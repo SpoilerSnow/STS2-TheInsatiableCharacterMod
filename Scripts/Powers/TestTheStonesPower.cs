@@ -10,7 +10,7 @@ using STS2RitsuLib.Interop.AutoRegistration;
 namespace TheInsatiable.Scripts.Powers;
 
 [RegisterPower]
-public sealed class TestTheStonesPower : InsatiablePowerModel
+public class TestTheStonesPower : InsatiablePowerModel
 {
     public override PowerType Type => PowerType.Debuff;
     public override PowerStackType StackType => PowerStackType.Single;

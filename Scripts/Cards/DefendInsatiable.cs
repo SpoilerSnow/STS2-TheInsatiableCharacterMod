@@ -13,18 +13,13 @@ namespace TheInsatiable.Scripts.Cards;
 
 public class DefendInsatiable : InsatiableCardModel
 {
-	private const int energyCost = 1;
-	private const CardType type = CardType.Skill;
-	private const CardRarity rarity = CardRarity.Basic;
-	private const TargetType targetType = TargetType.Self;
-	private const bool shouldShowInCardLibrary = true;
     public override bool GainsBlock => true;
     protected override HashSet<CardTag> CanonicalTags => new HashSet<CardTag> { CardTag.Defend };
 	protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(5, ValueProp.Move)];
 	protected override IEnumerable<IHoverTip> AdditionalHoverTips => [HoverTipFactory.Static(StaticHoverTip.Block)];
 
 	public DefendInsatiable() 
-		: base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
+		: base(1, CardType.Skill, CardRarity.Basic, TargetType.Self)
 	{
 	}
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

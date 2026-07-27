@@ -19,11 +19,11 @@ public class ScorchedEarthPower : InsatiablePowerModel
         int muddyamount = base.Owner.GetPowerAmount<MuddyPower>();
 		if (muddyamount > 0)
 		{
-			base.DynamicVars["scorchedearth"].BaseValue = 4 * Amount * (muddyamount + 1);
+			base.DynamicVars["scorchedearth"].BaseValue = Amount * (muddyamount + 1);
 		}
 		else
 		{
-			base.DynamicVars["scorchedearth"].BaseValue = 4 * Amount;
+			base.DynamicVars["scorchedearth"].BaseValue = Amount;
 		}
 	}
 }

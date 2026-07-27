@@ -16,13 +16,8 @@ namespace TheInsatiable.Scripts.Cards;
 
 public class InsatiableBodySlam : InsatiableCardModel
 {
-	private const int energyCost = 1;
-	private const CardType type = CardType.Attack;
-	private const CardRarity rarity = CardRarity.Rare;
-	private const TargetType targetType = TargetType.AllEnemies;
-	private const bool shouldShowInCardLibrary = true;
-    public InsatiableBodySlam()
-		: base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
+public InsatiableBodySlam()
+		: base(1, CardType.Attack, CardRarity.Rare, TargetType.AllEnemies)
 	{
 	}
     protected override IEnumerable<DynamicVar> CanonicalVars => [

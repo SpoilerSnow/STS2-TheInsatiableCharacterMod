@@ -17,7 +17,7 @@ public class AppendageScalpel : InsatiableCardModel
 {
 	protected override bool HasEnergyCostX => true;
 	protected override IEnumerable<DynamicVar> CanonicalVars => [
-		new CalculationBaseVar(9),
+		new CalculationBaseVar(8),
 		new ExtraDamageVar(2),
 		new CalculatedDamageVar(ValueProp.Move).WithMultiplier(delegate(CardModel card, Creature? target)
 		{

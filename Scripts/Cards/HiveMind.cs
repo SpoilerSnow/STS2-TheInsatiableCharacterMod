@@ -4,6 +4,7 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using TheInsatiable.Scripts.Pools;
 using TheInsatiable.Scripts.Powers;
+using TheInsatiable.Scripts.CardKeywords;
 
 namespace TheInsatiable.Scripts.Cards;
 
@@ -11,6 +12,7 @@ namespace TheInsatiable.Scripts.Cards;
 
 public class HiveMind : InsatiableCardModel
 {
+	public override IEnumerable<CardKeyword> CanonicalKeywords => [TheInsatiableKeyword.Insect];
 	public HiveMind()
 		: base(3, CardType.Power, CardRarity.Rare, TargetType.Self)
 	{

@@ -12,13 +12,8 @@ namespace TheInsatiable.Scripts.Cards;
 
 [RegisterCard(typeof(InsatiableCardPool))]
 
-public class LyingInSand : InsatiableCardModel
+public class Ambush : InsatiableCardModel
 {
-	private const int energyCost = 0;
-	private const CardType type = CardType.Skill;
-	private const CardRarity rarity = CardRarity.Common;
-	private const TargetType targetType = TargetType.AnyEnemy;
-	private const bool shouldShowInCardLibrary = true;
 	public override IEnumerable<CardKeyword> CanonicalKeywords => [
         CardKeyword.Innate,
         CardKeyword.Exhaust
@@ -33,8 +28,8 @@ public class LyingInSand : InsatiableCardModel
         new PowerVar<WeakPower>(1),
         new PowerVar<VulnerablePower>(1)
         ];
-    public LyingInSand()
-		: base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
+    public Ambush()
+		: base(0, CardType.Skill, CardRarity.Common, TargetType.AnyEnemy)
 	{
 	}
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

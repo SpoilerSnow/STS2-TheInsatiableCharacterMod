@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byv0q1mxspulm"
-path="res://.godot/imported/GoldPan.png-d139c84e618d9242066588d768525a34.ctex"
+uid="uid://b7skm1rt80gb4"
+path="res://.godot/imported/CrownOfInsect.png-88989782002c78bbfaff2ca4d3482fc9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TheInsatiable/images/relics/outline/upscayl_png_digital-art-4x_1x/GoldPan.png"
-dest_files=["res://.godot/imported/GoldPan.png-d139c84e618d9242066588d768525a34.ctex"]
+source_file="res://TheInsatiable/images/relics/CrownOfInsect.png"
+dest_files=["res://.godot/imported/CrownOfInsect.png-88989782002c78bbfaff2ca4d3482fc9.ctex"]
 
 [params]
 

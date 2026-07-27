@@ -9,7 +9,7 @@ using STS2RitsuLib.Interop.AutoRegistration;
 namespace TheInsatiable.Scripts.Powers;
 
 [RegisterPower]
-public sealed class MawOfVoidPower : InsatiablePowerModel
+public class MawOfVoidPower : InsatiablePowerModel
 {
 	private bool _ignoredFirst;
     public override PowerType Type => PowerType.Buff;

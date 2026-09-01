@@ -15,7 +15,10 @@ public class InsatiableSwallow : InsatiableCardModel
 {
     public override int MaxUpgradeLevel => 0;
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
-    protected override IEnumerable<IHoverTip> AdditionalHoverTips => [HoverTipFactory.FromKeyword(TheInsatiableKeyword.Swallow)];
+    protected override IEnumerable<IHoverTip> AdditionalHoverTips => [
+        HoverTipFactory.FromKeyword(TheInsatiableKeyword.Swallow),
+        HoverTipFactory.FromKeyword(TheInsatiableKeyword.Piles),
+    ];
     public InsatiableSwallow()
 		: base(1, CardType.Status, CardRarity.Status, TargetType.Self)
 	{

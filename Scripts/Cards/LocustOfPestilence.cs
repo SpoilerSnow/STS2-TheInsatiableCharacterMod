@@ -37,6 +37,7 @@ public class LocustOfPestilence : InsatiableCardModel
 			.WithHitCount(base.DynamicVars.Repeat.IntValue)
 			.FromCard(this, cardPlay)
 			.Targeting(cardPlay.Target)
+			.WithHitFx("vfx/vfx_attack_blunt")
 			.Execute(choiceContext);
         await PowerCmd.Apply<PoisonPower>(new ThrowingPlayerChoiceContext(), cardPlay.Target, base.DynamicVars.Poison.BaseValue, base.Owner.Creature, this);
 	}

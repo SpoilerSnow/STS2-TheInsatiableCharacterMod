@@ -20,7 +20,7 @@ public class ThickFur : InsatiableCardModel
     public override IEnumerable<CardKeyword> CanonicalKeywords => [TheInsatiableKeyword.Insect];
 	public override bool GainsBlock => true;
 	protected override IEnumerable<DynamicVar> CanonicalVars => [
-		new BlockVar(8, ValueProp.Move),
+		new BlockVar(9, ValueProp.Move),
 		new BlockVar("BlockNextTurn", 7, ValueProp.Move),
         new PowerVar<BlurPower>(1),
         new PowerVar<PlatingPower>(2),
@@ -42,6 +42,7 @@ public class ThickFur : InsatiableCardModel
         BlockVar blockVar = (BlockVar)base.DynamicVars["BlockNextTurn"];
         IEnumerable<AbstractModel> modifiers;
         decimal blockNextTurnAmount = Hook.ModifyBlock(base.CombatState, base.Owner.Creature, blockVar.BaseValue, blockVar.Props, this, cardPlay, out modifiers);
+        SfxCmd.Play("event:/sfx/enemy/enemy_attacks/giant_louse/giant_louse_curl");
         await CreatureCmd.GainBlock(base.Owner.Creature, base.DynamicVars.Block, cardPlay);
 		await PowerCmd.Apply<BlockNextTurnPower>(choiceContext, base.Owner.Creature, blockNextTurnAmount, base.Owner.Creature, this);
 	}

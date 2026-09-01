@@ -112,5 +112,15 @@
     "THE_INSATIABLE_POWER_PHOTOTAXIS_POWER.smartDescription": "The next [blue]{Amount}[/blue] times an enemy gains a [green]buff[/green], draw cards equal to its stacks.",
     "THE_INSATIABLE_POWER_GASTRIC_CAPACITY_POWER.title": "Gastric Capacity",
     "THE_INSATIABLE_POWER_GASTRIC_CAPACITY_POWER.description": "[gold]Swallow Pile[/gold] capacity {Amount:cond:<0?decreased|increased} by [blue]3[/blue].",
-    "THE_INSATIABLE_POWER_GASTRIC_CAPACITY_POWER.smartDescription": "[gold]Swallow Pile[/gold] capacity {Amount:cond:<0?decreased|increased} by [blue]{Amount:abs()}[/blue]."
+    "THE_INSATIABLE_POWER_GASTRIC_CAPACITY_POWER.smartDescription": "[gold]Swallow Pile[/gold] capacity {Amount:cond:<0?decreased|increased} by [blue]{Amount:abs()}[/blue].",
+    "THE_INSATIABLE_POWER_LAY_EGGS_PLUS_POWER.title": "Lay Eggs+",
+    "THE_INSATIABLE_POWER_LAY_EGGS_PLUS_POWER.description": "At the start of your turn, add [green]Upgraded[/green] [gold]Hatch[/gold] and [gold]Nibble[/gold] to your hand.",
+    "THE_INSATIABLE_POWER_LAY_EGGS_PLUS_POWER.smartDescription": "At the start of your turn, add [green]Upgraded[/green] [blue]{Amount}[/blue] [gold]Hatch[/gold] and [gold]Nibble[/gold] cards to your hand.",
+    "THE_INSATIABLE_POWER_DIGESTIVE_JUICE_POWER.title": "Digestive Juice",
+    "THE_INSATIABLE_POWER_DIGESTIVE_JUICE_POWER.description": "Each time you first gain [gold]Quicksand[/gold] each turn, reduce this count by [blue]1[/blue].\nWhen the count is [blue]0[/blue], [gold]Swallow[/gold] it.",
+    "THE_INSATIABLE_POWER_DIGESTIVE_JUICE_POWER.smartDescription": "Each time you first gain [gold]Quicksand[/gold] each turn, reduce this count by [blue]1[/blue].\nWhen the count is [blue]0[/blue], [gold]Swallow[/gold] it.",
+    "THE_INSATIABLE_POWER_THE_WONDER_POWER.title": "The Wonder",
+    "THE_INSATIABLE_POWER_THE_WONDER_POWER.description": "At the end of the next few turns, choose any number of [gold]cards[/gold] to [gold]Retain[/gold].\nFor each [gold]Rare[/gold] or [gold]Ancient[/gold] card retained, gain [blue]1[/blue]{energyPrefix:energyIcons(1)} next turn.",
+    "THE_INSATIABLE_POWER_THE_WONDER_POWER.smartDescription": "At the end of the next [blue]{Amount}[/blue] turns, choose any number of [gold]cards[/gold] to [gold]Retain[/gold].\nFor each [gold]Rare[/gold] or [gold]Ancient[/gold] card retained, gain [blue]1[/blue]{energyPrefix:energyIcons(1)} next turn.",
+    "THE_INSATIABLE_POWER_THE_WONDER_POWER.selectionScreenPrompt": "Choose any cards to retain."
 }

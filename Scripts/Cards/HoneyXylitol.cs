@@ -37,6 +37,7 @@ public class HoneyXylitol : InsatiableCardModel
 	{
         FlashOnPlayer();
         await Cmd.Wait(0.3f);
+        await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
 		await PowerCmd.Apply<StrengthPower>(new ThrowingPlayerChoiceContext(), base.Owner.Creature, base.DynamicVars.Strength.IntValue, base.Owner.Creature, this);
 	}
     protected override void OnUpgrade()

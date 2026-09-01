@@ -16,7 +16,6 @@ namespace TheInsatiable.Scripts.Cards;
 
 public class GastricAcid : InsatiableCardModel
 {
-    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
     protected override IEnumerable<IHoverTip> AdditionalHoverTips => [
         HoverTipFactory.FromKeyword(TheInsatiableKeyword.Gulp),
 		HoverTipFactory.FromKeyword(TheInsatiableKeyword.Digest)

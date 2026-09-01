@@ -33,7 +33,7 @@ public class TestTheStones : InsatiableCardModel
 			.FromCard(this, cardPlay)
 			.Targeting(cardPlay.Target)
 			.WithAttackerFx(null, "event:/sfx/enemy/enemy_attacks/workbug_rock/workbug_rock_attack")
-			.WithHitFx("vfx/vfx_attack_blunt")
+			.WithHitFx("vfx/vfx_rock_shatter", null, "blunt_attack.mp3")
 			.Execute(choiceContext);
         await PowerCmd.Apply<ImbalancedPower>(new ThrowingPlayerChoiceContext(), cardPlay.Target, 1, base.Owner.Creature, this);
 		await PowerCmd.Apply<TestTheStonesPower>(new ThrowingPlayerChoiceContext(), cardPlay.Target, 1, base.Owner.Creature, this);

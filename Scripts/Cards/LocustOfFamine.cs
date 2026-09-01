@@ -37,6 +37,7 @@ public class LocustOfFamine : InsatiableCardModel
 			.WithHitCount(base.DynamicVars.Repeat.IntValue)
 			.FromCard(this, cardPlay)
 			.Targeting(cardPlay.Target)
+			.WithHitFx("vfx/vfx_attack_blunt")
 			.Execute(choiceContext);
         await PowerCmd.Apply<QuickSandPower>(new ThrowingPlayerChoiceContext(), cardPlay.Target, base.DynamicVars["QuickSandPower"].BaseValue, base.Owner.Creature, this);
 	}

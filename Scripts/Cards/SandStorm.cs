@@ -39,9 +39,8 @@ public class SandStorm : InsatiableCardModel
 	}
     protected override void OnUpgrade()
 	{
-		base.DynamicVars["QuickSandPower"].UpgradeValueBy(2);
+		base.DynamicVars["QuickSandPower"].UpgradeValueBy(3);
         base.DynamicVars.Weak.UpgradeValueBy(1);
 	    base.DynamicVars.Vulnerable.UpgradeValueBy(1);
 	}
-
 }

@@ -8,6 +8,8 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheInsatiable.Scripts.Pools;
 using TheInsatiable.Scripts.Powers;
+using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.CardSelection;
 
 namespace TheInsatiable.Scripts.Cards;
 
@@ -15,34 +17,38 @@ namespace TheInsatiable.Scripts.Cards;
 
 public class InsatiableThrash : InsatiableCardModel
 {
-	private const int energyCost = 1;
-	private const CardType type = CardType.Attack;
-	private const CardRarity rarity = CardRarity.Common;
-	private const TargetType targetType = TargetType.AnyEnemy;
-	private const bool shouldShowInCardLibrary = true;
-    protected override bool ShouldGlowGoldInternal => base.CombatState?.HittableEnemies.Any((Creature e) => e.HasPower<QuickSandPower>()) ?? false;
-    protected override IEnumerable<IHoverTip> AdditionalHoverTips => [HoverTipFactory.FromPower<QuickSandPower>()];
-	protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(8, ValueProp.Move)];
+	protected override IEnumerable<DynamicVar> CanonicalVars => [
+		new DamageVar(8, ValueProp.Move),
+		new RepeatVar(2)];
 	public InsatiableThrash() 
-		: base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
+		: base(2, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
 	{
 	}
 	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
 	{
 		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
-		int hitCount = (!cardPlay.Target.HasPower<QuickSandPower>()) ? 1 : 2;
 		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue)
-		    .WithHitCount(hitCount)
+		    .WithHitCount(base.DynamicVars.Repeat.IntValue)
 			.FromCard(this, cardPlay)
-			.WithAttackerAnim("Thrash", 0.3f)
-			.OnlyPlayAnimOnce()
 			.Targeting(cardPlay.Target)
+			.OnlyPlayAnimOnce()
+			.WithAttackerAnim("Thrash", 0.3f)
+			.WithAttackerFx(null, "event:/sfx/enemy/enemy_attacks/the_insatiable/the_insatiable_thrash")
 			.WithHitFx("vfx/vfx_scratch")
 			.Execute(choiceContext);
+		CardModel cardModel = (await CardSelectCmd.FromCombatPile(prefs: new CardSelectorPrefs(base.SelectionScreenPrompt, 1), context: choiceContext, pile: PileType.Discard.GetPile(base.Owner), player: base.Owner)).FirstOrDefault();
+		if (cardModel != null)
+		{
+			if (IsUpgraded)
+			{
+				CardCmd.Upgrade(cardModel);
+			}
+			await CardPileCmd.Add(cardModel, PileType.Hand);
+		}
 	}
 
 	protected override void OnUpgrade()
 	{
-		DynamicVars.Damage.UpgradeValueBy(2);
+		DynamicVars.Damage.UpgradeValueBy(1);
 	}
 }

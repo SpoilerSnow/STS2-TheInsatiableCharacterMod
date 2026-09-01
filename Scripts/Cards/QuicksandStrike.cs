@@ -34,6 +34,7 @@ public class QuicksandStrike : InsatiableCardModel
 		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue)
 			.FromCard(this, cardPlay)
 			.Targeting(cardPlay.Target)
+			.WithHitFx("vfx/vfx_bite")
 			.Execute(choiceContext);
         await PowerCmd.Apply<QuickSandPower>(new ThrowingPlayerChoiceContext(), cardPlay.Target, base.DynamicVars["QuickSandPower"].IntValue, base.Owner.Creature, this);
 		await CardPileCmd.AddGeneratedCardToCombat(base.CombatState.CreateCard<SandStone>(base.Owner), PileType.Hand, base.Owner);

@@ -10,5 +10,7 @@
     "THE_INSATIABLE_KEYWORD_GULP.description": "Triggers the corresponding effect when [gold]Swallowed[/gold].",
     "THE_INSATIABLE_KEYWORD_GULP.title": "Gulp",
     "THE_INSATIABLE_KEYWORD_INSECT.description": "This card counts as an Insect card.",
-    "THE_INSATIABLE_KEYWORD_INSECT.title": "Insect"
+    "THE_INSATIABLE_KEYWORD_INSECT.title": "Insect",
+    "THE_INSATIABLE_KEYWORD_PILES.description": "Refers to the [gold]Draw Pile[/gold], [gold]Discard Pile[/gold], and [gold]Hand[/gold].",
+    "THE_INSATIABLE_KEYWORD_PILES.title": "Piles"
 }

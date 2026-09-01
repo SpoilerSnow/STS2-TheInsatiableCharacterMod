@@ -10,14 +10,14 @@ namespace TheInsatiable.Scripts.Cards;
 
 [RegisterCard(typeof(InsatiableCardPool))]
 
-public class AppendageSlice : InsatiableCardModel
+public class Eviscerate : InsatiableCardModel
 {
 	protected override IEnumerable<DynamicVar> CanonicalVars => 
 	[
 		new DamageVar(3, ValueProp.Move),
 		new RepeatVar(2)
 	];
-	public AppendageSlice() 
+	public Eviscerate() 
 		: base(0, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
 	{
 	}
@@ -28,11 +28,14 @@ public class AppendageSlice : InsatiableCardModel
 			.WithHitCount(base.DynamicVars.Repeat.IntValue)
 			.FromCard(this, cardPlay)
 			.Targeting(cardPlay.Target)
-			.WithHitFx("vfx/vfx_bite")
+			.OnlyPlayAnimOnce()
+			.WithAttackerAnim("Thrash", 0.3f)
+			.WithAttackerFx(null, "event:/sfx/enemy/enemy_attacks/the_insatiable/the_insatiable_thrash")
+			.WithHitFx("vfx/vfx_scratch")
 			.Execute(choiceContext);
 	}
 	protected override void OnUpgrade()
 	{
-		DynamicVars.Damage.UpgradeValueBy(1);
+		DynamicVars.Repeat.UpgradeValueBy(1);
 	}
 }

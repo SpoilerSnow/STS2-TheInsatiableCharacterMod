@@ -1,10 +1,10 @@
 {
     "SEA_GLASS.THE_INSATIABLE_CHARACTER_INSATIABLE_CHARACTER.title": "沙虫玻璃",
     "THE_INSATIABLE_RELIC_DESERT_STONE_RELIC.title": "沙之石",
-    "THE_INSATIABLE_RELIC_DESERT_STONE_RELIC.description": "在每场战斗开始时，将一张[gold]砂岩[/gold]放入手牌，给予所有敌人[blue]{QuickSandPower:diff()}[/blue]层[gold]流沙[/gold]。",
+    "THE_INSATIABLE_RELIC_DESERT_STONE_RELIC.description": "在每场战斗开始时，将一张[gold]砂岩[/gold]加入手牌，给予所有敌人[blue]{QuickSandPower:diff()}[/blue]层[gold]流沙[/gold]。",
     "THE_INSATIABLE_RELIC_DESERT_STONE_RELIC.flavor": "无厌沙虫的宝物，据说来自某个同样神秘的永恒领域...",
     "THE_INSATIABLE_RELIC_POLISHED_DESERT_STONE_RELIC.title": "精磨沙之石",
-    "THE_INSATIABLE_RELIC_POLISHED_DESERT_STONE_RELIC.description": "在每场战斗开始时，将一张[gold]砂岩[/gold]放入手牌。\n在每场战斗的前[blue]4[/blue]个回合开始，给予所有敌人[blue]{QuickSandPower:diff()}[/blue]层[gold]流沙[/gold]。",
+    "THE_INSATIABLE_RELIC_POLISHED_DESERT_STONE_RELIC.description": "在每场战斗开始时，将一张[gold]砂岩[/gold]加入手牌。\n在每场战斗的前[blue]{Turns:diff()}[/blue]个回合开始，给予所有敌人[blue]{QuickSandPower:diff()}[/blue]层[gold]流沙[/gold]。",
     "THE_INSATIABLE_RELIC_POLISHED_DESERT_STONE_RELIC.flavor": "经过精心打磨的沙之石，是无厌沙虫力量的源泉。",
     "THE_INSATIABLE_RELIC_REVERSE_HOURGLASS_RELIC.title": "逆流沙漏",
     "THE_INSATIABLE_RELIC_REVERSE_HOURGLASS_RELIC.description": "每当你给予敌人[gold]流沙[/gold]时，所给予的[gold]流沙[/gold]层数增加[blue]{QuickSandPower:diff()}[/blue]层",

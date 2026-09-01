@@ -19,7 +19,7 @@ public class DeathHighway : InsatiableCardModel
     protected override IEnumerable<IHoverTip> AdditionalHoverTips => [HoverTipFactory.FromPower<QuickSandPower>()];
 	protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new DamageVar(9, ValueProp.Move),
+        new DamageVar(8, ValueProp.Move),
         new CardsVar(2)
     ];
 	public DeathHighway() 
@@ -43,6 +43,10 @@ public class DeathHighway : InsatiableCardModel
             PileType? currentPile = this.Pile?.Type;
             if (currentPile == PileType.Draw || currentPile == PileType.Discard)
             {
+				if (currentPile == PileType.Draw && this.Pile?.Cards.FirstOrDefault() == this)
+                {
+                    return;
+                }
                 await CardPileCmd.Add(this, PileType.Draw, CardPilePosition.Top);
             }
         }

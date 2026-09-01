@@ -16,16 +16,16 @@ namespace TheInsatiable.Scripts.Cards;
 
 public class InsectPlague : InsatiableCardModel
 {
-    protected override bool ShouldGlowGoldInternal => CombatManager.Instance.History.Entries
+    protected override bool ShouldGlowGoldInternal => CombatManager.Instance.History.Entries?
         .OfType<DamageReceivedEntry>()
         .Any(e => e.Dealer == base.Owner.Creature
-		    && e.Receiver != null
+		    && e.Receiver.IsAlive
             && e.Result.Props.IsPoweredAttack()
-            && e.HappenedThisTurn(base.CombatState));
+            && e.HappenedThisTurn(base.CombatState)) ?? false;
     protected override IEnumerable<IHoverTip> AdditionalHoverTips => [HoverTipFactory.FromPower<VulnerablePower>()];
 	protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new DamageVar(10, ValueProp.Move),
+        new DamageVar(9, ValueProp.Move),
         new PowerVar<VulnerablePower>(1)
     ];
 	public InsectPlague() 

@@ -16,7 +16,7 @@ public class PhototaxisPower : InsatiablePowerModel
 	public override PowerStackType StackType => PowerStackType.Counter;
 	public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
 	{
-		if (power.Type == PowerType.Buff && !(amount <= 0m) && applier.IsMonster)
+		if (power.Type == PowerType.Buff && amount > 0m && applier != null && applier.IsMonster)
 		{
 			Flash();
 			await CardPileCmd.Draw(choiceContext, amount, base.Owner.Player);

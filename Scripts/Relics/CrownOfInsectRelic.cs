@@ -19,7 +19,10 @@ public class CrownOfInsectRelic : InsatiableRelicModel
 {
 	public override RelicRarity Rarity => RelicRarity.Rare;
     protected override IEnumerable<DynamicVar> CanonicalVars => [new EnergyVar(1)];
-    protected override IEnumerable<IHoverTip> AdditionalHoverTips => [HoverTipFactory.ForEnergy(this)];
+    protected override IEnumerable<IHoverTip> AdditionalHoverTips => [
+		HoverTipFactory.ForEnergy(this),
+		HoverTipFactory.FromKeyword(TheInsatiableKeyword.Insect)
+	];
     public override bool TryModifyEnergyCostInCombat(CardModel card, decimal originalCost, out decimal modifiedCost)
 	{
 		modifiedCost = originalCost;

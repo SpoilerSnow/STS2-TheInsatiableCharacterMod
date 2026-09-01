@@ -46,9 +46,7 @@ public class UnderSixFeetPower : InsatiablePowerModel
 		if (data.quickSandCounts[target] >= SwallowThreshold)
 		{
 			Flash();
-			await CreatureCmd.TriggerAnim(applier, "EatPlayer", 0.5f);
-			await Cmd.Wait(2f);
-			await TheInsatiableCmd.SwallowCreature(target);
+			await TheInsatiableCmd.SwallowCreature(applier, target);
 			data.quickSandCounts[target] = 0;
 			InvokeDisplayAmountChanged();
 		}

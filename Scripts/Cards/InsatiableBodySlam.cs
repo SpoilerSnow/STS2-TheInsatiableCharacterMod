@@ -9,6 +9,7 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheInsatiable.Scripts.Pools;
 using TheInsatiable.Scripts.Powers;
+using STS2RitsuLib.Combat.CardTargeting;
 
 namespace TheInsatiable.Scripts.Cards;
 
@@ -33,18 +34,11 @@ public InsatiableBodySlam()
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
 		await PowerCmd.Apply<QuickSandPower>(new ThrowingPlayerChoiceContext(), base.CombatState.HittableEnemies, base.DynamicVars["QuickSandPower"].IntValue, base.Owner.Creature, this);
-        var targets = base.CombatState.HittableEnemies
-        .Where(enemy => enemy.HasPower<QuickSandPower>())
-        .ToList();
-        foreach (var enemy in targets)
-        {
-            await DamageCmd
-            .Attack(base.DynamicVars.CalculatedDamage)
+        await DamageCmd.Attack(base.DynamicVars.CalculatedDamage)
             .FromCard(this, cardPlay)
-            .Targeting(enemy)
+			.TargetingFiltered(base.CombatState.HittableEnemies.Where(enemy => enemy.HasPower<QuickSandPower>()).ToList())
 			.WithHitFx("vfx/vfx_bite")
             .Execute(choiceContext);
-        }
     }
 	protected override void OnUpgrade()
 	{

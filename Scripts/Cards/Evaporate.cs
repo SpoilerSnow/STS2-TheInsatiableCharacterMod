@@ -36,9 +36,7 @@ public class Evaporate : InsatiableCardModel
         int hpamount = cardPlay.Target.CurrentHp;
         if (hpamount > 0 && quicksandamount >= hpamount)
         {
-            await CreatureCmd.TriggerAnim(base.Owner.Creature, "EatPlayer", 0.5f);
-			await Cmd.Wait(2f);
-            await TheInsatiableCmd.SwallowCreature(cardPlay.Target);
+            await TheInsatiableCmd.SwallowCreature(base.Owner.Creature, cardPlay.Target);
         }
     }
 

@@ -16,9 +16,15 @@ namespace TheInsatiable.Scripts.Cards;
 public class OuroborosFrom : InsatiableCardModel
 {
     public override IEnumerable<CardKeyword> CanonicalKeywords => [TheInsatiableKeyword.SelfSwallow];
-	protected override IEnumerable<IHoverTip> AdditionalHoverTips => [
+	protected override IEnumerable<IHoverTip> AdditionalHoverTips => IsUpgraded ? 
+	[
 		HoverTipFactory.FromKeyword(TheInsatiableKeyword.Swallow),
-		HoverTipFactory.FromKeyword(TheInsatiableKeyword.Dynamic)
+		HoverTipFactory.FromKeyword(TheInsatiableKeyword.Dynamic),
+		HoverTipFactory.FromKeyword(TheInsatiableKeyword.Piles)
+	]:
+	[
+		HoverTipFactory.FromKeyword(TheInsatiableKeyword.Swallow),
+		HoverTipFactory.FromKeyword(TheInsatiableKeyword.Dynamic),
 	];
 	protected override IEnumerable<DynamicVar> CanonicalVars => [new PowerVar<OuroborosFromPower>(1)];
 	public OuroborosFrom()

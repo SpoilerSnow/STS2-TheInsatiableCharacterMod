@@ -33,6 +33,7 @@ public class LocustOfAbyss : InsatiableCardModel
 			.WithHitCount(base.DynamicVars.Repeat.IntValue)
 			.FromCard(this, cardPlay)
 			.Targeting(cardPlay.Target)
+			.WithHitFx("vfx/vfx_attack_blunt")
 			.Execute(choiceContext);
 	}
 	protected override void OnUpgrade()

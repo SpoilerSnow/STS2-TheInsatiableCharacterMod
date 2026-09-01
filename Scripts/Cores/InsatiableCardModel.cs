@@ -61,10 +61,14 @@ public abstract class InsatiableCardModel : ModCardTemplate, ITheInsatiableModel
     }
     public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
 	{
-		CardPile? pile = base.Pile;
-		if (pile == Entry.SwallowPile.GetPile(player) && player == base.Owner)
+        if (base.Owner.PlayerCombatState.TurnNumber <= 1)
+        {
+            return;
+        }
+		PileType? currentPile = base.Pile?.Type;
+		if (currentPile == Entry.SwallowPile && player == base.Owner)
 		{
-            await OnDigest(); 
+            await OnDigest();
 		}
 	}
     public virtual Task OnDigest()

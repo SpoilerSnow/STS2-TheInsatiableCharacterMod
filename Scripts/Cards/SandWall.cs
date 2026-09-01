@@ -26,7 +26,7 @@ public class SandWall : InsatiableCardModel
     ];
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new BlockVar(11, ValueProp.Move),
-        new PowerVar<QuickSandPower>(4)
+        new PowerVar<QuickSandPower>(3)
     ];
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
 	{
@@ -36,7 +36,7 @@ public class SandWall : InsatiableCardModel
 	}
     protected override void OnUpgrade()
 	{
-        base.DynamicVars.Block.UpgradeValueBy(4);
+        base.DynamicVars.Block.UpgradeValueBy(3);
 		base.DynamicVars["QuickSandPower"].UpgradeValueBy(2);
 	}
 

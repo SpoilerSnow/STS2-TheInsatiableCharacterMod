@@ -8,6 +8,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 using TheInsatiable.Scripts.CardKeywords;
 using TheInsatiable.Scripts.Pools;
 using TheInsatiable.Scripts.Powers;
+using MegaCrit.Sts2.Core.Models;
 
 namespace TheInsatiable.Scripts.Cards;
 
@@ -15,7 +16,10 @@ namespace TheInsatiable.Scripts.Cards;
 
 public class MawOfVoid : InsatiableCardModel
 {
-    protected override IEnumerable<IHoverTip> AdditionalHoverTips => [HoverTipFactory.FromKeyword(TheInsatiableKeyword.Swallow)];
+    protected override IEnumerable<IHoverTip> AdditionalHoverTips => [
+		HoverTipFactory.FromKeyword(TheInsatiableKeyword.Swallow),
+		HoverTipFactory.FromKeyword(TheInsatiableKeyword.Piles),
+	];
 	protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(14, ValueProp.Move)];
 	public MawOfVoid()
 		: base(2, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
@@ -30,7 +34,16 @@ public class MawOfVoid : InsatiableCardModel
         .Targeting(cardPlay.Target)
 		.WithHitFx("vfx/vfx_bite")
 		.Execute(choiceContext);
-		await PowerCmd.Apply<MawOfVoidPower>(choiceContext, base.Owner.Creature, 1, base.Owner.Creature, this);
+		List<CardModel> cards = choesnpile1.Select(c => base.CombatState.CreateCard((CardModel)c, base.Owner)).ToList();
+        CardModel cardModel = await CardSelectCmd.FromChooseACardScreen(choiceContext, cards, base.Owner, canSkip: true);
+        if (cardModel != null)
+        {
+            CardModel? swallowedCard = await ((IChoosable)cardModel).OnChosen(choiceContext);
+            if (swallowedCard != null && choiceContext != null)
+            {
+                await PowerCmd.Apply<MawOfVoidPower>(choiceContext, base.Owner.Creature, 1, base.Owner.Creature, this);
+            }
+        }
 	}
 	protected override void OnUpgrade()
 	{

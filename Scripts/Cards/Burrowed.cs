@@ -22,12 +22,9 @@ public class Burrowed : InsatiableCardModel
     ];
     protected override IEnumerable<IHoverTip> AdditionalHoverTips => [
         HoverTipFactory.Static(StaticHoverTip.Block),
-        HoverTipFactory.FromPower<QuickSandPower>()
     ];
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new BlockVar(27, ValueProp.Move),
-        new PowerVar<QuickSandPower>(5),
-        new PowerVar<InsatiableBurrowedPower>(1)
     ];
     public Burrowed()
 		: base(3, CardType.Skill, CardRarity.Rare, TargetType.AllEnemies)
@@ -35,13 +32,13 @@ public class Burrowed : InsatiableCardModel
 	}
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
 	{
+        await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
         await CreatureCmd.GainBlock(base.Owner.Creature, base.DynamicVars.Block, cardPlay);
-		await PowerCmd.Apply<QuickSandPower>(new ThrowingPlayerChoiceContext(), base.CombatState.HittableEnemies, base.DynamicVars["QuickSandPower"].IntValue, base.Owner.Creature, this);
-        await PowerCmd.Apply<InsatiableBurrowedPower>(choiceContext, base.Owner.Creature, base.DynamicVars["InsatiableBurrowedPower"].BaseValue, base.Owner.Creature, this);
+        SfxCmd.Play("event:/sfx/enemy/enemy_attacks/burrowing_bug/burrowing_bug_burrow");
+        await PowerCmd.Apply<InsatiableBurrowedPower>(choiceContext, base.Owner.Creature, 1, base.Owner.Creature, this);
 	}
     protected override void OnUpgrade()
 	{
         base.DynamicVars.Block.UpgradeValueBy(5);
-        base.DynamicVars["QuickSandPower"].UpgradeValueBy(2);
 	}
 }

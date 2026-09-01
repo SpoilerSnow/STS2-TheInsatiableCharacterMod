@@ -112,5 +112,15 @@
     "THE_INSATIABLE_POWER_PHOTOTAXIS_POWER.smartDescription": "次に[blue]{Amount}[/blue]回、敵が[green]バフ[/green]を得た時、そのスタック数だけカードを引く。",
     "THE_INSATIABLE_POWER_GASTRIC_CAPACITY_POWER.title": "胃容量",
     "THE_INSATIABLE_POWER_GASTRIC_CAPACITY_POWER.description": "[gold]丸呑みスタック[/gold]の上限が[blue]3[/blue]{Amount:cond:<0?減少|増加}する。",
-    "THE_INSATIABLE_POWER_GASTRIC_CAPACITY_POWER.smartDescription": "[gold]丸呑みスタック[/gold]の上限が[blue]{Amount:abs()}[/blue]{Amount:cond:<0?減少|増加}する。"
+    "THE_INSATIABLE_POWER_GASTRIC_CAPACITY_POWER.smartDescription": "[gold]丸呑みスタック[/gold]の上限が[blue]{Amount:abs()}[/blue]{Amount:cond:<0?減少|増加}する。",
+    "THE_INSATIABLE_POWER_LAY_EGGS_PLUS_POWER.title": "産卵+",
+    "THE_INSATIABLE_POWER_LAY_EGGS_PLUS_POWER.description": "自分のターン開始時、[green]アップグレード済み[/green]の[gold]孵化[/gold]と[gold]ひとかじり[/gold]を手札に加える。",
+    "THE_INSATIABLE_POWER_LAY_EGGS_PLUS_POWER.smartDescription": "自分のターン開始時、[green]アップグレード済み[/green]の[blue]{Amount}[/blue]枚の[gold]孵化[/gold]と[gold]ひとかじり[/gold]を手札に加える。",
+    "THE_INSATIABLE_POWER_DIGESTIVE_JUICE_POWER.title": "消化液",
+    "THE_INSATIABLE_POWER_DIGESTIVE_JUICE_POWER.description": "毎ターン、初めて[gold]流砂[/gold]を得た時、数値が[blue]1[/blue]減少する。\n数値が[blue]0[/blue]になった時、そのカードを[gold]丸呑み[/gold]する。",
+    "THE_INSATIABLE_POWER_DIGESTIVE_JUICE_POWER.smartDescription": "毎ターン、初めて[gold]流砂[/gold]を得た時、数値が[blue]1[/blue]減少する。\n数値が[blue]0[/blue]になった時、そのカードを[gold]丸呑み[/gold]する。",
+    "THE_INSATIABLE_POWER_THE_WONDER_POWER.title": "奇観",
+    "THE_INSATIABLE_POWER_THE_WONDER_POWER.description": "次の数ターン終了時、任意の枚数を[gold]保持[/gold]する。\n保持した[gold]レア[/gold]または[gold]古代[/gold]カード1枚につき、次のターンに[blue]1[/blue]{energyPrefix:energyIcons(1)}を得る。",
+    "THE_INSATIABLE_POWER_THE_WONDER_POWER.smartDescription": "次の[blue]{Amount}[/blue]ターン終了時、任意の枚数を[gold]保持[/gold]する。\n保持した[gold]レア[/gold]または[gold]古代[/gold]カード1枚につき、次のターンに[blue]1[/blue]{energyPrefix:energyIcons(1)}を得る。",
+    "THE_INSATIABLE_POWER_THE_WONDER_POWER.selectionScreenPrompt": "保持するカードを選択。"
 }

@@ -14,7 +14,10 @@ namespace TheInsatiable.Scripts.Cards;
 
 public class HaveDinner : InsatiableCardModel
 {
-    protected override IEnumerable<IHoverTip> AdditionalHoverTips => [HoverTipFactory.FromKeyword(TheInsatiableKeyword.Swallow)];
+    protected override IEnumerable<IHoverTip> AdditionalHoverTips => [
+        HoverTipFactory.FromKeyword(TheInsatiableKeyword.Swallow),
+        HoverTipFactory.FromKeyword(TheInsatiableKeyword.Piles),
+    ];
     protected override IEnumerable<DynamicVar> CanonicalVars => [new CardsVar(2)];
     public HaveDinner()
 		: base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)

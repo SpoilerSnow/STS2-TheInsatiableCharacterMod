@@ -8,6 +8,7 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using TheInsatiable.Scripts.Pools;
 using TheInsatiable.Scripts.Powers;
+using TheInsatiable.Scripts.CardKeywords;
 
 namespace TheInsatiable.Scripts.Cards;
 
@@ -21,6 +22,7 @@ public class Dune : InsatiableCardModel
     ];
     protected override IEnumerable<IHoverTip> AdditionalHoverTips => [
         HoverTipFactory.FromPower<QuickSandPower>(),
+        HoverTipFactory.FromKeyword(TheInsatiableKeyword.Piles),
         HoverTipFactory.Static(StaticHoverTip.ReplayStatic)
     ];
 

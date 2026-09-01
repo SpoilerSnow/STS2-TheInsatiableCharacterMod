@@ -14,7 +14,15 @@ public abstract class InsatiablePowerModel : ModPowerTemplate, ITheInsatiableMod
     public virtual bool HasBigCustomPortrait => ResourceLoader.Exists($"res://TheInsatiable/images/powers/big/{GetType().Name.Replace("Power", "")}.png");
     public override string? CustomIconPath => HasCustomPortrait ? ($"res://TheInsatiable/images/powers/{GetType().Name.Replace("Power", "")}.png") : ($"res://TheInsatiable/images/powers/the_insatiable_power.png");
 	public override string? CustomBigIconPath => HasCustomPortrait ? ($"res://TheInsatiable/images/powers/big/{GetType().Name.Replace("Power", "")}.png") : ($"res://TheInsatiable/images/powers/big/the_insatiable_power.png");
+    public virtual Task BeforeCardSwallow(CardModel card, bool causedBySelfSwallow)
+    {
+        return Task.CompletedTask;
+    }
     public virtual Task AfterCardSwallow(ICombatState combatState, PlayerChoiceContext choiceContext, CardModel card, bool causedBySelfSwallow)
+    {
+        return Task.CompletedTask;
+    }
+    public virtual Task BeforeCreatureSwallow(Creature creature, bool force = false)
     {
         return Task.CompletedTask;
     }

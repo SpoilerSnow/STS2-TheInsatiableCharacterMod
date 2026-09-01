@@ -35,9 +35,9 @@ public class InsatiableCharacter : ModCharacterTemplate<InsatiableCardPool, Insa
     // 初始血量
     public override int StartingHp => 80;
     // 攻击动画延迟
-    public override float AttackAnimDelay => 0.3f;
+    public override float AttackAnimDelay => 0.15f;
     // 施法动画延迟
-    public override float CastAnimDelay => 0f;
+    public override float CastAnimDelay => 0.25f;
     // 如果你的人物不需要时间线小故事，加上这句。
     public override bool RequiresEpochAndTimeline => false;
     // 角色资源资产配置
@@ -83,9 +83,9 @@ public class InsatiableCharacter : ModCharacterTemplate<InsatiableCardPool, Insa
                 CastSfx: "event:/sfx/enemy/enemy_attacks/the_insatiable/the_insatiable_salivate",
                 // 死亡音效
                 DeathSfx: "event:/sfx/enemy/enemy_attacks/the_insatiable/the_insatiable_finisher",
-                // 角色选择音效（暂未自定义）。
-                // CharacterSelectSfx: null,
-                // 过渡音效。
+                // 角色选择音效
+                CharacterSelectSfx: "event:/sfx/enemy/enemy_attacks/the_insatiable/the_insatiable_liquify_ground",
+                // 过渡音效
                 CharacterTransitionSfx: "event:/sfx/ui/wipe_ironclad"
             ),
             Multiplayer: new(
@@ -191,8 +191,8 @@ public class InsatiableCharacter : ModCharacterTemplate<InsatiableCardPool, Insa
         CreatureAnimator valtotal = new CreatureAnimator(val1, controller);
         valtotal.AddAnyState("Idle", val1, () => !HasNoEscapePower);
         valtotal.AddAnyState("Idle", val6, () => HasNoEscapePower);
-        valtotal.AddAnyState("Cast", val2, () => !HasNoEscapePower);
-        valtotal.AddAnyState("Cast", val2a, () => HasNoEscapePower);
+        valtotal.AddAnyState("PowerUp", val2, () => !HasNoEscapePower);
+        valtotal.AddAnyState("PowerUp", val2a, () => HasNoEscapePower);
         valtotal.AddAnyState("Attack", val3, () => !HasNoEscapePower);
         valtotal.AddAnyState("Attack", val3a, () => HasNoEscapePower);
         valtotal.AddAnyState("Hit", val4, () => !HasNoEscapePower);
@@ -202,8 +202,8 @@ public class InsatiableCharacter : ModCharacterTemplate<InsatiableCardPool, Insa
         valtotal.AddAnyState("NoEscape", val6, () => HasNoEscapePower);
         valtotal.AddAnyState("EatPlayer", val7, () => !HasNoEscapePower);
         valtotal.AddAnyState("EatPlayer", val7a, () => HasNoEscapePower);
-        valtotal.AddAnyState("PowerUp", val8, () => !HasNoEscapePower);
-        valtotal.AddAnyState("PowerUp", val8a, () => HasNoEscapePower);
+        valtotal.AddAnyState("Cast", val8, () => !HasNoEscapePower);
+        valtotal.AddAnyState("Cast", val8a, () => HasNoEscapePower);
         valtotal.AddAnyState("Thrash", val9, () => !HasNoEscapePower);
         valtotal.AddAnyState("Thrash", val9a, () => HasNoEscapePower);
         return valtotal;

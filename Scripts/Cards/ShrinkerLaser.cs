@@ -22,24 +22,24 @@ public class ShrinkerLaser : InsatiableCardModel
 		TheInsatiableKeyword.Insect,
 		CardKeyword.Exhaust];
 	protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new DamageVar(14, ValueProp.Move),
+        new DamageVar(11, ValueProp.Move),
         new DynamicVar("DamageDecrease", 30m),
-		new RepeatVar(4)];
+		new DynamicVar("Count", 4)];
 	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
 	{
 		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
 		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue)
 			.FromCard(this, cardPlay)
 			.Targeting(cardPlay.Target)
+			.WithAttackerFx(null, "event:/sfx/enemy/enemy_attacks/shrinker_beetle/shrinker_beetle_cast")
 			.WithHitFx("vfx/vfx_attack_slash")
 			.Execute(choiceContext);
-		SfxCmd.Play("event:/sfx/enemy/enemy_attacks/shrinker_beetle/shrinker_beetle_cast");
-		await PowerCmd.Apply<ShrinkPower>(new ThrowingPlayerChoiceContext(), cardPlay.Target, base.DynamicVars.Repeat.BaseValue, base.Owner.Creature, this);
+		await PowerCmd.Apply<ShrinkPower>(new ThrowingPlayerChoiceContext(), cardPlay.Target, base.DynamicVars["Count"].BaseValue, base.Owner.Creature, this);
 	}
 
 	protected override void OnUpgrade()
 	{
-		base.DynamicVars.Damage.UpgradeValueBy(4);
-        base.DynamicVars.Repeat.UpgradeValueBy(1);
+		base.DynamicVars.Damage.UpgradeValueBy(3);
+        base.DynamicVars["Count"].UpgradeValueBy(1);
 	}
 }

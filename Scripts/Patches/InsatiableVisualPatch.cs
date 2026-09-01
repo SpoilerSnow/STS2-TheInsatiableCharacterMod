@@ -22,7 +22,7 @@ internal static class BigMushroomGrowScalePatch
 internal static class SurroundedPowerInsatiableFacingPatch
 {
 	[HarmonyPrefix]
-	[HarmonyPatch("FlipScale")]
+	[HarmonyPatch("FlipScale", new[] { typeof(Node2D) })]
 	private static bool FlipScalePrefix(SurroundedPower __instance, Node2D? body, ref Task __result)
 	{
 		if (__instance.Owner?.Player?.Character is not InsatiableCharacter)

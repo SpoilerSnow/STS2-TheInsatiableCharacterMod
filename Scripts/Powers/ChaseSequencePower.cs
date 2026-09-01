@@ -16,13 +16,13 @@ using TheInsatiable.Scripts.CardKeywords;
 
 namespace TheInsatiable.Scripts.Powers;
 [RegisterPower]
-public class ChaseSequencePower : InsatiablePowerModel, IPowerExtraIconAmountLabelSpecsProvider
+public class ChaseSequencePower : InsatiablePowerModel
 {
     private class Data
 	{
 		public int remainingTurns;
 	}
-    public int TopRightDisplayAmount => 6 - GetInternalData<Data>().remainingTurns % 6;
+    public override int DisplayAmount => 6 - GetInternalData<Data>().remainingTurns % 6;
     public override PowerType Type => PowerType.Buff;
 	public override PowerStackType StackType => PowerStackType.Counter;
     protected override IEnumerable<IHoverTip> AdditionalHoverTips => [
@@ -33,15 +33,6 @@ public class ChaseSequencePower : InsatiablePowerModel, IPowerExtraIconAmountLab
     {
         return new Data { remainingTurns = 0 };
     }
-    public IReadOnlyList<ExtraIconAmountLabelSpec> GetPowerExtraIconAmountLabelSpecs()
-    {
-        return
-        [
-            ExtraIconAmountLabelSpec.Plain(
-                ExtraIconAmountLabelCorner.TopRight,
-                TopRightDisplayAmount.ToString())
-        ];
-    }
     public override async Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
     {
 		if (participants.Contains(base.Owner))
@@ -49,7 +40,7 @@ public class ChaseSequencePower : InsatiablePowerModel, IPowerExtraIconAmountLab
         Data data = GetInternalData<Data>();
         data.remainingTurns++;
         InvokeDisplayAmountChanged();
-        if (TopRightDisplayAmount != 6)
+        if (DisplayAmount != 6)
         {
             return;
         }
@@ -65,29 +56,10 @@ public class ChaseSequencePower : InsatiablePowerModel, IPowerExtraIconAmountLab
                 if (card is FranticEscape)
                 {
                     Flash();
-                    await CreatureCmd.TriggerAnim(base.Owner, "EatPlayer", 0.5f);
-			        await Cmd.Wait(2f);
-                    await TheInsatiableCmd.SwallowCreature(player1.Creature);
+                    await TheInsatiableCmd.SwallowCreature(base.Owner, player1.Creature);
                 }
             }
         }
 		}
-    }
-    public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
-    {
-        if (player != base.Owner.Player)
-        {
-            return;
-        }
-        IEnumerable<Player> enumerable = base.CombatState.Players.Where((Player p) => p.Creature.IsAlive && p != base.Owner.Player);
-        foreach (Player player1 in enumerable)
-        {
-            IEnumerable<CardModel> statusCards = CardFactory.GetDistinctForCombat(player1, ModelDb.CardPool<StatusCardPool>().GetUnlockedCards(base.Owner.Player.UnlockState, base.Owner.Player.RunState.CardMultiplayerConstraint), base.Amount, base.Owner.Player.RunState.Rng.CombatCardGeneration).Concat([base.CombatState.CreateCard<FranticEscape>(base.Owner.Player)]);
-            foreach (CardModel statusCard in statusCards)
-            {
-                Flash();
-                CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat(statusCard, PileType.Draw, base.Owner.Player, CardPilePosition.Random));
-            }
-        }
     }
 }

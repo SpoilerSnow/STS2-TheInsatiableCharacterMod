@@ -7,6 +7,6 @@ namespace TheInsatiable.Scripts.Powers;
 [RegisterPower]
 public class NegativePhototaxisPower : TemporaryStrengthPower
 {
-	public override AbstractModel OriginModel => ModelDb.Card<NegativePhototaxis>();
+	public override AbstractModel OriginModel => ModelDb.Card<Phototaxis>();
     protected override bool IsPositive => false;
 }

@@ -60,9 +60,7 @@ public class InsatiableNoEscapePower : InsatiablePowerModel
 		{
 			if (!enemy.IsDead)
 			{
-				await CreatureCmd.TriggerAnim(((PowerModel)this).Owner, "EatPlayer", 0.5f);
-				await Cmd.Wait(2f);
-				await TheInsatiableCmd.SwallowCreature(enemy);
+				await TheInsatiableCmd.SwallowCreature(base.Owner, enemy);
 			}
 		}
 	}

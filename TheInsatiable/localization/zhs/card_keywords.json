@@ -9,6 +9,8 @@
     "THE_INSATIABLE_KEYWORD_DYNAMIC.title": "数值",
     "THE_INSATIABLE_KEYWORD_GULP.description": "被[gold]吞噬[/gold]时触发对应效果。",
     "THE_INSATIABLE_KEYWORD_GULP.title": "吞咽",
-    "THE_INSATIABLE_KEYWORD_INSECT.description": "本牌视为虫群牌",
-    "THE_INSATIABLE_KEYWORD_INSECT.title": "虫群"
+    "THE_INSATIABLE_KEYWORD_INSECT.description": "记作一种牌的类型。\n无实际作用。",
+    "THE_INSATIABLE_KEYWORD_INSECT.title": "虫群",
+    "THE_INSATIABLE_KEYWORD_PILES.description": "包括[gold]抽牌堆[/gold]，[gold]弃牌堆[/gold]和[gold]手牌[/gold]。",
+    "THE_INSATIABLE_KEYWORD_PILES.title": "牌堆"
 }

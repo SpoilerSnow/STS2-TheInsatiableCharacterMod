@@ -17,7 +17,7 @@ public class AppendageScalpel : InsatiableCardModel
 {
 	protected override bool HasEnergyCostX => true;
 	protected override IEnumerable<DynamicVar> CanonicalVars => [
-		new CalculationBaseVar(8),
+		new CalculationBaseVar(7),
 		new ExtraDamageVar(2),
 		new CalculatedDamageVar(ValueProp.Move).WithMultiplier(delegate(CardModel card, Creature? target)
 		{
@@ -43,7 +43,10 @@ public class AppendageScalpel : InsatiableCardModel
             .WithHitCount(ResolveEnergyXValue())
             .FromCard(this, cardPlay)
 			.Targeting(cardPlay.Target)
-			.WithHitFx("vfx/vfx_bite")
+			.OnlyPlayAnimOnce()
+			.WithAttackerAnim("Thrash", 0.3f)
+			.WithAttackerFx(null, "event:/sfx/enemy/enemy_attacks/the_insatiable/the_insatiable_thrash")
+			.WithHitFx("vfx/vfx_scratch")
 			.Execute(choiceContext);
 	}
 	protected override void OnUpgrade()

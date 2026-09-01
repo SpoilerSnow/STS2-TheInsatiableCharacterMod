@@ -27,7 +27,7 @@ public class DesertMirage : InsatiableCardModel
     ];
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new HealVar(4),
-        new BlockVar(10, ValueProp.Move),
+        new BlockVar(8, ValueProp.Move),
         new PowerVar<QuickSandPower>(5),
         new PowerVar<DesertMiragePower>(1)
     ];
@@ -43,8 +43,8 @@ public class DesertMirage : InsatiableCardModel
 
     protected override void OnUpgrade()
     {
-        base.DynamicVars.Heal.UpgradeValueBy(2);
-        base.DynamicVars.Block.UpgradeValueBy(2);
+        base.DynamicVars.Heal.UpgradeValueBy(1);
+        base.DynamicVars.Block.UpgradeValueBy(3);
         base.DynamicVars["QuickSandPower"].UpgradeValueBy(2);
     }
 }

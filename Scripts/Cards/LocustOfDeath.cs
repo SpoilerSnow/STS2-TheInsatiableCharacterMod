@@ -35,6 +35,7 @@ public class LocustOfDeath : InsatiableCardModel
 		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue)
 			.FromCard(this, cardPlay)
 			.Targeting(cardPlay.Target)
+			.WithHitFx("vfx/vfx_attack_blunt")
 			.Execute(choiceContext);
         await PowerCmd.Apply<WeakPower>(new ThrowingPlayerChoiceContext(), cardPlay.Target, base.DynamicVars.Weak.BaseValue, base.Owner.Creature, this);
 	}

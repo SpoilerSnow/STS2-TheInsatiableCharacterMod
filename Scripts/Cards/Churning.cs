@@ -10,12 +10,14 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using TheInsatiable.Scripts.CardKeywords;
 using TheInsatiable.Scripts.Pools;
+using STS2RitsuLib.Combat.AttackHits;
+using MegaCrit.Sts2.Core.Nodes.Vfx;
 
 namespace TheInsatiable.Scripts.Cards;
 
 [RegisterCard(typeof(InsatiableCardPool))]
 
-public class Churning : InsatiableCardModel
+public class Churning : InsatiableCardModel, IAttackHitHookListener
 {
     protected override IEnumerable<IHoverTip> AdditionalHoverTips => [
         HoverTipFactory.FromKeyword(TheInsatiableKeyword.Swallow),
@@ -40,12 +42,15 @@ public class Churning : InsatiableCardModel
         for (int i = 0; i < SwallowPile; i++)
 		{
 			Creature enemy = base.Owner.RunState.Rng.CombatTargets.NextItem(base.CombatState.HittableEnemies);
+			if (enemy != null)
+			{
             await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue)
                 .FromCard(this, cardPlay)
                 .Targeting(enemy)
-		        .WithHitFx("vfx/vfx_slime_impact")
+				.WithHitVfxNode(NGoopyImpactVfx.Create)
 		        .Execute(choiceContext);
             await PowerCmd.Apply<PoisonPower>(choiceContext, enemy, base.DynamicVars.Poison.BaseValue, base.Owner.Creature, this);
+			}
         }
 	}
 	protected override void OnUpgrade()

@@ -22,9 +22,9 @@ public class Chomp : InsatiableCardModel
 	}
 	protected override IEnumerable<IHoverTip> AdditionalHoverTips => [HoverTipFactory.FromCard<Dazed>()];
 	protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new DamageVar(6, ValueProp.Move),
+        new DamageVar(7, ValueProp.Move),
         new RepeatVar(2)
-        ];
+    ];
 	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
 	{
 		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");

@@ -24,7 +24,7 @@ public class Ambush : InsatiableCardModel
         HoverTipFactory.FromPower<VulnerablePower>()
         ];
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new PowerVar<QuickSandPower>(4),
+        new PowerVar<QuickSandPower>(3),
         new PowerVar<WeakPower>(1),
         new PowerVar<VulnerablePower>(1)
         ];

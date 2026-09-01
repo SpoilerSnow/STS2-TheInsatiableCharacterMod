@@ -37,6 +37,7 @@ public class LocustOfWar : InsatiableCardModel
 			.WithHitCount(base.DynamicVars.Repeat.IntValue)
 			.FromCard(this, cardPlay)
 			.Targeting(cardPlay.Target)
+			.WithHitFx("vfx/vfx_attack_blunt")
 			.Execute(choiceContext);
         await PowerCmd.Apply<VulnerablePower>(new ThrowingPlayerChoiceContext(), cardPlay.Target, base.DynamicVars.Vulnerable.BaseValue, base.Owner.Creature, this);
 	}

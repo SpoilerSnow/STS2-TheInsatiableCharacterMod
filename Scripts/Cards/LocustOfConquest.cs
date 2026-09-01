@@ -32,6 +32,7 @@ public class LocustOfConquest : InsatiableCardModel
 			.WithHitCount(base.DynamicVars.Repeat.IntValue)
 			.FromCard(this, cardPlay)
             .TargetingAllOpponents(base.CombatState)
+			.WithHitFx("vfx/vfx_attack_blunt")
 			.Execute(choiceContext);
 	}
 	protected override void OnUpgrade()

@@ -50,9 +50,7 @@ public class StealTechniquePower : InsatiablePowerModel
 			where c.DeckVersion != null
 			select c
 		).ToList();
-
 		if (candidateCards.Count == 0) return;
-
 		// 按蚱蜢优先级选择
 		IEnumerable<CardModel> selected = candidateCards;
 		foreach (Func<CardModel, bool> predicate in _stealPriorities)
@@ -64,20 +62,19 @@ public class StealTechniquePower : InsatiablePowerModel
 				break;
 			}
 		}
-
 		CardModel cardToSteal = base.CombatState.RunState.Rng.CombatCardSelection.NextItem(selected);
 		if (cardToSteal == null) return;
-
 		await TheInsatiableCmd.SwallowCard(new ThrowingPlayerChoiceContext(), cardToSteal);
 		_stolenCard = cardToSteal;
 	}
 
-	public override async Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
-	{
-		if (!participants.Contains(base.Owner)) return;
-
+	public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
+    {
+        if (player != base.Owner.Player)
+        {
+            return;
+        }
 		await PowerCmd.Decrement(this);
-
 		if (base.Amount <= 0 && _stolenCard != null)
 		{
 			Flash();

@@ -20,14 +20,14 @@ public class LikeMothToFlame : InsatiableCardModel
 	protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
         new DamageVar(4, ValueProp.Move),
-        new PowerVar<LikeMothToFlamePower>(2)
+        new PowerVar<LikeMothToFlamePower>(1)
     ];
     protected override IEnumerable<IHoverTip> AdditionalHoverTips => [
         HoverTipFactory.FromPower<StrengthPower>(),
         HoverTipFactory.Static(StaticHoverTip.Block),
     ];
 	public LikeMothToFlame() 
-		: base(0, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
+		: base(0, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
 	{
 	}
 	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -44,6 +44,7 @@ public class LikeMothToFlame : InsatiableCardModel
 	{
 		if (cardSource == this && result.WasFullyBlocked)
 		{
+			await Cmd.Wait(0.3f);
 			await CardPileCmd.Add(this, PileType.Hand);
 		}
 	}

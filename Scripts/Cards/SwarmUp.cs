@@ -32,7 +32,9 @@ public class SwarmUp : InsatiableCardModel
             .FromCard(this, cardPlay)
             .TargetingAllOpponents(base.CombatState)
             .OnlyPlayAnimOnce()
+            .WithAttackerAnim("PowerUp", 0.3f)
 			.WithAttackerFx(null, "event:/sfx/enemy/enemy_attacks/entomancer/entomancer_attack_ranged")
+            .WithHitFx("vfx/vfx_attack_slash")
             .Execute(choiceContext);
 	}
     protected override void OnUpgrade()

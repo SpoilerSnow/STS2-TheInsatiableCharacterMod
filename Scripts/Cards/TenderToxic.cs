@@ -36,6 +36,7 @@ public sealed class TenderToxic : InsatiableCardModel
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
 	{
        await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+	   SfxCmd.Play("event:/sfx/enemy/enemy_attacks/hunter_killer/hunter_killer_cast");
 	   await PowerCmd.Apply<TenderToxicPower>(choiceContext, base.Owner.Creature, base.DynamicVars.Strength.BaseValue, base.Owner.Creature, this);
 	}
     protected override void OnUpgrade()

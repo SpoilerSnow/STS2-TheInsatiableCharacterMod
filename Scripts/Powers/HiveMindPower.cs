@@ -78,6 +78,7 @@ public class HiveMindPower : InsatiablePowerModel
                 matchingCard.RemoveFromCurrentPile(silent: true);
                 await CardPileCmd.Add(matchingCard, PileType.Draw, CardPilePosition.Top, this, true);
             }
+            SfxCmd.Play("event:/sfx/enemy/enemy_attacks/entomancer/entomancer_cast");
             await CardPileCmd.AutoPlayFromDrawPile(choiceContext, base.Owner.Player, matchingCards.Count, CardPilePosition.Top, false);
             // 清除守卫标记
             foreach (CardModel matchingCard in matchingCards)

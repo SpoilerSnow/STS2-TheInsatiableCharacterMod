@@ -21,6 +21,7 @@ public class Abyss : InsatiableCardModel
         HoverTipFactory.FromCard<LocustOfDeath>(base.IsUpgraded),
         HoverTipFactory.FromCard<LocustOfAbyss>(base.IsUpgraded),
         HoverTipFactory.FromKeyword(TheInsatiableKeyword.Swallow),
+        HoverTipFactory.FromKeyword(TheInsatiableKeyword.Piles),
     ];
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
     public Abyss()
@@ -29,6 +30,7 @@ public class Abyss : InsatiableCardModel
 	}
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {
+        await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
         for (int i = 0; i < 6; i++)
 		{
             List<CardModel> cards = choesnpile1.Select(c => base.CombatState.CreateCard((CardModel)c, base.Owner)).ToList();

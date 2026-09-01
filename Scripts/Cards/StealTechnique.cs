@@ -34,6 +34,7 @@ public class StealTechnique : InsatiableCardModel
 		await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
 			.FromCard(this, cardPlay)
 			.Targeting(cardPlay.Target)
+			.WithAttackerFx(null, "event:/sfx/enemy/enemy_attacks/thieving_hopper/thieving_hopper_steal")
 			.WithHitFx("vfx/vfx_attack_slash")
 			.Execute(choiceContext);
 		await PowerCmd.Apply<StealTechniquePower>(choiceContext, base.Owner.Creature, base.DynamicVars.CalculationBase.BaseValue, base.Owner.Creature, this);

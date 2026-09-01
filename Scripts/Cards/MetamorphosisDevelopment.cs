@@ -25,6 +25,7 @@ public class MetamorphosisDevelopment : InsatiableCardModel
     protected override IEnumerable<IHoverTip> AdditionalHoverTips => [
         HoverTipFactory.Static(StaticHoverTip.Block),
         HoverTipFactory.FromKeyword(TheInsatiableKeyword.Swallow),
+        HoverTipFactory.FromKeyword(TheInsatiableKeyword.Piles),
         HoverTipFactory.FromPower<DexterityPower>(),
         HoverTipFactory.FromPower<WeakPower>(),
     ];
@@ -48,7 +49,11 @@ public class MetamorphosisDevelopment : InsatiableCardModel
             {
                 if (swallowedCard.Affliction != null)
                 {
-                    await PowerCmd.Apply<WeakPower>(choiceContext, base.Owner.Creature, base.DynamicVars.Weak.BaseValue, base.Owner.Creature, this);
+                    PowerModel powerModel = await PowerCmd.Apply<WeakPower>(choiceContext, base.Owner.Creature, base.DynamicVars.Weak.BaseValue, base.Owner.Creature, this);
+                    if (powerModel != null)
+		            {
+			            powerModel.SkipNextDurationTick = false;
+		            }
                 }
                 if (swallowedCard.Enchantment != null || swallowedCard.IsUpgraded)
                 {

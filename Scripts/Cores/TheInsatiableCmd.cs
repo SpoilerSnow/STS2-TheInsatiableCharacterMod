@@ -34,12 +34,15 @@ public class TheInsatiableCmd
         }
         return false;
     }
-    public static async Task SwallowCreature(Creature creature, bool force = false)
+    public static async Task SwallowCreature(Creature dealer, Creature creature, bool force = false)
     {
         if (!CombatManager.Instance.IsOverOrEnding)
 		{
             ICombatState combatState = creature.CombatState ?? creature.CombatState;
             await TheInsatiableHook.BeforeCreatureSwallow(combatState, creature, force);
+            SfxCmd.Play("event:/sfx/enemy/enemy_attacks/the_insatiable/the_insatiable_finisher");
+            await CreatureCmd.TriggerAnim(dealer, "EatPlayer", 0.5f);
+			await Cmd.Wait(2f);
             await CreatureCmd.Kill(creature);
             CombatManager.Instance.History.CreatureSwallowed(combatState, creature);
             await TheInsatiableHook.AfterCreatureSwallow(combatState, creature, force);

@@ -4,5 +4,5 @@
     "THE_INSATIABLE_POTION_LIQUID_HUNGRY_POTION.title": "Liquid Hunger",
     "THE_INSATIABLE_POTION_LIQUID_HUNGRY_POTION.description": "Fill your [gold]Hand[/gold] with [gold]Insatiable Swallow[/gold].",
     "THE_INSATIABLE_POTION_DIGESTIVE_JUICE_POTION.title": "Digestive Juice",
-    "THE_INSATIABLE_POTION_DIGESTIVE_JUICE_POTION.description": "[gold]Swallow[/gold] an enemy. Does not work against [gold]Elite[/gold] or [gold]Boss[/gold] fights."
+    "THE_INSATIABLE_POTION_DIGESTIVE_JUICE_POTION.description": "Apply [gold]Digestive Juice[/gold] to an enemy.\nIn [gold]Normal[/gold], [gold]Elite[/gold], and [gold]Boss[/gold] fights, apply [blue]{Other}[/blue]/[blue]{Elite}[/blue]/[blue]{Boss}[/blue] respectively."
 }

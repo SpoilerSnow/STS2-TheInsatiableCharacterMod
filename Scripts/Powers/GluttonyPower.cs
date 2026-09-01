@@ -1,4 +1,5 @@
 using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
@@ -35,9 +36,12 @@ public class GluttonyPower : InsatiablePowerModel
 	}
 	public override async Task AfterDeath(PlayerChoiceContext choiceContext, Creature creature, bool wasRemovalPrevented, float deathAnimLength)
 	{
-		if (base.CombatState.Enemies.Contains(creature))
+		if (creature != CombatManager.Instance.History.Entries.OfType<CreatureSwallowedEntry>())
 		{
 			await TheInsatiableHook.BeforeCreatureSwallow(CombatState, creature, false);
+			SfxCmd.Play("event:/sfx/enemy/enemy_attacks/the_insatiable/the_insatiable_finisher");
+            await CreatureCmd.TriggerAnim(base.Owner, "EatPlayer", 0.5f);
+			await Cmd.Wait(2f);
 			CombatManager.Instance.History.CreatureSwallowed(CombatState, creature);
 			await TheInsatiableHook.AfterCreatureSwallow(CombatState, creature, false);
 		}

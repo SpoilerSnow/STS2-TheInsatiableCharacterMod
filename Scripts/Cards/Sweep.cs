@@ -19,7 +19,6 @@ public sealed class Sweep : InsatiableCardModel
         HoverTipFactory.FromKeyword(TheInsatiableKeyword.Swallow),
         base.EnergyHoverTip
     ];
-    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new CardsVar(1),
         new EnergyVar(1)
@@ -33,18 +32,14 @@ public sealed class Sweep : InsatiableCardModel
         await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
 	    foreach (var player1 in base.CombatState.Players)
         {
-            List<CardModel> cards = choesnpile1.Select(c => base.CombatState.CreateCard((CardModel)c, player1)).ToList();
-            CardModel cardModel = await CardSelectCmd.FromChooseACardScreen(choiceContext, cards, player1, canSkip: true);
-            if (cardModel != null)
-            {
-                await ((IChoosable)cardModel).OnChosen(choiceContext);
-            }
             await CardPileCmd.Draw(choiceContext, base.DynamicVars.Cards.BaseValue, player1);
             await PlayerCmd.GainEnergy(base.DynamicVars.Energy.BaseValue, player1);
+            CardModel cardModel = base.CombatState.CreateCard<InsatiableSwallow>(base.Owner);
+            if (IsUpgraded)
+		    {
+			    cardModel.SetToFreeThisCombat();
+		    }
+            await CardPileCmd.AddGeneratedCardToCombat(cardModel, PileType.Hand, base.Owner);
         }
-	}
-    protected override void OnUpgrade()
-	{
-		RemoveKeyword(CardKeyword.Exhaust);
 	}
 }

@@ -16,17 +16,20 @@ namespace TheInsatiable.Scripts.Cards;
 
 public sealed class ChaseSequence : InsatiableCardModel
 {
-	public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Innate];
+	public override IEnumerable<CardKeyword> CanonicalKeywords => [
+		CardKeyword.Innate,
+		CardKeyword.Ethereal
+	];
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.MultiplayerOnly;
     protected override IEnumerable<IHoverTip> AdditionalHoverTips => [
 		base.EnergyHoverTip,
 		HoverTipFactory.FromCard<FranticEscape>(),
         HoverTipFactory.FromKeyword(TheInsatiableKeyword.Swallow),
+		HoverTipFactory.FromKeyword(TheInsatiableKeyword.Piles),
     ];
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-		new PowerVar<ChaseSequencePower>(2),
-		new PowerVar<RunPower>(1),
-		new EnergyVar(1)
+		new EnergyVar(1),
+		new PowerVar<RunPower>(1)
 	];
 	public ChaseSequence()
 		: base(1, CardType.Power, CardRarity.Rare, TargetType.Self)
@@ -35,15 +38,15 @@ public sealed class ChaseSequence : InsatiableCardModel
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
 	{
         await CreatureCmd.TriggerAnim(base.Owner.Creature, "PowerUp", base.Owner.Character.CastAnimDelay);
-	    await PowerCmd.Apply<ChaseSequencePower>(choiceContext, base.Owner.Creature, base.DynamicVars["ChaseSequencePower"].BaseValue, base.Owner.Creature, this);
+	    await PowerCmd.Apply<ChaseSequencePower>(choiceContext, base.Owner.Creature, 1, base.Owner.Creature, this);
 		IEnumerable<Player> enumerable = base.CombatState.Players.Where((Player p) => p.Creature.IsAlive && p != base.Owner);
 		foreach (Player player1 in enumerable)
 		{
-			await PowerCmd.Apply<RunPower>(choiceContext, player1.Creature, base.DynamicVars["RunPower"].BaseValue, base.Owner.Creature, this);
+			await PowerCmd.Apply<RunPower>(choiceContext, player1.Creature, base.DynamicVars.Energy.BaseValue, base.Owner.Creature, this);
 		}
 	}
     protected override void OnUpgrade()
 	{
-        DynamicVars["ChaseSequencePower"].UpgradeValueBy(-1);
+        RemoveKeyword(CardKeyword.Ethereal);
 	}
 }

@@ -16,6 +16,7 @@ public class InsatiableNoEscape : InsatiableCardModel
 {
 	protected override IEnumerable<IHoverTip> AdditionalHoverTips => [
 		HoverTipFactory.FromKeyword(TheInsatiableKeyword.Swallow),
+		HoverTipFactory.FromKeyword(TheInsatiableKeyword.Piles),
 		HoverTipFactory.FromCard<InsatiableSwallow>()];
 	public InsatiableNoEscape()
 		: base(3, CardType.Power, CardRarity.Ancient, TargetType.Self)
@@ -24,7 +25,11 @@ public class InsatiableNoEscape : InsatiableCardModel
 	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
 	{
 		await PowerCmd.Apply<InsatiableNoEscapePower>(choiceContext, base.Owner.Creature, 1, base.Owner.Creature, this);
+		SfxCmd.Play("event:/sfx/enemy/enemy_attacks/the_insatiable/the_insatiable_liquify_ground");
 		await CreatureCmd.TriggerAnim(base.Owner.Creature, "PowerUp", base.Owner.Character.CastAnimDelay);
+		await Cmd.Wait(0.5f);
+		VfxCmd.PlayOnCreatureCenter(base.Owner.Creature, "vfx/vfx_scream");
+		await Cmd.Wait(0.75f);
         List<CardPileAddResult> statusCards = new List<CardPileAddResult>();
 			for (int i = 0; i < 6; i++)
 			{

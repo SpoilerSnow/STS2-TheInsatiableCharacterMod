@@ -10,5 +10,7 @@
     "THE_INSATIABLE_KEYWORD_GULP.description": "[gold]丸呑み[/gold]された時、対応する効果を発動する。",
     "THE_INSATIABLE_KEYWORD_GULP.title": "嚥下",
     "THE_INSATIABLE_KEYWORD_INSECT.description": "このカードは蟲カードとして扱う。",
-    "THE_INSATIABLE_KEYWORD_INSECT.title": "蟲"
+    "THE_INSATIABLE_KEYWORD_INSECT.title": "蟲",
+    "THE_INSATIABLE_KEYWORD_PILES.description": "包括[gold]抽牌堆[/gold]，[gold]弃牌堆[/gold]和[gold]手牌[/gold]。",
+    "THE_INSATIABLE_KEYWORD_PILES.title": "牌堆"
 }

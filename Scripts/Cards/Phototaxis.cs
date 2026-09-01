@@ -15,29 +15,26 @@ namespace TheInsatiable.Scripts.Cards;
 
 public class Phototaxis : InsatiableCardModel
 {
-	protected override IEnumerable<IHoverTip> AdditionalHoverTips => [
-		HoverTipFactory.FromPower<WeakPower>(),
-		HoverTipFactory.FromCard<NegativePhototaxis>(),
-	];
+	protected override IEnumerable<IHoverTip> AdditionalHoverTips => [HoverTipFactory.FromPower<StrengthPower>()];
 	protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new PowerVar<WeakPower>(1),
-		new PowerVar<PhototaxisPower>(1),
+        new PowerVar<StrengthPower>(2),
+		new PowerVar<PhototaxisPower>(2),
     ];
 	public Phototaxis()
-		: base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+		: base(1, CardType.Skill, CardRarity.Uncommon, TargetType.AnyEnemy)
 	{
 	}
 	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
 	{
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
 		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.AttackAnimDelay);
-		await PowerCmd.Apply<WeakPower>(new ThrowingPlayerChoiceContext(), base.CombatState.HittableEnemies, base.DynamicVars.Weak.IntValue, base.Owner.Creature, this);
-		await CardPileCmd.AddGeneratedCardToCombat(base.CombatState.CreateCard<NegativePhototaxis>(base.Owner), PileType.Hand, base.Owner);
+		await PowerCmd.Apply<NegativePhototaxisPower>(new ThrowingPlayerChoiceContext(), cardPlay.Target, base.DynamicVars.Strength.IntValue, base.Owner.Creature, this);
 		await PowerCmd.Apply<PhototaxisPower>(choiceContext, base.Owner.Creature, base.DynamicVars["PhototaxisPower"].BaseValue, base.Owner.Creature, this);
 	}
 	protected override void OnUpgrade()
 	{
 		base.DynamicVars["PhototaxisPower"].UpgradeValueBy(1);
-		base.DynamicVars.Weak.UpgradeValueBy(1);
+		base.DynamicVars.Strength.UpgradeValueBy(1);
 	}
 }

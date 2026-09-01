@@ -17,10 +17,11 @@ public class BeFull : InsatiableCardModel
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
     protected override IEnumerable<IHoverTip> AdditionalHoverTips => [
         HoverTipFactory.FromKeyword(TheInsatiableKeyword.Swallow),
+        HoverTipFactory.FromKeyword(TheInsatiableKeyword.Piles),
         base.EnergyHoverTip
     ];
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new CardsVar(3),
+        new CardsVar(2),
         new EnergyVar(2)
     ];
     public BeFull()

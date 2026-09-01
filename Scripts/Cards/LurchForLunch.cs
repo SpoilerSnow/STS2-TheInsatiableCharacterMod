@@ -12,12 +12,11 @@ namespace TheInsatiable.Scripts.Cards;
 
 public class LurchForLunch : InsatiableCardModel
 {
-    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
     protected override IEnumerable<DynamicVar> CanonicalVars => [new EnergyVar(1)];
-    protected override IEnumerable<IHoverTip> AdditionalHoverTips => [
+    protected override IEnumerable<IHoverTip> AdditionalHoverTips => IsUpgraded ? [
         HoverTipFactory.FromCard<InsatiableSwallow>(),
-        base.EnergyHoverTip
-    ];
+        base.EnergyHoverTip] : 
+    [HoverTipFactory.FromCard<InsatiableSwallow>()];
     public LurchForLunch()
 		: base(0, CardType.Skill, CardRarity.Common, TargetType.Self)
 	{
@@ -25,11 +24,10 @@ public class LurchForLunch : InsatiableCardModel
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
-        await PlayerCmd.GainEnergy(base.DynamicVars.Energy.BaseValue, base.Owner);
+        if (IsUpgraded)
+		{
+			await PlayerCmd.GainEnergy(base.DynamicVars.Energy.BaseValue, base.Owner);
+		}
         await CardPileCmd.AddGeneratedCardToCombat(base.CombatState.CreateCard<InsatiableSwallow>(base.Owner), PileType.Hand, base.Owner);
-    }
-    protected override void OnUpgrade()
-	{
-		AddKeyword(CardKeyword.Retain);
     }
 }

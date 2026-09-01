@@ -32,6 +32,7 @@ public class EggAgainstStone : InsatiableCardModel
 		await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
 			.FromCard(this, cardPlay)
 			.Targeting(cardPlay.Target)
+			.WithAttackerFx(null, "event:/sfx/enemy/enemy_attacks/workbug_egg/workbug_egg_attack")
 			.WithHitFx("vfx/vfx_attack_blunt")
 			.Execute(choiceContext);
 		await PowerCmd.Apply<PlatingPower>(choiceContext, base.Owner.Creature, base.DynamicVars["PlatingPower"].BaseValue, base.Owner.Creature, this);

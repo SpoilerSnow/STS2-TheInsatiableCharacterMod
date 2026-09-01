@@ -24,11 +24,12 @@ public class LivingWeapon : InsatiableCardModel
 	{
         await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue)
             .FromCard(this, cardPlay)
-            .WithAttackerAnim("Thrash", 0.3f)
-			.OnlyPlayAnimOnce()
             .TargetingAllOpponents(base.CombatState)
-            .WithHitFx("vfx/vfx_scratch")
-            .Execute(choiceContext);
+            .OnlyPlayAnimOnce()
+			.WithAttackerAnim("Thrash", 0.3f)
+			.WithAttackerFx(null, "event:/sfx/enemy/enemy_attacks/the_insatiable/the_insatiable_thrash")
+			.WithHitFx("vfx/vfx_scratch")
+			.Execute(choiceContext);
 	}
     protected override void OnUpgrade()
 	{

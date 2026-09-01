@@ -16,8 +16,8 @@ public class LayEggs : InsatiableCardModel
 {
 	public override IEnumerable<CardKeyword> CanonicalKeywords => [TheInsatiableKeyword.Insect];
 	protected override IEnumerable<IHoverTip> AdditionalHoverTips => [
-		HoverTipFactory.FromCard<Hatch>(),
-        HoverTipFactory.FromCard<Nibble>(),
+		HoverTipFactory.FromCard<Hatch>(base.IsUpgraded),
+        HoverTipFactory.FromCard<Nibble>(base.IsUpgraded),
 	];
 	protected override IEnumerable<DynamicVar> CanonicalVars => [new PowerVar<LayEggsPower>(1)];
 	public LayEggs()
@@ -27,10 +27,11 @@ public class LayEggs : InsatiableCardModel
 	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
 	{
 		await CreatureCmd.TriggerAnim(base.Owner.Creature, "PowerUp", base.Owner.Character.CastAnimDelay);
+		if (IsUpgraded)
+		{
+			await PowerCmd.Apply<LayEggsPlusPower>(choiceContext, base.Owner.Creature, base.DynamicVars["LayEggsPower"].BaseValue, base.Owner.Creature, this);
+			return;
+		}
 		await PowerCmd.Apply<LayEggsPower>(choiceContext, base.Owner.Creature, base.DynamicVars["LayEggsPower"].BaseValue, base.Owner.Creature, this);
 	}
-	protected override void OnUpgrade()
-    {
-        AddKeyword(CardKeyword.Innate);
-    }
 }

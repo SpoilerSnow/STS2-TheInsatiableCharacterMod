@@ -20,7 +20,7 @@ public class Dessert : InsatiableCardModel
 {
 	public override bool GainsBlock => true;
 	protected override IEnumerable<DynamicVar> CanonicalVars => [
-		new BlockVar(7, ValueProp.Move),
+		new BlockVar(6, ValueProp.Move),
 		new MaxCapacityVar(1),
 	];
 	protected override IEnumerable<IHoverTip> AdditionalHoverTips => [
@@ -49,6 +49,7 @@ public class Dessert : InsatiableCardModel
 	}
 	protected override void OnUpgrade()
 	{
-		DynamicVars.Block.UpgradeValueBy(3);
+		DynamicVars.Block.UpgradeValueBy(2);
+		DynamicVars["MaxCapacity"].UpgradeValueBy(1);
 	}
 }

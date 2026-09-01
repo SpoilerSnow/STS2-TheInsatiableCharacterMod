@@ -26,10 +26,13 @@ public class LayEggsPower : InsatiablePowerModel
 		if (player == base.Owner.Player)
 		{
 			Flash();
+			SfxCmd.Play("event:/sfx/enemy/enemy_attacks/egg_layer/egg_layer_lay");
 			for (int i = 0; i < Amount; i++)
 			{
-				await CardPileCmd.AddGeneratedCardToCombat(base.CombatState.CreateCard<Hatch>(base.Owner.Player), PileType.Hand, base.Owner.Player);
-                await CardPileCmd.AddGeneratedCardToCombat(base.CombatState.CreateCard<Nibble>(base.Owner.Player), PileType.Hand, base.Owner.Player);
+				CardModel hatch = base.CombatState.CreateCard<Hatch>(base.Owner.Player);
+                CardModel nibble = base.CombatState.CreateCard<Nibble>(base.Owner.Player);
+				await CardPileCmd.AddGeneratedCardToCombat(hatch, PileType.Hand, base.Owner.Player);
+                await CardPileCmd.AddGeneratedCardToCombat(nibble, PileType.Hand, base.Owner.Player);
 			}
 		}
 	}

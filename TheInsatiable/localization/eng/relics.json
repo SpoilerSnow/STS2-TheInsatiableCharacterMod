@@ -5,7 +5,7 @@
     "THE_INSATIABLE_RELIC_DESERT_STONE_RELIC.flavor": "The Insatiable Sandworm's treasure, said to come from an equally mysterious eternal realm...",
     "THE_INSATIABLE_RELIC_POLISHED_DESERT_STONE_RELIC.title": "Polished Desert Stone",
     "THE_INSATIABLE_RELIC_POLISHED_DESERT_STONE_RELIC.description": "At the start of each combat, add a [gold]Sandstone[/gold] to your hand.\nAt the start of the first [blue]4[/blue] turns of each combat, apply [blue]{QuickSandPower}[/blue] [gold]Quicksand[/gold] to ALL enemies.",
-    "THE_INSATIABLE_RELIC_POLISHED_DESERT_STONE_RELIC.flavor": "A carefully polished Desert Stone, the source of the Insatiable Sandworm's power.",
+    "THE_INSATIABLE_RELIC_POLISHED_DESERT_STONE_RELIC.flavor": "A carefully polished Desert Stone, the source of the Insatiable's power.",
     "THE_INSATIABLE_RELIC_REVERSE_HOURGLASS_RELIC.title": "Reverse Hourglass",
     "THE_INSATIABLE_RELIC_REVERSE_HOURGLASS_RELIC.description": "Whenever you apply [gold]Quicksand[/gold] to an enemy, increase the [gold]Quicksand[/gold] applied by [blue]{QuickSandPower}[/blue].",
     "THE_INSATIABLE_RELIC_REVERSE_HOURGLASS_RELIC.flavor": "The sand within seems to defy gravity, flowing grain by grain from the bottom of the hourglass to the top.",
@@ -14,7 +14,7 @@
     "THE_INSATIABLE_RELIC_ANOTHER_STOMACH_RELIC.flavor": "It can never be filled.",
     "THE_INSATIABLE_RELIC_EXUVIAE_SKELETON_RELIC.title": "Exoskeleton Exuviae",
     "THE_INSATIABLE_RELIC_EXUVIAE_SKELETON_RELIC.description": "The first attack damage greater than [blue]9[/blue] received each combat is reduced to [blue]9[/blue].",
-    "THE_INSATIABLE_RELIC_EXUVIAE_SKELETON_RELIC.flavor": "Similar shells can often be found in the Burrow. Whether they are molted skins or corpses of exoskeleton creatures, no one knows.",
+    "THE_INSATIABLE_RELIC_EXUVIAE_SKELETON_RELIC.flavor": "Similar shells can often be found in the Hive. Whether they are molted skins or corpses of exoskeleton creatures, no one knows.",
     "THE_INSATIABLE_RELIC_OBELISK_RELIC.title": "Obelisk",
     "THE_INSATIABLE_RELIC_OBELISK_RELIC.description": "Cards with [gold]Innate[/gold] gain [gold]Retain[/gold]. \nCards with [gold]Retain[/gold] gain [gold]Innate[/gold].",
     "THE_INSATIABLE_RELIC_OBELISK_RELIC.flavor": "An ancient monument.",
@@ -24,7 +24,7 @@
     "THE_INSATIABLE_RELIC_GOLD_PAN_RELIC.title": "Gold Pan",
     "THE_INSATIABLE_RELIC_GOLD_PAN_RELIC.description": "At the start of each combat, [gold]Swallow[/gold] [blue]{Cards:diff()}[/blue] [gold]Gold Rush[/gold].",
     "THE_INSATIABLE_RELIC_GOLD_PAN_RELIC.flavor": "From a Spire adventurer who came before.",
-    "THE_INSATIABLE_RELIC_CROWN_OF_INSECT_RELIC.title": "Crown of the Swarm",
+    "THE_INSATIABLE_RELIC_CROWN_OF_INSECT_RELIC.title": "Crown of the Insect",
     "THE_INSATIABLE_RELIC_CROWN_OF_INSECT_RELIC.description": "ALL [gold]Insect[/gold] cards cost {Energy:energyIcons()} less.",
-    "THE_INSATIABLE_RELIC_CROWN_OF_INSECT_RELIC.flavor": "The swarm bows before it."
+    "THE_INSATIABLE_RELIC_CROWN_OF_INSECT_RELIC.flavor": "The Insect bow before it."
 }

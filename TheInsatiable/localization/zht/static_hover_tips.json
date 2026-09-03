@@ -1,0 +1,5 @@
+{
+  "THE_INSATIABLE_CARDPILE_SWALLOW_PILE.title": "吞噬堆",
+  "THE_INSATIABLE_CARDPILE_SWALLOW_PILE.description": "吞噬堆最多容纳[blue]{MaxCapacity:diff()}[/blue]张卡牌，\n进入吞噬堆后[blue]{MaxTurnsInPile:diff()}[/blue]回合的卡牌会移除出战斗。\n\n点击查看你吞噬堆中的卡牌。",
+  "THE_INSATIABLE_CARDPILE_SWALLOW_PILE.empty": "我的吞噬堆是[red]空的[/red]。"
+}

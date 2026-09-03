@@ -35,6 +35,10 @@ public class RunPower : InsatiablePowerModel
 	}
 	public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
     {
+		if (player != base.Owner.Player)
+        {
+            return;
+        }
         IEnumerable<CardModel> statusCards = CardFactory.GetDistinctForCombat(base.Owner.Player, ModelDb.CardPool<StatusCardPool>().GetUnlockedCards(base.Owner.Player.UnlockState, base.Owner.Player.RunState.CardMultiplayerConstraint), base.Amount, base.Owner.Player.RunState.Rng.CombatCardGeneration).Concat([base.CombatState.CreateCard<FranticEscape>(base.Owner.Player)]);
         foreach (CardModel statusCard in statusCards)
         {

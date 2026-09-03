@@ -30,6 +30,7 @@ public class GluttonyPower : InsatiablePowerModel
 	{
 		if (card.Owner.Creature == base.Owner)
 		{
+			Flash();
 			CardModel scard = card.CreateClone();
 			await TheInsatiableCmd.SwallowCard(choiceContext, scard);
 		}
@@ -38,10 +39,8 @@ public class GluttonyPower : InsatiablePowerModel
 	{
 		if (creature != CombatManager.Instance.History.Entries.OfType<CreatureSwallowedEntry>())
 		{
+			Flash();
 			await TheInsatiableHook.BeforeCreatureSwallow(CombatState, creature, false);
-			SfxCmd.Play("event:/sfx/enemy/enemy_attacks/the_insatiable/the_insatiable_finisher");
-            await CreatureCmd.TriggerAnim(base.Owner, "EatPlayer", 0.5f);
-			await Cmd.Wait(2f);
 			CombatManager.Instance.History.CreatureSwallowed(CombatState, creature);
 			await TheInsatiableHook.AfterCreatureSwallow(CombatState, creature, false);
 		}

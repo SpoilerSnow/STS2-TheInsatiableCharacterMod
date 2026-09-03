@@ -29,7 +29,7 @@ public sealed class ChaseSequence : InsatiableCardModel
     ];
     protected override IEnumerable<DynamicVar> CanonicalVars => [
 		new EnergyVar(1),
-		new PowerVar<RunPower>(1)
+		new CardsVar(1),
 	];
 	public ChaseSequence()
 		: base(1, CardType.Power, CardRarity.Rare, TargetType.Self)
@@ -42,7 +42,7 @@ public sealed class ChaseSequence : InsatiableCardModel
 		IEnumerable<Player> enumerable = base.CombatState.Players.Where((Player p) => p.Creature.IsAlive && p != base.Owner);
 		foreach (Player player1 in enumerable)
 		{
-			await PowerCmd.Apply<RunPower>(choiceContext, player1.Creature, base.DynamicVars.Energy.BaseValue, base.Owner.Creature, this);
+			await PowerCmd.Apply<RunPower>(choiceContext, player1.Creature, base.DynamicVars.Cards.BaseValue, base.Owner.Creature, this);
 		}
 	}
     protected override void OnUpgrade()

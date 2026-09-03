@@ -5,6 +5,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheInsatiable.Scripts.Pools;
+using TheInsatiable.Scripts.Characters;
 
 namespace TheInsatiable.Scripts.Cards;
 
@@ -29,7 +30,7 @@ public class Eviscerate : InsatiableCardModel
 			.FromCard(this, cardPlay)
 			.Targeting(cardPlay.Target)
 			.OnlyPlayAnimOnce()
-			.WithAttackerAnim("Thrash", 0.3f)
+			.WithAttackerAnim(InsatiableCharacter.GetThrashAnimIfApplicable(base.Owner.Character), InsatiableCharacter.GetThrashDelayIfApplicable(base.Owner.Character))
 			.WithAttackerFx(null, "event:/sfx/enemy/enemy_attacks/the_insatiable/the_insatiable_thrash")
 			.WithHitFx("vfx/vfx_scratch")
 			.Execute(choiceContext);

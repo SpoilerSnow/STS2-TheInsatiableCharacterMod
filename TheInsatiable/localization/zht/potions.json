@@ -1,0 +1,8 @@
+{
+    "THE_INSATIABLE_POTION_BOTTLED_QUICK_SAND_POTION.title": "瓶装流沙",
+    "THE_INSATIABLE_POTION_BOTTLED_QUICK_SAND_POTION.description": "给予[blue]{QuickSandPower}[/blue]层[gold]流沙[/gold]。",
+    "THE_INSATIABLE_POTION_LIQUID_HUNGRY_POTION.title": "液态饥饿",
+    "THE_INSATIABLE_POTION_LIQUID_HUNGRY_POTION.description": "用[gold]沙虫吞噬[/gold]填满你的[gold]手牌[/gold]。",
+    "THE_INSATIABLE_POTION_DIGESTIVE_JUICE_POTION.title": "消化液",
+    "THE_INSATIABLE_POTION_DIGESTIVE_JUICE_POTION.description": "给予一名敌人数层[gold]消化液[/gold]。\n在[gold]普通[/gold]战，[gold]精英[/gold]战和[gold]Boss[/gold]战中分别为[blue]{Other}[/blue]/[blue]{Elite}[/blue]/[blue]{Boss}[/blue]层。"
+}

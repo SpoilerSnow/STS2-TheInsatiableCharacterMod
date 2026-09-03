@@ -208,4 +208,21 @@ public class InsatiableCharacter : ModCharacterTemplate<InsatiableCardPool, Insa
         valtotal.AddAnyState("Thrash", val9a, () => HasNoEscapePower);
         return valtotal;
     }
+    public static string GetThrashAnimIfApplicable(CharacterModel character)
+	{
+		if (!(character is InsatiableCharacter))
+		{
+			return "Attack";
+		}
+		return "Thrash";
+	}
+
+	public static float GetThrashDelayIfApplicable(CharacterModel character)
+	{
+		if (!(character is InsatiableCharacter))
+		{
+			return character.AttackAnimDelay;
+		}
+		return 0.3f;
+	}
 }
